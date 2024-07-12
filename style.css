@@ -1,0 +1,125 @@
+/* Estilo básico para resetar alguns padrões */
+body, ul {
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove preenchimentos padrão */
+}
+
+/* Estilizando a barra de navegação */
+nav {
+    background-color: green; /* Define a cor de fundo da barra de navegação */
+    overflow: hidden; /* Garante que o conteúdo flutuante seja contido */
+}
+
+nav ul {
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+}
+
+nav ul li {
+    float: left; /* Alinha os itens da lista horizontalmente */
+}
+
+nav ul li a {
+    display: block; /* Torna o link um bloco para facilitar o preenchimento */
+    color: white; /* Define a cor do texto como branco */
+    text-align: center; /* Centraliza o texto dentro do link */
+    padding: 14px 20px; /* Adiciona preenchimento interno ao link */
+    text-decoration: none; /* Remove a sublinha padrão dos links */
+    position: relative; /* Necessário para o uso dos pseudo-elementos */
+    margin: 5px; /* Espaçamento entre os itens */
+    overflow: hidden; /* Para que a animação não ultrapasse os limites */
+    border: 2px solid green; /* Borda verde */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+nav ul li a:before {
+    content: ''; /* Adiciona um conteúdo vazio para o pseudo-elemento */
+    position: absolute; /* Permite posicionamento absoluto dentro do link */
+    top: -100%; /* Inicia fora da visualização */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Ocupa toda a largura do link */
+    height: 200%; /* Alterado para garantir que a animação preencha toda a borda */
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 10px,
+        lime 10px,
+        lime 20px
+    ); /* Define um gradiente linear repetido para a animação */
+    animation: matrix 1s linear infinite; /* Aplica a animação */
+}
+
+/* Estilo ao passar o mouse */
+nav ul li a:hover {
+    background-color: #111; /* Muda a cor de fundo ao passar o mouse */
+    border-color: #111; /* Muda a cor da borda ao passar o mouse */
+}
+
+/* Animação para o efeito "matrix" */
+@keyframes matrix {
+    0% {
+        top: -100%; /* Inicia fora da visualização */
+    }
+    100% {
+        top: 100%; /* Termina fora da visualização do outro lado */
+    }
+}
+
+/* Estilos para as seções */
+section {
+    padding: 20px;
+    margin: 20px;
+    color: rgb(8, 128, 100);
+    column-rule-color: aqua;
+}
+
+section#home {
+    background-color:#f0f0f0;
+}
+
+section#about {
+    background-color: #e0e0e0;
+    /*Adicionar o estilo para a imagem de fundo */
+    background-image: url('C:\Users\willi\Pictures\Wallpapers\PeakyWill.jpg'); /* Substitua pelo caminho da imagem */
+    background-size: cover;
+    background-position: center;
+
+}
+
+section#services {
+    background-color: #d0d0d0;
+
+}
+
+section#contact {
+    background-color: #c0c0c0;
+
+}
+
+.content {
+    background-color: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+form {
+    color: blue
+}
+
+name {
+    color: red
+}
+section#formulario {
+    color: pink
+}
+button {
+    color: red;
+    padding: 10px;
+    margin: 10px;
+}
+
+email {
+    color: rgb(255, 0, 247);
+}
+

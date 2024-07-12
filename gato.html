@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Barra de Navegação</title>
+    <link rel="stylesheet" href="style.css"> <!-- Vincula o arquivo CSS -->
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Pagina Inicial</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!--Seção Página Inicial -->
+    <section id="home">
+        <h1>Bem-Vindo á Minha Página</h1>
+        <div class="content>"
+            <p>Descrição dos serviços oferecidos.</p>
+        </div>
+    </section>
+
+    <!--Seção Contato-->
+    <section id="contact">
+        <h1>Contato</h1>
+        <div class="content">
+            <p>Informações de Contato.</p>
+        </div>
+    </section>
+    <script src="script.js"></script> <!-- Vincula o arquivo JavaScript -->
+</body>
+<section id="formulario">                                                            <!-- Criei este para testar o que pode mudar ele todo e o que muda individualmente ;)-->
+<form action="/submit" method="POST"> <!-- Formulário que envia dados via POST -->
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name"> <!-- Campo de texto para nome -->
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"> <!-- Campo de texto para email -->
+    
+    <button type="submit">Enviar</button> <!-- Botão para enviar o formulário -->
+</section>
+</form>
+
+</html>
