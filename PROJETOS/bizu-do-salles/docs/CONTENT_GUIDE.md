@@ -38,7 +38,7 @@ Status em 29/09/2026: **69 questões nacionais publicadas**; estaduais de SP agu
 
 | Bloco | Base legal (texto oficial) | Abrangência | Status |
 |---|---|---|---|
-| Constituição Federal (direitos fundamentais, adm. pública, nacionalidade, militares, segurança pública) | CF/88 | Nacional | ✅ 50 |
+| Constituição Federal (direitos fundamentais, adm. pública, nacionalidade, militares, segurança pública) | CF/88 | Nacional | ✅ 35 |
 | Direitos Humanos | DUDH (1948); depois Pacto de San José (Dec. 678/1992) | Nacional | ✅ 5 |
 | Tortura, Abuso de Autoridade | Lei 9.455/97; Lei 13.869/19 | Nacional | ✅ 11 |
 | Português, Matemática | Conteúdo próprio | Nacional | ✅ 18 |
