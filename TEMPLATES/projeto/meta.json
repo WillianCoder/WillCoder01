@@ -1,0 +1,23 @@
+{
+  "titulo": "{{NOME}}",
+  "tipo": "projeto",
+  "categoria": "Desenvolvimento",
+  "status": "planejado",
+  "tecnologias": [],
+  "data": "{{DATA}}",
+  "atualizado": "{{DATA}}",
+  "versao": "0.1.0",
+  "nivel": "iniciante",
+  "resumo": "Descreva o projeto em uma frase.",
+  "destaque": false,
+  "portfolio": {
+    "problema": "",
+    "desenvolvido": "",
+    "participacao": "",
+    "resultado": ""
+  },
+  "links": {
+    "demo": "",
+    "repositorio": ""
+  }
+}

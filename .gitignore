@@ -1,0 +1,46 @@
+# Segredos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+secrets.*
+
+# Sistemas operacionais
+.DS_Store
+Thumbs.db
+# desktop.ini é ignorado para novos arquivos; o da raiz já estava versionado e foi preservado
+desktop.ini
+!/desktop.ini
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# JavaScript
+node_modules/
+dist/
+.cache/
+
+# C# / .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+TestResults/
+
+# Logs e temporários
+*.log
+*.tmp
+~$*

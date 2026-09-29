@@ -1,0 +1,10 @@
+{
+  "titulo": "{{NOME}}",
+  "tipo": "experimento",
+  "categoria": "Experimento",
+  "status": "teste",
+  "tecnologias": [],
+  "data": "{{DATA}}",
+  "atualizado": "{{DATA}}",
+  "resumo": "Hipótese ou tecnologia testada em uma frase."
+}

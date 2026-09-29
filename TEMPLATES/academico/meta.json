@@ -1,0 +1,17 @@
+{
+  "titulo": "{{NOME}}",
+  "tipo": "academico",
+  "categoria": "Trabalho",
+  "status": "desenvolvimento",
+  "tecnologias": [],
+  "data": "{{DATA}}",
+  "atualizado": "{{DATA}}",
+  "versao": "0.1.0",
+  "resumo": "Tema do trabalho em uma frase.",
+  "academico": {
+    "disciplina": "",
+    "professor": "",
+    "semestre": "",
+    "integrantes": []
+  }
+}

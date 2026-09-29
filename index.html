@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Willian Salles — Laboratório Digital</title>
+  <meta name="description" content="Painel de projetos, estudos, trabalhos acadêmicos e portfólio de Willian Salles.">
+  <meta name="theme-color" content="#07090F">
+  <link rel="icon" href="site/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="site/css/main.css">
+  <script>
+    // Aplica preferências salvas antes da pintura para evitar "piscar".
+    try {
+      const t = localStorage.getItem("tema"); if (t) document.documentElement.dataset.theme = t;
+      if (localStorage.getItem("movimento") === "off") document.documentElement.dataset.motion = "off";
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <svg class="brand-pac" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 16 L30 8 A15 15 0 1 0 30 24 Z" fill="currentColor"/></svg>
+      <span class="brand-name" data-perfil="nome">Willian Salles</span>
+    </a>
+    <button class="icon-btn menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">☰</button>
+    <nav id="menu" class="menu" aria-label="Principal">
+      <a href="#inicio">🏠 Início</a>
+      <a href="#portfolio">💼 Portfólio</a>
+      <a href="#explorar">🔎 Explorar</a>
+      <a href="#estudos">📚 Estudos</a>
+      <a href="#academico">🎓 Acadêmico</a>
+      <a href="#sobre">👤 Sobre</a>
+      <a href="DOCUMENTACAO/README.md">📖 Docs</a>
+    </nav>
+    <div class="toggles">
+      <button class="icon-btn" id="btn-movimento" aria-pressed="false" title="Pausar animações" aria-label="Pausar animações">⏸</button>
+      <button class="icon-btn" id="btn-tema" title="Alternar tema claro/escuro" aria-label="Alternar tema claro/escuro">◐</button>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <!-- HERO -->
+    <section id="inicio" class="hero" aria-labelledby="hero-titulo">
+      <p class="eyebrow">&gt; laboratório digital<span class="caret" aria-hidden="true">_</span></p>
+      <h1 id="hero-titulo" class="hero-title" data-perfil="nome">Willian Salles</h1>
+      <p class="hero-sub" data-perfil="titulo">Desenvolvimento • Tecnologia • Projetos • Aprendizado</p>
+      <p class="hero-desc" data-perfil="descricao"></p>
+      <div class="hero-links" id="hero-links"></div>
+
+      <div class="maze" aria-hidden="true">
+        <div class="maze-track" id="maze-track">
+          <span class="maze-dots"></span>
+          <span class="pac"></span>
+          <span class="ghost g-red"></span>
+          <span class="ghost g-pink"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="section" aria-labelledby="dash-titulo">
+      <div class="section-head">
+        <h2 id="dash-titulo">📈 Painel</h2>
+        <p class="muted small">Números gerados automaticamente a partir do repositório · atualizado em <span id="gerado" class="mono">—</span></p>
+      </div>
+      <div class="stats" id="stats"></div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>🛠️ Tecnologias registradas</h3>
+          <div class="chips" id="tecs"></div>
+        </div>
+        <div class="panel">
+          <h3>🕒 Últimas atualizações</h3>
+          <ol class="recent" id="recentes"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+    <section id="portfolio" class="section" aria-labelledby="port-titulo">
+      <div class="section-head">
+        <h2 id="port-titulo">💼 Portfólio</h2>
+        <p class="muted small">Projetos selecionados para apresentação profissional.</p>
+      </div>
+      <div class="cards" id="lista-portfolio"></div>
+    </section>
+
+    <!-- EXPLORAR -->
+    <section id="explorar" class="section" aria-labelledby="exp-titulo">
+      <div class="section-head">
+        <h2 id="exp-titulo">🔎 Explorar</h2>
+        <p class="muted small">Projetos, trabalhos, estudos, experimentos e documentos. Atalho: <kbd>/</kbd></p>
+      </div>
+      <form class="filters" id="filtros" role="search" onsubmit="return false">
+        <label class="search">
+          <span class="sr-only">Buscar</span>
+          <input type="search" id="busca" placeholder="Buscar por nome, tecnologia, disciplina…" autocomplete="off">
+        </label>
+        <label><span class="sr-only">Tipo</span><select id="f-tipo"><option value="">Todos os tipos</option></select></label>
+        <label><span class="sr-only">Status</span><select id="f-status"><option value="">Todos os status</option></select></label>
+        <label><span class="sr-only">Tecnologia</span><select id="f-tec"><option value="">Todas as tecnologias</option></select></label>
+        <label><span class="sr-only">Categoria</span><select id="f-cat"><option value="">Todas as categorias</option></select></label>
+        <label><span class="sr-only">Ano</span><select id="f-ano"><option value="">Todos os anos</option></select></label>
+        <button type="reset" class="btn ghost">Limpar</button>
+      </form>
+      <p class="muted small" id="contagem" aria-live="polite"></p>
+      <div class="cards" id="lista-explorar"></div>
+    </section>
+
+    <!-- ESTUDOS -->
+    <section id="estudos" class="section" aria-labelledby="est-titulo">
+      <div class="section-head">
+        <h2 id="est-titulo">📚 Estudos</h2>
+        <p class="muted small">Cursos e assuntos em andamento, com progresso.</p>
+      </div>
+      <div class="cards" id="lista-estudos"></div>
+    </section>
+
+    <!-- ACADÊMICO -->
+    <section id="academico" class="section" aria-labelledby="aca-titulo">
+      <div class="section-head">
+        <h2 id="aca-titulo">🎓 Acadêmico</h2>
+        <p class="muted small">Trabalhos organizados por semestre e disciplina.</p>
+      </div>
+      <div id="lista-academico"></div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="section" aria-labelledby="sobre-titulo">
+      <div class="section-head"><h2 id="sobre-titulo">👤 Sobre</h2></div>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Apresentação</h3>
+          <p data-perfil="descricao"></p>
+          <h3>Interesses profissionais</h3>
+          <div class="chips" data-lista="interesses"></div>
+          <h3>Estudando agora</h3>
+          <div class="chips" data-lista="estudando"></div>
+        </div>
+        <div class="panel">
+          <h3>Objetivos</h3>
+          <ul class="plain" data-lista="objetivos"></ul>
+          <h3>Contato</h3>
+          <ul class="plain" id="contatos"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span class="dots" aria-hidden="true">• • •</span> Construído com HTML, CSS e JavaScript puros · <a href="CHANGELOG.md">Changelog</a> · <a href="https://github.com/WillianCoder/WillCoder01">Código-fonte</a></p>
+  </footer>
+
+  <dialog id="detalhe" class="modal" aria-labelledby="det-titulo">
+    <div class="modal-body" id="det-corpo"></div>
+    <form method="dialog"><button class="btn" autofocus>Fechar</button></form>
+  </dialog>
+
+  <script src="site/data/catalog.js"></script>
+  <script src="site/js/app.js" defer></script>
+</body>
+</html>
