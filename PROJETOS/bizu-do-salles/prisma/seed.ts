@@ -1,6 +1,7 @@
 // Popula dados iniciais editáveis no painel: planos, ciclos, flags, configurações e questões revisadas.
 import { PrismaClient } from "@prisma/client";
 import { loadQuestionFiles } from "../src/content";
+import { UFS } from "../src/core/states";
 
 const db = new PrismaClient();
 const slug = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -20,6 +21,10 @@ async function main() {
     await db.featureFlag.upsert({ where: { key }, update: {}, create: { key, enabled } });
   }
   await db.setting.upsert({ where: { key: "app_name" }, update: {}, create: { key: "app_name", value: "Bizu do Salles" } });
+
+  for (const [code, name] of Object.entries(UFS)) {
+    await db.state.upsert({ where: { code }, update: {}, create: { code, name } });
+  }
 
   const cycles = {
     BASIC: await db.cycle.upsert({ where: { code: "BASIC" }, update: {}, create: { code: "BASIC", name: "Ciclo Básico" } }),
@@ -44,7 +49,7 @@ async function main() {
       if (exists) continue; // edições feitas no painel prevalecem
       await db.question.create({
         data: {
-          code: q.code, subjectId: subject.id, topicId: topic.id, statement: q.statement, correctLetter: q.correct,
+          code: q.code, subjectId: subject.id, topicId: topic.id, stateCode: file.state ?? null, statement: q.statement, correctLetter: q.correct,
           explanation: q.explanation, reference: q.reference, sourceLicense: file.sourceLicense, difficulty: q.difficulty,
           author: file.author, status: "PUBLISHED",
           options: { create: Object.entries(q.options).map(([letter, text]) => ({ letter, text, whyWrong: q.whyWrong?.[letter as "A"] })) },

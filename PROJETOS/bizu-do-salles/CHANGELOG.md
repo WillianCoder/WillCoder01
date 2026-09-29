@@ -2,6 +2,12 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.1.1] — 2026-09-29
+### Adicionado
+- Suporte a todos os estados: tabela `State` (27 UFs), UF do aluno, conteúdo nacional x estadual (`src/core/states.ts`).
+- 8 questões novas (Administração pública — CF/88, art. 37; Direitos fundamentais), total de 25.
+- Guia de conteúdo estadual, começando por São Paulo.
+
 ## [0.1.0] — 2026-09-29
 ### Adicionado
 - Esquema do banco (Prisma/PostgreSQL): usuários, sessões, escolas, planos, assinaturas, pagamentos, cupons, ciclos, disciplinas, assuntos, questões A–E, tentativas, favoritos/revisar depois, cadernos, simulados, materiais, metas, notificações, configurações, feature flags e auditoria.

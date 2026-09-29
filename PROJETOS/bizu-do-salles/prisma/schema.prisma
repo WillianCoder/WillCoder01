@@ -61,6 +61,8 @@ model User {
   blocked      Boolean   @default(false)
   schoolId     String?
   school       School?   @relation(fields: [schoolId], references: [id])
+  stateCode    String?   // UF escolhida no cadastro (ex.: SP)
+  state        State?    @relation(fields: [stateCode], references: [code])
   termsAcceptedAt   DateTime
   privacyAcceptedAt DateTime
   createdAt    DateTime  @default(now())
@@ -94,11 +96,23 @@ model Session {
   @@index([userId, revokedAt])
 }
 
+/// Estados atendidos. Conteúdo com stateCode nulo é nacional e vale para todos.
+model State {
+  code      String     @id // UF
+  name      String
+  active    Boolean    @default(true)
+  users     User[]
+  schools   School[]
+  questions Question[]
+  materials Material[]
+}
+
 model School {
   id        String   @id @default(cuid())
   name      String   @unique
   city      String?
-  state     String?
+  stateCode String?
+  state     State?   @relation(fields: [stateCode], references: [code])
   active    Boolean  @default(true)
   users     User[]
   createdAt DateTime @default(now())
@@ -210,6 +224,8 @@ model Question {
   subject       Subject        @relation(fields: [subjectId], references: [id])
   topicId       String?
   topic         Topic?         @relation(fields: [topicId], references: [id])
+  stateCode     String?        // nulo = nacional (CF, leis federais); UF = legislação estadual
+  state         State?         @relation(fields: [stateCode], references: [code])
   type          String         @default("MULTIPLE_CHOICE")
   statement     String
   correctLetter String
@@ -230,6 +246,7 @@ model Question {
   simulationItems SimulationQuestion[]
 
   @@index([subjectId, status])
+  @@index([stateCode])
 }
 
 model QuestionOption {
@@ -339,6 +356,8 @@ model Material {
   kind          String     // pdf | text | summary | audio | image
   cycle         CycleCode?
   subjectId     String?
+  stateCode     String?
+  state         State?     @relation(fields: [stateCode], references: [code])
   storageKey    String
   free          Boolean    @default(false)
   sourceLicense String

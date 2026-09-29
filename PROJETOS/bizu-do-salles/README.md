@@ -1,8 +1,8 @@
 # Bizu do Salles
 
-Plataforma de estudos por questões para cursos de formação da Polícia Militar — **Ciclo Básico**, **Ciclo Específico** e plano **Básico + Específico**.
+Plataforma de estudos por questões para cursos de formação da Polícia Militar de **todos os estados** (começando por São Paulo) — **Ciclo Básico**, **Ciclo Específico** e plano **Básico + Específico**.
 
-Versão **0.1.0** — fundação: banco de dados, regras de acesso, sessão única, desempenho e primeiras questões originais. Interface web vem na v0.2 ([roadmap](docs/AUDITORIA.md#12-roadmap-mvp-primeiro)).
+Versão **0.1.1** — fundação: banco de dados, regras de acesso, sessão única, desempenho e primeiras questões originais. Interface web vem na v0.2 ([roadmap](docs/AUDITORIA.md#12-roadmap-mvp-primeiro)).
 
 ## Onde fica cada coisa
 

@@ -19,6 +19,8 @@ export const questionFile = z.object({
   cycle: z.enum(["BASIC", "SPECIFIC"]),
   subject: z.string(),
   topic: z.string(),
+  /** UF para legislação estadual; omitido = conteúdo nacional. */
+  state: z.string().regex(/^[A-Z]{2}$/).optional(),
   sourceLicense: z.string().min(10),
   author: z.string(),
   questions: z.array(question).min(1),

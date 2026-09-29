@@ -3,6 +3,7 @@ import { activationWindow, canAccess, daysRemaining } from "../src/core/access";
 import { checkSession, newSessionToken, hashToken, sessionsToRevoke } from "../src/core/session";
 import { xray } from "../src/core/performance";
 import { loadQuestionFiles } from "../src/content";
+import { visibleForState } from "../src/core/states";
 
 const now = new Date("2026-10-01T12:00:00Z");
 const future = new Date("2026-12-30T12:00:00Z");
@@ -57,5 +58,14 @@ describe("banco de questões", () => {
   it("todos os arquivos são válidos e têm fonte/licença", () => {
     const files = loadQuestionFiles();
     expect(files.flatMap((f) => f.questions).length).toBeGreaterThan(0);
+  });
+});
+
+describe("conteúdo por estado", () => {
+  it("nacional para todos, estadual só para a UF do aluno", () => {
+    expect(visibleForState(null, "MG")).toBe(true);
+    expect(visibleForState("SP", "SP")).toBe(true);
+    expect(visibleForState("SP", "MG")).toBe(false);
+    expect(visibleForState("SP", null)).toBe(false);
   });
 });
