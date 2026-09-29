@@ -82,9 +82,10 @@ export async function savePreferences(form: FormData) {
   const fonte = String(form.get("fonte"));
   if (["light", "dark", "auto"].includes(tema)) jar.set("tema", tema, opts);
   if (["small", "normal", "large", "xlarge"].includes(fonte)) jar.set("fonte", fonte, opts);
-  const nickname = String(form.get("nickname") ?? "").trim().slice(0, 30);
+  // Apelido: só letras, números, espaço, ponto, hífen e sublinhado (evita conteúdo ofensivo/HTML).
+  const nickname = String(form.get("nickname") ?? "").normalize("NFC").replace(/[^\p{L}\p{N} ._-]/gu, "").trim().replace(/\s+/g, " ").slice(0, 30);
   const user = await requireUser();
-  await db.user.update({ where: { id: user.id }, data: { nickname: nickname || null } });
+  await db.user.update({ where: { id: user.id }, data: { nickname: nickname || null, rankingOptIn: form.get("rankingOptIn") === "on" && nickname.length >= 2 } });
   const meta = Math.min(Math.max(Math.round(Number(form.get("metaDiaria")) || 0), 0), 500);
   await db.goal.upsert({ where: { userId: user.id }, update: { questionsDay: meta || null }, create: { userId: user.id, questionsDay: meta || null } });
   revalidatePath("/", "layout");

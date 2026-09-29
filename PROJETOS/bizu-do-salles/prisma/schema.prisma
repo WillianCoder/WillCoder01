@@ -58,6 +58,7 @@ model User {
   id           String    @id @default(cuid())
   name         String
   nickname     String?
+  rankingOptIn Boolean   @default(false) // aparece no ranking só se o aluno autorizar
   email        String    @unique
   passwordHash String
   phone        String?
@@ -314,6 +315,8 @@ model Notebook {
   name      String
   items     NotebookQuestion[]
   createdAt DateTime           @default(now())
+
+  @@index([userId])
 }
 
 model NotebookQuestion {
@@ -321,6 +324,7 @@ model NotebookQuestion {
   notebook   Notebook @relation(fields: [notebookId], references: [id], onDelete: Cascade)
   questionId String
   question   Question @relation(fields: [questionId], references: [id])
+  addedAt    DateTime @default(now())
 
   @@id([notebookId, questionId])
 }

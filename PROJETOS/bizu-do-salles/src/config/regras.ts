@@ -55,6 +55,17 @@ export const REGRAS = {
     toleranciaSegundos: 60,
   },
 
+  ranking: {
+    // ✏️ EDITÁVEL: quantas posições o ranking mostra
+    tamanho: 50,
+  },
+
+  cadernos: {
+    // ✏️ EDITÁVEL: máximo de cadernos por aluno e de questões por caderno
+    maxPorAluno: 30,
+    maxQuestoes: 500,
+  },
+
   conteudo: {
     // ✏️ EDITÁVEL: quantas questões de cada arquivo novo viram amostra grátis ao carregar (seed)
     gratisPorArquivo: 3,

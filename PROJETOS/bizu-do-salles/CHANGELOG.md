@@ -2,6 +2,14 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.5.0] — 2026-09-29
+### Adicionado
+- **Cadernos** (`/app/cadernos`): criar, renomear, excluir; "Adicionar ao caderno" na questão (inclusive criando caderno novo); estudar só as questões do caderno; gerar simulado a partir do caderno; ver e remover questões.
+- **Ranking** (`/app/ranking`): por período (7 dias, 30 dias, geral), ciclo e abrangência (meu estado, minha escola, Brasil). Pontos = acertos na **primeira tentativa** de cada questão (refazer não soma). Participação só com autorização e apelido; mostra apenas apelido e escola; consulta SQL parametrizada.
+- Apelido higienizado (só letras, números, espaço, ponto, hífen e sublinhado).
+- Limites editáveis em `src/config/regras.ts` (`cadernos`, `ranking`). Migração `cadernos_ranking`.
+- 2 novos testes de navegador (12 no total).
+
 ## [0.4.0] — 2026-09-29
 ### Adicionado
 - **Recuperação de senha**: "Esqueci minha senha" no login; link de uso único que expira (`REGRAS.senha.linkMinutos`, 60 min), enviado por e-mail via Resend quando `RESEND_API_KEY`/`EMAIL_FROM` estão configurados. Sem e-mail, o administrador gera o link em **Usuários → Link de senha** (mostrado uma vez, auditado) e envia ao aluno.

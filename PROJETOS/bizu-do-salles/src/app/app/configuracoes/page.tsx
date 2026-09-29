@@ -17,6 +17,10 @@ export default async function Configuracoes({ searchParams }: { searchParams: Pr
       <h1>Configurações</h1>
       {salvo && <p className="alert ok">Preferências salvas.</p>}
       <div className="field"><label htmlFor="nickname">Apelido (aparece no ranking)</label><input id="nickname" name="nickname" defaultValue={user.nickname ?? ""} maxLength={30} /></div>
+      <label className="row" style={{ fontWeight: 400 }}>
+        <input type="checkbox" name="rankingOptIn" defaultChecked={user.rankingOptIn} style={{ width: "auto", minHeight: "auto" }} />
+        <span>🏆 Participar do ranking (mostra só o apelido e a escola)</span>
+      </label>
       <div className="field"><label htmlFor="metaDiaria">🎯 Meta diária de questões (0 = sem meta)</label><input id="metaDiaria" name="metaDiaria" type="number" min={0} max={500} defaultValue={goal?.questionsDay ?? 20} /></div>
       <h2>Aparência e acessibilidade</h2>
       <div className="field">

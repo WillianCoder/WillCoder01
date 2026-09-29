@@ -14,11 +14,12 @@ import { orderFor } from "@/core/shuffle";
 import { stateWhere } from "@/core/states";
 import { CYCLE_NAME, LEVEL_NAME } from "@/lib/format";
 import { answer, reportProblem, toggleMark } from "../actions";
+import { addToNotebook } from "../cadernos/actions";
 
 export const metadata = { title: "Questões" };
 const POS = ["A", "B", "C", "D", "E"];
 
-type SP = { filtro?: string; disciplina?: string; q?: string; tentativa?: string; reportado?: string; erro?: string };
+type SP = { filtro?: string; disciplina?: string; caderno?: string; q?: string; tentativa?: string; reportado?: string; erro?: string; caderno_ok?: string; caderno_erro?: string };
 
 export default async function Questoes({ searchParams }: { searchParams: Promise<SP> }) {
   const sp = await searchParams;
@@ -26,8 +27,8 @@ export default async function Questoes({ searchParams }: { searchParams: Promise
   const { cycles } = await userAccess(user.id, user.role);
   const filter: Filter = sp.filtro && sp.filtro in FILTERS ? (sp.filtro as Filter) : "nao-respondidas";
   const base = visibleWhere(user, cycles);
-  const where = { AND: [base, filterWhere(user.id, filter, sp.disciplina)] };
-  const qs = (extra: Record<string, string>) => "/app/questoes?" + new URLSearchParams({ filtro: filter, ...(sp.disciplina ? { disciplina: sp.disciplina } : {}), ...extra });
+  const where = { AND: [base, filterWhere(user.id, filter, sp.disciplina, sp.caderno)] };
+  const qs = (extra: Record<string, string>) => "/app/questoes?" + new URLSearchParams({ filtro: filter, ...(sp.disciplina ? { disciplina: sp.disciplina } : {}), ...(sp.caderno ? { caderno: sp.caderno } : {}), ...extra });
 
   const subjects = await db.subject.findMany({ where: { active: true, questions: { some: base } }, include: { cycle: true }, orderBy: [{ cycle: { code: "asc" } }, { order: "asc" }, { name: "asc" }] });
 
@@ -39,6 +40,8 @@ export default async function Questoes({ searchParams }: { searchParams: Promise
   const q = sp.q ? await db.question.findFirst({ where: { id: sp.q, ...base }, include: { options: true, subject: { include: { cycle: true } }, topic: true } }) : null;
   const attempt = sp.tentativa && q ? await db.questionAttempt.findFirst({ where: { id: sp.tentativa, userId: user.id, questionId: q.id } }) : null;
   const marks = q ? await db.favorite.findMany({ where: { userId: user.id, questionId: q.id } }) : [];
+  const notebooks = await db.notebook.findMany({ where: { userId: user.id }, orderBy: { name: "asc" }, select: { id: true, name: true } });
+  const caderno = sp.caderno ? notebooks.find((n) => n.id === sp.caderno) : null;
   const nextId = q ? await nextQuestionId(filter === "nao-respondidas" ? { AND: [where, { id: { not: q.id } }] } : where, q.code) : null;
   const locked = await db.question.count({ where: { ...stateWhere(user.stateCode), status: "PUBLISHED", isFree: false, subject: { cycle: { code: { notIn: cycles as ("BASIC" | "SPECIFIC")[] } } } } });
 
@@ -48,7 +51,10 @@ export default async function Questoes({ searchParams }: { searchParams: Promise
 
   return (
     <div className="stack">
-      <h1>Questões</h1>
+      <h1>Questões{caderno ? ` · 📒 ${caderno.name}` : ""}</h1>
+      {caderno && <p className="muted">Estudando só as questões deste caderno. <Link href="/app/questoes">Ver todas</Link></p>}
+      {sp.caderno_ok && <p className="alert ok">Adicionada ao caderno “{sp.caderno_ok}”.</p>}
+      {sp.caderno_erro && <p className="alert bad">Não foi possível criar o caderno (nome curto ou limite atingido).</p>}
       <form className="row" method="get" aria-label="Filtros">
         <select name="filtro" defaultValue={filter} style={{ maxWidth: 220 }} aria-label="Filtro">
           {Object.entries(FILTERS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
@@ -57,6 +63,7 @@ export default async function Questoes({ searchParams }: { searchParams: Promise
           <option value="">Todas as disciplinas</option>
           {subjects.map((s) => <option key={s.id} value={s.id}>{CYCLE_NAME[s.cycle.code]} · {s.name}</option>)}
         </select>
+        {sp.caderno && <input type="hidden" name="caderno" value={sp.caderno} />}
         <button className="btn small" type="submit">Filtrar</button>
       </form>
 
@@ -123,6 +130,19 @@ export default async function Questoes({ searchParams }: { searchParams: Promise
               );
             })}
           </div>
+
+          <details>
+            <summary>📒 Adicionar ao caderno</summary>
+            <form action={addToNotebook} className="row" style={{ marginTop: ".75rem" }}>
+              <input type="hidden" name="questionId" value={q.id} /><input type="hidden" name="back" value={here + (attempt ? `&tentativa=${attempt.id}` : "")} />
+              <select name="notebookId" defaultValue={notebooks[0]?.id ?? "novo"} aria-label="Caderno" style={{ maxWidth: 240 }}>
+                {notebooks.map((n) => <option key={n.id} value={n.id}>{n.name}</option>)}
+                <option value="novo">+ Novo caderno…</option>
+              </select>
+              <input name="novo" placeholder="Nome do novo caderno" maxLength={60} aria-label="Nome do novo caderno" style={{ maxWidth: 220 }} />
+              <button className="btn ghost small" type="submit">Adicionar</button>
+            </form>
+          </details>
 
           <details>
             <summary>Encontrou um problema nesta questão?</summary>

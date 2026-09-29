@@ -27,12 +27,13 @@ export async function createSimulation(form: FormData) {
   const filtro = String(form.get("filtro") ?? "todas");
   const filter: Filter = filtro in FILTERS ? (filtro as Filter) : "todas";
   const subjectId = String(form.get("disciplina") ?? "") || undefined;
+  const notebookId = String(form.get("caderno") ?? "") || undefined;
   const n = rapido ? R.rapidoQuestoes : Math.min(Math.max(Number(form.get("quantidade")) || R.minQuestoes, R.minQuestoes), R.maxQuestoes);
   const minutos = rapido ? 0 : Math.min(Math.max(Number(form.get("minutos")) || 0, 0), R.maxMinutos);
 
   const { cycles } = await userAccess(user.id, user.role);
   const pool = await db.question.findMany({
-    where: { AND: [visibleWhere(user, cycles), rapido ? {} : filterWhere(user.id, filter, subjectId)] },
+    where: { AND: [visibleWhere(user, cycles), rapido ? {} : filterWhere(user.id, filter, subjectId, notebookId)] },
     select: { id: true },
     take: 3000,
   });
@@ -40,7 +41,9 @@ export async function createSimulation(form: FormData) {
   const chosen = pickRandom(pool.map((q) => q.id), n);
 
   const subject = subjectId ? await db.subject.findUnique({ where: { id: subjectId } }) : null;
-  const title = rapido ? "Simulado rápido" : `Simulado${subject ? ` · ${subject.name}` : ""} · ${chosen.length} questões`;
+  const nb = notebookId ? await db.notebook.findFirst({ where: { id: notebookId, userId: user.id } }) : null;
+  const label = nb ? ` · 📒 ${nb.name}` : subject ? ` · ${subject.name}` : "";
+  const title = rapido ? "Simulado rápido" : `Simulado${label} · ${chosen.length} questões`;
   const sim = await db.simulation.create({
     data: {
       title, kind: rapido ? "quick" : filter === "erradas" ? "errors" : subjectId ? "subject" : "custom",
