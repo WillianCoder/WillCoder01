@@ -44,5 +44,9 @@
     "server-only": "^0.0.1",
     "zod": "^4.6.5"
   },
-  "private": true
+  "private": true,
+  "overrides": {
+    "postcss": "^8.5.28",
+    "deepmerge-ts": "^8.0.0"
+  }
 }
