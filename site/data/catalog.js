@@ -1,6 +1,6 @@
 // Arquivo gerado por scripts/catalogo.py — não edite manualmente.
 window.CATALOGO = {
-  "gerado": "2024-07-12",
+  "gerado": "2026-09-29",
   "perfil": {
     "nome": "Willian Salles",
     "titulo": "Desenvolvimento • Tecnologia • Projetos • Aprendizado",
@@ -16,8 +16,8 @@ window.CATALOGO = {
     }
   },
   "estatisticas": {
-    "total": 1,
-    "projetos": 0,
+    "total": 2,
+    "projetos": 1,
     "concluidos": 0,
     "desenvolvimento": 0,
     "academicos": 0,
@@ -27,11 +27,44 @@ window.CATALOGO = {
     "documentos": 7,
     "tecnologias": [
       "CSS",
+      "Expo",
       "HTML",
-      "JavaScript"
+      "JavaScript",
+      "Next.js",
+      "PostgreSQL",
+      "TypeScript"
     ]
   },
   "itens": [
+    {
+      "titulo": "Plataforma de Estudos — Ciclo Básico + Específico",
+      "tipo": "projeto",
+      "categoria": "Desenvolvimento",
+      "status": "planejado",
+      "tecnologias": [
+        "TypeScript",
+        "Next.js",
+        "PostgreSQL",
+        "Expo"
+      ],
+      "data": "2026-09-29",
+      "atualizado": "2026-09-29",
+      "versao": "0.0.1",
+      "nivel": "avancado",
+      "resumo": "Plataforma própria de estudos por questões para cursos de formação da PM (web, Android e iOS). Fase 1: auditoria e plano.",
+      "destaque": false,
+      "portfolio": {
+        "problema": "",
+        "desenvolvido": "",
+        "participacao": "",
+        "resultado": ""
+      },
+      "links": {
+        "demo": "",
+        "repositorio": ""
+      },
+      "caminho": "PROJETOS/plataforma-estudos"
+    },
     {
       "titulo": "Primeira página web — barra de navegação",
       "tipo": "experimento",
