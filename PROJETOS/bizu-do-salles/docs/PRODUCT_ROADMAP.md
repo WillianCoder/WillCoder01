@@ -7,7 +7,7 @@
 | v0.3 | Recuperação de senha por e-mail (Resend), meta diária, streak com calendário | ⏳ |
 | v0.4 | Simulados (rápido, por disciplina, personalizado, com cronômetro) e resultado | ⏳ |
 | v0.5 | Cadernos, ranking por apelido (opt-in), conquistas leves | ⏳ |
-| v0.6 | Questões de SP (RDPM, CE-SP) — depende do texto oficial | ⏳ |
+| v0.6 | Questões de SP: RDPM ✅ (109); Constituição do Estado de SP e demais normas internas ⏳ |
 | v0.7 | Gestão de equipe (editores) no painel, importação de questões por planilha | ⏳ |
 | v0.8 | Mercado Pago (Pix/cartão) com webhook e cupons | ⏳ |
 | v1.0 | Lançamento: deploy, domínio, backup testado, revisão jurídica, LGPD (exportar/excluir dados) | ⏳ |

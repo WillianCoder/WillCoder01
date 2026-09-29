@@ -10,7 +10,7 @@ const question = z.object({
   statement: z.string().min(20),
   options: z.object({ A: z.string(), B: z.string(), C: z.string(), D: z.string(), E: z.string() }),
   correct: z.enum(LETTERS),
-  explanation: z.string().min(10),
+  explanation: z.string().min(20),
   whyWrong: z.partialRecord(z.enum(LETTERS), z.string()).optional(),
   reference: z.string().min(3),
 });

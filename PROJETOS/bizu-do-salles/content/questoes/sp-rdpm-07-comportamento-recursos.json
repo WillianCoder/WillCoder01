@@ -1,0 +1,190 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Regulamento Disciplinar da PM (RDPM)",
+  "topic": "Comportamento, recursos, revisão e recompensas",
+  "state": "SP",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto oficial compilado da LC 893/2001 (Alesp, última atualização: Lei 18.442/2026). Texto legal não protegido por direito autoral (Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "RDPM-COM-001",
+      "difficulty": "EASY",
+      "statement": "Ao ser admitida na Polícia Militar, a praça é classificada no comportamento:",
+      "options": {
+        "A": "bom",
+        "B": "ótimo",
+        "C": "excelente",
+        "D": "regular",
+        "E": "mau"
+      },
+      "correct": "A",
+      "explanation": "Resposta: “bom”. Fundamento: art. 55.",
+      "reference": "LC 893/2001, art. 55"
+    },
+    {
+      "code": "RDPM-COM-002",
+      "difficulty": "MEDIUM",
+      "statement": "O comportamento EXCELENTE é atribuído à praça que, no período de:",
+      "options": {
+        "A": "2 anos, não sofreu sanção",
+        "B": "5 anos, recebeu até 2 repreensões",
+        "C": "10 anos, não recebeu qualquer sanção disciplinar",
+        "D": "1 ano, recebeu até 2 permanências",
+        "E": "3 anos, recebeu só advertências"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “10 anos, não recebeu qualquer sanção disciplinar”. Fundamento: art. 54, I.",
+      "reference": "LC 893/2001, art. 54, I"
+    },
+    {
+      "code": "RDPM-COM-003",
+      "difficulty": "HARD",
+      "statement": "Para a classificação do comportamento, o RDPM estabelece que:",
+      "options": {
+        "A": "uma advertência equivale a uma repreensão",
+        "B": "três permanências equivalem a uma detenção",
+        "C": "duas repreensões equivalem a uma permanência disciplinar",
+        "D": "uma detenção equivale a duas repreensões",
+        "E": "não há equivalência entre sanções"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “duas repreensões equivalem a uma permanência disciplinar”. Fundamento: art. 54, § 3º.",
+      "reference": "LC 893/2001, art. 54, § 3º"
+    },
+    {
+      "code": "RDPM-COM-004",
+      "difficulty": "HARD",
+      "statement": "A praça que, no período de 1 ano, receber mais de 2 permanências disciplinares ou mais de 1 detenção estará no comportamento:",
+      "options": {
+        "A": "bom",
+        "B": "regular",
+        "C": "insuficiente",
+        "D": "ótimo",
+        "E": "mau"
+      },
+      "correct": "E",
+      "explanation": "Resposta: “mau”. Fundamento: art. 54, V.",
+      "reference": "LC 893/2001, art. 54, V"
+    },
+    {
+      "code": "RDPM-COM-005",
+      "difficulty": "MEDIUM",
+      "statement": "São recursos disciplinares previstos no RDPM:",
+      "options": {
+        "A": "apelação e agravo",
+        "B": "embargos e revisão criminal",
+        "C": "mandado de segurança e habeas corpus",
+        "D": "pedido de reconsideração de ato e recurso hierárquico",
+        "E": "representação e denúncia"
+      },
+      "correct": "D",
+      "explanation": "Resposta: “pedido de reconsideração de ato e recurso hierárquico”. Fundamento: art. 56, parágrafo único.",
+      "reference": "LC 893/2001, art. 56"
+    },
+    {
+      "code": "RDPM-COM-006",
+      "difficulty": "HARD",
+      "statement": "O pedido de reconsideração de ato, segundo o RDPM:",
+      "options": {
+        "A": "tem efeito suspensivo, é feito uma única vez, diretamente à autoridade recorrida, em até 5 dias da ciência do ato",
+        "B": "não tem efeito suspensivo e pode ser feito várias vezes",
+        "C": "é dirigido ao Governador",
+        "D": "tem prazo de 30 dias",
+        "E": "dispensa forma escrita"
+      },
+      "correct": "A",
+      "explanation": "Art. 57, §§ 1º e 2º. A autoridade tem até 10 dias para solucionar (§ 3º).",
+      "reference": "LC 893/2001, art. 57"
+    },
+    {
+      "code": "RDPM-COM-007",
+      "difficulty": "HARD",
+      "statement": "O recurso hierárquico, segundo o RDPM:",
+      "options": {
+        "A": "é interposto uma única vez, tem efeito suspensivo e é dirigido à autoridade imediatamente superior à que não reconsiderou o ato",
+        "B": "pode ser interposto sem pedido de reconsideração prévio, em qualquer caso",
+        "C": "é dirigido à mesma autoridade que puniu",
+        "D": "não tem prazo",
+        "E": "é julgado pela Justiça Militar"
+      },
+      "correct": "A",
+      "explanation": "Art. 58, caput e § 1º. Prazo de interposição: 5 dias; solução: 10 dias (§ 3º).",
+      "reference": "LC 893/2001, art. 58"
+    },
+    {
+      "code": "RDPM-COM-008",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o RDPM, os prazos para interposição dos recursos disciplinares são:",
+      "options": {
+        "A": "prescricionais",
+        "B": "indeterminados",
+        "C": "decadenciais",
+        "D": "prorrogáveis a pedido",
+        "E": "suspensos nas férias"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “decadenciais”. Fundamento: art. 61.",
+      "reference": "LC 893/2001, art. 61"
+    },
+    {
+      "code": "RDPM-COM-009",
+      "difficulty": "HARD",
+      "statement": "Em razão da interposição de recurso disciplinar, o RDPM determina que:",
+      "options": {
+        "A": "a sanção sempre é agravada",
+        "B": "o prazo de prescrição corre normalmente",
+        "C": "a sanção é automaticamente anulada",
+        "D": "não caberá agravamento da sanção",
+        "E": "o recorrente perde o comportamento"
+      },
+      "correct": "D",
+      "explanation": "Art. 65, parágrafo único. A interposição de recurso interrompe a prescrição (art. 85, § 2º).",
+      "reference": "LC 893/2001, art. 65, parágrafo único"
+    },
+    {
+      "code": "RDPM-COM-010",
+      "difficulty": "HARD",
+      "statement": "A anulação de sanção administrativa disciplinar somente poderá ser feita no prazo de:",
+      "options": {
+        "A": "1 ano",
+        "B": "2 anos",
+        "C": "10 anos",
+        "D": "5 anos, a contar da publicação do ato",
+        "E": "a qualquer tempo"
+      },
+      "correct": "D",
+      "explanation": "Art. 62, § 1º. Atos de revisão: retificação, atenuação, agravação e anulação (art. 62, I a IV).",
+      "reference": "LC 893/2001, art. 62"
+    },
+    {
+      "code": "RDPM-COM-011",
+      "difficulty": "MEDIUM",
+      "statement": "São recompensas policiais-militares, segundo o RDPM:",
+      "options": {
+        "A": "dispensa do serviço e folga",
+        "B": "gratificação e férias extras",
+        "C": "promoção e medalha",
+        "D": "elogio e cancelamento de sanções",
+        "E": "transferência e licença-prêmio"
+      },
+      "correct": "D",
+      "explanation": "Art. 68. A dispensa do serviço NÃO é recompensa (art. 69) e é limitada a 6 dias por ano.",
+      "reference": "LC 893/2001, arts. 68 e 69"
+    },
+    {
+      "code": "RDPM-COM-012",
+      "difficulty": "HARD",
+      "statement": "O cancelamento de sanções é ato do Comandante Geral, a pedido do interessado, após decorridos:",
+      "options": {
+        "A": "2 anos",
+        "B": "5 anos",
+        "C": "20 anos",
+        "D": "15 anos",
+        "E": "10 anos de efetivo serviço sem qualquer outra sanção, a contar da última pena"
+      },
+      "correct": "E",
+      "explanation": "Art. 70, § 1º. O cancelamento não tem efeito retroativo (§ 2º).",
+      "reference": "LC 893/2001, art. 70"
+    }
+  ]
+}

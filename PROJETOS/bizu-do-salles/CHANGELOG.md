@@ -2,6 +2,13 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.2.1] — 2026-09-29
+### Adicionado
+- **109 questões originais do RDPM de SP** (LC 893/2001, texto compilado da Alesp atualizado até a Lei 18.442/2026), cobrindo os 14 capítulos: disposições gerais, deontologia, disciplina, transgressões (26 de classificação G/M/L conferidas contra o texto oficial), sanções, recolhimento, procedimento, competência, aplicação, comportamento, recursos, revisão, recompensas e processo regular. Total do banco: 178.
+- Registro de fontes oficiais no CONTENT_GUIDE.
+### Alterado
+- Explicações curtas agora trazem a resposta por extenso + fundamento; validador exige no mínimo 20 caracteres.
+
 ## [0.2.0] — 2026-09-29
 ### Adicionado
 - Site Next.js 15: página inicial com planos do banco, cadastro (estado + escola), login, termos, privacidade, ajuda/FAQ, PWA (instalar na tela inicial).

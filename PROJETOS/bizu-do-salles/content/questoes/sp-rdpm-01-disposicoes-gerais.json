@@ -1,0 +1,135 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Regulamento Disciplinar da PM (RDPM)",
+  "topic": "Disposições gerais e hierarquia",
+  "state": "SP",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto oficial compilado da LC 893/2001 (Alesp, última atualização: Lei 18.442/2026). Texto legal não protegido por direito autoral (Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "RDPM-DG-001",
+      "difficulty": "EASY",
+      "statement": "Segundo o RDPM (LC 893/2001), as bases da organização da Polícia Militar são:",
+      "options": {
+        "A": "a legalidade e a eficiência",
+        "B": "a honra e a dignidade",
+        "C": "a lealdade e a coragem",
+        "D": "o patriotismo e o civismo",
+        "E": "a hierarquia e a disciplina"
+      },
+      "correct": "E",
+      "explanation": "Art. 1º: a hierarquia e a disciplina são as bases da organização da Polícia Militar.",
+      "reference": "LC 893/2001, art. 1º"
+    },
+    {
+      "code": "RDPM-DG-002",
+      "difficulty": "MEDIUM",
+      "statement": "Estão sujeitos ao RDPM, entre outros:",
+      "options": {
+        "A": "somente os militares do serviço ativo",
+        "B": "os Magistrados da Justiça Militar",
+        "C": "apenas oficiais",
+        "D": "os militares ocupantes de cargos eletivos",
+        "E": "os militares da ativa, da reserva remunerada, os reformados e os agregados"
+      },
+      "correct": "E",
+      "explanation": "Art. 2º, caput. O parágrafo único exclui os ocupantes de cargos públicos ou eletivos e os Magistrados da Justiça Militar.",
+      "reference": "LC 893/2001, art. 2º",
+      "whyWrong": {
+        "A": "O RDPM alcança também inativos e agregados.",
+        "B": "Excluídos pelo parágrafo único, item 2.",
+        "D": "Excluídos pelo parágrafo único, item 1."
+      }
+    },
+    {
+      "code": "RDPM-DG-003",
+      "difficulty": "MEDIUM",
+      "statement": "De acordo com o RDPM, a hierarquia policial-militar culmina:",
+      "options": {
+        "A": "no Comandante Geral da Polícia Militar",
+        "B": "no Governador do Estado, Chefe Supremo da Polícia Militar",
+        "C": "no Secretário da Segurança Pública",
+        "D": "no Presidente da República",
+        "E": "no Comandante do Exército"
+      },
+      "correct": "B",
+      "explanation": "Art. 3º, caput: a ordenação da autoridade culmina no Governador do Estado, Chefe Supremo da Polícia Militar.",
+      "reference": "LC 893/2001, art. 3º"
+    },
+    {
+      "code": "RDPM-DG-004",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o RDPM, posto e graduação são, respectivamente:",
+      "options": {
+        "A": "o grau hierárquico das praças e o dos oficiais",
+        "B": "o tempo de serviço e a antiguidade",
+        "C": "a função e o cargo do militar",
+        "D": "o grau hierárquico dos oficiais, conferido pelo Governador, e o grau das praças, conferido pelo Comandante Geral",
+        "E": "o grau conferido pelo Secretário da Segurança e o conferido pelo comandante da unidade"
+      },
+      "correct": "D",
+      "explanation": "Art. 3º, §§ 2º e 3º: posto é o grau dos oficiais, conferido por ato do Governador e confirmado em Carta Patente ou Folha de Apostila; graduação é o grau das praças, conferida pelo Comandante Geral.",
+      "reference": "LC 893/2001, art. 3º, §§ 2º e 3º"
+    },
+    {
+      "code": "RDPM-DG-005",
+      "difficulty": "HARD",
+      "statement": "Em igualdade de posto ou graduação, o primeiro critério listado pelo RDPM para definir a antiguidade é a:",
+      "options": {
+        "A": "maior idade",
+        "B": "data de nomeação ou admissão",
+        "C": "data da última promoção",
+        "D": "classificação no curso de formação",
+        "E": "prevalência dos graus hierárquicos anteriores"
+      },
+      "correct": "C",
+      "explanation": "Art. 4º, I a V, na ordem: data da última promoção; prevalência sucessiva dos graus anteriores; classificação no curso; data de nomeação/admissão; maior idade.",
+      "reference": "LC 893/2001, art. 4º"
+    },
+    {
+      "code": "RDPM-DG-006",
+      "difficulty": "HARD",
+      "statement": "Para a admissão de soldados, a antiguidade, segundo o RDPM, é definida pela:",
+      "options": {
+        "A": "maior idade",
+        "B": "indicação do comandante",
+        "C": "data de nascimento",
+        "D": "ordem alfabética",
+        "E": "ordem de classificação obtida no respectivo curso ou concurso"
+      },
+      "correct": "E",
+      "explanation": "Resposta: “ordem de classificação obtida no respectivo curso ou concurso”. Fundamento: art. 4º, parágrafo único.",
+      "reference": "LC 893/2001, art. 4º, parágrafo único"
+    },
+    {
+      "code": "RDPM-DG-007",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o RDPM, ocorre precedência funcional quando, em igualdade de posto ou graduação, o militar:",
+      "options": {
+        "A": "for mais velho",
+        "B": "for do sexo masculino",
+        "C": "tiver mais cursos",
+        "D": "estiver no serviço ativo, em relação aos inativos",
+        "E": "morar mais perto da unidade"
+      },
+      "correct": "D",
+      "explanation": "Art. 5º, II. O inciso I trata de quem ocupa cargo ou função que lhe atribua superioridade funcional.",
+      "reference": "LC 893/2001, art. 5º"
+    },
+    {
+      "code": "RDPM-DG-008",
+      "difficulty": "HARD",
+      "statement": "A Lei nº 18.442/2026 acrescentou ao art. 5º do RDPM que terão precedência funcional, em igualdade de postos, com os Oficiais PM dos demais Quadros, os integrantes do:",
+      "options": {
+        "A": "Quadro de Oficiais de Estado-Maior (QOEM)",
+        "B": "Quadro de Oficiais de Saúde",
+        "C": "Quadro Auxiliar de Oficiais",
+        "D": "Quadro de Praças Especiais",
+        "E": "Quadro de Oficiais Capelães"
+      },
+      "correct": "A",
+      "explanation": "Art. 5º, parágrafo único, acrescentado pela Lei 18.442, de 02/04/2026.",
+      "reference": "LC 893/2001, art. 5º, parágrafo único (Lei 18.442/2026)"
+    }
+  ]
+}

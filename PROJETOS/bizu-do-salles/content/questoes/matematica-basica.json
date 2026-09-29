@@ -17,7 +17,7 @@
         "E": "25"
       },
       "correct": "B",
-      "explanation": "180 ÷ 12 = 15 litros.",
+      "explanation": "Resposta: “15”. Fundamento: 180 ÷ 12 = 15 litros.",
       "reference": "Divisão / razão"
     },
     {
@@ -32,7 +32,7 @@
         "E": "175"
       },
       "correct": "C",
-      "explanation": "0,20 × 350 = 70.",
+      "explanation": "Resposta: “70”. Fundamento: 0,20 × 350 = 70.",
       "reference": "Porcentagem"
     },
     {
@@ -77,7 +77,7 @@
         "E": "20% menor"
       },
       "correct": "C",
-      "explanation": "1,10 × 0,90 = 0,99 → 1% menor.",
+      "explanation": "Resposta: “1% menor”. Fundamento: 1,10 × 0,90 = 0,99 → 1% menor.",
       "reference": "Porcentagens sucessivas"
     },
     {
@@ -92,7 +92,7 @@
         "E": "9"
       },
       "correct": "C",
-      "explanation": "(6+7+8+9+10) ÷ 5 = 40 ÷ 5 = 8.",
+      "explanation": "Resposta: “8”. Fundamento: (6+7+8+9+10) ÷ 5 = 40 ÷ 5 = 8.",
       "reference": "Média aritmética"
     },
     {
@@ -107,7 +107,7 @@
         "E": "100"
       },
       "correct": "D",
-      "explanation": "120 ÷ 4 × 3 = 90.",
+      "explanation": "Resposta: “90”. Fundamento: 120 ÷ 4 × 3 = 90.",
       "reference": "Frações"
     },
     {
@@ -152,7 +152,7 @@
         "E": "1.300 m²"
       },
       "correct": "D",
-      "explanation": "25 × 40 = 1.000 m².",
+      "explanation": "Resposta: “1.000 m²”. Fundamento: 25 × 40 = 1.000 m².",
       "reference": "Área do retângulo"
     }
   ]
