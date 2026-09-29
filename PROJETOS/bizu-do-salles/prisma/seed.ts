@@ -44,14 +44,14 @@ async function main() {
       update: {},
       create: { subjectId: subject.id, name: file.topic, slug: slug(file.topic) },
     });
-    for (const q of file.questions) {
+    for (const [i, q] of file.questions.entries()) {
       const exists = await db.question.findUnique({ where: { code: q.code } });
       if (exists) continue; // edições feitas no painel prevalecem
       await db.question.create({
         data: {
           code: q.code, subjectId: subject.id, topicId: topic.id, stateCode: file.state ?? null, statement: q.statement, correctLetter: q.correct,
           explanation: q.explanation, reference: q.reference, sourceLicense: file.sourceLicense, difficulty: q.difficulty,
-          author: file.author, status: "PUBLISHED",
+          author: file.author, status: "PUBLISHED", isFree: i < 3, // 3 primeiras de cada arquivo = amostra grátis
           options: { create: Object.entries(q.options).map(([letter, text]) => ({ letter, text, whyWrong: q.whyWrong?.[letter as "A"] })) },
         },
       });

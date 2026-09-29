@@ -1,6 +1,6 @@
 # Arquitetura
 
-Visão completa, riscos e roadmap: [AUDITORIA.md](AUDITORIA.md) §11–12.
+Estrutura de pastas explicada: [GUIA_INICIANTE.md](GUIA_INICIANTE.md). Visão completa, riscos e roadmap: [AUDITORIA.md](AUDITORIA.md) §11–12.
 
 ## Princípios
 1. **O servidor decide.** Acesso premium, sessão e preço nunca são decididos no frontend (`src/core/access.ts`, `src/core/session.ts`).

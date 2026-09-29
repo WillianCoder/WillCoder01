@@ -1,0 +1,13 @@
+# Banco de dados local para desenvolvimento. Uso: docker compose up -d
+# (alternativa a instalar o PostgreSQL no computador)
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: bizu
+      POSTGRES_PASSWORD: bizu
+      POSTGRES_DB: bizu
+    ports: ["5432:5432"]
+    volumes: ["bizu-db:/var/lib/postgresql/data"]
+volumes:
+  bizu-db:

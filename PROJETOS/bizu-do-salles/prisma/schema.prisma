@@ -1,4 +1,4 @@
-// Bizu do Salles — esquema do banco (v0.1.0). Documentação: docs/DATABASE.md
+// Bizu do Salles — esquema do banco (v0.2.0). Documentação: docs/DATABASE.md
 generator client {
   provider = "prisma-client-js"
 }
@@ -233,6 +233,7 @@ model Question {
   reference     String         // ex.: "CF/88, art. 5º, XI"
   sourceLicense String         // origem/licença do conteúdo (docs/CONTENT_GUIDE.md)
   difficulty    Difficulty     @default(MEDIUM)
+  isFree        Boolean        @default(false) // amostra grátis, visível sem plano
   status        QuestionStatus @default(IN_REVIEW)
   author        String
   createdAt     DateTime       @default(now())
