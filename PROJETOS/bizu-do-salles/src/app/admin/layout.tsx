@@ -14,7 +14,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   const user = await requireAdmin(["ADMIN", "EDITOR"]);
   const nav: [string, string, boolean][] = [
     ["/admin", "📈 Visão geral", true], ["/admin/questoes", "❓ Questões", false], ["/admin/importar", "📥 Importar planilha", true], ["/admin/problemas", "🆘 Problemas relatados", false],
-    ["/admin/usuarios", "👥 Usuários e assinaturas", true], ["/admin/planos", "💳 Planos e preços", true],
+    ["/admin/usuarios", "👥 Usuários e assinaturas", true], ["/admin/planos", "💳 Planos e preços", true], ["/admin/cupons", "🎟️ Cupons", true],
     ["/admin/escolas", "🏫 Escolas", true], ["/admin/auditoria", "🗂️ Auditoria", true],
   ];
   return (

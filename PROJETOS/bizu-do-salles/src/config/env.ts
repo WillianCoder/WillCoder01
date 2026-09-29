@@ -8,6 +8,7 @@ const schema = z.object({
   SUPPORT_WHATSAPP: z.string().optional(),
   MERCADOPAGO_ACCESS_TOKEN: z.string().optional(),
   MERCADOPAGO_WEBHOOK_SECRET: z.string().optional(),
+  MERCADOPAGO_SANDBOX: z.string().optional(),
   ANTHROPIC_API_KEY: z.string().optional(),
   APP_URL: z.string().url().optional(), // endereço público do site (ex.: https://bizudosalles.com.br)
   RESEND_API_KEY: z.string().optional(), // envio de e-mails (resend.com); sem ela, links são gerados pelo painel

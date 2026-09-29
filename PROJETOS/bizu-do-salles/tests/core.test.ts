@@ -7,6 +7,8 @@ import { visibleForState } from "../src/core/states";
 import { displayOrder, isNumericOptions, orderFor, originalLetter } from "../src/core/shuffle";
 import { gradeSimulation, pickRandom, secondsLeft } from "../src/core/simulation";
 import { csvToObjects, parseCsv } from "../src/core/csv";
+import { applyCoupon } from "../src/core/pricing";
+import { signWebhook, verifyWebhookSignature } from "../src/core/mercadopago-signature";
 
 const now = new Date("2026-10-01T12:00:00Z");
 const future = new Date("2026-12-30T12:00:00Z");
@@ -134,5 +136,32 @@ describe("planilha CSV", () => {
   it("aceita vírgula e cabeçalho com acento/maiúsculas", () => {
     const [r] = csvToObjects("Código,Explicação\nA-B-001,ok");
     expect(r).toEqual({ line: 2, data: { codigo: "A-B-001", explicacao: "ok" } });
+  });
+});
+
+describe("cupons", () => {
+  const base = { code: "X", percentOff: null, amountOffCents: null, planSlugs: [] as string[], maxUses: null, used: 0, validUntil: null, active: true };
+  it("aplica percentual e valor fixo, respeitando o mínimo", () => {
+    expect(applyCoupon(6000, "basico", { ...base, percentOff: 10 }, 100)).toEqual({ ok: true, finalCents: 5400, discountCents: 600 });
+    expect(applyCoupon(3500, "basico", { ...base, amountOffCents: 1000 }, 100)).toMatchObject({ ok: true, finalCents: 2500 });
+    expect(applyCoupon(3500, "basico", { ...base, percentOff: 100 }, 100)).toMatchObject({ ok: true, finalCents: 100 });
+    expect(applyCoupon(3500, "basico", null, 100)).toMatchObject({ ok: true, finalCents: 3500 });
+  });
+  it("recusa cupom inativo, expirado, esgotado ou de outro plano", () => {
+    expect(applyCoupon(3500, "basico", { ...base, active: false }, 100).ok).toBe(false);
+    expect(applyCoupon(3500, "basico", { ...base, validUntil: new Date("2020-01-01") }, 100).ok).toBe(false);
+    expect(applyCoupon(3500, "basico", { ...base, maxUses: 5, used: 5 }, 100).ok).toBe(false);
+    expect(applyCoupon(3500, "basico", { ...base, planSlugs: ["especifico"] }, 100).ok).toBe(false);
+  });
+});
+
+describe("assinatura do webhook do Mercado Pago", () => {
+  it("aceita assinatura correta e recusa adulterada", () => {
+    const v1 = signWebhook("segredo", "123456", "req-1", "1700000000");
+    expect(verifyWebhookSignature({ xSignature: `ts=1700000000,v1=${v1}`, xRequestId: "req-1", dataId: "123456", secret: "segredo" })).toBe(true);
+    expect(verifyWebhookSignature({ xSignature: `ts=1700000000,v1=${v1}`, xRequestId: "req-1", dataId: "999999", secret: "segredo" })).toBe(false);
+    expect(verifyWebhookSignature({ xSignature: `ts=1700000000,v1=${v1}`, xRequestId: "req-1", dataId: "123456", secret: "outro" })).toBe(false);
+    expect(verifyWebhookSignature({ xSignature: null, xRequestId: null, dataId: "1", secret: "s" })).toBe(false);
+    expect(verifyWebhookSignature({ xSignature: "ts=1,v1=zz", xRequestId: null, dataId: "1", secret: "s" })).toBe(false);
   });
 });

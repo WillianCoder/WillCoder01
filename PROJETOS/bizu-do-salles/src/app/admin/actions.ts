@@ -189,3 +189,39 @@ export async function setRole(form: FormData) {
   await audit(admin.id, "user.role", "User", id, { role: u!.role }, { role });
   redirect("/admin/usuarios?salvo=1");
 }
+
+/** Cria cupom de desconto. Percentual (0–100) OU valor fixo em reais. Auditado. */
+export async function saveCoupon(form: FormData) {
+  const admin = await requireAdmin();
+  const d = z.object({
+    code: z.string().trim().toUpperCase().regex(/^[A-Z0-9_-]{3,40}$/, "Código com 3 a 40 letras/números (sem espaço)."),
+    percentOff: z.string().regex(/^(\d{1,3})?$/),
+    amountOff: z.string().regex(/^(\d+([.,]\d{1,2})?)?$/),
+    maxUses: z.string().regex(/^(\d{1,6})?$/),
+    validUntil: z.string().regex(/^(\d{4}-\d{2}-\d{2})?$/),
+  }).safeParse(Object.fromEntries(form));
+  if (!d.success) redirect(`/admin/cupons?erro=${encodeURIComponent(d.error.issues[0].message)}`);
+  const v = d.data!;
+  const percentOff = v.percentOff ? Math.min(Number(v.percentOff), 100) : null;
+  const amountOffCents = v.amountOff ? Math.round(Number(v.amountOff.replace(",", ".")) * 100) : null;
+  if (!percentOff && !amountOffCents) redirect(`/admin/cupons?erro=${encodeURIComponent("Informe o desconto em % ou em R$.")}`);
+  if (await db.coupon.findUnique({ where: { code: v.code } })) redirect(`/admin/cupons?erro=${encodeURIComponent("Já existe cupom com esse código.")}`);
+  const planSlugs = form.getAll("planSlugs").map(String).filter(Boolean);
+  const c = await db.coupon.create({
+    data: {
+      code: v.code, percentOff, amountOffCents, planSlugs, maxUses: v.maxUses ? Number(v.maxUses) : null,
+      validUntil: v.validUntil ? new Date(`${v.validUntil}T23:59:59-03:00`) : null,
+    },
+  });
+  await audit(admin.id, "coupon.create", "Coupon", c.id, null, c);
+  redirect("/admin/cupons?salvo=1");
+}
+
+export async function toggleCoupon(form: FormData) {
+  const admin = await requireAdmin();
+  const id = String(form.get("id"));
+  const c = await db.coupon.findUniqueOrThrow({ where: { id } });
+  await db.coupon.update({ where: { id }, data: { active: !c.active } });
+  await audit(admin.id, c.active ? "coupon.disable" : "coupon.enable", "Coupon", id);
+  redirect("/admin/cupons");
+}

@@ -149,7 +149,10 @@ model Subscription {
   status    SubscriptionStatus @default(PENDING)
   startsAt  DateTime?
   endsAt    DateTime?
-  source    String             @default("web") // web | apple | google
+  source    String             @default("web") // web | apple | google | manual
+  amountCents Int?             // valor cobrado neste pedido (preço do plano − cupom), conferido no webhook
+  couponId  String?
+  coupon    Coupon?            @relation(fields: [couponId], references: [id])
   payments  Payment[]
   createdAt DateTime           @default(now())
   updatedAt DateTime           @updatedAt
@@ -185,6 +188,8 @@ model Coupon {
   validUntil    DateTime?
   active        Boolean   @default(true)
   payments      Payment[]
+  subscriptions Subscription[]
+  createdAt     DateTime  @default(now())
 }
 
 model Cycle {

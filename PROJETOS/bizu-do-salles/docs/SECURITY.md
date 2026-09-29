@@ -21,11 +21,13 @@
 - Simulados: sorteio só entre questões liberadas; gabarito só após finalizar; envio fora do tempo (com tolerância) não conta; proteção contra envio duplo.
 - Recuperação de senha: token aleatório de 256 bits, só o hash no banco, uso único, expira em 60 min; trocar a senha desconecta todos os aparelhos; resposta genérica; limites por IP e por e-mail; `Referrer-Policy` impede o token de vazar para outros sites.
 
+## Implementado (v0.7)
+- Pagamentos: preço calculado no servidor; webhook só é aceito com assinatura HMAC válida; o pagamento é consultado na API do Mercado Pago; valor e moeda conferidos; idempotência; ativação única; estorno cancela o acesso; auditoria de cada evento. Chaves apenas em variáveis de ambiente.
+
 ## Obrigatório nas próximas versões
 | Item | Versão |
 |---|---|
 | Limite de tentativas compartilhado (Upstash Redis) quando houver várias instâncias | v1.0 |
-| Webhook de pagamento com verificação de assinatura e idempotência | v0.8 |
 | Uploads: limite de tamanho, checagem de MIME real, bucket privado com URL assinada | v1.x |
 | Cabeçalhos de segurança (CSP, HSTS), dependências monitoradas (npm audit/Dependabot) | v1.0 |
 

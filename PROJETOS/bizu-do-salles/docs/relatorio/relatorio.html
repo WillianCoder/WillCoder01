@@ -52,7 +52,7 @@
   <div><span class="dot"></span>Relatório do projeto</div>
   <h1>Bizu do Salles</h1>
   <div class="sub">Plataforma de estudos por questões para a formação da Polícia Militar<br>Ciclo Básico + Ciclo Específico · foco em São Paulo</div>
-  <div class="meta">Versão 0.6.0 · 29 de setembro de 2026<br>Escrito para quem está começando: cada termo técnico é explicado.</div>
+  <div class="meta">Versão 0.7.0 · 29 de setembro de 2026<br>Escrito para quem está começando: cada termo técnico é explicado.</div>
 </div>
 
 <section>
@@ -77,13 +77,13 @@
   <div class="grid3">
     <div class="kpi"><b>178</b><span>questões originais comentadas</span></div>
     <div class="kpi"><b>109</b><span>do RDPM de São Paulo</span></div>
-    <div class="kpi"><b>33</b><span>testes automáticos passando</span></div>
+    <div class="kpi"><b>37</b><span>testes automáticos passando</span></div>
   </div>
   <div class="box tip"><b class="t">Em uma frase</b>
   O Bizu do Salles já é um <b>site funcionando</b>: o aluno cria conta, estuda por questões com explicação e vê o próprio desempenho; você, como administrador, cadastra questões, muda preços e libera o acesso de quem pagou — tudo por telas, sem mexer em código.</div>
   <ul>
     <li><b>Pronto:</b> site, cadastro, login seguro (um aparelho por vez), questões, <b>simulados com cronômetro</b>, cadernos, ranking, recuperação de senha, meta diária, desempenho, planos, painel do administrador, testes, backups, documentação.</li>
-    <li><b>Ainda falta:</b> publicar na internet, pagamento automático (Mercado Pago), aplicativo de celular nas lojas.</li>
+    <li><b>Ainda falta:</b> publicar na internet e colar as chaves do Mercado Pago (passo a passo pronto), aplicativo de celular nas lojas.</li>
     <li><b>Onde está tudo:</b> no seu GitHub, repositório <code>WillCoder01</code>, pasta <code>PROJETOS/bizu-do-salles</code>.</li>
   </ul>
 </section>
@@ -125,7 +125,7 @@
     <tr><td>Relatar problema</td><td>Botão "Encontrou um problema?" em cada questão; vai para o painel.</td><td class="ok">Pronto</td></tr>
     <tr><td>Painel do administrador</td><td>Questões, planos e preços, usuários, liberar pagamento, escolas, problemas relatados, configurações, auditoria.</td><td class="ok">Pronto</td></tr>
     <tr><td>Backups</td><td>Comandos para copiar e restaurar o banco de dados.</td><td class="ok">Pronto</td></tr>
-    <tr><td>Testes automáticos</td><td>18 testes das regras + 15 testes num navegador de verdade. Rodam sozinhos no GitHub.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Testes automáticos</td><td>21 testes das regras + 16 testes num navegador de verdade. Rodam sozinhos no GitHub.</td><td class="ok">Pronto</td></tr>
     <tr><td>Recuperação de senha</td><td>"Esqueci minha senha" com link por e-mail (quando configurado) ou gerado por você no painel para enviar pelo WhatsApp. Link vale 1 vez e expira em 60 min.</td><td class="ok">Pronto</td></tr>
     <tr><td>Meta diária</td><td>O aluno define quantas questões quer fazer por dia e acompanha a barra de progresso.</td><td class="ok">Pronto</td></tr>
     <tr><td>Cadernos</td><td>O aluno junta questões em coleções próprias ("Revisão RDPM") para estudar ou gerar simulado.</td><td class="ok">Pronto</td></tr>
@@ -133,7 +133,8 @@
     <tr><td>Importar planilha</td><td>Você preenche questões no Excel e envia de uma vez; entram "em revisão" e o sistema aponta linhas com erro.</td><td class="ok">Pronto</td></tr>
     <tr><td>LGPD</td><td>O aluno baixa os próprios dados ou exclui a conta sozinho, em Configurações.</td><td class="ok">Pronto</td></tr>
     <tr><td>Simulados</td><td>Simulado rápido ou personalizado (disciplina, só as que errou, quantidade, tempo), cronômetro, nota, desempenho por disciplina e correção comentada.</td><td class="ok">Pronto</td></tr>
-    <tr><td>Pagamento automático</td><td>Mercado Pago (Pix/cartão) liberando sozinho.</td><td class="no">A fazer</td></tr>
+    <tr><td>Pagamento automático</td><td>Mercado Pago (Pix, cartão, boleto) liberando o acesso sozinho após confirmação segura. Falta só você colar as chaves (docs/PAYMENTS.md).</td><td class="ok">Pronto</td></tr>
+    <tr><td>Cupons de desconto</td><td>Em % ou R$, com limite de usos, validade e planos.</td><td class="ok">Pronto</td></tr>
     <tr><td>Publicação na internet</td><td>Deixar o site acessível a todos com endereço próprio.</td><td class="no">A fazer</td></tr>
   </table>
   <div class="grid">
@@ -163,14 +164,20 @@
     <li>Grava a tentativa no banco (acertou/errou, tempo).</li>
     <li>Só então devolve a tela com o gabarito, a explicação e o artigo da lei.</li>
   </ol>
-  <h3>O caminho de um pagamento (hoje)</h3>
+  <h3>O caminho de um pagamento (automático, com Mercado Pago)</h3>
+  <ol>
+    <li>O aluno escolhe o plano (e um cupom, se tiver) e clica em <b>Pagar com Pix ou cartão</b>.</li>
+    <li>O servidor calcula o preço pelo banco e abre a página de pagamento do Mercado Pago.</li>
+    <li>O Mercado Pago avisa o site. O site confere a <b>assinatura</b>, consulta o pagamento, confere o <b>valor</b> e libera o plano.</li>
+  </ol>
+  <h3>O caminho de um pagamento (modo manual, sem as chaves do Mercado Pago)</h3>
   <ol>
     <li>O aluno escolhe um plano → vira um <b>pedido pendente</b>.</li>
     <li>O aluno paga (ex.: Pix) e manda o comprovante no WhatsApp de suporte.</li>
     <li>Você confere <b>no extrato do banco</b> e clica em <b>Confirmar pagamento e liberar</b> no painel.</li>
     <li>O plano fica ativo por 90 dias; o sistema registra que foi você quem liberou.</li>
   </ol>
-  <div class="box warn"><b class="t">Atenção</b>Nunca libere pelo "print" do comprovante sem ver no extrato — prints são fáceis de falsificar. Quando o Mercado Pago for ligado, isso passa a ser automático.</div>
+  <div class="box warn"><b class="t">Atenção</b>No modo manual, nunca libere pelo "print" do comprovante sem ver no extrato — prints são fáceis de falsificar. Com o Mercado Pago ligado, a liberação é automática e segura.</div>
 </section>
 
 <section>
@@ -333,6 +340,8 @@
     <tr><td>Tornar alguém editor ou administrador</td><td>Painel → Usuários → papel → <b>Mudar papel</b></td><td>🟢</td></tr>
     <tr><td>Cancelar o plano de alguém</td><td>Painel → Usuários → Cancelar</td><td>🟢</td></tr>
     <tr><td>WhatsApp e e-mail de suporte</td><td>Painel → <b>Visão geral</b> → Configurações gerais</td><td>🟢</td></tr>
+    <tr><td>Criar cupom de desconto</td><td>Painel → <b>🎟️ Cupons</b></td><td>🟢</td></tr>
+    <tr><td>Ligar o pagamento automático</td><td>Variáveis <code>MERCADOPAGO_ACCESS_TOKEN</code> e <code>MERCADOPAGO_WEBHOOK_SECRET</code> na Vercel (passo a passo em <code>docs/PAYMENTS.md</code>)</td><td>🟡</td></tr>
     <tr><td>Ligar/desligar recursos (ranking, simulados, IA, áudio…)</td><td>Painel → Visão geral → Recursos ligados/desligados</td><td>🟢</td></tr>
   </table>
 
@@ -433,7 +442,7 @@
     <tr><td>v0.5.x</td><td>Conquistas (XP, medalhas), calendário de estudos</td><td class="no">A fazer</td></tr>
     <tr><td>v0.6</td><td>Importar planilha, papéis da equipe, LGPD</td><td class="ok">Feito</td></tr>
     <tr><td>—</td><td>Mais conteúdo de SP (Constituição Estadual, normas da escola)</td><td class="no">Depende de PDFs</td></tr>
-    <tr><td>v0.8</td><td>Mercado Pago automático + cupons</td><td class="no">A fazer</td></tr>
+    <tr><td>v0.7</td><td>Mercado Pago automático + cupons</td><td class="ok">Feito (falta colar as chaves)</td></tr>
     <tr><td>v1.0</td><td>Lançamento: internet, domínio, revisão jurídica, LGPD completa</td><td class="no">A fazer</td></tr>
     <tr><td>v2.0</td><td>Aplicativo Android/iOS</td><td class="no">A fazer</td></tr>
   </table>
@@ -468,7 +477,7 @@
     <tr><td>☐</td><td>Site publicado com domínio próprio (HTTPS automático)</td></tr>
     <tr><td>☐</td><td>Termos e privacidade revisados por advogado</td></tr>
     <tr><td>☐</td><td>Backup diário ligado e <b>um teste de restauração feito</b></td></tr>
-    <tr><td>☐</td><td>Pagamento automático (Mercado Pago) testado</td></tr>
+    <tr><td>☐</td><td>Chaves do Mercado Pago coladas na Vercel e compra-teste de R$ 1,00 feita (docs/PAYMENTS.md)</td></tr>
     <tr><td>☐</td><td>Pelo menos 300 questões publicadas e revisadas</td></tr>
     <tr><td>☐</td><td>WhatsApp e e-mail de suporte configurados no painel</td></tr>
     <tr><td>☐</td><td>CNPJ/MEI para emitir recibos</td></tr>

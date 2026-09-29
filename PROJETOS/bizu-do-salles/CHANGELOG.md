@@ -2,6 +2,14 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.7.0] — 2026-09-29
+### Adicionado
+- **Pagamento automático com Mercado Pago** (Pix, cartão, boleto): checkout criado no servidor com preço do banco; webhook `/api/webhooks/mercadopago` com verificação de assinatura (HMAC-SHA256), consulta do pagamento na API, conferência de valor e moeda, idempotência por `gatewayId`, proteção contra ativação dupla, cancelamento automático em estorno; tudo auditado. Sem chaves, o site segue no modo manual.
+- **Cupons de desconto** (Admin → 🎟️ Cupons): % ou R$, limite de usos, validade, planos; uso contado só com pagamento aprovado; valor mínimo configurável.
+- Pedidos guardam o valor cobrado (`Subscription.amountCents`) e o cupom. Migração `pagamentos`.
+- Simulador do Mercado Pago para testes (`e2e/mock-mercadopago.mjs`); teste de navegador do pagamento (16 no total) e 3 unitários (21 no total).
+- `docs/PAYMENTS.md` com passo a passo para ligar o Mercado Pago.
+
 ## [0.6.0] — 2026-09-29
 ### Adicionado
 - **Importar questões por planilha** (Admin → 📥 Importar planilha): CSV do Excel (`;` ou `,`, com BOM), modelo em `/modelo-questoes.csv`; até 1.000 linhas/2 MB; valida cada linha e aponta erros; códigos existentes são ignorados; tudo entra como **Em revisão**; auditado.
