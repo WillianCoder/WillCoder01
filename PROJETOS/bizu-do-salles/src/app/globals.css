@@ -92,3 +92,8 @@ th, td { text-align: left; padding: .55rem .5rem; border-bottom: 1px solid var(-
 .option .letter { font-weight: 700; min-width: 1.4rem; }
 .option.correct { background: var(--ok-bg); border-color: var(--ok); }
 .option.wrong { background: var(--bad-bg); border-color: var(--bad); }
+
+/* Simulados */
+.timer { position: sticky; top: 0; z-index: 5; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: .5rem .9rem; font-weight: 700; font-size: 1.1rem; width: fit-content; }
+.timer.warn { border-color: var(--accent); color: var(--accent); }
+.qnum { font-weight: 800; color: var(--brand); margin-right: .35rem; }

@@ -41,6 +41,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
 
       <div className="row">
         <Link href="/app/questoes" className="btn">Continuar estudando</Link>
+        <Link href="/app/simulados" className="btn ghost">Fazer um simulado</Link>
         <Link href="/app/questoes?filtro=erradas" className="btn ghost">Revisar meus erros</Link>
       </div>
 

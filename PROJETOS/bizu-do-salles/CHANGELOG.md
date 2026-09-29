@@ -2,6 +2,16 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.3.0] — 2026-09-29
+### Adicionado
+- **Simulados** (`/app/simulados`): simulado rápido (10 questões) e personalizado (disciplina, só não respondidas/erradas/favoritas, quantidade, tempo). Cronômetro com aviso nos 5 minutos finais e envio automático; resultado com nota, aproveitamento, erros/em branco, tempo, desempenho por disciplina e correção comentada; histórico.
+- Segurança: sorteio só entre questões que o aluno pode ver; gabarito só depois de finalizar; envio após o tempo (com tolerância) não conta; proteção contra envio duplo; limite de 20 simulados/hora.
+- Limites editáveis em `src/config/regras.ts` (`simulado`). Migração `simulados` (ligação resposta ↔ simulado + índices).
+- Alternativas só numéricas (prazos, valores) não são mais embaralhadas, para facilitar a leitura.
+- Teste de navegador do simulado (7 no total) e 4 novos testes unitários (16 no total).
+### Corrigido
+- Vulnerabilidades de dependências de build (postcss, deepmerge-ts) via `overrides`; `npm audit` limpo.
+
 ## [0.2.2] — 2026-09-29
 ### Adicionado
 - **Relatório em PDF** (`docs/RELATORIO.pdf`, gerado de `docs/relatorio/relatorio.html` com `npm run relatorio`): resumo, glossário, segurança, conteúdo, painel, mapa do projeto, **Guia de edição** por assunto, custos, roteiro e checklist.

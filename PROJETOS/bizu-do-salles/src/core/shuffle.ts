@@ -18,6 +18,16 @@ export function displayOrder(userId: string, questionId: string, letters: readon
 }
 
 /** Converte a posição clicada na tela para a letra original armazenada. */
-export function originalLetter(userId: string, questionId: string, shownIndex: number): string {
-  return displayOrder(userId, questionId)[shownIndex];
+export function originalLetter(userId: string, questionId: string, shownIndex: number, order?: string[]): string {
+  return (order ?? displayOrder(userId, questionId))[shownIndex];
+}
+
+/** Alternativas só com números/valores (ex.: "15 dias", "R$ 2.300,00") ficam em ordem original, para facilitar a leitura. */
+export function isNumericOptions(texts: string[]) {
+  return texts.length > 0 && texts.every((t) => /^(R\$\s*)?\d/.test(t.trim()) && t.length <= 40);
+}
+
+/** Ordem de exibição considerando o conteúdo: numéricas não são embaralhadas. */
+export function orderFor(userId: string, q: { id: string; options: { letter: string; text: string }[] }) {
+  return isNumericOptions(q.options.map((o) => o.text)) ? ["A", "B", "C", "D", "E"] : displayOrder(userId, q.id);
 }

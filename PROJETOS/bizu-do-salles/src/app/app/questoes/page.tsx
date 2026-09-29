@@ -10,7 +10,7 @@ import { db } from "@/lib/db";
 import { requireUser } from "@/lib/auth";
 import { userAccess } from "@/lib/access";
 import { FILTERS, filterWhere, nextQuestionId, visibleWhere, type Filter } from "@/lib/questions";
-import { displayOrder } from "@/core/shuffle";
+import { orderFor } from "@/core/shuffle";
 import { stateWhere } from "@/core/states";
 import { CYCLE_NAME, LEVEL_NAME } from "@/lib/format";
 import { answer, reportProblem, toggleMark } from "../actions";
@@ -42,7 +42,7 @@ export default async function Questoes({ searchParams }: { searchParams: Promise
   const nextId = q ? await nextQuestionId(filter === "nao-respondidas" ? { AND: [where, { id: { not: q.id } }] } : where, q.code) : null;
   const locked = await db.question.count({ where: { ...stateWhere(user.stateCode), status: "PUBLISHED", isFree: false, subject: { cycle: { code: { notIn: cycles as ("BASIC" | "SPECIFIC")[] } } } } });
 
-  const order = q ? displayOrder(user.id, q.id) : [];
+  const order = q ? orderFor(user.id, q) : [];
   const byLetter = Object.fromEntries(q?.options.map((o) => [o.letter, o]) ?? []);
   const here = q ? qs({ q: q.id }) : "";
 

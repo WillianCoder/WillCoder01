@@ -275,10 +275,12 @@ model QuestionAttempt {
   correct      Boolean
   timeMs       Int?
   simulationAttemptId String?
+  simulationAttempt   SimulationAttempt? @relation(fields: [simulationAttemptId], references: [id])
   createdAt    DateTime @default(now())
 
   @@index([userId, createdAt])
   @@index([userId, questionId])
+  @@index([simulationAttemptId])
 }
 
 model QuestionFlag {
@@ -353,6 +355,9 @@ model SimulationAttempt {
   finishedAt   DateTime?
   correct      Int        @default(0)
   total        Int        @default(0)
+  answers      QuestionAttempt[]
+
+  @@index([userId, startedAt])
 }
 
 model Material {

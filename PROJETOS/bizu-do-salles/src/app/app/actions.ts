@@ -12,7 +12,7 @@ import { db } from "@/lib/db";
 import { requireUser } from "@/lib/auth";
 import { userAccess } from "@/lib/access";
 import { visibleWhere } from "@/lib/questions";
-import { originalLetter } from "@/core/shuffle";
+import { orderFor, originalLetter } from "@/core/shuffle";
 import { rateLimit } from "@/lib/rate-limit";
 import { REGRAS, janela } from "@/config/regras";
 
@@ -31,7 +31,8 @@ export async function answer(form: FormData) {
   if (!rateLimit(`answer:${user.id}`, ...janela(REGRAS.limites.respostasPorAluno))) redirect(`${back(form)}&erro=limite`);
   const q = await loadVisible(user.id, user.stateCode, questionId, user.role);
   if (!q) redirect("/app/planos?bloqueado=1"); // sem acesso: nunca confiar no que veio do navegador
-  const chosen = originalLetter(user.id, q!.id, shown);
+  const opts = await db.questionOption.findMany({ where: { questionId: q!.id }, select: { letter: true, text: true }, orderBy: { letter: "asc" } });
+  const chosen = originalLetter(user.id, q!.id, shown, orderFor(user.id, { id: q!.id, options: opts }));
   const started = Number(form.get("startedAt"));
   const timeMs = Number.isFinite(started) ? Math.min(Math.max(Date.now() - started, 0), 60 * 60_000) : null;
   const attempt = await db.questionAttempt.create({

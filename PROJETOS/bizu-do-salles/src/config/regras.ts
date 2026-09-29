@@ -36,6 +36,18 @@ export const REGRAS = {
     forteAPartirDe: 80,
   },
 
+  simulado: {
+    // ✏️ EDITÁVEL: quantidade mínima e máxima de questões por simulado
+    minQuestoes: 5,
+    maxQuestoes: 60,
+    // ✏️ EDITÁVEL: questões do "simulado rápido"
+    rapidoQuestoes: 10,
+    // ✏️ EDITÁVEL: tempo máximo que o aluno pode escolher (minutos)
+    maxMinutos: 240,
+    // ✏️ EDITÁVEL: tolerância (segundos) após o fim do tempo para aceitar o envio automático
+    toleranciaSegundos: 60,
+  },
+
   conteudo: {
     // ✏️ EDITÁVEL: quantas questões de cada arquivo novo viram amostra grátis ao carregar (seed)
     gratisPorArquivo: 3,

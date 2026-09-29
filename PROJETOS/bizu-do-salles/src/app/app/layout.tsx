@@ -12,6 +12,7 @@ import { logout } from "../auth-actions";
 const NAV = [
   ["/app", "🏠", "Início"],
   ["/app/questoes", "❓", "Questões"],
+  ["/app/simulados", "🧪", "Simulados"],
   ["/app/questoes?filtro=erradas", "🔁", "Revisar erros"],
   ["/app/questoes?filtro=favoritas", "⭐", "Favoritas"],
   ["/app/questoes?filtro=revisar", "🚩", "Revisar depois"],
@@ -20,7 +21,7 @@ const NAV = [
   ["/app/configuracoes", "⚙️", "Configurações"],
 ] as const;
 // ✏️ EDITÁVEL: itens da barra inferior no celular (máximo 5)
-const MOBILE = [NAV[0], NAV[1], NAV[5], NAV[6], NAV[7]];
+const MOBILE = [NAV[0], NAV[1], NAV[2], NAV[6], NAV[8]];
 
 export default async function StudentLayout({ children }: { children: React.ReactNode }) {
   const user = await requireUser();

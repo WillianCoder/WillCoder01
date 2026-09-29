@@ -49,7 +49,7 @@ window.CATALOGO = {
       ],
       "data": "2026-09-29",
       "atualizado": "2026-09-29",
-      "versao": "0.2.2",
+      "versao": "0.3.0",
       "nivel": "avancado",
       "resumo": "Plataforma de estudos por questões para a formação da PM (Ciclo Básico + Específico). v0.2: site com área do aluno e painel administrativo.",
       "destaque": false,

@@ -4,7 +4,8 @@ import { checkSession, newSessionToken, hashToken, sessionsToRevoke } from "../s
 import { xray } from "../src/core/performance";
 import { loadQuestionFiles } from "../src/content";
 import { visibleForState } from "../src/core/states";
-import { displayOrder, originalLetter } from "../src/core/shuffle";
+import { displayOrder, isNumericOptions, orderFor, originalLetter } from "../src/core/shuffle";
+import { gradeSimulation, pickRandom, secondsLeft } from "../src/core/simulation";
 
 const now = new Date("2026-10-01T12:00:00Z");
 const future = new Date("2026-12-30T12:00:00Z");
@@ -85,5 +86,41 @@ describe("embaralhamento das alternativas", () => {
   it("varia entre alunos", () => {
     const orders = new Set(Array.from({ length: 20 }, (_, i) => displayOrder(`u${i}`, "q1").join("")));
     expect(orders.size).toBeGreaterThan(5);
+  });
+});
+
+describe("simulados", () => {
+  it("sorteia sem repetir e respeita a quantidade", () => {
+    const ids = Array.from({ length: 50 }, (_, i) => i);
+    const s = pickRandom(ids, 20);
+    expect(s).toHaveLength(20);
+    expect(new Set(s).size).toBe(20);
+    expect(pickRandom([1, 2], 10)).toHaveLength(2);
+  });
+  it("corrige com em branco contando como erro e agrupa por disciplina", () => {
+    const r = gradeSimulation([
+      { subject: "RDPM", correctLetter: "A", chosenLetter: "A" },
+      { subject: "RDPM", correctLetter: "B", chosenLetter: "C" },
+      { subject: "CF", correctLetter: "D", chosenLetter: null },
+      { subject: "CF", correctLetter: "E", chosenLetter: "E" },
+    ]);
+    expect(r).toMatchObject({ total: 4, correct: 2, wrong: 1, blank: 1, rate: 50 });
+    expect(r.subjects.find((s) => s.subject === "RDPM")).toMatchObject({ total: 2, correct: 1, rate: 50 });
+  });
+  it("calcula o tempo restante", () => {
+    const start = new Date("2026-10-01T12:00:00Z");
+    expect(secondsLeft(start, null)).toBeNull();
+    expect(secondsLeft(start, 600, new Date("2026-10-01T12:04:00Z"))).toBe(360);
+    expect(secondsLeft(start, 600, new Date("2026-10-01T13:00:00Z"))).toBe(0);
+  });
+});
+
+describe("alternativas numéricas", () => {
+  it("não embaralha quando todas são números/valores", () => {
+    expect(isNumericOptions(["15 dias", "30 dias", "45 dias", "60 dias", "90 dias"])).toBe(true);
+    expect(isNumericOptions(["R$ 2.030,00", "R$ 2.150,00", "R$ 2.300,00", "R$ 2.318,55", "R$ 3.000,00"])).toBe(true);
+    expect(isNumericOptions(["Advertência", "5 dias", "x", "y", "z"])).toBe(false);
+    const q = { id: "q1", options: ["1 ano", "2 anos", "5 anos", "10 anos", "20 anos"].map((text, i) => ({ letter: "ABCDE"[i], text })) };
+    expect(orderFor("u1", q)).toEqual(["A", "B", "C", "D", "E"]);
   });
 });
