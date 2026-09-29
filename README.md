@@ -25,9 +25,9 @@ Gerado automaticamente por `scripts/catalogo.py` a partir dos `meta.json` — ne
 <!-- STATS:INICIO -->
 | Itens | Projetos | Concluídos | Em desenvolvimento | Acadêmicos | Estudos | Experimentos | Documentos |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| 1 | 0 | 0 | 0 | 0 | 0 | 1 | 7 |
+| 2 | 1 | 0 | 1 | 0 | 0 | 1 | 8 |
 
-**Tecnologias registradas:** CSS, HTML, JavaScript
+**Tecnologias registradas:** CSS, HTML, JavaScript, PostgreSQL, Prisma, TypeScript, Vitest
 <!-- STATS:FIM -->
 
 ## 🧭 Como navegar

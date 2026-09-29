@@ -1,6 +1,6 @@
 // Arquivo gerado por scripts/catalogo.py — não edite manualmente.
 window.CATALOGO = {
-  "gerado": "2024-07-12",
+  "gerado": "2026-09-29",
   "perfil": {
     "nome": "Willian Salles",
     "titulo": "Desenvolvimento • Tecnologia • Projetos • Aprendizado",
@@ -16,22 +16,55 @@ window.CATALOGO = {
     }
   },
   "estatisticas": {
-    "total": 1,
-    "projetos": 0,
+    "total": 2,
+    "projetos": 1,
     "concluidos": 0,
-    "desenvolvimento": 0,
+    "desenvolvimento": 1,
     "academicos": 0,
     "estudos": 0,
     "experimentos": 1,
     "portfolio": 0,
-    "documentos": 7,
+    "documentos": 8,
     "tecnologias": [
       "CSS",
       "HTML",
-      "JavaScript"
+      "JavaScript",
+      "PostgreSQL",
+      "Prisma",
+      "TypeScript",
+      "Vitest"
     ]
   },
   "itens": [
+    {
+      "titulo": "Bizu do Salles",
+      "tipo": "projeto",
+      "categoria": "Desenvolvimento",
+      "status": "desenvolvimento",
+      "tecnologias": [
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Vitest"
+      ],
+      "data": "2026-09-29",
+      "atualizado": "2026-09-29",
+      "versao": "0.2.0",
+      "nivel": "avancado",
+      "resumo": "Plataforma de estudos por questões para a formação da PM (Ciclo Básico + Específico). v0.2: site com área do aluno e painel administrativo.",
+      "destaque": false,
+      "portfolio": {
+        "problema": "",
+        "desenvolvido": "",
+        "participacao": "",
+        "resultado": ""
+      },
+      "links": {
+        "demo": "",
+        "repositorio": ""
+      },
+      "caminho": "PROJETOS/bizu-do-salles"
+    },
     {
       "titulo": "Primeira página web — barra de navegação",
       "tipo": "experimento",

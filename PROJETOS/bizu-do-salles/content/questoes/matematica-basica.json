@@ -1,0 +1,159 @@
+{
+  "cycle": "BASIC",
+  "subject": "Matemática",
+  "topic": "Matemática básica",
+  "sourceLicense": "Questões originais Bizu do Salles (conteúdo próprio).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "MAT-BAS-001",
+      "difficulty": "EASY",
+      "statement": "Uma viatura faz 12 km por litro. Quantos litros ela consome para percorrer 180 km?",
+      "options": {
+        "A": "12",
+        "B": "15",
+        "C": "18",
+        "D": "20",
+        "E": "25"
+      },
+      "correct": "B",
+      "explanation": "180 ÷ 12 = 15 litros.",
+      "reference": "Divisão / razão"
+    },
+    {
+      "code": "MAT-BAS-002",
+      "difficulty": "EASY",
+      "statement": "Quanto é 20% de 350?",
+      "options": {
+        "A": "35",
+        "B": "50",
+        "C": "70",
+        "D": "75",
+        "E": "175"
+      },
+      "correct": "C",
+      "explanation": "0,20 × 350 = 70.",
+      "reference": "Porcentagem"
+    },
+    {
+      "code": "MAT-BAS-003",
+      "difficulty": "MEDIUM",
+      "statement": "Seis policiais concluem uma varredura em 8 horas. Mantido o mesmo ritmo, em quantas horas 12 policiais concluiriam a mesma varredura?",
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "6",
+        "D": "12",
+        "E": "16"
+      },
+      "correct": "B",
+      "explanation": "Grandezas inversamente proporcionais: 6 × 8 = 12 × t → t = 4 horas.",
+      "reference": "Regra de três inversa"
+    },
+    {
+      "code": "MAT-BAS-004",
+      "difficulty": "MEDIUM",
+      "statement": "Um capital de R$ 2.000,00 é aplicado a juros simples de 3% ao mês durante 5 meses. Qual o montante?",
+      "options": {
+        "A": "R$ 2.030,00",
+        "B": "R$ 2.150,00",
+        "C": "R$ 2.300,00",
+        "D": "R$ 2.318,55",
+        "E": "R$ 3.000,00"
+      },
+      "correct": "C",
+      "explanation": "J = 2000 × 0,03 × 5 = 300; M = 2000 + 300 = R$ 2.300,00. (R$ 2.318,55 seria juros compostos.)",
+      "reference": "Juros simples"
+    },
+    {
+      "code": "MAT-BAS-005",
+      "difficulty": "HARD",
+      "statement": "Um produto sofre aumento de 10% e, em seguida, desconto de 10%. Em relação ao preço inicial, o preço final é:",
+      "options": {
+        "A": "igual",
+        "B": "1% maior",
+        "C": "1% menor",
+        "D": "10% menor",
+        "E": "20% menor"
+      },
+      "correct": "C",
+      "explanation": "1,10 × 0,90 = 0,99 → 1% menor.",
+      "reference": "Porcentagens sucessivas"
+    },
+    {
+      "code": "MAT-BAS-006",
+      "difficulty": "EASY",
+      "statement": "Qual a média aritmética das notas 6, 7, 8, 9 e 10?",
+      "options": {
+        "A": "7",
+        "B": "7,5",
+        "C": "8",
+        "D": "8,5",
+        "E": "9"
+      },
+      "correct": "C",
+      "explanation": "(6+7+8+9+10) ÷ 5 = 40 ÷ 5 = 8.",
+      "reference": "Média aritmética"
+    },
+    {
+      "code": "MAT-BAS-007",
+      "difficulty": "EASY",
+      "statement": "Quanto é 3/4 de 120?",
+      "options": {
+        "A": "30",
+        "B": "60",
+        "C": "80",
+        "D": "90",
+        "E": "100"
+      },
+      "correct": "D",
+      "explanation": "120 ÷ 4 × 3 = 90.",
+      "reference": "Frações"
+    },
+    {
+      "code": "MAT-BAS-008",
+      "difficulty": "MEDIUM",
+      "statement": "Em uma turma de 40 alunos, a razão entre mulheres e homens é 3 para 5. Quantas mulheres há na turma?",
+      "options": {
+        "A": "12",
+        "B": "15",
+        "C": "18",
+        "D": "24",
+        "E": "25"
+      },
+      "correct": "B",
+      "explanation": "3 + 5 = 8 partes; 40 ÷ 8 = 5; mulheres = 3 × 5 = 15.",
+      "reference": "Razão e proporção"
+    },
+    {
+      "code": "MAT-BAS-009",
+      "difficulty": "MEDIUM",
+      "statement": "Em um mapa na escala 1:50.000, dois pontos estão a 4 cm de distância. Qual a distância real?",
+      "options": {
+        "A": "200 m",
+        "B": "500 m",
+        "C": "2 km",
+        "D": "20 km",
+        "E": "50 km"
+      },
+      "correct": "C",
+      "explanation": "4 cm × 50.000 = 200.000 cm = 2.000 m = 2 km.",
+      "reference": "Escala"
+    },
+    {
+      "code": "MAT-BAS-010",
+      "difficulty": "EASY",
+      "statement": "Um pátio retangular mede 25 m por 40 m. Qual a sua área?",
+      "options": {
+        "A": "65 m²",
+        "B": "130 m²",
+        "C": "650 m²",
+        "D": "1.000 m²",
+        "E": "1.300 m²"
+      },
+      "correct": "D",
+      "explanation": "25 × 40 = 1.000 m².",
+      "reference": "Área do retângulo"
+    }
+  ]
+}

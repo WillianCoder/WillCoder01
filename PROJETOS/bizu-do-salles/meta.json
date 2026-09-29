@@ -1,0 +1,28 @@
+{
+  "titulo": "Bizu do Salles",
+  "tipo": "projeto",
+  "categoria": "Desenvolvimento",
+  "status": "desenvolvimento",
+  "tecnologias": [
+    "TypeScript",
+    "PostgreSQL",
+    "Prisma",
+    "Vitest"
+  ],
+  "data": "2026-09-29",
+  "atualizado": "2026-09-29",
+  "versao": "0.2.0",
+  "nivel": "avancado",
+  "resumo": "Plataforma de estudos por questões para a formação da PM (Ciclo Básico + Específico). v0.2: site com área do aluno e painel administrativo.",
+  "destaque": false,
+  "portfolio": {
+    "problema": "",
+    "desenvolvido": "",
+    "participacao": "",
+    "resultado": ""
+  },
+  "links": {
+    "demo": "",
+    "repositorio": ""
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "cycle": "BASIC",
+  "subject": "Direito Constitucional",
+  "topic": "Administração pública",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto da CF/88 (lei — não protegida por direito autoral, Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "CF-AP-001",
+      "difficulty": "EASY",
+      "statement": "O caput do art. 37 da CF/88 enumera os princípios da administração pública. Qual alternativa traz apenas princípios expressos nesse dispositivo?",
+      "options": {
+        "A": "Impessoalidade, motivação, eficiência e continuidade",
+        "B": "Legalidade, hierarquia, disciplina, publicidade e eficiência",
+        "C": "Razoabilidade, proporcionalidade, moralidade e publicidade",
+        "D": "Legalidade, supremacia do interesse público, moralidade e economicidade",
+        "E": "Legalidade, impessoalidade, moralidade, publicidade e eficiência"
+      },
+      "correct": "E",
+      "explanation": "O art. 37, caput, lista legalidade, impessoalidade, moralidade, publicidade e eficiência (o famoso LIMPE). Os demais princípios citados existem na doutrina ou em outras normas, mas não estão no caput.",
+      "reference": "CF/88, art. 37, caput"
+    },
+    {
+      "code": "CF-AP-002",
+      "difficulty": "EASY",
+      "statement": "O princípio da eficiência foi incluído no caput do art. 37 da CF/88 por qual emenda constitucional?",
+      "options": {
+        "A": "EC nº 1/1992",
+        "B": "EC nº 20/1998",
+        "C": "EC nº 19/1998",
+        "D": "EC nº 45/2004",
+        "E": "EC nº 103/2019"
+      },
+      "correct": "C",
+      "explanation": "A Emenda Constitucional nº 19/1998 (Reforma Administrativa) acrescentou a eficiência ao caput do art. 37.",
+      "reference": "CF/88, art. 37, caput (redação da EC nº 19/1998)"
+    },
+    {
+      "code": "CF-AP-003",
+      "difficulty": "MEDIUM",
+      "statement": "Conforme a CF/88, a investidura em cargo ou emprego público depende de aprovação prévia em concurso público, ressalvadas:",
+      "options": {
+        "A": "nenhuma hipótese",
+        "B": "as contratações de parentes até o terceiro grau",
+        "C": "as nomeações feitas por governadores em ano eleitoral",
+        "D": "as nomeações para cargos técnicos de nível superior",
+        "E": "as nomeações para cargo em comissão declarado em lei de livre nomeação e exoneração"
+      },
+      "correct": "E",
+      "explanation": "Art. 37, II: o concurso de provas ou de provas e títulos é a regra, ressalvadas as nomeações para cargo em comissão declarado em lei de livre nomeação e exoneração.",
+      "reference": "CF/88, art. 37, II"
+    },
+    {
+      "code": "CF-AP-004",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo a CF/88, o prazo de validade do concurso público será de:",
+      "options": {
+        "A": "até um ano, improrrogável",
+        "B": "até quatro anos, prorrogável duas vezes",
+        "C": "até dois anos, prorrogável indefinidamente",
+        "D": "cinco anos, improrrogável",
+        "E": "até dois anos, prorrogável uma vez, por igual período"
+      },
+      "correct": "E",
+      "explanation": "Art. 37, III.",
+      "reference": "CF/88, art. 37, III"
+    },
+    {
+      "code": "CF-AP-005",
+      "difficulty": "MEDIUM",
+      "statement": "Um policial militar, em serviço, causa dano a terceiro. Segundo a CF/88, a responsabilidade do Estado pelo dano é:",
+      "options": {
+        "A": "subjetiva, dependendo de prova de culpa do agente pela vítima",
+        "B": "inexistente, pois o agente responde sozinho",
+        "C": "objetiva, assegurado o direito de regresso contra o agente nos casos de dolo ou culpa",
+        "D": "objetiva, sem possibilidade de regresso contra o agente",
+        "E": "subsidiária, só após esgotado o patrimônio do agente"
+      },
+      "correct": "C",
+      "explanation": "Art. 37, § 6º: as pessoas jurídicas de direito público respondem pelos danos que seus agentes, nessa qualidade, causarem a terceiros, assegurado o direito de regresso contra o responsável nos casos de dolo ou culpa.",
+      "reference": "CF/88, art. 37, § 6º"
+    },
+    {
+      "code": "CF-AP-006",
+      "difficulty": "HARD",
+      "statement": "De acordo com a CF/88, os atos de improbidade administrativa importarão:",
+      "options": {
+        "A": "a cassação dos direitos políticos e a prisão preventiva",
+        "B": "a perda da nacionalidade",
+        "C": "somente a perda da função pública",
+        "D": "a suspensão dos direitos políticos, a perda da função pública, a indisponibilidade dos bens e o ressarcimento ao erário",
+        "E": "a suspensão dos direitos políticos, exclusivamente"
+      },
+      "correct": "D",
+      "explanation": "Art. 37, § 4º, na forma e gradação previstas em lei, sem prejuízo da ação penal cabível. A CF veda a cassação de direitos políticos (art. 15).",
+      "reference": "CF/88, art. 37, § 4º, e art. 15"
+    },
+    {
+      "code": "CF-AP-007",
+      "difficulty": "MEDIUM",
+      "statement": "A publicidade dos atos, programas, obras, serviços e campanhas dos órgãos públicos deverá ter caráter educativo, informativo ou de orientação social. Segundo a CF/88, nela:",
+      "options": {
+        "A": "podem constar nomes de autoridades, desde que com autorização do Tribunal de Contas",
+        "B": "podem constar imagens de servidores em ano não eleitoral",
+        "C": "não podem constar nomes, símbolos ou imagens que caracterizem promoção pessoal de autoridades ou servidores públicos",
+        "D": "é obrigatório o nome do governante responsável",
+        "E": "podem constar símbolos partidários"
+      },
+      "correct": "C",
+      "explanation": "Art. 37, § 1º — aplicação do princípio da impessoalidade.",
+      "reference": "CF/88, art. 37, § 1º"
+    }
+  ]
+}

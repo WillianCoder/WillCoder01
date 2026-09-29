@@ -1,0 +1,141 @@
+{
+  "cycle": "BASIC",
+  "subject": "Língua Portuguesa",
+  "topic": "Gramática",
+  "sourceLicense": "Questões originais Bizu do Salles (conteúdo próprio).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "POR-GRA-001",
+      "difficulty": "EASY",
+      "statement": "Assinale a frase em que o acento indicativo de crase está empregado corretamente.",
+      "options": {
+        "A": "Vou à escola amanhã.",
+        "B": "Refiro-me à ela.",
+        "C": "Começou à chover.",
+        "D": "Fiz o trajeto à pé.",
+        "E": "Entreguei o relatório à você."
+      },
+      "correct": "A",
+      "explanation": "Há crase quando o verbo exige a preposição 'a' e o substantivo feminino admite o artigo 'a': ir a + a escola.",
+      "reference": "Norma-padrão: regência e crase",
+      "whyWrong": {
+        "B": "Não há crase antes de pronome pessoal.",
+        "C": "Não há crase antes de verbo.",
+        "D": "Não há crase antes de palavra masculina.",
+        "E": "Não há crase antes de 'você'."
+      }
+    },
+    {
+      "code": "POR-GRA-002",
+      "difficulty": "MEDIUM",
+      "statement": "Assinale a frase correta quanto à concordância verbal.",
+      "options": {
+        "A": "Fazem dois anos que entrei na corporação.",
+        "B": "Haviam muitas pessoas no local.",
+        "C": "Devem haver soluções.",
+        "D": "Existe muitas dúvidas sobre o tema.",
+        "E": "Houve muitos problemas na ocorrência."
+      },
+      "correct": "E",
+      "explanation": "'Haver' no sentido de existir é impessoal e fica no singular; 'existir' concorda com o sujeito; 'fazer' indicando tempo é impessoal.",
+      "reference": "Norma-padrão: concordância verbal",
+      "whyWrong": {
+        "A": "Correto: 'Faz dois anos'.",
+        "B": "Correto: 'Havia muitas pessoas'.",
+        "C": "Correto: 'Deve haver soluções'.",
+        "D": "Correto: 'Existem muitas dúvidas'."
+      }
+    },
+    {
+      "code": "POR-GRA-003",
+      "difficulty": "EASY",
+      "statement": "Assinale a alternativa em que todas as palavras estão grafadas corretamente.",
+      "options": {
+        "A": "exceção, privilégio, análise",
+        "B": "excessão, previlégio, análize",
+        "C": "exceção, previlégio, análise",
+        "D": "excessão, privilégio, análize",
+        "E": "exceção, privilégio, análize"
+      },
+      "correct": "A",
+      "explanation": "Grafias corretas: exceção, privilégio, análise.",
+      "reference": "Vocabulário Ortográfico da Língua Portuguesa (VOLP)"
+    },
+    {
+      "code": "POR-GRA-004",
+      "difficulty": "MEDIUM",
+      "statement": "De acordo com o Acordo Ortográfico em vigor, assinale a palavra corretamente grafada.",
+      "options": {
+        "A": "idéia",
+        "B": "heroico",
+        "C": "vôo",
+        "D": "lingüiça",
+        "E": "pára (verbo)"
+      },
+      "correct": "B",
+      "explanation": "O Acordo eliminou o acento dos ditongos abertos 'ei' e 'oi' em paroxítonas (ideia, heroico), do hiato 'oo' (voo), o trema e o acento diferencial de 'para'.",
+      "reference": "Acordo Ortográfico de 1990 (Decreto 6.583/2008)"
+    },
+    {
+      "code": "POR-GRA-005",
+      "difficulty": "MEDIUM",
+      "statement": "Assinale a frase com pontuação correta.",
+      "options": {
+        "A": "O soldado, apresentou-se ao comandante.",
+        "B": "Soldado, apresente-se ao comandante.",
+        "C": "Soldado apresente-se, ao comandante.",
+        "D": "O comandante chamou, o soldado.",
+        "E": "Os alunos do curso, chegaram cedo."
+      },
+      "correct": "B",
+      "explanation": "O vocativo ('Soldado') deve ser separado por vírgula. Não se separa sujeito de verbo nem verbo de complemento.",
+      "reference": "Norma-padrão: pontuação"
+    },
+    {
+      "code": "POR-GRA-006",
+      "difficulty": "EASY",
+      "statement": "Complete corretamente: \"______ você faltou à instrução? Faltei ______ estava doente.\"",
+      "options": {
+        "A": "Porque / por que",
+        "B": "Por que / por quê",
+        "C": "Por quê / por que",
+        "D": "Porquê / porque",
+        "E": "Por que / porque"
+      },
+      "correct": "E",
+      "explanation": "'Por que' separado inicia perguntas; 'porque' junto introduz explicação ou causa.",
+      "reference": "Norma-padrão: uso dos porquês"
+    },
+    {
+      "code": "POR-GRA-007",
+      "difficulty": "MEDIUM",
+      "statement": "Na frase \"O policial chegou cedo, mas a ocorrência já havia sido encerrada\", a conjunção 'mas' expressa ideia de:",
+      "options": {
+        "A": "causa",
+        "B": "adição",
+        "C": "oposição (adversidade)",
+        "D": "conclusão",
+        "E": "condição"
+      },
+      "correct": "C",
+      "explanation": "'Mas' é conjunção coordenativa adversativa.",
+      "reference": "Norma-padrão: conjunções"
+    },
+    {
+      "code": "POR-GRA-008",
+      "difficulty": "MEDIUM",
+      "statement": "Assinale a frase em que o pronome oblíquo está colocado de acordo com a norma-padrão.",
+      "options": {
+        "A": "Me passe o relatório.",
+        "B": "Não esqueça-se da escala.",
+        "C": "Nunca o vi tão atento.",
+        "D": "Tinha-se esquecido, não lembro-me.",
+        "E": "Quem avisou-te?"
+      },
+      "correct": "C",
+      "explanation": "Palavras negativas ('nunca', 'não') e pronomes interrogativos atraem o pronome (próclise). Não se inicia período com pronome oblíquo na norma-padrão.",
+      "reference": "Norma-padrão: colocação pronominal"
+    }
+  ]
+}

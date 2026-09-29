@@ -1,0 +1,15 @@
+# Roteiro do produto
+
+| Versão | Entrega | Status |
+|---|---|---|
+| v0.1 | Banco, regras de acesso, sessão única, desempenho, questões iniciais | ✅ |
+| v0.2 | Site: página inicial, cadastro com estado, login, área do aluno (questões, desempenho, favoritas, revisar, plano, acessibilidade), painel admin (questões, planos, usuários, escolas, problemas, auditoria), testes de navegador, CI com banco | ✅ |
+| v0.3 | Recuperação de senha por e-mail (Resend), meta diária, streak com calendário | ⏳ |
+| v0.4 | Simulados (rápido, por disciplina, personalizado, com cronômetro) e resultado | ⏳ |
+| v0.5 | Cadernos, ranking por apelido (opt-in), conquistas leves | ⏳ |
+| v0.6 | Questões de SP (RDPM, CE-SP) — depende do texto oficial | ⏳ |
+| v0.7 | Gestão de equipe (editores) no painel, importação de questões por planilha | ⏳ |
+| v0.8 | Mercado Pago (Pix/cartão) com webhook e cupons | ⏳ |
+| v1.0 | Lançamento: deploy, domínio, backup testado, revisão jurídica, LGPD (exportar/excluir dados) | ⏳ |
+| v1.x | Materiais e áudios, gerador de questões por IA com revisão humana, revisão espaçada | ⏳ |
+| v2.0 | Apps Android/iOS (Expo) | ⏳ |

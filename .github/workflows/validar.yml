@@ -17,3 +17,37 @@ jobs:
           python-version: "3.12"
       - name: Validar metadados, links e catálogo
         run: python scripts/catalogo.py --check
+
+  bizu-do-salles:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: PROJETOS/bizu-do-salles
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: bizu
+          POSTGRES_PASSWORD: bizu
+          POSTGRES_DB: bizu
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://bizu:bizu@localhost:5432/bizu
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: PROJETOS/bizu-do-salles/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npx prisma migrate deploy
+      - run: npm run db:seed
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run admin:create -- admin@teste.dev "Admin Teste"
+        env:
+          ADMIN_PASSWORD: admin-teste-12345
+      - run: npm run test:e2e

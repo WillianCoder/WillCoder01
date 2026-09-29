@@ -1,0 +1,408 @@
+// Bizu do Salles — esquema do banco (v0.2.0). Documentação: docs/DATABASE.md
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  STUDENT
+  EDITOR
+  ADMIN
+}
+
+enum SubscriptionStatus {
+  PENDING
+  ACTIVE
+  CANCELED
+  EXPIRED
+}
+
+enum PaymentStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  REFUNDED
+  CANCELED
+}
+
+enum QuestionStatus {
+  GENERATED
+  IN_REVIEW
+  REVIEWED
+  APPROVED
+  PUBLISHED
+  REJECTED
+  ARCHIVED
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+enum CycleCode {
+  BASIC
+  SPECIFIC
+}
+
+model User {
+  id           String    @id @default(cuid())
+  name         String
+  nickname     String?
+  email        String    @unique
+  passwordHash String
+  phone        String?
+  role         Role      @default(STUDENT)
+  blocked      Boolean   @default(false)
+  schoolId     String?
+  school       School?   @relation(fields: [schoolId], references: [id])
+  stateCode    String?   // UF escolhida no cadastro (ex.: SP)
+  state        State?    @relation(fields: [stateCode], references: [code])
+  termsAcceptedAt   DateTime
+  privacyAcceptedAt DateTime
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  sessions      Session[]
+  subscriptions Subscription[]
+  payments      Payment[]
+  attempts      QuestionAttempt[]
+  favorites     Favorite[]
+  notebooks     Notebook[]
+  flags         QuestionFlag[]
+  simulations   SimulationAttempt[]
+  goals         Goal[]
+  notifications Notification[]
+}
+
+/// Sessão única: um login novo revoga as sessões ativas anteriores (src/core/session.ts).
+model Session {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokenHash   String    @unique
+  deviceLabel String?
+  createdAt   DateTime  @default(now())
+  lastSeenAt  DateTime  @default(now())
+  expiresAt   DateTime
+  revokedAt   DateTime?
+  revokedReason String?
+
+  @@index([userId, revokedAt])
+}
+
+/// Estados atendidos. Conteúdo com stateCode nulo é nacional e vale para todos.
+model State {
+  code      String     @id // UF
+  name      String
+  active    Boolean    @default(true)
+  users     User[]
+  schools   School[]
+  questions Question[]
+  materials Material[]
+}
+
+model School {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  city      String?
+  stateCode String?
+  state     State?   @relation(fields: [stateCode], references: [code])
+  active    Boolean  @default(true)
+  users     User[]
+  createdAt DateTime @default(now())
+}
+
+/// Planos são editáveis no painel; preço em centavos. Nenhum preço fica no código.
+model Plan {
+  id           String      @id @default(cuid())
+  slug         String      @unique
+  name         String
+  description  String
+  priceCents   Int
+  durationDays Int
+  cycles       CycleCode[]
+  benefits     String[]
+  active       Boolean     @default(true)
+  subscriptions Subscription[]
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+model Subscription {
+  id        String             @id @default(cuid())
+  userId    String
+  user      User               @relation(fields: [userId], references: [id])
+  planId    String
+  plan      Plan               @relation(fields: [planId], references: [id])
+  status    SubscriptionStatus @default(PENDING)
+  startsAt  DateTime?
+  endsAt    DateTime?
+  source    String             @default("web") // web | apple | google
+  payments  Payment[]
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+
+  @@index([userId, status])
+}
+
+model Payment {
+  id             String        @id @default(cuid())
+  userId         String
+  user           User          @relation(fields: [userId], references: [id])
+  subscriptionId String
+  subscription   Subscription  @relation(fields: [subscriptionId], references: [id])
+  gateway        String        // mercadopago
+  gatewayId      String        @unique // idempotência do webhook
+  amountCents    Int
+  couponId       String?
+  coupon         Coupon?       @relation(fields: [couponId], references: [id])
+  status         PaymentStatus @default(PENDING)
+  rawEvent       Json?
+  confirmedAt    DateTime?
+  createdAt      DateTime      @default(now())
+}
+
+model Coupon {
+  id            String    @id @default(cuid())
+  code          String    @unique
+  percentOff    Int?
+  amountOffCents Int?
+  planSlugs     String[]
+  maxUses       Int?
+  used          Int       @default(0)
+  validUntil    DateTime?
+  active        Boolean   @default(true)
+  payments      Payment[]
+}
+
+model Cycle {
+  id       String    @id @default(cuid())
+  code     CycleCode @unique
+  name     String
+  subjects Subject[]
+}
+
+model Subject {
+  id        String     @id @default(cuid())
+  cycleId   String
+  cycle     Cycle      @relation(fields: [cycleId], references: [id])
+  name      String
+  slug      String
+  order     Int        @default(0)
+  active    Boolean    @default(true)
+  topics    Topic[]
+  questions Question[]
+
+  @@unique([cycleId, slug])
+}
+
+/// Assunto e subassunto na mesma tabela (parentId).
+model Topic {
+  id        String     @id @default(cuid())
+  subjectId String
+  subject   Subject    @relation(fields: [subjectId], references: [id])
+  parentId  String?
+  parent    Topic?     @relation("TopicTree", fields: [parentId], references: [id])
+  children  Topic[]    @relation("TopicTree")
+  name      String
+  slug      String
+  questions Question[]
+
+  @@unique([subjectId, slug])
+}
+
+model Question {
+  id            String         @id @default(cuid())
+  code          String         @unique // ex.: CF-DG-001
+  subjectId     String
+  subject       Subject        @relation(fields: [subjectId], references: [id])
+  topicId       String?
+  topic         Topic?         @relation(fields: [topicId], references: [id])
+  stateCode     String?        // nulo = nacional (CF, leis federais); UF = legislação estadual
+  state         State?         @relation(fields: [stateCode], references: [code])
+  type          String         @default("MULTIPLE_CHOICE")
+  statement     String
+  correctLetter String
+  explanation   String
+  reference     String         // ex.: "CF/88, art. 5º, XI"
+  sourceLicense String         // origem/licença do conteúdo (docs/CONTENT_GUIDE.md)
+  difficulty    Difficulty     @default(MEDIUM)
+  isFree        Boolean        @default(false) // amostra grátis, visível sem plano
+  status        QuestionStatus @default(IN_REVIEW)
+  author        String
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  options       QuestionOption[]
+  attempts      QuestionAttempt[]
+  favorites     Favorite[]
+  flags         QuestionFlag[]
+  notebookItems NotebookQuestion[]
+  simulationItems SimulationQuestion[]
+
+  @@index([subjectId, status])
+  @@index([stateCode])
+}
+
+model QuestionOption {
+  id         String   @id @default(cuid())
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  letter     String
+  text       String
+  whyWrong   String?
+
+  @@unique([questionId, letter])
+}
+
+model QuestionAttempt {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id])
+  questionId   String
+  question     Question @relation(fields: [questionId], references: [id])
+  chosenLetter String
+  correct      Boolean
+  timeMs       Int?
+  simulationAttemptId String?
+  createdAt    DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([userId, questionId])
+}
+
+model QuestionFlag {
+  id         String    @id @default(cuid())
+  userId     String
+  user       User      @relation(fields: [userId], references: [id])
+  questionId String
+  question   Question  @relation(fields: [questionId], references: [id])
+  kind       String    // gabarito | portugues | duplicada | alternativa | explicacao | fonte | outro
+  message    String?
+  resolvedAt DateTime?
+  createdAt  DateTime  @default(now())
+}
+
+model Favorite {
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id])
+  kind       String   @default("FAVORITE") // FAVORITE | REVIEW_LATER
+  createdAt  DateTime @default(now())
+
+  @@id([userId, questionId, kind])
+}
+
+model Notebook {
+  id        String             @id @default(cuid())
+  userId    String
+  user      User               @relation(fields: [userId], references: [id])
+  name      String
+  items     NotebookQuestion[]
+  createdAt DateTime           @default(now())
+}
+
+model NotebookQuestion {
+  notebookId String
+  notebook   Notebook @relation(fields: [notebookId], references: [id], onDelete: Cascade)
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id])
+
+  @@id([notebookId, questionId])
+}
+
+model Simulation {
+  id         String               @id @default(cuid())
+  title      String
+  kind       String               // quick | subject | cycle | full | custom | review | errors
+  timeLimitS Int?
+  createdBy  String?
+  items      SimulationQuestion[]
+  attempts   SimulationAttempt[]
+  createdAt  DateTime             @default(now())
+}
+
+model SimulationQuestion {
+  simulationId String
+  simulation   Simulation @relation(fields: [simulationId], references: [id], onDelete: Cascade)
+  questionId   String
+  question     Question   @relation(fields: [questionId], references: [id])
+  position     Int
+
+  @@id([simulationId, questionId])
+}
+
+model SimulationAttempt {
+  id           String     @id @default(cuid())
+  simulationId String
+  simulation   Simulation @relation(fields: [simulationId], references: [id])
+  userId       String
+  user         User       @relation(fields: [userId], references: [id])
+  startedAt    DateTime   @default(now())
+  finishedAt   DateTime?
+  correct      Int        @default(0)
+  total        Int        @default(0)
+}
+
+model Material {
+  id            String     @id @default(cuid())
+  title         String
+  kind          String     // pdf | text | summary | audio | image
+  cycle         CycleCode?
+  subjectId     String?
+  stateCode     String?
+  state         State?     @relation(fields: [stateCode], references: [code])
+  storageKey    String
+  free          Boolean    @default(false)
+  sourceLicense String
+  createdAt     DateTime   @default(now())
+}
+
+model Goal {
+  id            String @id @default(cuid())
+  userId        String
+  user          User   @relation(fields: [userId], references: [id])
+  questionsDay  Int?
+  minutesDay    Int?
+}
+
+model Notification {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id])
+  kind      String
+  title     String
+  body      String
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+}
+
+model Setting {
+  key   String @id
+  value Json
+}
+
+model FeatureFlag {
+  key     String  @id
+  enabled Boolean @default(false)
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  actorId   String
+  action    String
+  entity    String
+  entityId  String
+  before    Json?
+  after     Json?
+  createdAt DateTime @default(now())
+
+  @@index([entity, entityId])
+}

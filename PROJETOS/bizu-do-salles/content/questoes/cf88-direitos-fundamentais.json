@@ -1,0 +1,186 @@
+{
+  "cycle": "BASIC",
+  "subject": "Direito Constitucional",
+  "topic": "Direitos e garantias fundamentais",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto da CF/88 (lei — não protegida por direito autoral, Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "CF-DF-001",
+      "difficulty": "EASY",
+      "statement": "Segundo a Constituição Federal, a casa é asilo inviolável do indivíduo. Em qual situação é permitido entrar nela sem o consentimento do morador, durante a noite?",
+      "options": {
+        "A": "Para cumprir mandado de busca e apreensão expedido por juiz.",
+        "B": "Para realizar vistoria administrativa da prefeitura.",
+        "C": "Para cumprir requisição do delegado de polícia.",
+        "D": "Em caso de flagrante delito, desastre ou para prestar socorro.",
+        "E": "Em nenhuma hipótese."
+      },
+      "correct": "D",
+      "explanation": "O art. 5º, XI, permite a entrada sem consentimento a qualquer hora em flagrante delito, desastre ou para prestar socorro. A ordem judicial só autoriza a entrada durante o dia.",
+      "whyWrong": {
+        "A": "Por ordem judicial, a entrada só pode ocorrer durante o dia.",
+        "B": "Não há previsão constitucional.",
+        "C": "Requisição policial não autoriza a entrada.",
+        "E": "Há exceções expressas."
+      },
+      "reference": "CF/88, art. 5º, XI"
+    },
+    {
+      "code": "CF-DF-002",
+      "difficulty": "EASY",
+      "statement": "De acordo com a CF/88, ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada de autoridade:",
+      "options": {
+        "A": "policial",
+        "B": "do Ministério Público",
+        "C": "administrativa superior",
+        "D": "judiciária competente",
+        "E": "militar de qualquer posto"
+      },
+      "correct": "D",
+      "explanation": "O art. 5º, LXI, exige ordem escrita e fundamentada de autoridade judiciária competente, salvo transgressão militar ou crime propriamente militar definidos em lei.",
+      "reference": "CF/88, art. 5º, LXI"
+    },
+    {
+      "code": "CF-DF-003",
+      "difficulty": "MEDIUM",
+      "statement": "Qual remédio constitucional é cabível para proteger a liberdade de locomoção ameaçada por ilegalidade ou abuso de poder?",
+      "options": {
+        "A": "Mandado de segurança",
+        "B": "Habeas data",
+        "C": "Mandado de injunção",
+        "D": "Habeas corpus",
+        "E": "Ação popular"
+      },
+      "correct": "D",
+      "explanation": "O habeas corpus protege o direito de locomoção (art. 5º, LXVIII).",
+      "whyWrong": {
+        "A": "Protege direito líquido e certo não amparado por HC ou HD.",
+        "B": "Garante acesso e retificação de informações pessoais.",
+        "C": "Supre falta de norma regulamentadora.",
+        "E": "Anula ato lesivo ao patrimônio público, à moralidade etc."
+      },
+      "reference": "CF/88, art. 5º, LXVIII"
+    },
+    {
+      "code": "CF-DF-004",
+      "difficulty": "MEDIUM",
+      "statement": "Para conhecer informações relativas à sua pessoa constantes de bancos de dados de entidades governamentais, o cidadão deve utilizar:",
+      "options": {
+        "A": "Habeas corpus",
+        "B": "Mandado de segurança coletivo",
+        "C": "Habeas data",
+        "D": "Ação civil pública",
+        "E": "Mandado de injunção"
+      },
+      "correct": "C",
+      "explanation": "O habeas data assegura o conhecimento e a retificação de dados pessoais em registros governamentais ou de caráter público (art. 5º, LXXII).",
+      "reference": "CF/88, art. 5º, LXXII"
+    },
+    {
+      "code": "CF-DF-005",
+      "difficulty": "EASY",
+      "statement": "A Constituição estabelece que a prática do racismo constitui crime:",
+      "options": {
+        "A": "afiançável e prescritível",
+        "B": "inafiançável e imprescritível, sujeito à pena de reclusão",
+        "C": "inafiançável, mas prescritível",
+        "D": "afiançável e imprescritível",
+        "E": "de menor potencial ofensivo"
+      },
+      "correct": "B",
+      "explanation": "Art. 5º, XLII: o racismo é crime inafiançável e imprescritível, sujeito à pena de reclusão.",
+      "reference": "CF/88, art. 5º, XLII"
+    },
+    {
+      "code": "CF-DF-006",
+      "difficulty": "MEDIUM",
+      "statement": "São considerados pela CF/88 crimes inafiançáveis e insuscetíveis de graça ou anistia:",
+      "options": {
+        "A": "a tortura, o tráfico ilícito de entorpecentes, o terrorismo e os crimes hediondos",
+        "B": "o racismo e a ação de grupos armados",
+        "C": "somente os crimes hediondos",
+        "D": "os crimes contra a administração pública",
+        "E": "os crimes militares próprios"
+      },
+      "correct": "A",
+      "explanation": "Art. 5º, XLIII. Racismo e ação de grupos armados contra a ordem constitucional são inafiançáveis e imprescritíveis (incisos XLII e XLIV), regra diferente.",
+      "reference": "CF/88, art. 5º, XLIII"
+    },
+    {
+      "code": "CF-DF-007",
+      "difficulty": "EASY",
+      "statement": "Conforme a CF/88, a pena de morte é admitida:",
+      "options": {
+        "A": "para crimes hediondos",
+        "B": "mediante plebiscito",
+        "C": "para terrorismo",
+        "D": "em caso de guerra declarada",
+        "E": "em nenhuma hipótese"
+      },
+      "correct": "D",
+      "explanation": "Art. 5º, XLVII, 'a': não haverá pena de morte, salvo em caso de guerra declarada, nos termos do art. 84, XIX.",
+      "reference": "CF/88, art. 5º, XLVII, a"
+    },
+    {
+      "code": "CF-DF-008",
+      "difficulty": "MEDIUM",
+      "statement": "Sobre o direito de reunião, a CF/88 assegura que todos podem reunir-se pacificamente, sem armas, em locais abertos ao público:",
+      "options": {
+        "A": "mediante autorização prévia da autoridade policial",
+        "B": "independentemente de autorização, exigido apenas prévio aviso à autoridade competente",
+        "C": "somente com autorização judicial",
+        "D": "sem qualquer comunicação, em qualquer caso",
+        "E": "somente em dias úteis"
+      },
+      "correct": "B",
+      "explanation": "Art. 5º, XVI: não se exige autorização, apenas prévio aviso, e a reunião não pode frustrar outra anteriormente convocada para o mesmo local.",
+      "reference": "CF/88, art. 5º, XVI"
+    },
+    {
+      "code": "CF-DF-009",
+      "difficulty": "HARD",
+      "statement": "O preso será informado de seus direitos, entre os quais o de permanecer calado. A prisão de qualquer pessoa e o local onde se encontre devem ser comunicados imediatamente:",
+      "options": {
+        "A": "somente ao juiz competente",
+        "B": "à OAB",
+        "C": "ao Ministério Público e à Defensoria",
+        "D": "ao comandante da unidade",
+        "E": "ao juiz competente e à família do preso ou à pessoa por ele indicada"
+      },
+      "correct": "E",
+      "explanation": "Art. 5º, LXII: comunicação imediata ao juiz competente e à família do preso ou à pessoa por ele indicada. O inciso LXIII trata do direito ao silêncio.",
+      "reference": "CF/88, art. 5º, LXII e LXIII"
+    },
+    {
+      "code": "CF-DF-010",
+      "difficulty": "MEDIUM",
+      "statement": "Em relação à extradição, a CF/88 determina que:",
+      "options": {
+        "A": "o brasileiro nato pode ser extraditado por tráfico de drogas",
+        "B": "o estrangeiro pode ser extraditado por crime político",
+        "C": "nenhum brasileiro nato será extraditado",
+        "D": "o naturalizado nunca será extraditado",
+        "E": "a extradição depende de plebiscito"
+      },
+      "correct": "C",
+      "explanation": "Art. 5º, LI: o brasileiro nato nunca é extraditado; o naturalizado pode ser, por crime comum anterior à naturalização ou tráfico de entorpecentes. Inciso LII: estrangeiro não é extraditado por crime político ou de opinião.",
+      "reference": "CF/88, art. 5º, LI e LII"
+    },
+    {
+      "code": "CF-DF-011",
+      "difficulty": "EASY",
+      "statement": "Segundo a CF/88, ninguém será submetido a tortura nem a tratamento:",
+      "options": {
+        "A": "desumano ou degradante",
+        "B": "diferenciado",
+        "C": "sigiloso",
+        "D": "de urgência",
+        "E": "sem ordem judicial"
+      },
+      "correct": "A",
+      "explanation": "Art. 5º, III.",
+      "reference": "CF/88, art. 5º, III"
+    }
+  ]
+}
