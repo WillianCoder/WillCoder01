@@ -27,6 +27,8 @@
 `GPIO17` (pino 11) → resistor 220 Ω → perna longa do LED; perna curta → GND (pino 9).
 Dois LEDs? Um resistor para cada, ambos no mesmo GPIO.
 
+Depois, em `src/config.json`, troque `"led_gpio": null` por `"led_gpio": 17`: os olhos acendem enquanto ele fala.
+
 ## ⚠️ Cuidados
 - Ligue/desligue fios **com tudo desligado**.
 - **Nunca** ligue o alto-falante direto no Pi (sem amplificador).

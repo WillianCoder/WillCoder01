@@ -23,8 +23,10 @@ Existem **2 lugares** onde o código roda. Escolha a pasta do seu computador:
 |:-:|---|---|
 | 1 | `INSTALAR.bat` | Instala tudo (15–40 min). Clique **Sim** se o Windows perguntar |
 | 2 | `TESTAR_VOZ.bat` | Fala uma frase com a voz grossa |
-| 3 | `CONVERSAR_TECLADO.bat` | Conversa com a árvore **digitando** |
+| 3 | `CONVERSAR_TECLADO.bat` | Você **digita** e ele responde **falando** (sem microfone) |
 | 4 | `INICIAR.bat` | Boneco completo: fale **"Tronco, …"** no microfone |
+| — | `VERIFICAR.bat` | Mostra [OK]/[X] para cada parte, com a solução |
+| — | `TROCAR_PERSONAGEM.bat` | Árvore, dragão, robô ou coruja |
 | — | `EDITAR_NOME_E_VOZ.bat` | Muda nome, senha e tom da voz |
 | — | `EDITAR_PERSONALIDADE.bat` | Muda a personalidade e já aplica |
 
@@ -48,8 +50,8 @@ bash menu.sh
 | Arquivo | O que faz |
 |---|---|
 | `instalar.sh` | Instala tudo e faz o boneco ligar sozinho (20–40 min) |
-| `verificar.sh` | Mostra ✔ ou ✘ para cada parte, com a solução |
-| `menu.sh` | Menu com números: testar voz, microfone, ligar, desligar, editar... |
+| `verificar.sh` | Mostra [OK] ou [X] para cada parte, com a solução, e a temperatura |
+| `menu.sh` | Menu com 11 opções: testar, ligar, desligar, editar, trocar personagem, atualizar |
 | `boneco.service` | Usado pelo instalador (não precisa mexer) |
 
 > Pi com **4 GB**? Instale com o modelo menor: `MODELO_IA=qwen2.5:1.5b bash instalar.sh`
@@ -61,6 +63,7 @@ bash menu.sh
 | Arquivo | O que muda |
 |---|---|
 | `src/config.json` | **nome**, **senha**, **efeito_voz** (tom) |
-| `src/personagem/Modelfile` | **personalidade** e história |
+| `src/config.json` → `respostas_fixas` | respostas exatas para perguntas específicas |
+| `src/personagens/<ativo>/Modelfile` | **personalidade** e história |
 
 O resto (`boneco.py`, `personagem_logica.py`...) já está pronto: não precisa mexer.

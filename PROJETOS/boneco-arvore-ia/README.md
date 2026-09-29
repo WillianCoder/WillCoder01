@@ -1,6 +1,6 @@
 # 🌳 Boneco Árvore IA
 
-> ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-f5c518) ![Versão](https://img.shields.io/badge/vers%C3%A3o-0.2.0-f5c518)
+> ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-f5c518) ![Versão](https://img.shields.io/badge/vers%C3%A3o-0.3.0-f5c518)
 
 ## 📌 Sobre
 Boneco impresso em 3D com um Raspberry Pi escondido dentro dele. Ele fica **ouvindo**, acorda quando alguém fala o **nome** dele (como a Alexa) e responde com **voz grossa de árvore anciã**. Funciona **100 % offline**, usa só **software gratuito** e **nunca sai do personagem**.
@@ -27,7 +27,9 @@ Python · Raspberry Pi 5 · Ollama (Qwen 2.5) · Vosk · Piper TTS · SoX · Imp
 │   └── raspberry/                # 🍓 boneco de verdade (instalar.sh, verificar.sh, menu.sh)
 ├── src/                          # código que roda nos dois
 │   ├── config.json               # ✏️ NOME, SENHA, efeito de voz
-│   ├── personagem/Modelfile      # ✏️ PERSONALIDADE
+│   ├── personagens/              # 🎭 árvore, dragão, robô, coruja (Modelfile + perfil.json)
+│   ├── personagem.py             # troca/aplica personagem
+│   ├── diagnostico.py            # confere tudo ([OK]/[X])
 │   ├── boneco.py                 # programa principal (não precisa mexer)
 │   ├── personagem_logica.py      # regras: nome, senha, filtro
 │   └── testar_voz.py             # teste da voz grossa
@@ -52,8 +54,19 @@ Veja **[instalar/README.md](instalar/README.md)** ou o PDF **[instalacao-e-coman
 
 No Raspberry, `bash instalar/raspberry/menu.sh` abre um menu para ligar, desligar, testar e editar.
 
-## 🎭 Outro personagem
-Edite `src/config.json` (nome e voz) e `src/personagem/Modelfile` (personalidade), depois rode `ollama create arvore -f personagem/Modelfile`. Veja a seção 7 do PDF.
+## 🎭 Personagens prontos
+| Pasta | Personagem | Nome | Voz |
+|---|---|---|---|
+| `arvore` | 🌳 Árvore anciã | Tronco | grave com eco |
+| `dragao` | 🐉 Dragão brincalhão | Draco | bem grave e forte |
+| `robo` | 🤖 Robô amigo | Bip | metálica |
+| `coruja` | 🦉 Coruja sábia | Sofia | aguda e suave |
+
+Para trocar: `TROCAR_PERSONAGEM.bat` (Windows), `menu.sh` → 10 (Raspberry) ou `python personagem.py escolher dragao`.
+Para criar o seu, copie uma pasta de `src/personagens/` e edite.
+
+## 📦 Versões
+Veja **[docs/VERSOES.md](docs/VERSOES.md)** (o que cada versão tem e o que melhorou) e o relatório **[relatorio-funcionalidades-e-comandos.pdf](docs/relatorio-funcionalidades-e-comandos.pdf)**.
 
 ## 🧪 Testes
 ```bash

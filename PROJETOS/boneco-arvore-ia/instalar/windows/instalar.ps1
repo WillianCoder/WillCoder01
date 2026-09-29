@@ -37,10 +37,12 @@ foreach ($f in @("pt_BR-faber-medium.onnx", "pt_BR-faber-medium.onnx.json")) {
 Passo "4/6 Baixando a IA (qwen2.5:3b, ~2 GB)"
 ollama pull qwen2.5:3b
 
-Passo "5/6 Criando o personagem 'arvore'"
-ollama create arvore -f "$Src\personagem\Modelfile"
+Passo "5/6 Criando o personagem na IA"
+Push-Location $Src
+& $Python personagem.py aplicar
 
 Passo "6/6 Conferindo"
-& $Python -c "import vosk, sounddevice, piper; print('Bibliotecas OK')"
+& $Python diagnostico.py
+Pop-Location
 
-Write-Host "`nPRONTO! Agora de 2 cliques em TESTAR_VOZ.bat e depois em INICIAR.bat" -ForegroundColor Green
+Write-Host "`nPRONTO! Agora de 2 cliques em TESTAR_VOZ.bat e depois em CONVERSAR_TECLADO.bat" -ForegroundColor Green

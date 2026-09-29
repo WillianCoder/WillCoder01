@@ -4,6 +4,22 @@ Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versões
 
 ## [Não lançado]
 
+## [0.3.0] - 2026-09-29
+### Adicionado
+- Streaming: fala cada frase enquanto a IA ainda escreve; IA mantida carregada (`keep_alive`).
+- Voz do Piper carregada uma vez e cache de frases repetidas.
+- 4 personagens prontos (`src/personagens/`) e `personagem.py` (listar, escolher, aplicar).
+- `frases`, `respostas_fixas`, `apelidos` e `led_gpio` no `config.json`.
+- Modo teclado com voz (`--teclado`), `diagnostico.py`, `VERIFICAR.bat`, `TROCAR_PERSONAGEM.bat`.
+- Menu do Raspberry com 11 opções (trocar personagem, atualizar pelo GitHub); aviso de temperatura/energia.
+- `docs/VERSOES.md`, `releases/` e PDF "Relatório de funcionalidades e comandos".
+### Alterado
+- Modelo da IA renomeado para `boneco`; `FROM` segue o `modelo_base` instalado.
+- Acentos preservados na pergunta e no nome novo.
+### Corrigido
+- PDF de instalação repetia o guia inteiro no começo.
+- Espaço antes de pontuação quando a IA usava emoji.
+
 ## [0.2.0] - 2026-09-29
 ### Adicionado
 - Pasta `instalar/` separando onde instalar cada código: `windows/` (teste grátis com 2 cliques) e `raspberry/` (boneco de verdade).

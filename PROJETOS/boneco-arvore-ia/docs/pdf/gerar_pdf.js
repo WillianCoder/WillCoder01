@@ -2,7 +2,11 @@
 // Uso: node docs/pdf/gerar_pdf.js   (requer playwright)
 const { chromium } = require("playwright");
 const path = require("path");
-const PDFS = { "guia.html": "guia-boneco-arvore-ia.pdf", "instalacao.html": "instalacao-e-comandos.pdf" };
+const PDFS = {
+  "guia.html": "guia-boneco-arvore-ia.pdf",
+  "instalacao.html": "instalacao-e-comandos.pdf",
+  "relatorio.html": "relatorio-funcionalidades-e-comandos.pdf",
+};
 (async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage();

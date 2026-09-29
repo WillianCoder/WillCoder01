@@ -1,21 +1,5 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Boneco Árvore IA</title>
-<style>
-@page{size:A4;margin:14mm 13mm}
-*{box-sizing:border-box}body{font-family:"DejaVu Sans",Arial,sans-serif;color:#1f2a1f;font-size:10.5pt;line-height:1.45;margin:0}
-h1{font-size:26pt;margin:0;color:#2f5d2f}h2{color:#fff;background:#3f7a3f;padding:6px 10px;border-radius:6px;font-size:14pt;margin:18px 0 8px;break-after:avoid}
-h3{color:#2f5d2f;margin:12px 0 4px;font-size:11.5pt;break-after:avoid}
-table{width:100%;border-collapse:collapse;margin:6px 0;break-inside:auto}tr{break-inside:avoid}
-th{background:#dcebd3;text-align:left}th,td{border:1px solid #b9cfb0;padding:4px 6px;vertical-align:top}
-code,pre{font-family:"DejaVu Sans Mono",monospace;font-size:8.8pt}pre{background:#f1f5ee;border-left:4px solid #3f7a3f;padding:6px 8px;white-space:pre-wrap;margin:4px 0;break-inside:avoid}
-.page{break-before:page}.cover{text-align:center;padding-top:40mm}.cover p{font-size:13pt}
-.tip{background:#fff7d6;border:1px solid #e8cf6a;border-radius:6px;padding:6px 10px;margin:8px 0;break-inside:avoid}
-.warn{background:#fde4e0;border:1px solid #e7998c;border-radius:6px;padding:6px 10px;margin:8px 0;break-inside:avoid}
-.box{border:1px solid #b9cfb0;border-radius:8px;padding:6px 10px;margin:6px 0;break-inside:avoid}
-.steps li{margin-bottom:4px}.chk{font-size:12pt}.free{color:#2f7a2f;font-weight:bold}
-.flow{display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap;margin:10px 0}
-.flow div{background:#dcebd3;border:2px solid #3f7a3f;border-radius:8px;padding:6px 8px;text-align:center;font-size:9pt;width:108px}
-.flow span{font-size:16pt;color:#3f7a3f}
-</style></head><body>
+<link rel="stylesheet" href="estilo.css"></head><body>
 
 <div class="cover">
 <div style="font-size:80pt">🌳</div>
@@ -144,7 +128,7 @@ bash instalar.sh
 bash verificar.sh</pre>
 <p>📄 Comandos detalhados e versão para Windows: <b>instalacao-e-comandos.pdf</b></p>
 <p>Ele instala o Vosk, o Piper, o SoX e o Ollama, cria o personagem e deixa o boneco <b>ligando sozinho</b>.</p>
-<p>✅ <b>Teste:</b> rode <code>arecord -d 5 t.wav && aplay t.wav</code> (você ouve sua voz?) e <code>ollama run arvore "Quem é você?"</code>.</p>
+<p>✅ <b>Teste:</b> rode <code>arecord -d 5 t.wav && aplay t.wav</code> (você ouve sua voz?) e depois <code>bash verificar.sh</code> (tudo [OK]?).</p>
 <h3>Etapa 3 — Nome e senha (5 min)</h3>
 <p>Edite <code>src/config.json</code>: <code>"nome": "tronco"</code> e <code>"senha": "raiz dourada"</code>.</p>
 <table><tr><th>Você fala</th><th>Ele faz</th></tr>
@@ -173,10 +157,11 @@ sudo systemctl restart boneco    # reiniciar</pre>
 
 <div class="page"></div>
 <h2>7 · Usar em QUALQUER boneco ou personagem</h2>
+<div class="tip">🎭 <b>Já vêm 4 personagens prontos:</b> 🌳 árvore, 🐉 dragão, 🤖 robô e 🦉 coruja. Para trocar, use <code>TROCAR_PERSONAGEM.bat</code> no Windows ou a opção 10 do <code>menu.sh</code> no Raspberry.</div>
 <p>O projeto é um <b>molde</b>: para criar outro personagem (dragão, robô, coruja, vovó...), só mude <b>3 arquivos de texto</b>. O código não muda.</p>
 <table><tr><th>O que mudar</th><th>Arquivo</th><th>Exemplo</th></tr>
 <tr><td>Nome e senha</td><td><code>src/config.json</code></td><td><code>"nome": "draco"</code></td></tr>
-<tr><td>Personalidade e história</td><td><code>src/personagem/Modelfile</code></td><td>“Você é um dragão brincalhão de 300 anos...”</td></tr>
+<tr><td>Personalidade e história</td><td><code>src/personagens/…/Modelfile</code></td><td>“Você é um dragão brincalhão de 300 anos...”</td></tr>
 <tr><td>Tipo de voz</td><td><code>src/config.json</code> → <code>efeito_voz</code></td><td>Dragão: pitch -700 · Fada: pitch +400 · Robô: acrescente <code>flanger</code></td></tr>
 <tr><td>Frase de proteção</td><td><code>src/personagem_logica.py</code></td><td><code>FRASE_PROTECAO = "..."</code></td></tr>
 <tr><td>Corpo</td><td>Qualquer modelo 3D oco com tampa</td><td>Mesmos furos da etapa 6</td></tr></table>

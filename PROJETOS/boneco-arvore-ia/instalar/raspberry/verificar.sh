@@ -1,17 +1,16 @@
 #!/usr/bin/env bash
 # Confere se tudo foi instalado certo:   bash verificar.sh
 PROJETO="$(cd "$(dirname "$0")/../.." && pwd)"; SRC="$PROJETO/src"
-ok(){ echo -e "  \033[32m✔\033[0m $1"; }; ruim(){ echo -e "  \033[31m✘\033[0m $1  →  $2"; }
-checa(){ if eval "$2" >/dev/null 2>&1; then ok "$1"; else ruim "$1" "$3"; fi; }
+if [ ! -x "$PROJETO/.venv/bin/python" ]; then
+  echo "  [X]   Python do projeto  ->  rode: bash instalar.sh"; exit 1
+fi
+cd "$SRC" && "$PROJETO/.venv/bin/python" diagnostico.py
 
-echo "Verificando o boneco..."
-checa "Python do projeto"      "[ -x '$PROJETO/.venv/bin/python' ]"            "rode bash instalar.sh"
-checa "SoX (voz grossa)"       "command -v sox"                                 "sudo apt install sox"
-checa "Modelo de ouvir (Vosk)" "[ -d '$SRC/modelos/vosk-model-small-pt-0.3' ]"  "rode bash instalar.sh"
-checa "Voz (Piper)"            "[ -f '$SRC/modelos/pt_BR-faber-medium.onnx' ]"  "rode bash instalar.sh"
-checa "Ollama instalado"       "command -v ollama"                              "rode bash instalar.sh"
-checa "Personagem 'arvore'"    "ollama list | grep -q arvore"                   "ollama create arvore -f $SRC/personagem/Modelfile"
-checa "Microfone conectado"    "arecord -l | grep -q card"                      "plugue o microfone USB"
-checa "Saída de som"           "aplay -l | grep -q card"                        "plugue a placa de som USB"
-checa "Liga sozinho"           "systemctl is-enabled boneco"                    "rode bash instalar.sh"
-checa "Boneco rodando agora"   "systemctl is-active boneco"                     "sudo systemctl start boneco"
+echo
+echo "Raspberry:"
+ok(){ echo -e "  [OK]  $1"; }; ruim(){ echo -e "  [X]   $1  ->  $2"; }
+systemctl is-enabled boneco >/dev/null 2>&1 && ok "Liga sozinho ao energizar" || ruim "Liga sozinho" "rode: bash instalar.sh"
+systemctl is-active  boneco >/dev/null 2>&1 && ok "Boneco rodando agora"     || ruim "Boneco parado" "sudo systemctl start boneco"
+TEMP=$(vcgencmd measure_temp 2>/dev/null | grep -o '[0-9.]*')
+[ -n "$TEMP" ] && echo "  [i]   Temperatura: ${TEMP}°C (ideal: abaixo de 70)"
+vcgencmd get_throttled 2>/dev/null | grep -q "0x0$" || echo "  [!]   Já faltou energia: use um power bank PD 27 W (5V/5A)"

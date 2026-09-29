@@ -18,5 +18,8 @@ Siga na ordem. Cada etapa termina com um **✅ Teste** — só avance quando ele
 📄 **PDFs:**
 - [guia-boneco-arvore-ia.pdf](guia-boneco-arvore-ia.pdf): mapa mental, compras, equipamentos, sites e passo a passo
 - [instalacao-e-comandos.pdf](instalacao-e-comandos.pdf): **onde instalar cada código** e todos os comandos
+- [relatorio-funcionalidades-e-comandos.pdf](relatorio-funcionalidades-e-comandos.pdf): **versões**, o que cada uma tem, funcionalidades e todos os comandos
+
+📦 **Versões:** [VERSOES.md](VERSOES.md)
 
 > 💡 **Dica de ouro:** faça as etapas 3 a 5 primeiro no seu **PC** (Ollama, Piper e SoX funcionam em Windows/Linux). Assim você testa o personagem **de graça** antes de comprar qualquer coisa.
