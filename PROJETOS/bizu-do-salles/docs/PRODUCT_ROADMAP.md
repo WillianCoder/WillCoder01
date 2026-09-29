@@ -11,6 +11,7 @@
 | v0.6.0 | Importação por planilha, papéis da equipe no painel, LGPD (baixar dados / excluir conta) | ✅ |
 | v0.6 | Questões de SP: RDPM ✅ (109); Constituição do Estado de SP e demais normas internas ⏳ |
 | v0.7.0 | Mercado Pago (Pix/cartão) com webhook assinado e cupons | ✅ |
+| v0.8.0 | Biblioteca: resumos, áudios (player com velocidade e retomada) e PDFs; 3 resumos do RDPM | ✅ |
 | v1.0 | Lançamento: deploy, domínio, backup testado, revisão jurídica, LGPD (exportar/excluir dados) | ⏳ |
 | v1.x | Materiais e áudios, gerador de questões por IA com revisão humana, revisão espaçada | ⏳ |
 | v2.0 | Apps Android/iOS (Expo) | ⏳ |

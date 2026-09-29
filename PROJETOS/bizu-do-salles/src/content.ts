@@ -41,3 +41,21 @@ export function loadQuestionFiles(dir = join(__dirname, "..", "content", "questo
   }
   return parsed;
 }
+
+export const materialFile = z.object({
+  title: z.string().min(3),
+  kind: z.enum(["summary", "audio", "pdf"]),
+  cycle: z.enum(["BASIC", "SPECIFIC"]).optional(),
+  subject: z.string().optional(),
+  state: z.string().regex(/^[A-Z]{2}$/).optional(),
+  free: z.boolean().default(false),
+  sourceLicense: z.string().min(10),
+  url: z.string().url().startsWith("https://").optional(),
+  body: z.string().default(""),
+});
+export type MaterialFile = z.infer<typeof materialFile>;
+
+/** Lê e valida content/materiais/*.json. */
+export function loadMaterialFiles(dir = join(__dirname, "..", "content", "materiais")): MaterialFile[] {
+  return readdirSync(dir).filter((f) => f.endsWith(".json")).sort().map((f) => materialFile.parse(JSON.parse(readFileSync(join(dir, f), "utf8"))));
+}

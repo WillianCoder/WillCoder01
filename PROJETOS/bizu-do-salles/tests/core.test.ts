@@ -7,7 +7,9 @@ import { visibleForState } from "../src/core/states";
 import { displayOrder, isNumericOptions, orderFor, originalLetter } from "../src/core/shuffle";
 import { gradeSimulation, pickRandom, secondsLeft } from "../src/core/simulation";
 import { csvToObjects, parseCsv } from "../src/core/csv";
+import { loadMaterialFiles } from "../src/content";
 import { applyCoupon } from "../src/core/pricing";
+import { isSafeUrl, parseBody, splitBold } from "../src/core/material";
 import { signWebhook, verifyWebhookSignature } from "../src/core/mercadopago-signature";
 
 const now = new Date("2026-10-01T12:00:00Z");
@@ -163,5 +165,30 @@ describe("assinatura do webhook do Mercado Pago", () => {
     expect(verifyWebhookSignature({ xSignature: `ts=1700000000,v1=${v1}`, xRequestId: "req-1", dataId: "123456", secret: "outro" })).toBe(false);
     expect(verifyWebhookSignature({ xSignature: null, xRequestId: null, dataId: "1", secret: "s" })).toBe(false);
     expect(verifyWebhookSignature({ xSignature: "ts=1,v1=zz", xRequestId: null, dataId: "1", secret: "s" })).toBe(false);
+  });
+});
+
+describe("biblioteca", () => {
+  it("formata o resumo em blocos sem HTML", () => {
+    const b = parseBody("## Título\nlinha um\nlinha dois\n\n- item A\n- item B\ntexto <b>depois</b>");
+    expect(b).toEqual([
+      { t: "h", text: "Título" },
+      { t: "p", text: "linha um linha dois" },
+      { t: "ul", items: ["item A", "item B"] },
+      { t: "p", text: "texto <b>depois</b>" },
+    ]);
+    expect(splitBold("a **b** c")).toEqual([{ b: false, s: "a " }, { b: true, s: "b" }, { b: false, s: " c" }]);
+  });
+  it("só aceita links https seguros", () => {
+    expect(isSafeUrl("https://exemplo.com/audio.mp3")).toBe(true);
+    for (const u of ["http://exemplo.com/a.mp3", "javascript:alert(1)", "data:text/html,oi", "https://user:pw@x.com/a", "nada"]) expect(isSafeUrl(u)).toBe(false);
+  });
+});
+
+describe("materiais iniciais", () => {
+  it("arquivos válidos, com fonte e texto", () => {
+    const ms = loadMaterialFiles();
+    expect(ms.length).toBeGreaterThan(0);
+    for (const m of ms) expect(m.kind === "summary" ? m.body.length > 200 : Boolean(m.url)).toBe(true);
   });
 });

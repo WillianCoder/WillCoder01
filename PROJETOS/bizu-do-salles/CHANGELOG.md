@@ -2,6 +2,14 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.8.0] — 2026-09-29
+### Adicionado
+- **Biblioteca de materiais** (`/app/materiais`): resumos em texto (subtítulos, listas, negrito — sem HTML, seguro), áudios com player de velocidade (0,75×–2×) e "continuar de onde parou", e PDFs por link https. Mesma regra de acesso das questões (plano, estado, amostra grátis); recurso "Áudios" respeita a chave liga/desliga.
+- **Painel → 📖 Materiais**: criar/editar, rascunho/publicado (só admin publica), grátis, abrangência por estado; links só https; auditado.
+- **3 resumos originais do RDPM de SP** (transgressões; sanções e limites; prazos, comportamento e recursos) em `content/materiais/`, carregados pelo seed.
+- CSP permite áudio de endereços https (`media-src`). Migração `materiais`.
+- Testes: 3 unitários (24 no total) e 2 de navegador (18 no total).
+
 ## [0.7.0] — 2026-09-29
 ### Adicionado
 - **Pagamento automático com Mercado Pago** (Pix, cartão, boleto): checkout criado no servidor com preço do banco; webhook `/api/webhooks/mercadopago` com verificação de assinatura (HMAC-SHA256), consulta do pagamento na API, conferência de valor e moeda, idempotência por `gatewayId`, proteção contra ativação dupla, cancelamento automático em estorno; tudo auditado. Sem chaves, o site segue no modo manual.

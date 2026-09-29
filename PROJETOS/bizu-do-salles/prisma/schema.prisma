@@ -209,6 +209,7 @@ model Subject {
   active    Boolean    @default(true)
   topics    Topic[]
   questions Question[]
+  materials Material[]
 
   @@unique([cycleId, slug])
 }
@@ -370,18 +371,25 @@ model SimulationAttempt {
   @@index([userId, startedAt])
 }
 
+/// Biblioteca: resumos (texto), áudios e PDFs. Link externo só https. Mesma regra de acesso das questões.
 model Material {
   id            String     @id @default(cuid())
   title         String
-  kind          String     // pdf | text | summary | audio | image
+  kind          String     // summary (texto) | audio | pdf
   cycle         CycleCode?
   subjectId     String?
+  subject       Subject?   @relation(fields: [subjectId], references: [id])
   stateCode     String?
   state         State?     @relation(fields: [stateCode], references: [code])
-  storageKey    String
+  storageKey    String     @default("") // endereço (https) do áudio/PDF; vazio para resumo em texto
+  body          String     @default("") // texto do resumo
   free          Boolean    @default(false)
+  published     Boolean    @default(false)
   sourceLicense String
   createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @default(now()) @updatedAt
+
+  @@index([published, cycle])
 }
 
 /// Link de redefinição de senha: uso único, expira rápido; no banco só o hash do token.

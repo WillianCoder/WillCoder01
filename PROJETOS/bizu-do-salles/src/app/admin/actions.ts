@@ -14,6 +14,7 @@ import { requireAdmin } from "@/lib/auth";
 import { audit } from "@/lib/audit";
 import { activationWindow } from "@/core/access";
 import { createResetLink } from "@/lib/password-reset";
+import { isSafeUrl } from "@/core/material";
 
 const L = ["A", "B", "C", "D", "E"] as const;
 const slug = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -224,4 +225,37 @@ export async function toggleCoupon(form: FormData) {
   await db.coupon.update({ where: { id }, data: { active: !c.active } });
   await audit(admin.id, c.active ? "coupon.disable" : "coupon.enable", "Coupon", id);
   redirect("/admin/cupons");
+}
+
+const materialSchema = z.object({
+  title: z.string().trim().min(3, "Título muito curto.").max(160),
+  kind: z.enum(["summary", "audio", "pdf"]),
+  cycle: z.enum(["", "BASIC", "SPECIFIC"]),
+  subjectId: z.string(),
+  stateCode: z.string().regex(/^([A-Z]{2})?$/),
+  storageKey: z.string().trim().max(1000),
+  body: z.string().max(50_000),
+  sourceLicense: z.string().trim().min(10, "Informe a origem/licença do material."),
+});
+
+/** Cria/edita material da biblioteca. Links só https (áudio/PDF hospedados em serviço com permissão). Auditado. */
+export async function saveMaterial(form: FormData) {
+  const user = await requireAdmin(["ADMIN", "EDITOR"]);
+  const id = String(form.get("id") ?? "");
+  const back = `/admin/materiais/${id || "novo"}`;
+  const p = materialSchema.safeParse(Object.fromEntries(form));
+  if (!p.success) redirect(`${back}?erro=${encodeURIComponent(p.error.issues[0].message)}`);
+  const d = p.data!;
+  if (d.kind !== "summary" && !isSafeUrl(d.storageKey)) redirect(`${back}?erro=${encodeURIComponent("Informe um link https:// válido para o áudio/PDF.")}`);
+  if (d.kind === "summary" && d.body.trim().length < 30) redirect(`${back}?erro=${encodeURIComponent("Escreva o texto do resumo.")}`);
+  const published = form.get("published") === "on";
+  if (published && user.role !== "ADMIN") redirect(`${back}?erro=${encodeURIComponent("Só o administrador publica.")}`);
+  const data = {
+    title: d.title, kind: d.kind, cycle: d.cycle || null, subjectId: d.subjectId || null, stateCode: d.stateCode || null,
+    storageKey: d.kind === "summary" ? "" : d.storageKey, body: d.body, sourceLicense: d.sourceLicense, free: form.get("free") === "on", published,
+  } as const;
+  const before = id ? await db.material.findUnique({ where: { id } }) : null;
+  const m = id ? await db.material.update({ where: { id }, data }) : await db.material.create({ data });
+  await audit(user.id, id ? "material.update" : "material.create", "Material", m.id, before, data);
+  redirect(`/admin/materiais/${m.id}?salvo=1`);
 }
