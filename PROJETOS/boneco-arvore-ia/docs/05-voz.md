@@ -1,10 +1,8 @@
 # 5 · Voz grossa
 
-```bash
-cd src
-bash testar_voz.sh                               # tom padrão (-500)
-bash testar_voz.sh "Olá, pequeno viajante." -650  # mais grave
-```
+- **Windows:** 2 cliques em `instalar/windows/TESTAR_VOZ.bat`
+- **Raspberry:** `bash instalar/raspberry/menu.sh` → opção **2**
+- Ou direto, dentro de `src/`: `python testar_voz.py "Olá, pequeno viajante." -650`
 
 ## Ajustes do `"efeito_voz"` em `config.json`
 | Efeito | O que faz | Valores |

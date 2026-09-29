@@ -4,10 +4,14 @@ Tudo roda offline: Vosk (ouvir) -> Ollama (pensar) -> Piper + SoX (falar).
 Executar:  python boneco.py
 """
 
+import glob
 import json
 import os
 import queue
+import shutil
 import subprocess
+import sys
+import wave
 
 import requests
 import sounddevice as sd
@@ -34,14 +38,32 @@ def limpar_microfone():
         audio.queue.clear()
 
 
-def falar(texto):
+def achar_sox():
+    """SoX no PATH (Raspberry) ou na pasta padrão do Windows."""
+    return shutil.which("sox") or next(iter(glob.glob(r"C:\Program Files*\sox*\sox.exe")), None)
+
+
+def tocar(arquivo):
+    """Toca um .wav pela saída de som padrão (funciona no Windows e no Raspberry)."""
+    with wave.open(arquivo, "rb") as w:
+        with sd.RawOutputStream(samplerate=w.getframerate(), channels=w.getnchannels(),
+                                dtype="int16") as saida:
+            saida.write(w.readframes(w.getnframes()))
+
+
+def falar(texto, efeito=None):
     print(f"[{cfg['nome']}] {texto}")
     wav, grossa = caminho("fala.wav"), caminho("fala_grossa.wav")
-    subprocess.run(["piper", "-m", caminho(cfg["voz_piper"]), "-f", wav],
+    subprocess.run([sys.executable, "-m", "piper", "-m", caminho(cfg["voz_piper"]), "-f", wav],
                    input=texto.encode("utf-8"), check=True, capture_output=True)
-    subprocess.run(["sox", wav, grossa, *cfg["efeito_voz"]], check=True)
+    sox = achar_sox()
+    if sox:
+        subprocess.run([sox, wav, grossa, *(efeito or cfg["efeito_voz"])], check=True)
+    else:
+        print("Aviso: SoX não encontrado, tocando a voz sem engrossar.")
+        grossa = wav
     limpar_microfone()  # não ouvir a própria voz
-    subprocess.run(["aplay", "-q", grossa], check=True)
+    tocar(grossa)
     limpar_microfone()
 
 

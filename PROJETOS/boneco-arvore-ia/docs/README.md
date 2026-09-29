@@ -15,6 +15,8 @@ Siga na ordem. Cada etapa termina com um **✅ Teste** — só avance quando ele
 | 8 | [Montagem final](08-montagem-final.md) | 1 h |
 | 9 | [Problemas e soluções](09-problemas.md) | — |
 
-📄 **Versão PDF com mapa mental:** [guia-boneco-arvore-ia.pdf](guia-boneco-arvore-ia.pdf)
+📄 **PDFs:**
+- [guia-boneco-arvore-ia.pdf](guia-boneco-arvore-ia.pdf): mapa mental, compras, equipamentos, sites e passo a passo
+- [instalacao-e-comandos.pdf](instalacao-e-comandos.pdf): **onde instalar cada código** e todos os comandos
 
 > 💡 **Dica de ouro:** faça as etapas 3 a 5 primeiro no seu **PC** (Ollama, Piper e SoX funcionam em Windows/Linux). Assim você testa o personagem **de graça** antes de comprar qualquer coisa.

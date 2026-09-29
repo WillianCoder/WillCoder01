@@ -26,10 +26,8 @@ Sem a senha, o pedido é ignorado. A **personalidade** nunca muda pela voz.
 ## 4.4 Mudar a personalidade (só pelo arquivo)
 1. Edite o texto em `src/personagem/Modelfile` (idade, história, jeito de falar).
 2. Aplique:
-```bash
-ollama create arvore -f personagem/Modelfile
-sudo systemctl restart boneco
-```
+- **Windows:** 2 cliques em `instalar/windows/EDITAR_PERSONALIDADE.bat`
+- **Raspberry:** `bash instalar/raspberry/menu.sh` → opção **9**
 
 ## 4.5 Escolher o modelo de IA
 | Modelo | Qualidade | Velocidade no Pi 5 | Use em |
