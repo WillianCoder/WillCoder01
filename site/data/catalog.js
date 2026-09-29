@@ -19,39 +19,39 @@ window.CATALOGO = {
     "total": 2,
     "projetos": 1,
     "concluidos": 0,
-    "desenvolvimento": 0,
+    "desenvolvimento": 1,
     "academicos": 0,
     "estudos": 0,
     "experimentos": 1,
     "portfolio": 0,
-    "documentos": 7,
+    "documentos": 8,
     "tecnologias": [
       "CSS",
-      "Expo",
       "HTML",
       "JavaScript",
-      "Next.js",
       "PostgreSQL",
-      "TypeScript"
+      "Prisma",
+      "TypeScript",
+      "Vitest"
     ]
   },
   "itens": [
     {
-      "titulo": "Plataforma de Estudos — Ciclo Básico + Específico",
+      "titulo": "Bizu do Salles",
       "tipo": "projeto",
       "categoria": "Desenvolvimento",
-      "status": "planejado",
+      "status": "desenvolvimento",
       "tecnologias": [
         "TypeScript",
-        "Next.js",
         "PostgreSQL",
-        "Expo"
+        "Prisma",
+        "Vitest"
       ],
       "data": "2026-09-29",
       "atualizado": "2026-09-29",
-      "versao": "0.0.1",
+      "versao": "0.1.0",
       "nivel": "avancado",
-      "resumo": "Plataforma própria de estudos por questões para cursos de formação da PM (web, Android e iOS). Fase 1: auditoria e plano.",
+      "resumo": "Plataforma de estudos por questões para a formação da PM (Ciclo Básico + Específico). v0.1: banco, regras de acesso, sessão única e questões originais.",
       "destaque": false,
       "portfolio": {
         "problema": "",
@@ -63,7 +63,7 @@ window.CATALOGO = {
         "demo": "",
         "repositorio": ""
       },
-      "caminho": "PROJETOS/plataforma-estudos"
+      "caminho": "PROJETOS/bizu-do-salles"
     },
     {
       "titulo": "Primeira página web — barra de navegação",

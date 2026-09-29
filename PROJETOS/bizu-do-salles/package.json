@@ -1,0 +1,30 @@
+{
+  "name": "bizu-do-salles",
+  "version": "0.1.0",
+  "description": "Bizu do Salles — plataforma de estudos por questões (Ciclo Básico + Específico).",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "prisma generate && tsc",
+    "validate": "prisma validate",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "prisma": "^6.19.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "zod": "^4.6.5"
+  },
+  "private": true
+}

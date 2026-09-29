@@ -1,0 +1,72 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Direito Constitucional",
+  "topic": "Segurança pública",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto da CF/88 (lei — não protegida por direito autoral, Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "CF-SP-001",
+      "difficulty": "EASY",
+      "statement": "Segundo o art. 144 da CF/88, a segurança pública é:",
+      "options": { "A": "dever exclusivo da União", "B": "dever do Estado, direito e responsabilidade de todos", "C": "atribuição exclusiva das Forças Armadas", "D": "competência dos municípios", "E": "responsabilidade apenas das polícias civis" },
+      "correct": "B",
+      "explanation": "Art. 144, caput: dever do Estado, direito e responsabilidade de todos, exercida para a preservação da ordem pública e da incolumidade das pessoas e do patrimônio.",
+      "reference": "CF/88, art. 144, caput"
+    },
+    {
+      "code": "CF-SP-002",
+      "difficulty": "EASY",
+      "statement": "Às polícias militares cabem, conforme a CF/88:",
+      "options": { "A": "as funções de polícia judiciária e a apuração de infrações penais", "B": "a polícia ostensiva e a preservação da ordem pública", "C": "o patrulhamento ostensivo das rodovias federais", "D": "a polícia marítima e de fronteiras", "E": "a segurança dos estabelecimentos penais" },
+      "correct": "B",
+      "explanation": "Art. 144, § 5º. Polícia judiciária é das polícias civis (§ 4º), rodovias federais da PRF (§ 2º), fronteiras da PF (§ 1º) e estabelecimentos penais das polícias penais (§ 5º-A).",
+      "reference": "CF/88, art. 144, § 5º"
+    },
+    {
+      "code": "CF-SP-003",
+      "difficulty": "MEDIUM",
+      "statement": "As polícias militares e os corpos de bombeiros militares, forças auxiliares e reserva do Exército, subordinam-se:",
+      "options": { "A": "ao Ministro da Defesa", "B": "aos Governadores dos Estados, do Distrito Federal e dos Territórios", "C": "ao Presidente da República", "D": "aos prefeitos", "E": "ao Comandante do Exército" },
+      "correct": "B",
+      "explanation": "Art. 144, § 6º: subordinam-se, juntamente com as polícias civis e penais, aos Governadores dos Estados, do DF e dos Territórios.",
+      "reference": "CF/88, art. 144, § 6º"
+    },
+    {
+      "code": "CF-SP-004",
+      "difficulty": "MEDIUM",
+      "statement": "Aos corpos de bombeiros militares, além das atribuições definidas em lei, incumbe:",
+      "options": { "A": "a execução de atividades de defesa civil", "B": "a polícia judiciária militar da União", "C": "o controle de tráfego aéreo", "D": "a guarda de fronteiras", "E": "a apuração de crimes ambientais" },
+      "correct": "A",
+      "explanation": "Art. 144, § 5º, parte final.",
+      "reference": "CF/88, art. 144, § 5º"
+    },
+    {
+      "code": "CF-SP-005",
+      "difficulty": "HARD",
+      "statement": "Quanto aos militares, a CF/88 estabelece que ao militar são proibidas:",
+      "options": { "A": "a sindicalização e a greve", "B": "apenas a greve", "C": "apenas a filiação partidária em qualquer situação", "D": "a participação em concursos públicos", "E": "a acumulação de qualquer cargo, inclusive o de professor" },
+      "correct": "A",
+      "explanation": "Art. 142, § 3º, IV, aplicável aos militares dos Estados por força do art. 42, § 1º: ao militar são proibidas a sindicalização e a greve.",
+      "reference": "CF/88, art. 142, § 3º, IV, c/c art. 42, § 1º"
+    },
+    {
+      "code": "CF-SP-006",
+      "difficulty": "MEDIUM",
+      "statement": "Os membros das Polícias Militares e Corpos de Bombeiros Militares, instituições organizadas com base na hierarquia e disciplina, são:",
+      "options": { "A": "servidores civis estaduais", "B": "militares dos Estados, do Distrito Federal e dos Territórios", "C": "militares da União", "D": "empregados públicos", "E": "agentes políticos" },
+      "correct": "B",
+      "explanation": "Art. 42, caput.",
+      "reference": "CF/88, art. 42"
+    },
+    {
+      "code": "CF-SP-007",
+      "difficulty": "MEDIUM",
+      "statement": "Os municípios poderão constituir guardas municipais destinadas:",
+      "options": { "A": "ao policiamento ostensivo em substituição à PM", "B": "à proteção de seus bens, serviços e instalações, conforme dispuser a lei", "C": "à investigação criminal", "D": "à defesa das fronteiras", "E": "à execução penal" },
+      "correct": "B",
+      "explanation": "Art. 144, § 8º.",
+      "reference": "CF/88, art. 144, § 8º"
+    }
+  ]
+}

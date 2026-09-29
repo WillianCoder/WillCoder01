@@ -17,3 +17,20 @@ jobs:
           python-version: "3.12"
       - name: Validar metadados, links e catálogo
         run: python scripts/catalogo.py --check
+
+  bizu-do-salles:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: PROJETOS/bizu-do-salles
+    env:
+      DATABASE_URL: postgresql://ci:ci@localhost:5432/ci
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - run: npx prisma validate
+      - run: npm run typecheck
+      - run: npm test
