@@ -1,0 +1,4 @@
+vosk>=0.3.45
+piper-tts>=1.2
+sounddevice>=0.4
+requests>=2.31
