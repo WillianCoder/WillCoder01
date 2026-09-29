@@ -22,6 +22,8 @@ const security = [
 const config: NextConfig = {
   poweredByHeader: false,
   serverExternalPackages: ["@node-rs/argon2"],
+  // Envio de planilhas (até 2 MB) pelo painel.
+  experimental: { serverActions: { bodySizeLimit: "3mb" } },
   async headers() {
     return [{ source: "/:path*", headers: security }];
   },

@@ -176,3 +176,16 @@ export async function adminResetLink(form: FormData) {
   (await cookies()).set("reset_link", JSON.stringify({ email: u!.email, link }), { httpOnly: true, sameSite: "strict", path: "/admin", maxAge: 120, secure: process.env.NODE_ENV === "production" });
   redirect("/admin/usuarios?link=1");
 }
+
+/** Muda o papel (Aluno / Editor / Administrador). Ninguém muda o próprio papel. Auditado. */
+export async function setRole(form: FormData) {
+  const admin = await requireAdmin();
+  const id = String(form.get("id"));
+  const role = String(form.get("role"));
+  if (id === admin.id || !["STUDENT", "EDITOR", "ADMIN"].includes(role)) redirect("/admin/usuarios");
+  const u = await db.user.findUnique({ where: { id } });
+  if (!u) redirect("/admin/usuarios");
+  await db.user.update({ where: { id }, data: { role: role as "STUDENT" } });
+  await audit(admin.id, "user.role", "User", id, { role: u!.role }, { role });
+  redirect("/admin/usuarios?salvo=1");
+}

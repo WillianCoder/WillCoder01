@@ -20,7 +20,7 @@ export default async function AdminQuestoes({ searchParams }: { searchParams: Pr
   ]);
   return (
     <div className="stack">
-      <div className="row" style={{ justifyContent: "space-between" }}><h1>Questões ({total})</h1><Link className="btn" href="/admin/questoes/nova">+ Nova questão</Link></div>
+      <div className="row" style={{ justifyContent: "space-between" }}><h1>Questões ({total})</h1><span className="row"><Link className="btn ghost" href="/admin/importar">📥 Importar planilha</Link><Link className="btn" href="/admin/questoes/nova">+ Nova questão</Link></span></div>
       <form className="row" method="get">
         <input name="busca" defaultValue={sp.busca} placeholder="Buscar por código ou texto" style={{ maxWidth: 320 }} aria-label="Buscar" />
         <select name="status" defaultValue={sp.status ?? ""} style={{ maxWidth: 200 }} aria-label="Status">

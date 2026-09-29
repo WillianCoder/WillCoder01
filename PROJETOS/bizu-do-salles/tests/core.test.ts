@@ -6,6 +6,7 @@ import { loadQuestionFiles } from "../src/content";
 import { visibleForState } from "../src/core/states";
 import { displayOrder, isNumericOptions, orderFor, originalLetter } from "../src/core/shuffle";
 import { gradeSimulation, pickRandom, secondsLeft } from "../src/core/simulation";
+import { csvToObjects, parseCsv } from "../src/core/csv";
 
 const now = new Date("2026-10-01T12:00:00Z");
 const future = new Date("2026-12-30T12:00:00Z");
@@ -122,5 +123,16 @@ describe("alternativas numéricas", () => {
     expect(isNumericOptions(["Advertência", "5 dias", "x", "y", "z"])).toBe(false);
     const q = { id: "q1", options: ["1 ano", "2 anos", "5 anos", "10 anos", "20 anos"].map((text, i) => ({ letter: "ABCDE"[i], text })) };
     expect(orderFor("u1", q)).toEqual(["A", "B", "C", "D", "E"]);
+  });
+});
+
+describe("planilha CSV", () => {
+  it("lê ponto e vírgula, aspas, quebra de linha em aspas e BOM do Excel", () => {
+    const t = '\uFEFFcodigo;enunciado;A\r\nX-Y-001;"Texto; com ""aspas""\ne quebra";opção\r\n\r\n';
+    expect(parseCsv(t)).toEqual([["codigo", "enunciado", "A"], ["X-Y-001", 'Texto; com "aspas"\ne quebra', "opção"]]);
+  });
+  it("aceita vírgula e cabeçalho com acento/maiúsculas", () => {
+    const [r] = csvToObjects("Código,Explicação\nA-B-001,ok");
+    expect(r).toEqual({ line: 2, data: { codigo: "A-B-001", explicacao: "ok" } });
   });
 });

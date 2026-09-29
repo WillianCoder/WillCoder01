@@ -9,7 +9,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { db } from "@/lib/db";
-import { requireUser } from "@/lib/auth";
+import { hashPassword, requireUser, verifyPassword } from "@/lib/auth";
 import { userAccess } from "@/lib/access";
 import { visibleWhere } from "@/lib/questions";
 import { orderFor, originalLetter } from "@/core/shuffle";
@@ -90,4 +90,41 @@ export async function savePreferences(form: FormData) {
   await db.goal.upsert({ where: { userId: user.id }, update: { questionsDay: meta || null }, create: { userId: user.id, questionsDay: meta || null } });
   revalidatePath("/", "layout");
   redirect("/app/configuracoes?salvo=1");
+}
+
+/**
+ * EXCLUSÃO DE CONTA (LGPD, art. 18, VI). Apaga o histórico de estudo e anonimiza o cadastro.
+ * Assinaturas e pagamentos são mantidos, sem dados pessoais, por obrigação fiscal/legal.
+ */
+export async function deleteAccount(form: FormData) {
+  const user = await requireUser();
+  const fail = (m: string): never => redirect(`/app/configuracoes?erro_exclusao=${encodeURIComponent(m)}`);
+  if (user.role !== "STUDENT") fail("Contas da equipe não podem ser excluídas por aqui. Mude o papel no painel primeiro.");
+  if (String(form.get("confirmacao") ?? "").trim().toUpperCase() !== "EXCLUIR") fail("Digite EXCLUIR para confirmar.");
+  if (!rateLimit(`delete:${user.id}`, 5, 60 * 60_000)) fail("Muitas tentativas. Aguarde.");
+  if (!(await verifyPassword(user.passwordHash, String(form.get("senha") ?? "")))) fail("Senha incorreta.");
+  const id = user.id;
+  const anon = `excluido-${id}@conta-excluida.invalid`;
+  await db.$transaction([
+    db.questionAttempt.deleteMany({ where: { userId: id } }),
+    db.simulationAttempt.deleteMany({ where: { userId: id } }),
+    db.simulation.deleteMany({ where: { createdBy: id } }),
+    db.favorite.deleteMany({ where: { userId: id } }),
+    db.notebook.deleteMany({ where: { userId: id } }),
+    db.questionFlag.deleteMany({ where: { userId: id } }),
+    db.goal.deleteMany({ where: { userId: id } }),
+    db.notification.deleteMany({ where: { userId: id } }),
+    db.passwordReset.deleteMany({ where: { userId: id } }),
+    db.session.deleteMany({ where: { userId: id } }),
+    db.user.update({
+      where: { id },
+      data: {
+        name: "Conta excluída", email: anon, nickname: null, phone: null, schoolId: null, rankingOptIn: false,
+        blocked: true, passwordHash: await hashPassword(crypto.randomUUID() + crypto.randomUUID()),
+      },
+    }),
+    db.auditLog.create({ data: { actorId: id, action: "user.self_delete", entity: "User", entityId: id } }),
+  ]);
+  (await cookies()).delete("bizu_session");
+  redirect("/?conta_excluida=1");
 }

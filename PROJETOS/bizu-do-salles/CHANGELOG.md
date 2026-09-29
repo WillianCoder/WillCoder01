@@ -2,6 +2,13 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.6.0] — 2026-09-29
+### Adicionado
+- **Importar questões por planilha** (Admin → 📥 Importar planilha): CSV do Excel (`;` ou `,`, com BOM), modelo em `/modelo-questoes.csv`; até 1.000 linhas/2 MB; valida cada linha e aponta erros; códigos existentes são ignorados; tudo entra como **Em revisão**; auditado.
+- **Papéis da equipe** no painel (Aluno / Editor / Administrador); ninguém muda o próprio papel; auditado.
+- **LGPD**: "Baixar meus dados" (JSON completo, sem senha) e "Excluir minha conta" (senha + digitar EXCLUIR): apaga histórico e anonimiza o cadastro, mantendo pagamentos sem dados pessoais.
+- Leitor de CSV testado (`src/core/csv.ts`); 3 novos testes de navegador (15 no total) e 2 unitários (18 no total).
+
 ## [0.5.0] — 2026-09-29
 ### Adicionado
 - **Cadernos** (`/app/cadernos`): criar, renomear, excluir; "Adicionar ao caderno" na questão (inclusive criando caderno novo); estudar só as questões do caderno; gerar simulado a partir do caderno; ver e remover questões.

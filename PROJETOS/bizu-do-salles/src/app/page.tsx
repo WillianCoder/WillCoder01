@@ -11,7 +11,8 @@ import { SITE } from "@/config/site";
 
 export const dynamic = "force-dynamic";
 
-export default async function Home() {
+export default async function Home({ searchParams }: { searchParams: Promise<{ conta_excluida?: string }> }) {
+  const { conta_excluida } = await searchParams;
   const [plans, total] = await Promise.all([
     db.plan.findMany({ where: { active: true }, orderBy: { priceCents: "asc" } }),
     db.question.count({ where: { status: "PUBLISHED" } }),
@@ -28,6 +29,7 @@ export default async function Home() {
         </div>
       </header>
       <main className="container">
+        {conta_excluida && <p className="alert ok" style={{ marginTop: "1rem" }}>Sua conta foi excluída. Obrigado por estudar com a gente.</p>}
         <section className="hero">
           <span className="badge">{SITE.selo}</span>
           <h1>{SITE.titulo}</h1>

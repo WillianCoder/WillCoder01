@@ -2,13 +2,15 @@ import { db } from "@/lib/db";
 import { requireAdmin } from "@/lib/auth";
 import { date } from "@/lib/format";
 import { cookies } from "next/headers";
-import { activateSubscription, adminResetLink, cancelSubscription, endSessions, toggleBlock } from "../actions";
+import { activateSubscription, adminResetLink, cancelSubscription, endSessions, setRole, toggleBlock } from "../actions";
+import { requireAdmin as currentAdmin } from "@/lib/auth";
 
 export const metadata = { title: "Usuários" };
 
 export default async function AdminUsuarios({ searchParams }: { searchParams: Promise<{ busca?: string; salvo?: string; link?: string }> }) {
   await requireAdmin();
   const sp = await searchParams;
+  const me = await currentAdmin();
   let reset: { email: string; link: string } | null = null;
   if (sp.link) try { reset = JSON.parse((await cookies()).get("reset_link")?.value ?? "null"); } catch { reset = null; }
   const [pending, users] = await Promise.all([
@@ -54,6 +56,13 @@ export default async function AdminUsuarios({ searchParams }: { searchParams: Pr
               ))}{u.subscriptions.length === 0 && "—"}</td>
               <td>{u.sessions[0] ? `${date(u.sessions[0].lastSeenAt)} · ${u.sessions[0].deviceLabel?.slice(0, 40) ?? ""}` : "Desconectado"}</td>
               <td className="row">
+                <form action={setRole} className="row" style={{ gap: ".3rem" }}>
+                  <input type="hidden" name="id" value={u.id} />
+                  <select name="role" defaultValue={u.role} aria-label={`Papel de ${u.name}`} disabled={u.id === me.id} style={{ width: "auto", minHeight: 36 }}>
+                    <option value="STUDENT">Aluno</option><option value="EDITOR">Editor</option><option value="ADMIN">Administrador</option>
+                  </select>
+                  {u.id !== me.id && <button className="btn ghost small">Mudar papel</button>}
+                </form>
                 <form action={adminResetLink}><input type="hidden" name="id" value={u.id} /><button className="btn ghost small">Link de senha</button></form>
                 <form action={endSessions}><input type="hidden" name="id" value={u.id} /><button className="btn ghost small">Desconectar</button></form>
                 <form action={toggleBlock}><input type="hidden" name="id" value={u.id} /><button className={`btn small ${u.blocked ? "" : "danger"}`}>{u.blocked ? "Desbloquear" : "Bloquear"}</button></form>
