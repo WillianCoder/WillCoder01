@@ -16,15 +16,15 @@ window.CATALOGO = {
     }
   },
   "estatisticas": {
-    "total": 2,
-    "projetos": 1,
+    "total": 3,
+    "projetos": 2,
     "concluidos": 0,
-    "desenvolvimento": 1,
+    "desenvolvimento": 2,
     "academicos": 0,
     "estudos": 0,
     "experimentos": 1,
     "portfolio": 0,
-    "documentos": 8,
+    "documentos": 9,
     "tecnologias": [
       "CSS",
       "HTML",
@@ -32,12 +32,45 @@ window.CATALOGO = {
       "JavaScript",
       "Ollama",
       "Piper TTS",
+      "PostgreSQL",
+      "Prisma",
       "Python",
       "Raspberry Pi",
+      "TypeScript",
+      "Vitest",
       "Vosk"
     ]
   },
   "itens": [
+    {
+      "titulo": "Bizu do Salles",
+      "tipo": "projeto",
+      "categoria": "Desenvolvimento",
+      "status": "desenvolvimento",
+      "tecnologias": [
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Vitest"
+      ],
+      "data": "2026-09-29",
+      "atualizado": "2026-09-29",
+      "versao": "0.6.0",
+      "nivel": "avancado",
+      "resumo": "Plataforma de estudos por questões para a formação da PM (Ciclo Básico + Específico). v0.2: site com área do aluno e painel administrativo.",
+      "destaque": false,
+      "portfolio": {
+        "problema": "",
+        "desenvolvido": "",
+        "participacao": "",
+        "resultado": ""
+      },
+      "links": {
+        "demo": "",
+        "repositorio": ""
+      },
+      "caminho": "PROJETOS/bizu-do-salles"
+    },
     {
       "titulo": "Boneco Árvore IA",
       "tipo": "projeto",
@@ -53,7 +86,7 @@ window.CATALOGO = {
       ],
       "data": "2026-09-29",
       "atualizado": "2026-09-29",
-      "versao": "0.2.0",
+      "versao": "0.3.0",
       "nivel": "iniciante",
       "resumo": "Boneco impresso em 3D com IA offline que acorda pelo nome e responde com voz grossa de árvore, sem sair do personagem.",
       "destaque": false,

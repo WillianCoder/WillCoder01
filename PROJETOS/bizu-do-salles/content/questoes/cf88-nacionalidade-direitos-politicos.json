@@ -1,0 +1,99 @@
+{
+  "cycle": "BASIC",
+  "subject": "Direito Constitucional",
+  "topic": "Nacionalidade e direitos políticos",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir de texto legal/oficial (não protegido por direito autoral, Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "CF-NDP-001",
+      "difficulty": "MEDIUM",
+      "statement": "Qual dos cargos abaixo NÃO é privativo de brasileiro nato, segundo a CF/88?",
+      "options": {
+        "A": "Presidente da República",
+        "B": "Governador de Estado",
+        "C": "Oficial das Forças Armadas",
+        "D": "Ministro do Supremo Tribunal Federal",
+        "E": "Ministro de Estado da Defesa"
+      },
+      "correct": "B",
+      "explanation": "Art. 12, § 3º, lista os cargos privativos de nato; governador não está entre eles.",
+      "reference": "CF/88, art. 12, § 3º"
+    },
+    {
+      "code": "CF-NDP-002",
+      "difficulty": "EASY",
+      "statement": "São brasileiros natos os nascidos na República Federativa do Brasil, ainda que de pais estrangeiros, desde que estes:",
+      "options": {
+        "A": "residam no Brasil há mais de um ano",
+        "B": "falem português",
+        "C": "sejam naturalizados",
+        "D": "não estejam a serviço de seu país",
+        "E": "sejam de país de língua portuguesa"
+      },
+      "correct": "D",
+      "explanation": "Resposta: “não estejam a serviço de seu país”. Fundamento: art. 12, I, 'a'.",
+      "reference": "CF/88, art. 12, I, a"
+    },
+    {
+      "code": "CF-NDP-003",
+      "difficulty": "EASY",
+      "statement": "Segundo a CF/88, o alistamento eleitoral e o voto são facultativos para:",
+      "options": {
+        "A": "maiores de 18 e menores de 60 anos",
+        "B": "servidores públicos",
+        "C": "analfabetos, maiores de 70 anos e maiores de 16 e menores de 18 anos",
+        "D": "militares da ativa",
+        "E": "todos os brasileiros"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “analfabetos, maiores de 70 anos e maiores de 16 e menores de 18 anos”. Fundamento: art. 14, § 1º, II.",
+      "reference": "CF/88, art. 14, § 1º"
+    },
+    {
+      "code": "CF-NDP-004",
+      "difficulty": "MEDIUM",
+      "statement": "Não podem alistar-se como eleitores, segundo a CF/88:",
+      "options": {
+        "A": "os maiores de 70 anos",
+        "B": "os naturalizados",
+        "C": "os policiais militares",
+        "D": "os analfabetos",
+        "E": "os estrangeiros e, durante o serviço militar obrigatório, os conscritos"
+      },
+      "correct": "E",
+      "explanation": "Resposta: “os estrangeiros e, durante o serviço militar obrigatório, os conscritos”. Fundamento: art. 14, § 2º.",
+      "reference": "CF/88, art. 14, § 2º"
+    },
+    {
+      "code": "CF-NDP-005",
+      "difficulty": "MEDIUM",
+      "statement": "A idade mínima exigida pela CF/88 como condição de elegibilidade para Governador é de:",
+      "options": {
+        "A": "18 anos",
+        "B": "21 anos",
+        "C": "35 anos",
+        "D": "30 anos",
+        "E": "25 anos"
+      },
+      "correct": "D",
+      "explanation": "Art. 14, § 3º, VI, 'b': 30 anos para Governador e Vice-Governador.",
+      "reference": "CF/88, art. 14, § 3º, VI, b"
+    },
+    {
+      "code": "CF-NDP-006",
+      "difficulty": "HARD",
+      "statement": "O militar alistável é elegível. Se contar mais de dez anos de serviço, segundo a CF/88, ele:",
+      "options": {
+        "A": "deverá afastar-se da atividade",
+        "B": "será agregado pela autoridade superior e, se eleito, passará automaticamente, no ato da diplomação, para a inatividade",
+        "C": "será demitido",
+        "D": "não pode concorrer",
+        "E": "permanece na ativa normalmente"
+      },
+      "correct": "B",
+      "explanation": "Art. 14, § 8º, II. Com menos de dez anos, deve afastar-se da atividade (inciso I).",
+      "reference": "CF/88, art. 14, § 8º"
+    }
+  ]
+}

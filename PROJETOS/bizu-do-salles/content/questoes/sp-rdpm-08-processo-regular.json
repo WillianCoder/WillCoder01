@@ -1,0 +1,145 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Regulamento Disciplinar da PM (RDPM)",
+  "topic": "Processo regular e disposições finais",
+  "state": "SP",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto oficial compilado da LC 893/2001 (Alesp, última atualização: Lei 18.442/2026). Texto legal não protegido por direito autoral (Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "RDPM-PRR-001",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o RDPM, o processo regular aplicável à praça com MENOS de 10 anos de serviço é o:",
+      "options": {
+        "A": "Processo Administrativo Disciplinar",
+        "B": "Conselho de Disciplina",
+        "C": "Conselho de Justificação",
+        "D": "Inquérito Policial Militar",
+        "E": "Sindicância"
+      },
+      "correct": "A",
+      "explanation": "Art. 71, III. Oficiais: Conselho de Justificação; praças com 10 anos ou mais: Conselho de Disciplina.",
+      "reference": "LC 893/2001, art. 71"
+    },
+    {
+      "code": "RDPM-PRR-002",
+      "difficulty": "MEDIUM",
+      "statement": "O processo regular aplicável aos OFICIAIS é o:",
+      "options": {
+        "A": "Conselho de Disciplina",
+        "B": "Conselho de Justificação",
+        "C": "Processo Administrativo Disciplinar",
+        "D": "Inquérito Policial Militar",
+        "E": "Termo circunstanciado"
+      },
+      "correct": "B",
+      "explanation": "Resposta: “Conselho de Justificação”. Fundamento: art. 71, I.",
+      "reference": "LC 893/2001, art. 71, I"
+    },
+    {
+      "code": "RDPM-PRR-003",
+      "difficulty": "MEDIUM",
+      "statement": "O Conselho de Disciplina é composto por:",
+      "options": {
+        "A": "5 praças",
+        "B": "3 oficiais da ativa",
+        "C": "2 oficiais e 1 praça",
+        "D": "1 juiz e 2 oficiais",
+        "E": "3 oficiais da reserva"
+      },
+      "correct": "B",
+      "explanation": "Art. 78: o mais antigo (no mínimo capitão) preside; o seguinte é o interrogante; o mais moderno é relator e escrivão.",
+      "reference": "LC 893/2001, art. 78"
+    },
+    {
+      "code": "RDPM-PRR-004",
+      "difficulty": "HARD",
+      "statement": "No Conselho de Disciplina, a função de relator e escrivão cabe ao:",
+      "options": {
+        "A": "mais antigo",
+        "B": "capitão, obrigatoriamente",
+        "C": "mais moderno",
+        "D": "sargento nomeado, sempre",
+        "E": "comandante da unidade"
+      },
+      "correct": "C",
+      "explanation": "Art. 78, § 1º. O presidente pode nomear subtenente ou sargento como escrivão, que não integra o Conselho (§ 2º).",
+      "reference": "LC 893/2001, art. 78"
+    },
+    {
+      "code": "RDPM-PRR-005",
+      "difficulty": "HARD",
+      "statement": "O oficial submetido a Conselho de Justificação e considerado culpado por decisão unânime pode ser agregado disciplinarmente, ficando, entre outros efeitos:",
+      "options": {
+        "A": "com remuneração integral",
+        "B": "percebendo 1/3 da remuneração e proibido de usar uniforme",
+        "C": "promovido",
+        "D": "de férias",
+        "E": "com metade da remuneração"
+      },
+      "correct": "B",
+      "explanation": "Resposta: “percebendo 1/3 da remuneração e proibido de usar uniforme”. Fundamento: art. 74, II e III.",
+      "reference": "LC 893/2001, art. 74"
+    },
+    {
+      "code": "RDPM-PRR-006",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o RDPM, a ação disciplinar da Administração prescreve em:",
+      "options": {
+        "A": "1 ano",
+        "B": "2 anos",
+        "C": "5 anos, contados da data do cometimento da transgressão",
+        "D": "10 anos",
+        "E": "20 anos"
+      },
+      "correct": "C",
+      "explanation": "Art. 85, caput. Se a transgressão também for crime, prescreve no prazo penal, salvo se inferior a 5 anos (§ 1º).",
+      "reference": "LC 893/2001, art. 85"
+    },
+    {
+      "code": "RDPM-PRR-007",
+      "difficulty": "HARD",
+      "statement": "Após receber os autos do Conselho de Disciplina, o Comandante Geral emite decisão final no prazo de:",
+      "options": {
+        "A": "15 dias",
+        "B": "30 dias",
+        "C": "45 dias",
+        "D": "60 dias",
+        "E": "90 dias"
+      },
+      "correct": "C",
+      "explanation": "Art. 83, com redação da LC 915/2002: 45 dias, decisão da qual não cabe recurso, salvo a hipótese do § 3º do art. 138 da Constituição do Estado.",
+      "reference": "LC 893/2001, art. 83 (redação da LC 915/2002)"
+    },
+    {
+      "code": "RDPM-PRR-008",
+      "difficulty": "MEDIUM",
+      "statement": "Para os efeitos do RDPM, considera-se Comandante de Unidade o oficial que estiver exercendo funções privativas dos postos de:",
+      "options": {
+        "A": "capitão e major",
+        "B": "tenente e capitão",
+        "C": "coronel e tenente-coronel",
+        "D": "major e tenente-coronel",
+        "E": "qualquer posto"
+      },
+      "correct": "C",
+      "explanation": "Art. 86. As expressões diretor, corregedor e chefe têm o mesmo significado.",
+      "reference": "LC 893/2001, art. 86"
+    },
+    {
+      "code": "RDPM-PRR-009",
+      "difficulty": "MEDIUM",
+      "statement": "Aplicam-se supletivamente ao Conselho de Disciplina as disposições do:",
+      "options": {
+        "A": "Código de Processo Penal Militar",
+        "B": "Código de Processo Civil",
+        "C": "Código Civil",
+        "D": "Estatuto da Criança e do Adolescente",
+        "E": "Código de Trânsito"
+      },
+      "correct": "A",
+      "explanation": "Resposta: “Código de Processo Penal Militar”. Fundamento: art. 87.",
+      "reference": "LC 893/2001, art. 87"
+    }
+  ]
+}

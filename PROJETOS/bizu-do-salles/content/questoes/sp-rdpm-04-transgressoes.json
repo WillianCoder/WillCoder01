@@ -1,0 +1,490 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Regulamento Disciplinar da PM (RDPM)",
+  "topic": "Transgressões disciplinares",
+  "state": "SP",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto oficial compilado da LC 893/2001 (Alesp, última atualização: Lei 18.442/2026). Texto legal não protegido por direito autoral (Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "RDPM-TRA-001",
+      "difficulty": "EASY",
+      "statement": "Segundo o RDPM, transgressão disciplinar é:",
+      "options": {
+        "A": "qualquer crime previsto no Código Penal Militar",
+        "B": "toda falta de educação",
+        "C": "a infração administrativa caracterizada pela violação dos deveres policiais-militares",
+        "D": "somente a desobediência a ordem de superior",
+        "E": "a infração de trânsito cometida com viatura"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “a infração administrativa caracterizada pela violação dos deveres policiais-militares”. Fundamento: art. 12, caput.",
+      "reference": "LC 893/2001, art. 12"
+    },
+    {
+      "code": "RDPM-TRA-002",
+      "difficulty": "EASY",
+      "statement": "As transgressões disciplinares, segundo o RDPM, são classificadas de acordo com sua gravidade em:",
+      "options": {
+        "A": "leves e graves",
+        "B": "leves, médias, graves e gravíssimas",
+        "C": "simples e qualificadas",
+        "D": "primárias e reincidentes",
+        "E": "graves (G), médias (M) e leves (L)"
+      },
+      "correct": "E",
+      "explanation": "Resposta: “graves (G), médias (M) e leves (L)”. Fundamento: art. 13, caput.",
+      "reference": "LC 893/2001, art. 13"
+    },
+    {
+      "code": "RDPM-TRA-003",
+      "difficulty": "MEDIUM",
+      "statement": "As transgressões são classificadas como graves, segundo o art. 12, § 2º, do RDPM, quando forem:",
+      "options": {
+        "A": "cometidas fora do serviço",
+        "B": "praticadas pela primeira vez",
+        "C": "praticadas por oficiais",
+        "D": "comunicadas por escrito",
+        "E": "atentatórias às instituições ou ao Estado, atentatórias aos direitos humanos fundamentais ou de natureza desonrosa"
+      },
+      "correct": "E",
+      "explanation": "Resposta: “atentatórias às instituições ou ao Estado, atentatórias aos direitos humanos fundamentais ou de natureza desonrosa”. Fundamento: art. 12, § 2º, itens 1 a 3.",
+      "reference": "LC 893/2001, art. 12, § 2º"
+    },
+    {
+      "code": "RDPM-TRA-004",
+      "difficulty": "HARD",
+      "statement": "Uma conduta que viola os deveres policiais-militares, mas não está especificada no art. 13 e não é atentatória às instituições, aos direitos humanos nem desonrosa, será classificada:",
+      "options": {
+        "A": "automaticamente como grave",
+        "B": "pela autoridade competente como média ou leve, consideradas as circunstâncias do fato",
+        "C": "como não punível",
+        "D": "pelo Governador",
+        "E": "sempre como leve"
+      },
+      "correct": "B",
+      "explanation": "Resposta: “pela autoridade competente como média ou leve, consideradas as circunstâncias do fato”. Fundamento: art. 12, § 3º.",
+      "reference": "LC 893/2001, art. 12, §§ 1º a 3º"
+    },
+    {
+      "code": "RDPM-TRA-005",
+      "difficulty": "MEDIUM",
+      "statement": "Ao aluno de curso da Polícia Militar aplica-se, quanto à disciplina, além do RDPM:",
+      "options": {
+        "A": "subsidiariamente, os regulamentos próprios dos estabelecimentos de ensino onde estiver matriculado",
+        "B": "apenas o regimento da faculdade civil",
+        "C": "somente o Código Penal Militar",
+        "D": "nenhuma outra norma",
+        "E": "o Estatuto dos Servidores Civis"
+      },
+      "correct": "A",
+      "explanation": "Art. 12, § 4º — ponto importante para quem está no curso de formação.",
+      "reference": "LC 893/2001, art. 12, § 4º"
+    },
+    {
+      "code": "RDPM-TRA-006",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o RDPM, a aplicação das penas disciplinares:",
+      "options": {
+        "A": "depende da condenação na ação penal",
+        "B": "depende de autorização judicial",
+        "C": "fica suspensa até o fim do processo criminal",
+        "D": "só ocorre se houver absolvição penal",
+        "E": "independe do resultado de eventual ação penal"
+      },
+      "correct": "E",
+      "explanation": "Art. 12, § 5º; ver também art. 44, parágrafo único.",
+      "reference": "LC 893/2001, art. 12, § 5º"
+    },
+    {
+      "code": "RDPM-TRA-007",
+      "difficulty": "EASY",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"usar de força desnecessária no atendimento de ocorrência ou no ato de efetuar prisão\" é classificada como:",
+      "options": {
+        "A": "Leve (L)",
+        "B": "Média (M)",
+        "C": "Grave (G)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "C",
+      "explanation": "Art. 13, parágrafo único, item 2. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 2"
+    },
+    {
+      "code": "RDPM-TRA-008",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"reter o preso, a vítima, as testemunhas ou partes não definidas por mais tempo que o necessário para a solução do procedimento\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Gravíssima",
+        "C": "Leve (L)",
+        "D": "Média (M)",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "D",
+      "explanation": "Art. 13, parágrafo único, item 6. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 6"
+    },
+    {
+      "code": "RDPM-TRA-009",
+      "difficulty": "EASY",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"faltar com a verdade\" é classificada como:",
+      "options": {
+        "A": "Não é transgressão prevista no art. 13",
+        "B": "Média (M)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Grave (G)"
+      },
+      "correct": "E",
+      "explanation": "Art. 13, parágrafo único, item 7. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 7"
+    },
+    {
+      "code": "RDPM-TRA-010",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"espalhar boatos ou notícias tendenciosas em prejuízo da boa ordem civil ou policial-militar ou do bom nome da Polícia Militar\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Média (M)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "B",
+      "explanation": "Art. 13, parágrafo único, item 12. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 12"
+    },
+    {
+      "code": "RDPM-TRA-011",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"deixar de comunicar ao superior a execução de ordem dele recebida, no mais curto prazo possível\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Média (M)",
+        "C": "Não é transgressão prevista no art. 13",
+        "D": "Gravíssima",
+        "E": "Leve (L)"
+      },
+      "correct": "E",
+      "explanation": "Art. 13, parágrafo único, item 35. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 35"
+    },
+    {
+      "code": "RDPM-TRA-012",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"não cumprir, sem justo motivo, a execução de qualquer ordem legal recebida\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Média (M)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "A",
+      "explanation": "Art. 13, parágrafo único, item 29. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 29"
+    },
+    {
+      "code": "RDPM-TRA-013",
+      "difficulty": "HARD",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"retardar, sem justo motivo, a execução de qualquer ordem legal recebida\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Média (M)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "B",
+      "explanation": "Art. 13, parágrafo único, item 30. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 30"
+    },
+    {
+      "code": "RDPM-TRA-014",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"deixar de prestar a superior hierárquico continência ou outros sinais de honra e respeito previstos em regulamento\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Leve (L)",
+        "C": "Média (M)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "C",
+      "explanation": "Art. 13, parágrafo único, item 44. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 44"
+    },
+    {
+      "code": "RDPM-TRA-015",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"chegar atrasado ao expediente, ao serviço para o qual esteja nominalmente escalado ou a qualquer ato em que deva tomar parte\" é classificada como:",
+      "options": {
+        "A": "Leve (L)",
+        "B": "Média (M)",
+        "C": "Grave (G)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "A",
+      "explanation": "Art. 13, parágrafo único, item 79. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 79"
+    },
+    {
+      "code": "RDPM-TRA-016",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"faltar ao expediente ou ao serviço para o qual esteja nominalmente escalado\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Média (M)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "A",
+      "explanation": "Art. 13, parágrafo único, item 75. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 75"
+    },
+    {
+      "code": "RDPM-TRA-017",
+      "difficulty": "HARD",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"dormir em serviço de policiamento, vigilância ou segurança de pessoas ou instalações\" é classificada como:",
+      "options": {
+        "A": "Leve (L)",
+        "B": "Média (M)",
+        "C": "Grave (G)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "C",
+      "explanation": "Art. 13, parágrafo único, item 85. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 85"
+    },
+    {
+      "code": "RDPM-TRA-018",
+      "difficulty": "HARD",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"dormir em serviço, salvo quando autorizado (fora das hipóteses de policiamento, vigilância ou segurança)\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Gravíssima",
+        "C": "Leve (L)",
+        "D": "Média (M)",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "D",
+      "explanation": "Art. 13, parágrafo único, item 86. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 86"
+    },
+    {
+      "code": "RDPM-TRA-019",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"embriagar-se quando em serviço ou apresentar-se embriagado para prestá-lo\" é classificada como:",
+      "options": {
+        "A": "Média (M)",
+        "B": "Grave (G)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "B",
+      "explanation": "Art. 13, parágrafo único, item 89. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 89"
+    },
+    {
+      "code": "RDPM-TRA-020",
+      "difficulty": "HARD",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"ingerir bebida alcoólica quando em serviço ou apresentar-se alcoolizado para prestá-lo\" é classificada como:",
+      "options": {
+        "A": "Média (M)",
+        "B": "Grave (G)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "A",
+      "explanation": "Art. 13, parágrafo único, item 90. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 90"
+    },
+    {
+      "code": "RDPM-TRA-021",
+      "difficulty": "EASY",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"fumar em local não permitido\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Média (M)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "C",
+      "explanation": "Art. 13, parágrafo único, item 92. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 92"
+    },
+    {
+      "code": "RDPM-TRA-022",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"andar ostensivamente armado, em trajes civis, não se achando de serviço\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Média (M)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "A",
+      "explanation": "Art. 13, parágrafo único, item 95. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 95"
+    },
+    {
+      "code": "RDPM-TRA-023",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"dirigir viatura policial com imprudência, imperícia, negligência, ou sem habilitação legal\" é classificada como:",
+      "options": {
+        "A": "Gravíssima",
+        "B": "Média (M)",
+        "C": "Leve (L)",
+        "D": "Grave (G)",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "D",
+      "explanation": "Art. 13, parágrafo único, item 99. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 99"
+    },
+    {
+      "code": "RDPM-TRA-024",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"apresentar-se, em qualquer situação, mal uniformizado, com o uniforme alterado ou diferente do previsto\" é classificada como:",
+      "options": {
+        "A": "Média (M)",
+        "B": "Grave (G)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "A",
+      "explanation": "Art. 13, parágrafo único, item 119. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 119"
+    },
+    {
+      "code": "RDPM-TRA-025",
+      "difficulty": "HARD",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"estar em desacordo com as normas regulamentares de apresentação pessoal\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Média (M)",
+        "C": "Gravíssima",
+        "D": "Leve (L)",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "D",
+      "explanation": "Art. 13, parágrafo único, item 122. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 122"
+    },
+    {
+      "code": "RDPM-TRA-026",
+      "difficulty": "HARD",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"frequentar ou fazer parte de sindicatos, associações profissionais com caráter de sindicato, ou de associações cujos estatutos não estejam de conformidade com a lei\" é classificada como:",
+      "options": {
+        "A": "Média (M)",
+        "B": "Grave (G)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "B",
+      "explanation": "Art. 13, parágrafo único, item 125. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 125"
+    },
+    {
+      "code": "RDPM-TRA-027",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"tendo conhecimento de transgressão disciplinar, deixar de apurá-la\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Média (M)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "A",
+      "explanation": "Art. 13, parágrafo único, item 52. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 52"
+    },
+    {
+      "code": "RDPM-TRA-028",
+      "difficulty": "HARD",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"deixar de punir o transgressor da disciplina, salvo se houver causa de justificação\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Leve (L)",
+        "C": "Média (M)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "C",
+      "explanation": "Art. 13, parágrafo único, item 53. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 53"
+    },
+    {
+      "code": "RDPM-TRA-029",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"simular doença para esquivar-se ao cumprimento do dever\" é classificada como:",
+      "options": {
+        "A": "Grave (G)",
+        "B": "Média (M)",
+        "C": "Leve (L)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "B",
+      "explanation": "Art. 13, parágrafo único, item 82. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 82"
+    },
+    {
+      "code": "RDPM-TRA-030",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o art. 13 do RDPM, a transgressão de \"desrespeitar, desconsiderar ou ofender pessoa por palavras, atos ou gestos, no atendimento de ocorrência policial ou em outras situações de serviço\" é classificada como:",
+      "options": {
+        "A": "Leve (L)",
+        "B": "Média (M)",
+        "C": "Grave (G)",
+        "D": "Gravíssima",
+        "E": "Não é transgressão prevista no art. 13"
+      },
+      "correct": "C",
+      "explanation": "Art. 13, parágrafo único, item 43. O RDPM classifica as transgressões apenas em graves (G), médias (M) e leves (L) — não existe 'gravíssima'.",
+      "reference": "LC 893/2001, art. 13, item 43"
+    },
+    {
+      "code": "RDPM-TRA-031",
+      "difficulty": "MEDIUM",
+      "statement": "Quantas transgressões disciplinares estão especificadas no parágrafo único do art. 13 do RDPM?",
+      "options": {
+        "A": "89",
+        "B": "100",
+        "C": "112",
+        "D": "132",
+        "E": "150"
+      },
+      "correct": "D",
+      "explanation": "O parágrafo único do art. 13 lista 132 itens, cada um com sua classificação (G, M ou L).",
+      "reference": "LC 893/2001, art. 13, parágrafo único"
+    },
+    {
+      "code": "RDPM-TRA-032",
+      "difficulty": "HARD",
+      "statement": "Qual das condutas abaixo é classificada pelo RDPM como transgressão LEVE?",
+      "options": {
+        "A": "Faltar com a verdade",
+        "B": "Dirigir viatura sem habilitação",
+        "C": "Embriagar-se em serviço",
+        "D": "Liberar preso sem competência legal",
+        "E": "Conversar ou fazer ruídos em ocasiões ou lugares impróprios"
+      },
+      "correct": "E",
+      "explanation": "Art. 13, item 69 (L). As demais são graves: itens 7, 89, 15 e 99.",
+      "reference": "LC 893/2001, art. 13, itens 7, 15, 69, 89 e 99"
+    }
+  ]
+}

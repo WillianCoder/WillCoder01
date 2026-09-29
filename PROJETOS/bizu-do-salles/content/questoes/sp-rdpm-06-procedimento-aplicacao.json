@@ -1,0 +1,280 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Regulamento Disciplinar da PM (RDPM)",
+  "topic": "Procedimento, competência e aplicação das sanções",
+  "state": "SP",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto oficial compilado da LC 893/2001 (Alesp, última atualização: Lei 18.442/2026). Texto legal não protegido por direito autoral (Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "RDPM-PRO-001",
+      "difficulty": "MEDIUM",
+      "statement": "A comunicação disciplinar, segundo o RDPM, deve ser apresentada no prazo de:",
+      "options": {
+        "A": "24 horas",
+        "B": "3 dias",
+        "C": "5 dias, contados da constatação ou conhecimento do fato",
+        "D": "10 dias",
+        "E": "30 dias"
+      },
+      "correct": "C",
+      "explanation": "Art. 28, § 1º (no recolhimento disciplinar, deve ser imediata).",
+      "reference": "LC 893/2001, art. 28, § 1º"
+    },
+    {
+      "code": "RDPM-PRO-002",
+      "difficulty": "HARD",
+      "statement": "Recebida a comunicação disciplinar, o acusado pode manifestar-se preliminarmente, por escrito, no prazo de:",
+      "options": {
+        "A": "24 horas",
+        "B": "3 dias",
+        "C": "5 dias",
+        "D": "8 dias",
+        "E": "15 dias"
+      },
+      "correct": "B",
+      "explanation": "Art. 28, § 2º. Depois, contra o termo acusatório, o prazo de defesa é de 5 dias (§ 3º).",
+      "reference": "LC 893/2001, art. 28, §§ 2º e 3º"
+    },
+    {
+      "code": "RDPM-PRO-003",
+      "difficulty": "HARD",
+      "statement": "Após o termo acusatório motivado, o militar pode exercer, por escrito, a ampla defesa e o contraditório no prazo de:",
+      "options": {
+        "A": "2 dias",
+        "B": "3 dias",
+        "C": "5 dias",
+        "D": "10 dias",
+        "E": "15 dias"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “5 dias”. Fundamento: art. 28, § 3º.",
+      "reference": "LC 893/2001, art. 28, § 3º"
+    },
+    {
+      "code": "RDPM-PRO-004",
+      "difficulty": "HARD",
+      "statement": "A solução do procedimento disciplinar deve ser dada no prazo de:",
+      "options": {
+        "A": "10 dias, improrrogável",
+        "B": "60 dias",
+        "C": "30 dias do recebimento da defesa, prorrogável por no máximo mais 15 dias",
+        "D": "90 dias",
+        "E": "5 anos"
+      },
+      "correct": "C",
+      "explanation": "Art. 29, § 1º. O signatário da comunicação deve ser notificado da solução em até 90 dias da comunicação (§ 3º).",
+      "reference": "LC 893/2001, art. 29"
+    },
+    {
+      "code": "RDPM-PRO-005",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o RDPM, representação é:",
+      "options": {
+        "A": "o pedido de férias",
+        "B": "a defesa escrita do acusado",
+        "C": "o elogio a um subordinado",
+        "D": "toda comunicação que se referir a ato praticado ou aprovado por superior hierárquico ou funcional que se repute irregular, ofensivo, injusto ou ilegal",
+        "E": "o relatório de ocorrência"
+      },
+      "correct": "D",
+      "explanation": "Art. 30, caput. Prazo de encaminhamento: 5 dias do conhecimento do fato (§ 4º).",
+      "reference": "LC 893/2001, art. 30"
+    },
+    {
+      "code": "RDPM-PRO-006",
+      "difficulty": "HARD",
+      "statement": "Oficiais do posto de capitão podem aplicar, segundo o RDPM:",
+      "options": {
+        "A": "qualquer sanção",
+        "B": "advertência, repreensão e permanência disciplinar de até 10 dias",
+        "C": "detenção de até 15 dias",
+        "D": "demissão de praças",
+        "E": "permanência de até 20 dias"
+      },
+      "correct": "B",
+      "explanation": "Art. 32, VI. Major: até 15 dias; tenente-coronel: até 20 dias; coronel: permanência até 20 e detenção até 15 dias.",
+      "reference": "LC 893/2001, art. 32"
+    },
+    {
+      "code": "RDPM-PRO-007",
+      "difficulty": "HARD",
+      "statement": "O Secretário da Segurança Pública e o Comandante Geral podem aplicar todas as sanções disciplinares, EXCETO:",
+      "options": {
+        "A": "a advertência",
+        "B": "a detenção",
+        "C": "a expulsão de praças",
+        "D": "a demissão de oficiais",
+        "E": "a repreensão"
+      },
+      "correct": "D",
+      "explanation": "Art. 32, I. Só o Governador aplica todas as sanções.",
+      "reference": "LC 893/2001, art. 32, I"
+    },
+    {
+      "code": "RDPM-PRO-008",
+      "difficulty": "MEDIUM",
+      "statement": "Qual das alternativas é causa de justificação que impede a aplicação de sanção, segundo o RDPM?",
+      "options": {
+        "A": "Ser o primeiro dia de serviço",
+        "B": "Ter bom relacionamento com o comandante",
+        "C": "Estar cansado",
+        "D": "Desconhecer o regulamento",
+        "E": "Legítima defesa própria ou de outrem"
+      },
+      "correct": "E",
+      "explanation": "Art. 34, III. Também: força maior/caso fortuito, benefício do serviço, obediência a ordem não manifestamente ilegal e uso de força para compelir subordinado em situações específicas.",
+      "reference": "LC 893/2001, art. 34"
+    },
+    {
+      "code": "RDPM-PRO-009",
+      "difficulty": "MEDIUM",
+      "statement": "A obediência a ordem superior é causa de justificação, segundo o RDPM, desde que:",
+      "options": {
+        "A": "a ordem tenha sido dada por escrito",
+        "B": "o superior seja oficial",
+        "C": "a ordem recebida não seja manifestamente ilegal",
+        "D": "haja testemunhas",
+        "E": "a ordem seja repetida"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “a ordem recebida não seja manifestamente ilegal”. Fundamento: art. 34, IV.",
+      "reference": "LC 893/2001, art. 34, IV"
+    },
+    {
+      "code": "RDPM-PRO-010",
+      "difficulty": "MEDIUM",
+      "statement": "É circunstância ATENUANTE, segundo o RDPM:",
+      "options": {
+        "A": "reincidência específica",
+        "B": "ter sido a falta praticada em presença de tropa",
+        "C": "colaborar na apuração da transgressão disciplinar",
+        "D": "conluio de duas ou mais pessoas",
+        "E": "mau comportamento"
+      },
+      "correct": "C",
+      "explanation": "Art. 35, VIII. As demais alternativas são agravantes (art. 36).",
+      "reference": "LC 893/2001, arts. 35 e 36"
+    },
+    {
+      "code": "RDPM-PRO-011",
+      "difficulty": "MEDIUM",
+      "statement": "É circunstância AGRAVANTE, segundo o RDPM:",
+      "options": {
+        "A": "estar no bom comportamento",
+        "B": "ter prestado serviços relevantes",
+        "C": "não possuir prática no serviço",
+        "D": "ter sido a falta praticada com abuso de autoridade hierárquica ou funcional",
+        "E": "ter praticado a falta para evitar mal maior"
+      },
+      "correct": "D",
+      "explanation": "Art. 36, VII. As demais são atenuantes (art. 35).",
+      "reference": "LC 893/2001, arts. 35 e 36"
+    },
+    {
+      "code": "RDPM-PRO-012",
+      "difficulty": "HARD",
+      "statement": "Segundo o RDPM, considera-se reincidência específica:",
+      "options": {
+        "A": "qualquer nova transgressão no mesmo ano",
+        "B": "duas faltas no mesmo dia",
+        "C": "o enquadramento da falta praticada num mesmo item dos previstos no art. 13 ou no item 2 do § 1º do art. 12",
+        "D": "a falta cometida na mesma OPM",
+        "E": "a falta cometida com o mesmo colega"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “o enquadramento da falta praticada num mesmo item dos previstos no art. 13 ou no item 2 do § 1º do art. 12”. Fundamento: art. 36, § 2º.",
+      "reference": "LC 893/2001, art. 36, § 2º"
+    },
+    {
+      "code": "RDPM-PRO-013",
+      "difficulty": "MEDIUM",
+      "statement": "Pela mesma transgressão, segundo o RDPM:",
+      "options": {
+        "A": "podem ser aplicadas até duas sanções",
+        "B": "a sanção dobra se houver testemunha",
+        "C": "aplica-se sempre advertência e repreensão juntas",
+        "D": "não será aplicada mais de uma sanção disciplinar",
+        "E": "aplica-se uma sanção por testemunha"
+      },
+      "correct": "D",
+      "explanation": "Resposta: “não será aplicada mais de uma sanção disciplinar”. Fundamento: art. 41, III.",
+      "reference": "LC 893/2001, art. 41, III"
+    },
+    {
+      "code": "RDPM-PRO-014",
+      "difficulty": "HARD",
+      "statement": "Segundo o art. 42 do RDPM, as faltas MÉDIAS são puníveis com permanência disciplinar de até:",
+      "options": {
+        "A": "3 dias",
+        "B": "5 dias",
+        "C": "8 dias (e até 15 dias na reincidência específica)",
+        "D": "10 dias",
+        "E": "20 dias"
+      },
+      "correct": "C",
+      "explanation": "Art. 42, II. Leves: advertência ou repreensão (reincidência: permanência até 5 dias). Graves: permanência até 10 ou detenção até 8 dias (reincidência: até 20 ou 15).",
+      "reference": "LC 893/2001, art. 42"
+    },
+    {
+      "code": "RDPM-PRO-015",
+      "difficulty": "HARD",
+      "statement": "Segundo o art. 42 do RDPM, as faltas LEVES, na reincidência específica, são puníveis com:",
+      "options": {
+        "A": "advertência apenas",
+        "B": "demissão",
+        "C": "detenção de até 8 dias",
+        "D": "permanência disciplinar de até 5 dias",
+        "E": "permanência de até 15 dias"
+      },
+      "correct": "D",
+      "explanation": "Resposta: “permanência disciplinar de até 5 dias”. Fundamento: art. 42, I.",
+      "reference": "LC 893/2001, art. 42, I"
+    },
+    {
+      "code": "RDPM-PRO-016",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o RDPM, nenhum militar será interrogado ou sofrerá aplicação de sanção se estiver:",
+      "options": {
+        "A": "de folga",
+        "B": "acompanhado de advogado",
+        "C": "de férias",
+        "D": "à paisana",
+        "E": "em estado de embriaguez ou sob ação de substância entorpecente"
+      },
+      "correct": "E",
+      "explanation": "Art. 50: deve, se necessário, ser recolhido disciplinarmente desde logo.",
+      "reference": "LC 893/2001, art. 50"
+    },
+    {
+      "code": "RDPM-PRO-017",
+      "difficulty": "MEDIUM",
+      "statement": "O início do cumprimento da sanção disciplinar deve ocorrer no prazo máximo de:",
+      "options": {
+        "A": "24 horas",
+        "B": "3 dias",
+        "C": "5 dias após a ciência, pelo punido, da sua publicação",
+        "D": "15 dias",
+        "E": "30 dias"
+      },
+      "correct": "C",
+      "explanation": "Art. 52, caput; cada dia é computado como 24 horas (§ 1º).",
+      "reference": "LC 893/2001, art. 52"
+    },
+    {
+      "code": "RDPM-PRO-018",
+      "difficulty": "MEDIUM",
+      "statement": "A sanção disciplinar, segundo o RDPM:",
+      "options": {
+        "A": "exime o punido da responsabilidade civil e criminal",
+        "B": "impede a abertura de inquérito",
+        "C": "não exime o punido da responsabilidade civil e criminal emanadas do mesmo fato",
+        "D": "substitui a ação penal",
+        "E": "só vale se não houver processo criminal"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “não exime o punido da responsabilidade civil e criminal emanadas do mesmo fato”. Fundamento: art. 44 e parágrafo único.",
+      "reference": "LC 893/2001, art. 44"
+    }
+  ]
+}

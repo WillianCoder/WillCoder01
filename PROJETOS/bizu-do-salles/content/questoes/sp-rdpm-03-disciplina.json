@@ -1,0 +1,115 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Regulamento Disciplinar da PM (RDPM)",
+  "topic": "Disciplina e ordens",
+  "state": "SP",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto oficial compilado da LC 893/2001 (Alesp, última atualização: Lei 18.442/2026). Texto legal não protegido por direito autoral (Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "RDPM-DIS-001",
+      "difficulty": "EASY",
+      "statement": "Segundo o RDPM, a disciplina policial-militar é:",
+      "options": {
+        "A": "o exato cumprimento dos deveres, traduzindo-se na rigorosa observância e acatamento integral das leis, regulamentos, normas e ordens",
+        "B": "o respeito apenas aos superiores",
+        "C": "a obediência a qualquer ordem, legal ou não",
+        "D": "a boa apresentação pessoal",
+        "E": "o cumprimento de metas"
+      },
+      "correct": "A",
+      "explanation": "Resposta: “o exato cumprimento dos deveres, traduzindo-se na rigorosa observância e acatamento integral das leis, regulamentos, normas e ordens”. Fundamento: art. 9º, caput.",
+      "reference": "LC 893/2001, art. 9º"
+    },
+    {
+      "code": "RDPM-DIS-002",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o RDPM, a disciplina e o respeito à hierarquia devem ser mantidos:",
+      "options": {
+        "A": "somente em serviço",
+        "B": "apenas por praças",
+        "C": "apenas durante o curso de formação",
+        "D": "só dentro da OPM",
+        "E": "permanentemente, tanto no serviço ativo quanto na inatividade"
+      },
+      "correct": "E",
+      "explanation": "Resposta: “permanentemente, tanto no serviço ativo quanto na inatividade”. Fundamento: art. 9º, § 2º.",
+      "reference": "LC 893/2001, art. 9º, § 2º"
+    },
+    {
+      "code": "RDPM-DIS-003",
+      "difficulty": "MEDIUM",
+      "statement": "Quando uma ordem parecer obscura, o RDPM determina que o subordinado deve:",
+      "options": {
+        "A": "cumpri-la do jeito que entender",
+        "B": "recusar-se a cumpri-la",
+        "C": "solicitar, ao recebê-la, os esclarecimentos necessários ao seu total entendimento",
+        "D": "comunicar o fato à imprensa",
+        "E": "aguardar nova ordem por escrito, sempre"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “solicitar, ao recebê-la, os esclarecimentos necessários ao seu total entendimento”. Fundamento: art. 10, § 1º.",
+      "reference": "LC 893/2001, art. 10, § 1º"
+    },
+    {
+      "code": "RDPM-DIS-004",
+      "difficulty": "MEDIUM",
+      "statement": "O executante que exorbitar no cumprimento da ordem recebida:",
+      "options": {
+        "A": "fica isento, pois cumpria ordem",
+        "B": "responde apenas civilmente",
+        "C": "divide a responsabilidade igualmente com quem deu a ordem",
+        "D": "só responde se for oficial",
+        "E": "responde pelo abuso ou excesso que cometer"
+      },
+      "correct": "E",
+      "explanation": "Art. 10, § 2º. O caput atribui à autoridade que determinou a ordem legal a inteira responsabilidade por ela.",
+      "reference": "LC 893/2001, art. 10"
+    },
+    {
+      "code": "RDPM-DIS-005",
+      "difficulty": "HARD",
+      "statement": "Segundo o RDPM, o superior hierárquico responde solidariamente, com as mesmas sanções da transgressão do subordinado, quando:",
+      "options": {
+        "A": "o subordinado for do seu pelotão, em qualquer caso",
+        "B": "estiver de folga no dia do fato",
+        "C": "presenciar o cometimento da transgressão deixando de atuar para fazê-la cessar imediatamente",
+        "D": "for mais moderno que o transgressor",
+        "E": "não souber do fato"
+      },
+      "correct": "C",
+      "explanation": "Art. 11, § 2º, itens 1 e 2: também quando concorrer diretamente, por ação ou omissão, mesmo não estando presente.",
+      "reference": "LC 893/2001, art. 11, § 2º"
+    },
+    {
+      "code": "RDPM-DIS-006",
+      "difficulty": "EASY",
+      "statement": "Conforme o RDPM, a violação da disciplina policial-militar será tão mais grave quanto:",
+      "options": {
+        "A": "maior for o salário de quem a cometer",
+        "B": "mais elevado for o grau hierárquico de quem a cometer",
+        "C": "mais jovem for o transgressor",
+        "D": "menor for o tempo de serviço",
+        "E": "mais pessoas assistirem"
+      },
+      "correct": "B",
+      "explanation": "Resposta: “mais elevado for o grau hierárquico de quem a cometer”. Fundamento: art. 11, § 3º.",
+      "reference": "LC 893/2001, art. 11, § 3º"
+    },
+    {
+      "code": "RDPM-DIS-007",
+      "difficulty": "MEDIUM",
+      "statement": "A ofensa aos valores e aos deveres policiais-militares, segundo o RDPM, constitui infração:",
+      "options": {
+        "A": "apenas administrativa",
+        "B": "somente penal",
+        "C": "administrativa, penal ou civil, isolada ou cumulativamente",
+        "D": "apenas ética, sem consequência",
+        "E": "somente civil"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “administrativa, penal ou civil, isolada ou cumulativamente”. Fundamento: art. 11, caput.",
+      "reference": "LC 893/2001, art. 11"
+    }
+  ]
+}

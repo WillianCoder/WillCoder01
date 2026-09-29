@@ -1,0 +1,84 @@
+{
+  "cycle": "BASIC",
+  "subject": "Direitos Humanos",
+  "topic": "Declaração Universal dos Direitos Humanos",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir de texto legal/oficial (não protegido por direito autoral, Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "DH-DUDH-001",
+      "difficulty": "EASY",
+      "statement": "A Declaração Universal dos Direitos Humanos foi adotada pela Assembleia Geral das Nações Unidas em:",
+      "options": {
+        "A": "1945",
+        "B": "1948",
+        "C": "1964",
+        "D": "1988",
+        "E": "1992"
+      },
+      "correct": "B",
+      "explanation": "Adotada e proclamada em 10 de dezembro de 1948 (Resolução 217 A (III)).",
+      "reference": "DUDH, preâmbulo e resolução de adoção"
+    },
+    {
+      "code": "DH-DUDH-002",
+      "difficulty": "EASY",
+      "statement": "Segundo o artigo 1º da DUDH, todos os seres humanos nascem:",
+      "options": {
+        "A": "livres e iguais em dignidade e em direitos",
+        "B": "iguais perante o Estado, mas não em direitos",
+        "C": "com deveres superiores aos direitos",
+        "D": "livres, mas sujeitos à vontade da maioria",
+        "E": "iguais apenas em seu país de origem"
+      },
+      "correct": "A",
+      "explanation": "Resposta: “livres e iguais em dignidade e em direitos”. Fundamento: art. 1º da DUDH.",
+      "reference": "DUDH, art. 1º"
+    },
+    {
+      "code": "DH-DUDH-003",
+      "difficulty": "EASY",
+      "statement": "De acordo com a DUDH, ninguém será submetido a tortura nem a penas ou tratamentos:",
+      "options": {
+        "A": "prolongados",
+        "B": "administrativos",
+        "C": "coletivos",
+        "D": "sem testemunhas",
+        "E": "cruéis, desumanos ou degradantes"
+      },
+      "correct": "E",
+      "explanation": "Resposta: “cruéis, desumanos ou degradantes”. Fundamento: art. 5º da DUDH.",
+      "reference": "DUDH, art. 5º"
+    },
+    {
+      "code": "DH-DUDH-004",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo a DUDH, ninguém pode ser arbitrariamente:",
+      "options": {
+        "A": "multado",
+        "B": "abordado",
+        "C": "fiscalizado",
+        "D": "preso, detido ou exilado",
+        "E": "identificado"
+      },
+      "correct": "D",
+      "explanation": "Resposta: “preso, detido ou exilado”. Fundamento: art. 9º da DUDH.",
+      "reference": "DUDH, art. 9º"
+    },
+    {
+      "code": "DH-DUDH-005",
+      "difficulty": "MEDIUM",
+      "statement": "A DUDH assegura que toda pessoa acusada de delito tem o direito de ser presumida inocente:",
+      "options": {
+        "A": "até que sua culpabilidade tenha sido provada de acordo com a lei, em julgamento público com as garantias necessárias à defesa",
+        "B": "até ser ouvida pela polícia",
+        "C": "somente se for primária",
+        "D": "até o oferecimento da denúncia",
+        "E": "apenas em crimes leves"
+      },
+      "correct": "A",
+      "explanation": "Resposta: “até que sua culpabilidade tenha sido provada de acordo com a lei, em julgamento público com as garantias necessárias à defesa”. Fundamento: art. 11, 1, da DUDH.",
+      "reference": "DUDH, art. 11"
+    }
+  ]
+}

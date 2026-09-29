@@ -42,7 +42,7 @@ def carregar_itens(erros: list[str]) -> list[dict]:
     itens = []
     for meta in sorted(RAIZ.rglob("meta.json")):
         rel = meta.relative_to(RAIZ)
-        if rel.parts[0] in IGNORAR:
+        if rel.parts[0] in IGNORAR or "node_modules" in rel.parts:
             continue
         try:
             dados = json.loads(meta.read_text(encoding="utf-8"))
@@ -78,7 +78,7 @@ def verificar_links(erros: list[str]) -> None:
     """Confere links relativos em todos os .md (links externos não são acessados)."""
     for md in RAIZ.rglob("*.md"):
         rel = md.relative_to(RAIZ)
-        if rel.parts[0] in {".git", "node_modules"}:
+        if rel.parts[0] == ".git" or "node_modules" in rel.parts:
             continue
         texto = re.sub(r"<!--.*?-->|```.*?```", "", md.read_text(encoding="utf-8"), flags=re.S)
         for alvo in LINK_MD_RE.findall(texto):

@@ -1,0 +1,99 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Legislação Penal Especial",
+  "topic": "Lei de Tortura (Lei 9.455/1997)",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir de texto legal/oficial (não protegido por direito autoral, Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "TOR-TOR-001",
+      "difficulty": "EASY",
+      "statement": "Segundo a Lei 9.455/1997, constitui crime de tortura constranger alguém com emprego de violência ou grave ameaça, causando-lhe sofrimento físico ou mental, com qual finalidade, entre outras?",
+      "options": {
+        "A": "Cobrar dívida vencida",
+        "B": "Aplicar sanção disciplinar prevista em regulamento",
+        "C": "Corrigir filho menor de idade",
+        "D": "Manter a ordem em evento público",
+        "E": "Obter informação, declaração ou confissão da vítima ou de terceira pessoa"
+      },
+      "correct": "E",
+      "explanation": "Art. 1º, I, 'a': a finalidade de obter informação, declaração ou confissão caracteriza a tortura-prova. As alíneas 'b' e 'c' tratam de provocar ação/omissão criminosa e de discriminação racial ou religiosa.",
+      "reference": "Lei 9.455/1997, art. 1º, I, a"
+    },
+    {
+      "code": "TOR-TOR-002",
+      "difficulty": "MEDIUM",
+      "statement": "A Lei de Tortura prevê como crime constranger alguém, com violência ou grave ameaça, causando sofrimento físico ou mental, em razão de:",
+      "options": {
+        "A": "discriminação racial ou religiosa",
+        "B": "divergência política",
+        "C": "dívida de jogo",
+        "D": "ciúme",
+        "E": "disputa de vizinhança"
+      },
+      "correct": "A",
+      "explanation": "Art. 1º, I, 'c' — tortura discriminatória.",
+      "reference": "Lei 9.455/1997, art. 1º, I, c"
+    },
+    {
+      "code": "TOR-TOR-003",
+      "difficulty": "MEDIUM",
+      "statement": "Se o crime de tortura é cometido por agente público, a Lei 9.455/1997 determina que a pena:",
+      "options": {
+        "A": "é reduzida de um terço",
+        "B": "é dobrada obrigatoriamente",
+        "C": "é substituída por multa",
+        "D": "é aumentada de um sexto até um terço",
+        "E": "não se altera"
+      },
+      "correct": "D",
+      "explanation": "Art. 1º, § 4º, I: aumenta-se a pena de um sexto até um terço se o crime é cometido por agente público.",
+      "reference": "Lei 9.455/1997, art. 1º, § 4º, I"
+    },
+    {
+      "code": "TOR-TOR-004",
+      "difficulty": "HARD",
+      "statement": "Conforme a Lei de Tortura, a condenação acarretará a perda do cargo, função ou emprego público e a interdição para seu exercício pelo:",
+      "options": {
+        "A": "mesmo prazo da pena aplicada",
+        "B": "prazo fixo de cinco anos",
+        "C": "dobro do prazo da pena aplicada",
+        "D": "triplo do prazo da pena",
+        "E": "prazo de dez anos"
+      },
+      "correct": "C",
+      "explanation": "Art. 1º, § 5º: perda do cargo e interdição pelo dobro do prazo da pena aplicada.",
+      "reference": "Lei 9.455/1997, art. 1º, § 5º"
+    },
+    {
+      "code": "TOR-TOR-005",
+      "difficulty": "MEDIUM",
+      "statement": "Sobre o crime de tortura, segundo a Lei 9.455/1997, é correto afirmar que ele é:",
+      "options": {
+        "A": "afiançável e suscetível de anistia",
+        "B": "afiançável, mas insuscetível de graça",
+        "C": "inafiançável e insuscetível de graça ou anistia",
+        "D": "de ação penal privada",
+        "E": "imprescritível e afiançável"
+      },
+      "correct": "C",
+      "explanation": "Art. 1º, § 6º, em harmonia com a CF/88, art. 5º, XLIII.",
+      "reference": "Lei 9.455/1997, art. 1º, § 6º; CF/88, art. 5º, XLIII"
+    },
+    {
+      "code": "TOR-TOR-006",
+      "difficulty": "HARD",
+      "statement": "Aquele que se omite em face das condutas de tortura, quando tinha o dever de evitá-las ou apurá-las, segundo a Lei 9.455/1997:",
+      "options": {
+        "A": "não comete crime",
+        "B": "responde apenas administrativamente",
+        "C": "incorre na pena de detenção de um a quatro anos",
+        "D": "incorre na mesma pena do torturador",
+        "E": "comete contravenção penal"
+      },
+      "correct": "C",
+      "explanation": "Art. 1º, § 2º: detenção de um a quatro anos para quem se omite tendo o dever de evitar ou apurar.",
+      "reference": "Lei 9.455/1997, art. 1º, § 2º"
+    }
+  ]
+}
