@@ -1,3 +1,7 @@
+// 📄 O QUE É: ESTRUTURA DO BANCO DE DADOS (tabelas e campos).
+// ✏️ EDITÁVEL: Nada no dia a dia.
+// ⚠️ CUIDADO: Toda mudança aqui exige MIGRAÇÃO (npx prisma migrate dev) e backup antes em produção. Peça ajuda.
+// 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
 // Bizu do Salles — esquema do banco (v0.2.0). Documentação: docs/DATABASE.md
 generator client {
   provider = "prisma-client-js"
@@ -54,6 +58,7 @@ model User {
   id           String    @id @default(cuid())
   name         String
   nickname     String?
+  rankingOptIn Boolean   @default(false) // aparece no ranking só se o aluno autorizar
   email        String    @unique
   passwordHash String
   phone        String?
@@ -77,6 +82,7 @@ model User {
   flags         QuestionFlag[]
   simulations   SimulationAttempt[]
   goals         Goal[]
+  passwordResets PasswordReset[]
   notifications Notification[]
 }
 
@@ -271,10 +277,12 @@ model QuestionAttempt {
   correct      Boolean
   timeMs       Int?
   simulationAttemptId String?
+  simulationAttempt   SimulationAttempt? @relation(fields: [simulationAttemptId], references: [id])
   createdAt    DateTime @default(now())
 
   @@index([userId, createdAt])
   @@index([userId, questionId])
+  @@index([simulationAttemptId])
 }
 
 model QuestionFlag {
@@ -307,6 +315,8 @@ model Notebook {
   name      String
   items     NotebookQuestion[]
   createdAt DateTime           @default(now())
+
+  @@index([userId])
 }
 
 model NotebookQuestion {
@@ -314,6 +324,7 @@ model NotebookQuestion {
   notebook   Notebook @relation(fields: [notebookId], references: [id], onDelete: Cascade)
   questionId String
   question   Question @relation(fields: [questionId], references: [id])
+  addedAt    DateTime @default(now())
 
   @@id([notebookId, questionId])
 }
@@ -349,6 +360,9 @@ model SimulationAttempt {
   finishedAt   DateTime?
   correct      Int        @default(0)
   total        Int        @default(0)
+  answers      QuestionAttempt[]
+
+  @@index([userId, startedAt])
 }
 
 model Material {
@@ -365,9 +379,22 @@ model Material {
   createdAt     DateTime   @default(now())
 }
 
+/// Link de redefinição de senha: uso único, expira rápido; no banco só o hash do token.
+model PasswordReset {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([userId])
+}
+
 model Goal {
   id            String @id @default(cuid())
-  userId        String
+  userId        String @unique
   user          User   @relation(fields: [userId], references: [id])
   questionsDay  Int?
   minutesDay    Int?

@@ -1,0 +1,145 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Regulamento Disciplinar da PM (RDPM)",
+  "topic": "Deontologia: valores e deveres",
+  "state": "SP",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto oficial compilado da LC 893/2001 (Alesp, última atualização: Lei 18.442/2026). Texto legal não protegido por direito autoral (Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "RDPM-DEO-001",
+      "difficulty": "EASY",
+      "statement": "Segundo o RDPM, a deontologia policial-militar é constituída pelos:",
+      "options": {
+        "A": "regulamentos de uniformes",
+        "B": "direitos remuneratórios",
+        "C": "manuais de tiro",
+        "D": "procedimentos operacionais padrão",
+        "E": "valores e deveres éticos, traduzidos em normas de conduta"
+      },
+      "correct": "E",
+      "explanation": "Resposta: “valores e deveres éticos, traduzidos em normas de conduta”. Fundamento: art. 6º, caput.",
+      "reference": "LC 893/2001, art. 6º"
+    },
+    {
+      "code": "RDPM-DEO-002",
+      "difficulty": "MEDIUM",
+      "statement": "Qual alternativa NÃO é um valor fundamental policial-militar listado no art. 7º do RDPM?",
+      "options": {
+        "A": "Patriotismo",
+        "B": "Obediência cega",
+        "C": "Dignidade humana",
+        "D": "Verdade real",
+        "E": "Coragem"
+      },
+      "correct": "B",
+      "explanation": "O art. 7º lista 12 valores: patriotismo, civismo, hierarquia, disciplina, profissionalismo, lealdade, constância, verdade real, honra, dignidade humana, honestidade e coragem. 'Obediência cega' não consta — ordens devem ser legais (art. 10).",
+      "reference": "LC 893/2001, art. 7º"
+    },
+    {
+      "code": "RDPM-DEO-003",
+      "difficulty": "EASY",
+      "statement": "Quantos valores fundamentais determinantes da moral policial-militar são listados no art. 7º do RDPM?",
+      "options": {
+        "A": "8",
+        "B": "10",
+        "C": "12",
+        "D": "15",
+        "E": "35"
+      },
+      "correct": "C",
+      "explanation": "São 12 valores (incisos I a XII). Já os deveres éticos do art. 8º são 35.",
+      "reference": "LC 893/2001, art. 7º"
+    },
+    {
+      "code": "RDPM-DEO-004",
+      "difficulty": "MEDIUM",
+      "statement": "O militar do Estado prestará compromisso de honra, em caráter solene, afirmando:",
+      "options": {
+        "A": "a consciente aceitação dos valores e deveres policiais-militares e a firme disposição de bem cumpri-los",
+        "B": "a aceitação de sua remuneração",
+        "C": "a renúncia aos direitos civis",
+        "D": "a filiação à associação de classe",
+        "E": "o juramento de nunca deixar a corporação"
+      },
+      "correct": "A",
+      "explanation": "Resposta: “a consciente aceitação dos valores e deveres policiais-militares e a firme disposição de bem cumpri-los”. Fundamento: art. 6º, § 2º.",
+      "reference": "LC 893/2001, art. 6º, § 2º"
+    },
+    {
+      "code": "RDPM-DEO-005",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o RDPM, é dever do militar atuar onde estiver, mesmo não estando em serviço, para preservar a ordem pública ou prestar socorro:",
+      "options": {
+        "A": "em qualquer circunstância, mesmo havendo força de serviço no local",
+        "B": "somente se estiver armado",
+        "C": "desde que não exista, naquele momento, força de serviço suficiente",
+        "D": "somente se for oficial",
+        "E": "apenas dentro do município onde trabalha"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “desde que não exista, naquele momento, força de serviço suficiente”. Fundamento: art. 8º, XXXV.",
+      "reference": "LC 893/2001, art. 8º, XXXV"
+    },
+    {
+      "code": "RDPM-DEO-006",
+      "difficulty": "MEDIUM",
+      "statement": "Ao militar do Estado em serviço ativo, segundo o RDPM, é vedado:",
+      "options": {
+        "A": "ser acionista de sociedade comercial",
+        "B": "ser cotista de empresa",
+        "C": "ter conta bancária",
+        "D": "exercer atividade de segurança particular",
+        "E": "estudar em faculdade particular"
+      },
+      "correct": "D",
+      "explanation": "Art. 8º, § 1º: veda segurança particular, comércio e administração/gerência de sociedade comercial, exceto como acionista, cotista ou comanditário.",
+      "reference": "LC 893/2001, art. 8º, § 1º"
+    },
+    {
+      "code": "RDPM-DEO-007",
+      "difficulty": "HARD",
+      "statement": "Segundo o RDPM, o militar deve abster-se, ainda que na inatividade, do uso das designações hierárquicas em atividade político-partidária, SALVO quando:",
+      "options": {
+        "A": "for convidado por partido",
+        "B": "for candidato a cargo eletivo",
+        "C": "estiver na reserva há mais de 5 anos",
+        "D": "tiver autorização do Comandante Geral",
+        "E": "se tratar de eleição municipal"
+      },
+      "correct": "B",
+      "explanation": "Resposta: “for candidato a cargo eletivo”. Fundamento: art. 8º, XXI, 'a'.",
+      "reference": "LC 893/2001, art. 8º, XXI, a"
+    },
+    {
+      "code": "RDPM-DEO-008",
+      "difficulty": "MEDIUM",
+      "statement": "Compete aos Comandantes de Unidade e de Subunidade destacada, conforme o RDPM, fiscalizar os subordinados que apresentarem:",
+      "options": {
+        "A": "baixo rendimento no tiro",
+        "B": "atrasos frequentes",
+        "C": "sinais exteriores de riqueza incompatíveis com a remuneração do cargo",
+        "D": "problemas de saúde",
+        "E": "pedidos de transferência"
+      },
+      "correct": "C",
+      "explanation": "Art. 8º, § 2º: devem fazê-los comprovar a origem dos bens mediante procedimento administrativo. Deixar de fiscalizar é transgressão grave (art. 13, item 28).",
+      "reference": "LC 893/2001, art. 8º, § 2º, e art. 13, item 28"
+    },
+    {
+      "code": "RDPM-DEO-009",
+      "difficulty": "HARD",
+      "statement": "Sobre manifestações, o RDPM estabelece que aos militares do Estado da ativa são proibidas:",
+      "options": {
+        "A": "manifestações coletivas sobre atos de superiores, de caráter reivindicatório e de cunho político-partidário",
+        "B": "quaisquer opiniões individuais",
+        "C": "manifestações religiosas pessoais",
+        "D": "conversas sobre política em casa",
+        "E": "publicações técnicas autorizadas"
+      },
+      "correct": "A",
+      "explanation": "Art. 8º, § 3º. Ao inativo é assegurado opinar sobre assunto político, observada a ética policial-militar (§ 4º).",
+      "reference": "LC 893/2001, art. 8º, §§ 3º e 4º"
+    }
+  ]
+}

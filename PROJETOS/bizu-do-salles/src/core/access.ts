@@ -1,3 +1,9 @@
+/**
+ * 📄 O QUE É: REGRA DE ACESSO: quem pode ver cada ciclo (plano ativo e dentro da validade).
+ * ✏️ EDITÁVEL: Nada para editar no dia a dia.
+ * ⚠️ CUIDADO: Regra de negócio central, coberta por testes (npm test).
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 /** Regra única de acesso premium. Sempre executada no servidor; o frontend só exibe o resultado. */
 export type Cycle = "BASIC" | "SPECIFIC";
 

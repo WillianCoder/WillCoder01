@@ -2,6 +2,52 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.6.0] — 2026-09-29
+### Adicionado
+- **Importar questões por planilha** (Admin → 📥 Importar planilha): CSV do Excel (`;` ou `,`, com BOM), modelo em `/modelo-questoes.csv`; até 1.000 linhas/2 MB; valida cada linha e aponta erros; códigos existentes são ignorados; tudo entra como **Em revisão**; auditado.
+- **Papéis da equipe** no painel (Aluno / Editor / Administrador); ninguém muda o próprio papel; auditado.
+- **LGPD**: "Baixar meus dados" (JSON completo, sem senha) e "Excluir minha conta" (senha + digitar EXCLUIR): apaga histórico e anonimiza o cadastro, mantendo pagamentos sem dados pessoais.
+- Leitor de CSV testado (`src/core/csv.ts`); 3 novos testes de navegador (15 no total) e 2 unitários (18 no total).
+
+## [0.5.0] — 2026-09-29
+### Adicionado
+- **Cadernos** (`/app/cadernos`): criar, renomear, excluir; "Adicionar ao caderno" na questão (inclusive criando caderno novo); estudar só as questões do caderno; gerar simulado a partir do caderno; ver e remover questões.
+- **Ranking** (`/app/ranking`): por período (7 dias, 30 dias, geral), ciclo e abrangência (meu estado, minha escola, Brasil). Pontos = acertos na **primeira tentativa** de cada questão (refazer não soma). Participação só com autorização e apelido; mostra apenas apelido e escola; consulta SQL parametrizada.
+- Apelido higienizado (só letras, números, espaço, ponto, hífen e sublinhado).
+- Limites editáveis em `src/config/regras.ts` (`cadernos`, `ranking`). Migração `cadernos_ranking`.
+- 2 novos testes de navegador (12 no total).
+
+## [0.4.0] — 2026-09-29
+### Adicionado
+- **Recuperação de senha**: "Esqueci minha senha" no login; link de uso único que expira (`REGRAS.senha.linkMinutos`, 60 min), enviado por e-mail via Resend quando `RESEND_API_KEY`/`EMAIL_FROM` estão configurados. Sem e-mail, o administrador gera o link em **Usuários → Link de senha** (mostrado uma vez, auditado) e envia ao aluno.
+- Trocar a senha desconecta todos os aparelhos e invalida links antigos; resposta sempre genérica (não revela se o e-mail tem conta); limites de tentativa por IP e por e-mail.
+- **Meta diária** de questões (Configurações) com barra de progresso no painel do aluno.
+- Migração `senha_e_meta` (tabela `PasswordReset`, uma meta por aluno). Novas variáveis: `APP_URL`, `RESEND_API_KEY`, `EMAIL_FROM`.
+- Testes de navegador: recuperação de senha, reutilização de link bloqueada, meta diária (10 no total). Cada teste simula um IP diferente (`e2e/fixtures.ts`), mantendo os limites de segurança ativos.
+
+## [0.3.0] — 2026-09-29
+### Adicionado
+- **Simulados** (`/app/simulados`): simulado rápido (10 questões) e personalizado (disciplina, só não respondidas/erradas/favoritas, quantidade, tempo). Cronômetro com aviso nos 5 minutos finais e envio automático; resultado com nota, aproveitamento, erros/em branco, tempo, desempenho por disciplina e correção comentada; histórico.
+- Segurança: sorteio só entre questões que o aluno pode ver; gabarito só depois de finalizar; envio após o tempo (com tolerância) não conta; proteção contra envio duplo; limite de 20 simulados/hora.
+- Limites editáveis em `src/config/regras.ts` (`simulado`). Migração `simulados` (ligação resposta ↔ simulado + índices).
+- Alternativas só numéricas (prazos, valores) não são mais embaralhadas, para facilitar a leitura.
+- Teste de navegador do simulado (7 no total) e 4 novos testes unitários (16 no total).
+### Corrigido
+- Vulnerabilidades de dependências de build (postcss, deepmerge-ts) via `overrides`; `npm audit` limpo.
+
+## [0.2.2] — 2026-09-29
+### Adicionado
+- **Relatório em PDF** (`docs/RELATORIO.pdf`, gerado de `docs/relatorio/relatorio.html` com `npm run relatorio`): resumo, glossário, segurança, conteúdo, painel, mapa do projeto, **Guia de edição** por assunto, custos, roteiro e checklist.
+- Configuração central editável: `src/config/site.ts` (textos da página inicial e FAQ) e `src/config/regras.ts` (sessão, limites de tentativa, Raio-X, amostra grátis).
+- Cabeçalho padrão `📄 O QUE É / ✏️ EDITÁVEL / ⚠️ CUIDADO` em 20 arquivos-chave, marcações `✏️` nos pontos de edição, `content/questoes/LEIA-ME.md` e cabeçalho no `.env.example`.
+
+## [0.2.1] — 2026-09-29
+### Adicionado
+- **109 questões originais do RDPM de SP** (LC 893/2001, texto compilado da Alesp atualizado até a Lei 18.442/2026), cobrindo os 14 capítulos: disposições gerais, deontologia, disciplina, transgressões (26 de classificação G/M/L conferidas contra o texto oficial), sanções, recolhimento, procedimento, competência, aplicação, comportamento, recursos, revisão, recompensas e processo regular. Total do banco: 178.
+- Registro de fontes oficiais no CONTENT_GUIDE.
+### Alterado
+- Explicações curtas agora trazem a resposta por extenso + fundamento; validador exige no mínimo 20 caracteres.
+
 ## [0.2.0] — 2026-09-29
 ### Adicionado
 - Site Next.js 15: página inicial com planos do banco, cadastro (estado + escola), login, termos, privacidade, ajuda/FAQ, PWA (instalar na tela inicial).

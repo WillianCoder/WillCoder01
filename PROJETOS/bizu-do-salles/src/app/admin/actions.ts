@@ -1,4 +1,11 @@
 "use server";
+/**
+ * 📄 O QUE É: AÇÕES DO ADMINISTRADOR no servidor: salvar questão, planos, liberar assinatura, bloquear, escolas, configurações.
+ * ✏️ EDITÁVEL: Regras de validação da questão (questionSchema): tamanhos mínimos, formato do código.
+ * ⚠️ CUIDADO: Área de SEGURANÇA e AUDITORIA: toda ação grava em AuditLog. Não remova as chamadas audit(...) nem requireAdmin().
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
@@ -6,6 +13,7 @@ import { db } from "@/lib/db";
 import { requireAdmin } from "@/lib/auth";
 import { audit } from "@/lib/audit";
 import { activationWindow } from "@/core/access";
+import { createResetLink } from "@/lib/password-reset";
 
 const L = ["A", "B", "C", "D", "E"] as const;
 const slug = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
@@ -154,4 +162,30 @@ export async function saveSettings(form: FormData) {
   for (const f of flags) await db.featureFlag.update({ where: { key: f.key }, data: { enabled: form.get(`flag_${f.key}`) === "on" } });
   await audit(user.id, "settings.update", "Setting", "*");
   redirect("/admin?salvo=1");
+}
+
+/** Gera link de nova senha para enviar ao aluno (ex.: WhatsApp). Mostrado uma vez; auditado. */
+export async function adminResetLink(form: FormData) {
+  const admin = await requireAdmin();
+  const id = String(form.get("id"));
+  const u = await db.user.findUnique({ where: { id } });
+  if (!u) redirect("/admin/usuarios");
+  const link = await createResetLink(u!.id);
+  await audit(admin.id, "user.reset_link", "User", u!.id);
+  // Guardado por 2 minutos num cookie protegido, só para exibir na próxima tela.
+  (await cookies()).set("reset_link", JSON.stringify({ email: u!.email, link }), { httpOnly: true, sameSite: "strict", path: "/admin", maxAge: 120, secure: process.env.NODE_ENV === "production" });
+  redirect("/admin/usuarios?link=1");
+}
+
+/** Muda o papel (Aluno / Editor / Administrador). Ninguém muda o próprio papel. Auditado. */
+export async function setRole(form: FormData) {
+  const admin = await requireAdmin();
+  const id = String(form.get("id"));
+  const role = String(form.get("role"));
+  if (id === admin.id || !["STUDENT", "EDITOR", "ADMIN"].includes(role)) redirect("/admin/usuarios");
+  const u = await db.user.findUnique({ where: { id } });
+  if (!u) redirect("/admin/usuarios");
+  await db.user.update({ where: { id }, data: { role: role as "STUDENT" } });
+  await audit(admin.id, "user.role", "User", id, { role: u!.role }, { role });
+  redirect("/admin/usuarios?salvo=1");
 }

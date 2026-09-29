@@ -1,4 +1,4 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Page } from "./fixtures";
 
 const email = `aluno${Date.now()}@teste.dev`;
 const senha = "senha-forte-123";

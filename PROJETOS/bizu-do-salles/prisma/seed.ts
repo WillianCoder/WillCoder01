@@ -1,12 +1,20 @@
+/**
+ * 📄 O QUE É: CARGA INICIAL do banco: planos, estados, recursos e questões dos arquivos JSON.
+ * ✏️ EDITÁVEL: Planos INICIAIS (só valem na primeira carga; depois, use o painel).
+ * ⚠️ CUIDADO: Nunca sobrescreve dados já existentes — pode rodar várias vezes com segurança.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 // Popula dados iniciais editáveis no painel: planos, ciclos, flags, configurações e questões revisadas.
 import { PrismaClient } from "@prisma/client";
 import { loadQuestionFiles } from "../src/content";
 import { UFS } from "../src/core/states";
+import { REGRAS } from "../src/config/regras";
 
 const db = new PrismaClient();
 const slug = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 async function main() {
+  // ✏️ EDITÁVEL: planos da PRIMEIRA carga (depois, altere pelo painel → Planos e preços)
   const plans = [
     { slug: "basico", name: "Ciclo Básico", description: "Acesso completo ao Ciclo Básico.", priceCents: 3500, durationDays: 90, cycles: ["BASIC"] },
     { slug: "especifico", name: "Ciclo Específico", description: "Acesso completo ao Ciclo Específico.", priceCents: 3500, durationDays: 90, cycles: ["SPECIFIC"] },
@@ -51,7 +59,7 @@ async function main() {
         data: {
           code: q.code, subjectId: subject.id, topicId: topic.id, stateCode: file.state ?? null, statement: q.statement, correctLetter: q.correct,
           explanation: q.explanation, reference: q.reference, sourceLicense: file.sourceLicense, difficulty: q.difficulty,
-          author: file.author, status: "PUBLISHED", isFree: i < 3, // 3 primeiras de cada arquivo = amostra grátis
+          author: file.author, status: "PUBLISHED", isFree: i < REGRAS.conteudo.gratisPorArquivo, // amostra grátis (✏️ src/config/regras.ts)
           options: { create: Object.entries(q.options).map(([letter, text]) => ({ letter, text, whyWrong: q.whyWrong?.[letter as "A"] })) },
         },
       });

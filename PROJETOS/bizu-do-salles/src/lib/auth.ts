@@ -1,12 +1,19 @@
+/**
+ * 📄 O QUE É: LOGIN E SESSÃO (servidor): senha Argon2id, um aparelho por vez, cookie seguro.
+ * ✏️ EDITÁVEL: Dias que o login dura: src/config/regras.ts (sessao.diasValidade).
+ * ⚠️ CUIDADO: Área de SEGURANÇA crítica. Não edite sem ajuda.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import "server-only";
 import { hash, verify } from "@node-rs/argon2";
 import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { db } from "./db";
+import { REGRAS } from "../config/regras";
 import { checkSession, hashToken, newSessionToken, SESSION_REPLACED } from "../core/session";
 
 export const COOKIE = "bizu_session";
-const TTL_DAYS = 30;
+const TTL_DAYS = REGRAS.sessao.diasValidade; // ✏️ muda em src/config/regras.ts
 
 export const hashPassword = (pw: string) => hash(pw); // Argon2id com parâmetros padrão seguros
 export const verifyPassword = (h: string, pw: string) => verify(h, pw);

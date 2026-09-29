@@ -1,0 +1,220 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Regulamento Disciplinar da PM (RDPM)",
+  "topic": "Sanções disciplinares",
+  "state": "SP",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto oficial compilado da LC 893/2001 (Alesp, última atualização: Lei 18.442/2026). Texto legal não protegido por direito autoral (Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "RDPM-SAN-001",
+      "difficulty": "EASY",
+      "statement": "Qual das alternativas NÃO é sanção disciplinar prevista no art. 14 do RDPM?",
+      "options": {
+        "A": "Advertência",
+        "B": "Repreensão",
+        "C": "Proibição do uso do uniforme",
+        "D": "Permanência disciplinar",
+        "E": "Multa"
+      },
+      "correct": "E",
+      "explanation": "O art. 14 prevê: advertência, repreensão, permanência disciplinar, detenção, reforma administrativa disciplinar, demissão, expulsão e proibição do uso do uniforme. Não há multa.",
+      "reference": "LC 893/2001, art. 14"
+    },
+    {
+      "code": "RDPM-SAN-002",
+      "difficulty": "EASY",
+      "statement": "A forma mais branda de sanção disciplinar, aplicada verbalmente e sem constar de publicação nem dos assentamentos, é a:",
+      "options": {
+        "A": "repreensão",
+        "B": "permanência disciplinar",
+        "C": "advertência",
+        "D": "detenção",
+        "E": "proibição do uso do uniforme"
+      },
+      "correct": "C",
+      "explanation": "Art. 15. Aplica-se exclusivamente às faltas de natureza leve.",
+      "reference": "LC 893/2001, art. 15"
+    },
+    {
+      "code": "RDPM-SAN-003",
+      "difficulty": "MEDIUM",
+      "statement": "A repreensão, segundo o RDPM:",
+      "options": {
+        "A": "é verbal e não é registrada",
+        "B": "implica perda da remuneração",
+        "C": "aplica-se somente a faltas graves",
+        "D": "é feita por escrito, publicada de forma reservada ou ostensiva, e sempre averbada nos assentamentos; aplica-se a faltas leves e médias",
+        "E": "só pode ser aplicada pelo Governador"
+      },
+      "correct": "D",
+      "explanation": "Resposta: “é feita por escrito, publicada de forma reservada ou ostensiva, e sempre averbada nos assentamentos; aplica-se a faltas leves e médias”. Fundamento: art. 16 e parágrafo único.",
+      "reference": "LC 893/2001, art. 16"
+    },
+    {
+      "code": "RDPM-SAN-004",
+      "difficulty": "MEDIUM",
+      "statement": "Na permanência disciplinar, o transgressor:",
+      "options": {
+        "A": "fica preso em cela",
+        "B": "fica em casa",
+        "C": "é afastado do serviço sem remuneração",
+        "D": "fica na OPM, sem estar circunscrito a determinado compartimento, comparecendo a todos os atos de instrução e serviço",
+        "E": "é transferido de unidade"
+      },
+      "correct": "D",
+      "explanation": "Resposta: “fica na OPM, sem estar circunscrito a determinado compartimento, comparecendo a todos os atos de instrução e serviço”. Fundamento: art. 17 e parágrafo único.",
+      "reference": "LC 893/2001, art. 17"
+    },
+    {
+      "code": "RDPM-SAN-005",
+      "difficulty": "HARD",
+      "statement": "A pedido do transgressor, a permanência disciplinar pode ser convertida em prestação de serviço extraordinário. O limite máximo dessa conversão é de:",
+      "options": {
+        "A": "2 dias",
+        "B": "3 dias",
+        "C": "5 dias",
+        "D": "8 dias",
+        "E": "10 dias"
+      },
+      "correct": "C",
+      "explanation": "Art. 19, § 1º. O pedido deve ser feito em 3 dias da publicação (art. 18, § 3º) e cada dia de serviço extraordinário equivale a 1 dia de permanência (art. 18, § 2º).",
+      "reference": "LC 893/2001, arts. 18 e 19"
+    },
+    {
+      "code": "RDPM-SAN-006",
+      "difficulty": "HARD",
+      "statement": "A prestação de serviço extraordinário decorrente de conversão da permanência disciplinar dura, por dia:",
+      "options": {
+        "A": "no mínimo 6 e no máximo 8 horas",
+        "B": "no mínimo 4 e no máximo 6 horas",
+        "C": "exatamente 12 horas",
+        "D": "no mínimo 8 e no máximo 12 horas",
+        "E": "24 horas"
+      },
+      "correct": "A",
+      "explanation": "Art. 19, caput: período nunca inferior a 6 nem superior a 8 horas, nos dias de folga. Não pode ser executada logo após serviço ordinário (§ 3º).",
+      "reference": "LC 893/2001, art. 19"
+    },
+    {
+      "code": "RDPM-SAN-007",
+      "difficulty": "MEDIUM",
+      "statement": "O prazo para o militar pedir a conversão da permanência disciplinar em serviço extraordinário é de:",
+      "options": {
+        "A": "24 horas",
+        "B": "3 dias, contados da publicação da sanção",
+        "C": "5 dias",
+        "D": "10 dias",
+        "E": "30 dias"
+      },
+      "correct": "B",
+      "explanation": "Art. 18, § 3º. O pedido de conversão elide o pedido de reconsideração de ato (§ 4º).",
+      "reference": "LC 893/2001, art. 18, §§ 3º e 4º"
+    },
+    {
+      "code": "RDPM-SAN-008",
+      "difficulty": "HARD",
+      "statement": "Segundo o RDPM, a detenção somente poderá ser aplicada:",
+      "options": {
+        "A": "em qualquer falta média",
+        "B": "em faltas leves repetidas",
+        "C": "na primeira falta grave",
+        "D": "a pedido do transgressor",
+        "E": "na reincidência no cometimento de transgressão disciplinar de natureza grave"
+      },
+      "correct": "E",
+      "explanation": "Art. 20, § 2º. Nos dias de detenção o militar perde as vantagens do posto/graduação e o tempo não é computado (§ 1º).",
+      "reference": "LC 893/2001, art. 20"
+    },
+    {
+      "code": "RDPM-SAN-009",
+      "difficulty": "HARD",
+      "statement": "São competentes para aplicar a detenção, segundo o art. 21 do RDPM:",
+      "options": {
+        "A": "qualquer oficial",
+        "B": "somente o Governador",
+        "C": "o Secretário da Segurança Pública, o Comandante Geral e os demais oficiais ocupantes de funções próprias do posto de coronel",
+        "D": "capitães e majores",
+        "E": "o comandante de companhia"
+      },
+      "correct": "C",
+      "explanation": "Resposta: “o Secretário da Segurança Pública, o Comandante Geral e os demais oficiais ocupantes de funções próprias do posto de coronel”. Fundamento: art. 21, caput.",
+      "reference": "LC 893/2001, art. 21"
+    },
+    {
+      "code": "RDPM-SAN-010",
+      "difficulty": "MEDIUM",
+      "statement": "A expulsão, segundo o art. 24 do RDPM, será aplicada, mediante processo regular:",
+      "options": {
+        "A": "à praça que atentar contra a segurança das instituições nacionais ou praticar atos desonrosos ou ofensivos ao decoro profissional",
+        "B": "ao oficial que faltar ao serviço",
+        "C": "a qualquer militar com mais de 3 faltas leves",
+        "D": "ao inativo que usar uniforme",
+        "E": "ao militar que simular doença"
+      },
+      "correct": "A",
+      "explanation": "Resposta: “à praça que atentar contra a segurança das instituições nacionais ou praticar atos desonrosos ou ofensivos ao decoro profissional”. Fundamento: art. 24. Ver também o art. 48.",
+      "reference": "LC 893/2001, arts. 24 e 48"
+    },
+    {
+      "code": "RDPM-SAN-011",
+      "difficulty": "MEDIUM",
+      "statement": "A proibição do uso de uniformes, como sanção disciplinar, é aplicada:",
+      "options": {
+        "A": "temporariamente, ao inativo que atentar contra o decoro ou a dignidade policial-militar, até o limite de 1 ano",
+        "B": "a qualquer praça da ativa, por até 30 dias",
+        "C": "ao aluno reprovado no curso",
+        "D": "somente a oficiais da ativa",
+        "E": "por prazo indeterminado"
+      },
+      "correct": "A",
+      "explanation": "Resposta: “temporariamente, ao inativo que atentar contra o decoro ou a dignidade policial-militar, até o limite de 1 ano”. Fundamento: art. 25.",
+      "reference": "LC 893/2001, art. 25"
+    },
+    {
+      "code": "RDPM-SAN-012",
+      "difficulty": "HARD",
+      "statement": "Segundo o RDPM, a praça será demitida quando, entre outras hipóteses, for condenada por sentença transitada em julgado a pena restritiva de liberdade por tempo superior a:",
+      "options": {
+        "A": "6 meses",
+        "B": "1 ano",
+        "C": "2 anos",
+        "D": "4 anos",
+        "E": "8 anos"
+      },
+      "correct": "C",
+      "explanation": "Art. 23, II, 'a' (para oficial, art. 23, I, 'a', o mesmo limite). O oficial demitido perde posto e patente; a praça, a graduação.",
+      "reference": "LC 893/2001, art. 23"
+    },
+    {
+      "code": "RDPM-SAN-013",
+      "difficulty": "HARD",
+      "statement": "Segundo o RDPM, o militar recolhido disciplinarmente (sem nota de punição publicada) pode permanecer nessa situação pelo prazo máximo de:",
+      "options": {
+        "A": "24 horas",
+        "B": "48 horas",
+        "C": "5 dias",
+        "D": "10 dias",
+        "E": "30 dias"
+      },
+      "correct": "C",
+      "explanation": "Art. 26, § 4º. A decisão deve ser fundamentada e comunicada ao Juiz Corregedor da polícia judiciária militar (§ 3º).",
+      "reference": "LC 893/2001, art. 26"
+    },
+    {
+      "code": "RDPM-SAN-014",
+      "difficulty": "MEDIUM",
+      "statement": "O recolhimento disciplinar pode ocorrer quando for necessário para a preservação da ordem e da disciplina, especialmente se o militar mostrar-se:",
+      "options": {
+        "A": "cansado",
+        "B": "atrasado",
+        "C": "agressivo, embriagado ou sob ação de substância entorpecente",
+        "D": "mal uniformizado",
+        "E": "em desacordo com o superior"
+      },
+      "correct": "C",
+      "explanation": "Art. 26, II. A condução do militar só pode ser feita por superior hierárquico (§ 2º).",
+      "reference": "LC 893/2001, art. 26, II e § 2º"
+    }
+  ]
+}

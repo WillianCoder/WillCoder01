@@ -1,3 +1,9 @@
+/**
+ * 📄 O QUE É: CONFIGURAÇÃO DO SERVIDOR e cabeçalhos de segurança.
+ * ✏️ EDITÁVEL: Nada no dia a dia.
+ * ⚠️ CUIDADO: Área de SEGURANÇA. Não remova os cabeçalhos.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import type { NextConfig } from "next";
 
 // Cabeçalhos de segurança aplicados a todas as páginas.
@@ -16,6 +22,8 @@ const security = [
 const config: NextConfig = {
   poweredByHeader: false,
   serverExternalPackages: ["@node-rs/argon2"],
+  // Envio de planilhas (até 2 MB) pelo painel.
+  experimental: { serverActions: { bodySizeLimit: "3mb" } },
   async headers() {
     return [{ source: "/:path*", headers: security }];
   },

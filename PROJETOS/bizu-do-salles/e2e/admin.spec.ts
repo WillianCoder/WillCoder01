@@ -1,4 +1,4 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Page } from "./fixtures";
 
 // Requer um admin de teste: ADMIN_PASSWORD=admin-teste-12345 npm run admin:create -- admin@teste.dev "Admin Teste"
 async function loginAdmin(page: Page) {

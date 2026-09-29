@@ -1,13 +1,18 @@
 import { db } from "@/lib/db";
 import { requireAdmin } from "@/lib/auth";
 import { date } from "@/lib/format";
-import { activateSubscription, cancelSubscription, endSessions, toggleBlock } from "../actions";
+import { cookies } from "next/headers";
+import { activateSubscription, adminResetLink, cancelSubscription, endSessions, setRole, toggleBlock } from "../actions";
+import { requireAdmin as currentAdmin } from "@/lib/auth";
 
 export const metadata = { title: "Usuários" };
 
-export default async function AdminUsuarios({ searchParams }: { searchParams: Promise<{ busca?: string; salvo?: string }> }) {
+export default async function AdminUsuarios({ searchParams }: { searchParams: Promise<{ busca?: string; salvo?: string; link?: string }> }) {
   await requireAdmin();
   const sp = await searchParams;
+  const me = await currentAdmin();
+  let reset: { email: string; link: string } | null = null;
+  if (sp.link) try { reset = JSON.parse((await cookies()).get("reset_link")?.value ?? "null"); } catch { reset = null; }
   const [pending, users] = await Promise.all([
     db.subscription.findMany({ where: { status: "PENDING" }, include: { user: true, plan: true }, orderBy: { createdAt: "asc" } }),
     db.user.findMany({
@@ -20,6 +25,13 @@ export default async function AdminUsuarios({ searchParams }: { searchParams: Pr
     <div className="stack">
       <h1>Usuários e assinaturas</h1>
       {sp.salvo && <p className="alert ok">Feito. Ação registrada na auditoria.</p>}
+      {reset && (
+        <div className="alert ok stack">
+          <p><strong>Link de nova senha para {reset.email}</strong> (vale {"uma vez"} e expira em breve). Copie e envie ao aluno:</p>
+          <input readOnly value={reset.link} aria-label="Link de nova senha" />
+          <p className="muted" style={{ fontSize: ".85rem" }}>Este link some desta tela em 2 minutos. Nunca publique em grupos.</p>
+        </div>
+      )}
       <section className="card stack">
         <h2>Pedidos aguardando pagamento ({pending.length})</h2>
         <p className="muted">Com o gateway ligado, a liberação é automática. Use a liberação manual só depois de conferir o pagamento no extrato.</p>
@@ -44,6 +56,14 @@ export default async function AdminUsuarios({ searchParams }: { searchParams: Pr
               ))}{u.subscriptions.length === 0 && "—"}</td>
               <td>{u.sessions[0] ? `${date(u.sessions[0].lastSeenAt)} · ${u.sessions[0].deviceLabel?.slice(0, 40) ?? ""}` : "Desconectado"}</td>
               <td className="row">
+                <form action={setRole} className="row" style={{ gap: ".3rem" }}>
+                  <input type="hidden" name="id" value={u.id} />
+                  <select name="role" defaultValue={u.role} aria-label={`Papel de ${u.name}`} disabled={u.id === me.id} style={{ width: "auto", minHeight: 36 }}>
+                    <option value="STUDENT">Aluno</option><option value="EDITOR">Editor</option><option value="ADMIN">Administrador</option>
+                  </select>
+                  {u.id !== me.id && <button className="btn ghost small">Mudar papel</button>}
+                </form>
+                <form action={adminResetLink}><input type="hidden" name="id" value={u.id} /><button className="btn ghost small">Link de senha</button></form>
                 <form action={endSessions}><input type="hidden" name="id" value={u.id} /><button className="btn ghost small">Desconectar</button></form>
                 <form action={toggleBlock}><input type="hidden" name="id" value={u.id} /><button className={`btn small ${u.blocked ? "" : "danger"}`}>{u.blocked ? "Desbloquear" : "Bloquear"}</button></form>
               </td>

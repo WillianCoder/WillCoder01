@@ -34,7 +34,7 @@ Fontes oficiais para as questões de SP, a conferir sempre no texto consolidado 
 Regra: só escrever questão estadual com o texto oficial vigente em mãos (as leis mudam; confira alterações posteriores).
 
 ## Plano de conteúdo — foco São Paulo (PMESP)
-Status em 29/09/2026: **69 questões nacionais publicadas**; estaduais de SP aguardando acesso ao texto oficial (os domínios de legislação estão bloqueados no ambiente de desenvolvimento em nuvem — ver README).
+Status em 29/09/2026: **178 questões** — 69 nacionais + **109 de SP (RDPM completo)**.
 
 | Bloco | Base legal (texto oficial) | Abrangência | Status |
 |---|---|---|---|
@@ -45,7 +45,7 @@ Status em 29/09/2026: **69 questões nacionais publicadas**; estaduais de SP agu
 | Código Penal, CPP, Código Penal Militar, CPPM | Decretos-Leis 2.848/40, 3.689/41, 1.001/69, 1.002/69 | Nacional | ⏳ |
 | ECA, Estatuto do Desarmamento, Maria da Penha, Lei de Drogas | Leis 8.069/90, 10.826/03, 11.340/06, 11.343/06 | Nacional | ⏳ |
 | Constituição do Estado de SP — segurança pública e servidores militares | CE-SP/1989 | SP | ⏳ precisa texto |
-| Regulamento Disciplinar da PM (RDPM) | LC 893/2001 e alterações | SP | ⏳ precisa texto |
+| Regulamento Disciplinar da PM (RDPM) — todos os 14 capítulos | LC 893/2001, texto compilado Alesp (atualizado até a Lei 18.442/2026) | SP | ✅ 109 |
 | Demais normas das aulas internas (estatuto, polícia comunitária, POP etc.) | Conforme ementa do curso | SP | ⏳ precisa ementa |
 
 ### Uso de material gratuito da internet
@@ -55,3 +55,12 @@ Apostilas e questões de cursos (mesmo gratuitas) servem **apenas como mapa de a
 - esquema, códigos únicos, alternativas sem repetição, fonte/licença obrigatória;
 - nenhuma letra com mais de 35% dos gabaritos;
 - relatório por ciclo, disciplina, dificuldade, abrangência e letra.
+
+### Registro de fontes oficiais usadas
+| Norma | Fonte | Versão conferida | Data |
+|---|---|---|---|
+| LC 893/2001 (RDPM) | Alesp — texto compilado | Última atualização: Lei 18.442, de 02/04/2026 (inclui LC 915/2002) | 29/09/2026 |
+| LC 893/2001 (RDPM) | PMESP — PDF de downloads (conferência) | Texto original | 29/09/2026 |
+
+As 26 questões de classificação (G/M/L) do art. 13 foram conferidas automaticamente contra o texto oficial (132 itens): nenhuma divergência.
+**Quando a lei mudar:** atualize esta tabela, revise as questões do artigo alterado (busque pela referência) e registre no CHANGELOG.

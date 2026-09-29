@@ -8,6 +8,8 @@ Recomendação para começar com custo zero ou baixo: **Vercel** (site) + **Neon
 3. Em **Environment Variables** da Vercel, adicione (valores reais, nunca no código):
    - `DATABASE_URL` = connection string do Neon
    - `APP_NAME` = Bizu do Salles
+   - `APP_URL` = endereço público (ex.: `https://bizudosalles.com.br`) — usado nos links de senha
+   - (opcional) `RESEND_API_KEY` e `EMAIL_FROM` — para o site enviar e-mails de "esqueci minha senha" sozinho (conta grátis em resend.com)
 4. **Build Command:** `npx prisma migrate deploy && npm run build` (aplica migrações a cada publicação).
 5. Faça o deploy. Depois, no seu computador, com `DATABASE_URL` do Neon no `.env`:
    `npm run db:seed` e `npm run admin:create -- seu@email.com "Seu Nome"`.

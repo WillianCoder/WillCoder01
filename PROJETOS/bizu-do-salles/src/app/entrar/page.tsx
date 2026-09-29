@@ -11,6 +11,7 @@ const MOTIVOS: Record<string, string> = {
   BLOCKED: "Conta bloqueada. Fale com o suporte.",
   LOGOUT: "Você saiu da sua conta.",
   REVOKED: "Sua sessão foi encerrada. Entre novamente.",
+  SENHA_ALTERADA: "Senha alterada. Entre com a nova senha.",
 };
 
 export default async function Entrar({ searchParams }: { searchParams: Promise<{ erro?: string; motivo?: string }> }) {
@@ -26,6 +27,7 @@ export default async function Entrar({ searchParams }: { searchParams: Promise<{
           <div className="field"><label htmlFor="email">E-mail</label><input id="email" name="email" type="email" autoComplete="email" required /></div>
           <div className="field"><label htmlFor="password">Senha</label><input id="password" name="password" type="password" autoComplete="current-password" required /></div>
           <button className="btn" type="submit">Entrar</button>
+          <p className="muted"><Link href="/esqueci-senha">Esqueci minha senha</Link></p>
           <p className="muted">Ainda não tem conta? <Link href="/cadastro">Criar conta</Link></p>
           <p className="muted" style={{ fontSize: ".85rem" }}>Por segurança, sua conta fica conectada em um aparelho por vez.</p>
         </form>

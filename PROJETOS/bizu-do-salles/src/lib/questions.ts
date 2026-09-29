@@ -4,6 +4,7 @@ import { db } from "./db";
 import { stateWhere } from "../core/states";
 
 export type Filter = "nao-respondidas" | "erradas" | "favoritas" | "revisar" | "todas";
+// ✏️ EDITÁVEL: nomes dos filtros da tela de questões (mude só o texto à direita)
 export const FILTERS: Record<Filter, string> = {
   "nao-respondidas": "Não respondidas",
   erradas: "Que errei",
@@ -20,8 +21,12 @@ export function visibleWhere(user: { id: string; stateCode: string | null }, cyc
   };
 }
 
-export function filterWhere(userId: string, filter: Filter, subjectId?: string): Prisma.QuestionWhereInput {
-  const w: Prisma.QuestionWhereInput = subjectId ? { subjectId } : {};
+export function filterWhere(userId: string, filter: Filter, subjectId?: string, notebookId?: string): Prisma.QuestionWhereInput {
+  const w: Prisma.QuestionWhereInput = {
+    ...(subjectId ? { subjectId } : {}),
+    // Caderno: só questões do caderno DESTE aluno (o dono é conferido aqui).
+    ...(notebookId ? { notebookItems: { some: { notebookId, notebook: { userId } } } } : {}),
+  };
   switch (filter) {
     case "nao-respondidas": return { ...w, attempts: { none: { userId } } };
     case "erradas": return { ...w, attempts: { some: { userId, correct: false } } };

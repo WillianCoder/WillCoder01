@@ -1,10 +1,18 @@
+/**
+ * 📄 O QUE É: PÁGINA INICIAL (endereço /): apresentação, recursos e planos.
+ * ✏️ EDITÁVEL: Os TEXTOS ficam em src/config/site.ts. Os PLANOS e PREÇOS vêm do banco — mude no painel (Admin → Planos e preços).
+ * ⚠️ CUIDADO: Aqui é a montagem da página; prefira editar os textos no arquivo de configuração.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import Link from "next/link";
 import { db } from "@/lib/db";
 import { brl, CYCLE_NAME } from "@/lib/format";
+import { SITE } from "@/config/site";
 
 export const dynamic = "force-dynamic";
 
-export default async function Home() {
+export default async function Home({ searchParams }: { searchParams: Promise<{ conta_excluida?: string }> }) {
+  const { conta_excluida } = await searchParams;
   const [plans, total] = await Promise.all([
     db.plan.findMany({ where: { active: true }, orderBy: { priceCents: "asc" } }),
     db.question.count({ where: { status: "PUBLISHED" } }),
@@ -21,31 +29,24 @@ export default async function Home() {
         </div>
       </header>
       <main className="container">
+        {conta_excluida && <p className="alert ok" style={{ marginTop: "1rem" }}>Sua conta foi excluída. Obrigado por estudar com a gente.</p>}
         <section className="hero">
-          <span className="badge">Formação policial militar · foco em São Paulo</span>
-          <h1>Estude por questões e saiba exatamente onde está errando.</h1>
-          <p className="muted" style={{ maxWidth: 640 }}>
-            Questões comentadas com a lei de base, simulados e um raio-x do seu desempenho, organizados
-            em Ciclo Básico e Ciclo Específico. Hoje são {total} questões originais, e o banco cresce toda semana.
-          </p>
+          <span className="badge">{SITE.selo}</span>
+          <h1>{SITE.titulo}</h1>
+          <p className="muted" style={{ maxWidth: 640 }}>{SITE.subtitulo.replace("{total}", String(total))}</p>
           <div className="row" style={{ marginTop: "1.5rem" }}>
-            <Link href="/cadastro" className="btn">Começar a estudar</Link>
-            <a href="#planos" className="btn ghost">Conhecer planos</a>
-            <Link href="/cadastro?gratis=1" className="btn ghost">Experimentar grátis</Link>
+            <Link href="/cadastro" className="btn">{SITE.botoes.comecar}</Link>
+            <a href="#planos" className="btn ghost">{SITE.botoes.planos}</a>
+            <Link href="/cadastro?gratis=1" className="btn ghost">{SITE.botoes.gratis}</Link>
           </div>
         </section>
 
         <section className="grid" aria-label="Recursos">
-          {[
-            ["❓", "Questões comentadas", "Gabarito, explicação e o artigo da lei em cada questão."],
-            ["📊", "Raio-X do aluno", "Pontos fortes, pontos a melhorar e o que revisar primeiro."],
-            ["⭐", "Favoritas e revisão", "Marque questões e volte nelas quando quiser."],
-            ["📱", "Celular e computador", "Funciona no navegador e pode ser instalado na tela inicial."],
-          ].map(([icon, title, text]) => (
-            <div className="card" key={title}>
-              <div style={{ fontSize: "1.6rem" }} aria-hidden>{icon}</div>
-              <h3>{title}</h3>
-              <p className="muted">{text}</p>
+          {SITE.recursos.map((r) => (
+            <div className="card" key={r.titulo}>
+              <div style={{ fontSize: "1.6rem" }} aria-hidden>{r.icone}</div>
+              <h3>{r.titulo}</h3>
+              <p className="muted">{r.texto}</p>
             </div>
           ))}
         </section>
@@ -66,7 +67,7 @@ export default async function Home() {
         </section>
       </main>
       <footer className="container muted" style={{ padding: "2rem 16px", borderTop: "1px solid var(--border)" }}>
-        <p>© Bizu do Salles · <Link href="/termos">Termos de uso</Link> · <Link href="/privacidade">Privacidade</Link> · <Link href="/ajuda">Ajuda</Link></p>
+        <p>© {SITE.nome} · <Link href="/termos">Termos de uso</Link> · <Link href="/privacidade">Privacidade</Link> · <Link href="/ajuda">Ajuda</Link></p>
       </footer>
     </>
   );

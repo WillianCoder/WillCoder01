@@ -1,10 +1,17 @@
+/**
+ * 📄 O QUE É: MOLDURA de todas as páginas: título da aba, tema e tamanho da letra.
+ * ✏️ EDITÁVEL: Nome e descrição do site: src/config/site.ts.
+ * ⚠️ CUIDADO: Evite editar sem ajuda.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 import "./globals.css";
+import { SITE } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: { default: "Bizu do Salles", template: "%s · Bizu do Salles" },
-  description: "Estude por questões para o Ciclo Básico e o Ciclo Específico da formação policial militar.",
+  title: { default: SITE.nome, template: `%s · ${SITE.nome}` },
+  description: SITE.descricao,
   manifest: "/manifest.webmanifest",
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0e6b5c" };
