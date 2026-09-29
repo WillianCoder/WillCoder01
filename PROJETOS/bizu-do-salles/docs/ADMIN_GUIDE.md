@@ -15,8 +15,10 @@ Para mudar o papel de alguém: Painel → **Usuários e assinaturas** → escolh
 - **Visão geral** — números (usuários, assinaturas, questões, problemas) + WhatsApp/e-mail de suporte + recursos ligados/desligados.
 - **Questões** — busca e filtro por status; *Nova questão* com formulário completo (alternativas A–E, gabarito, "por que está errada", explicação, referência e origem). A questão só aparece para alunos quando o status é **Publicada**. Marque **Grátis** para usá-la como amostra.
 - **📥 Importar planilha** — baixe o modelo, preencha no Excel (uma questão por linha), salve como **CSV UTF-8** e envie. As questões entram como *Em revisão*; confira e publique em Questões. Linhas com problema aparecem listadas com o motivo.
+- **📖 Materiais** — resumos (escritos no próprio painel: `## Subtítulo`, `- item`, `**negrito**`), áudios e PDFs (cole um link https de onde o arquivo está hospedado). Só publique material próprio ou autorizado.
 - **Problemas relatados** — o que os alunos apontaram em "Encontrou um problema?". Corrija a questão e marque como resolvido.
 - **Usuários e assinaturas** — pedidos pendentes (confirme o pagamento e libere), busca de alunos, cancelar plano, desconectar aparelho, bloquear/desbloquear e **Link de senha** (para aluno que esqueceu a senha: o link aparece uma vez, vale por 60 minutos e só funciona uma vez — envie em conversa privada, nunca em grupo).
+- **🎟️ Cupons** — crie códigos de desconto (% ou R$), com limite de usos, validade e planos. O uso só conta quando o pagamento é aprovado.
 - **Planos e preços** — nome, preço, duração, descrição, à venda ou não.
 - **Escolas** — lista fechada que o aluno escolhe no cadastro.
 - **Auditoria** — tudo que a equipe fez, com data e autor.

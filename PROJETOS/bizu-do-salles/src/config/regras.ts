@@ -66,6 +66,11 @@ export const REGRAS = {
     maxQuestoes: 500,
   },
 
+  pagamento: {
+    // ✏️ EDITÁVEL: menor valor cobrado mesmo com cupom (em centavos; 100 = R$ 1,00)
+    minimoCentavos: 100,
+  },
+
   conteudo: {
     // ✏️ EDITÁVEL: quantas questões de cada arquivo novo viram amostra grátis ao carregar (seed)
     gratisPorArquivo: 3,

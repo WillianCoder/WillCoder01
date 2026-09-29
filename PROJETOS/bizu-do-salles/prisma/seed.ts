@@ -6,7 +6,7 @@
  */
 // Popula dados iniciais editáveis no painel: planos, ciclos, flags, configurações e questões revisadas.
 import { PrismaClient } from "@prisma/client";
-import { loadQuestionFiles } from "../src/content";
+import { loadMaterialFiles, loadQuestionFiles } from "../src/content";
 import { UFS } from "../src/core/states";
 import { REGRAS } from "../src/config/regras";
 
@@ -66,7 +66,21 @@ async function main() {
       n++;
     }
   }
-  console.log(`Seed concluído: ${plans.length} planos, ${n} questões novas.`);
+  // Materiais da biblioteca: só cria os que ainda não existem (pelo título); edições do painel prevalecem.
+  let m = 0;
+  for (const mat of loadMaterialFiles()) {
+    if (await db.material.findFirst({ where: { title: mat.title } })) continue;
+    const cycle = mat.cycle ? cycles[mat.cycle] : null;
+    const subject = cycle && mat.subject ? await db.subject.findUnique({ where: { cycleId_slug: { cycleId: cycle.id, slug: slug(mat.subject) } } }) : null;
+    await db.material.create({
+      data: {
+        title: mat.title, kind: mat.kind, cycle: mat.cycle ?? null, subjectId: subject?.id ?? null, stateCode: mat.state ?? null,
+        storageKey: mat.url ?? "", body: mat.body, free: mat.free, published: true, sourceLicense: mat.sourceLicense,
+      },
+    });
+    m++;
+  }
+  console.log(`Seed concluído: ${plans.length} planos, ${n} questões novas, ${m} materiais novos.`);
 }
 
 main().finally(() => db.$disconnect());

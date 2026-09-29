@@ -15,6 +15,10 @@ import { visibleWhere } from "@/lib/questions";
 import { orderFor, originalLetter } from "@/core/shuffle";
 import { rateLimit } from "@/lib/rate-limit";
 import { REGRAS, janela } from "@/config/regras";
+import { SITE } from "@/config/site";
+import { applyCoupon } from "@/core/pricing";
+import { createCheckout, mercadoPagoEnabled } from "@/lib/mercadopago";
+import { baseUrl } from "@/lib/password-reset";
 
 const back = (form: FormData) => String(form.get("back") ?? "/app/questoes").replace(/[^\w\-/?=&%.]/g, "");
 
@@ -68,9 +72,32 @@ export async function subscribe(form: FormData) {
   const user = await requireUser();
   const plan = await db.plan.findFirst({ where: { id: String(form.get("planId")), active: true } });
   if (!plan) redirect("/app/planos");
+  if (!rateLimit(`subscribe:${user.id}`, 10, 60 * 60_000)) redirect("/app/planos?erro=" + encodeURIComponent("Muitas tentativas. Aguarde."));
+
+  // Preço calculado SEMPRE no servidor, a partir do banco (+ cupom validado).
+  const code = String(form.get("cupom") ?? "").trim().toUpperCase().slice(0, 40);
+  const coupon = code ? await db.coupon.findUnique({ where: { code } }) : null;
+  if (code && !coupon) redirect("/app/planos?erro=" + encodeURIComponent("Cupom não encontrado."));
+  const price = applyCoupon(plan!.priceCents, plan!.slug, coupon, REGRAS.pagamento.minimoCentavos);
+  if (!price.ok) redirect("/app/planos?erro=" + encodeURIComponent(price.error));
+  const amountCents = (price as { finalCents: number }).finalCents;
+
   // Pedido fica PENDENTE. Só vira ATIVO por confirmação do gateway (webhook) ou do administrador.
-  const pending = await db.subscription.findFirst({ where: { userId: user.id, planId: plan!.id, status: "PENDING" } });
-  if (!pending) await db.subscription.create({ data: { userId: user.id, planId: plan!.id, status: "PENDING" } });
+  const existing = await db.subscription.findFirst({ where: { userId: user.id, planId: plan!.id, status: "PENDING" } });
+  const sub = existing
+    ? await db.subscription.update({ where: { id: existing.id }, data: { amountCents, couponId: coupon?.id ?? null } })
+    : await db.subscription.create({ data: { userId: user.id, planId: plan!.id, status: "PENDING", amountCents, couponId: coupon?.id ?? null } });
+
+  if (mercadoPagoEnabled()) {
+    let url: string;
+    try {
+      url = await createCheckout({ subscriptionId: sub.id, title: `${SITE.nome} — ${plan!.name}`, amountCents, email: user.email, baseUrl: await baseUrl() });
+    } catch (e) {
+      console.error(e);
+      redirect("/app/planos?erro=" + encodeURIComponent("Não foi possível abrir o pagamento agora. Tente novamente em instantes."));
+    }
+    redirect(url!);
+  }
   redirect("/app/planos?pedido=1");
 }
 

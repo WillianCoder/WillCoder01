@@ -1,6 +1,6 @@
 import { db } from "@/lib/db";
 import { requireAdmin } from "@/lib/auth";
-import { date } from "@/lib/format";
+import { brl, date } from "@/lib/format";
 import { cookies } from "next/headers";
 import { activateSubscription, adminResetLink, cancelSubscription, endSessions, setRole, toggleBlock } from "../actions";
 import { requireAdmin as currentAdmin } from "@/lib/auth";
@@ -38,7 +38,7 @@ export default async function AdminUsuarios({ searchParams }: { searchParams: Pr
         {pending.map((s) => (
           <form action={activateSubscription} className="row" key={s.id} style={{ borderTop: "1px solid var(--border)", paddingTop: ".75rem" }}>
             <input type="hidden" name="id" value={s.id} />
-            <span><strong>{s.user.name}</strong> ({s.user.email}) · {s.plan.name} · pedido em {date(s.createdAt)}</span>
+            <span><strong>{s.user.name}</strong> ({s.user.email}) · {s.plan.name} · {s.amountCents !== null ? brl(s.amountCents) : brl(s.plan.priceCents)} · pedido em {date(s.createdAt)}</span>
             <input name="note" placeholder="Comprovante / observação" style={{ maxWidth: 240 }} required aria-label="Observação" />
             <button className="btn small">Confirmar pagamento e liberar</button>
           </form>

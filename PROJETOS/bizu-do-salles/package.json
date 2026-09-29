@@ -1,6 +1,6 @@
 {
   "name": "bizu-do-salles",
-  "version": "0.6.0",
+  "version": "0.8.0",
   "description": "Bizu do Salles — plataforma de estudos por questões (Ciclo Básico + Específico).",
   "directories": {
     "doc": "docs",
