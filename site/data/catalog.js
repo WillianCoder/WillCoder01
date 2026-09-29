@@ -16,23 +16,29 @@ window.CATALOGO = {
     }
   },
   "estatisticas": {
-    "total": 2,
-    "projetos": 1,
+    "total": 3,
+    "projetos": 2,
     "concluidos": 0,
-    "desenvolvimento": 1,
+    "desenvolvimento": 2,
     "academicos": 0,
     "estudos": 0,
     "experimentos": 1,
     "portfolio": 0,
-    "documentos": 8,
+    "documentos": 9,
     "tecnologias": [
       "CSS",
       "HTML",
+      "Impressão 3D",
       "JavaScript",
+      "Ollama",
+      "Piper TTS",
       "PostgreSQL",
       "Prisma",
+      "Python",
+      "Raspberry Pi",
       "TypeScript",
-      "Vitest"
+      "Vitest",
+      "Vosk"
     ]
   },
   "itens": [
@@ -64,6 +70,37 @@ window.CATALOGO = {
         "repositorio": ""
       },
       "caminho": "PROJETOS/bizu-do-salles"
+    },
+    {
+      "titulo": "Boneco Árvore IA",
+      "tipo": "projeto",
+      "categoria": "Inteligência Artificial",
+      "status": "desenvolvimento",
+      "tecnologias": [
+        "Python",
+        "Raspberry Pi",
+        "Ollama",
+        "Vosk",
+        "Piper TTS",
+        "Impressão 3D"
+      ],
+      "data": "2026-09-29",
+      "atualizado": "2026-09-29",
+      "versao": "0.3.0",
+      "nivel": "iniciante",
+      "resumo": "Boneco impresso em 3D com IA offline que acorda pelo nome e responde com voz grossa de árvore, sem sair do personagem.",
+      "destaque": false,
+      "portfolio": {
+        "problema": "",
+        "desenvolvido": "",
+        "participacao": "",
+        "resultado": ""
+      },
+      "links": {
+        "demo": "",
+        "repositorio": ""
+      },
+      "caminho": "PROJETOS/boneco-arvore-ia"
     },
     {
       "titulo": "Primeira página web — barra de navegação",

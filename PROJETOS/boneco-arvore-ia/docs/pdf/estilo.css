@@ -1,0 +1,16 @@
+/* Estilo comum dos PDFs do boneco */
+@page{size:A4;margin:14mm 13mm}
+*{box-sizing:border-box}body{font-family:"DejaVu Sans",Arial,sans-serif;color:#1f2a1f;font-size:10.5pt;line-height:1.45;margin:0}
+h1{font-size:26pt;margin:0;color:#2f5d2f}h2{color:#fff;background:#3f7a3f;padding:6px 10px;border-radius:6px;font-size:14pt;margin:18px 0 8px;break-after:avoid}
+h3{color:#2f5d2f;margin:12px 0 4px;font-size:11.5pt;break-after:avoid}
+table{width:100%;border-collapse:collapse;margin:6px 0;break-inside:auto}tr{break-inside:avoid}
+th{background:#dcebd3;text-align:left}th,td{border:1px solid #b9cfb0;padding:4px 6px;vertical-align:top}
+code,pre{font-family:"DejaVu Sans Mono",monospace;font-size:8.8pt}pre{background:#f1f5ee;border-left:4px solid #3f7a3f;padding:6px 8px;white-space:pre-wrap;margin:4px 0;break-inside:avoid}
+.page{break-before:page}.cover{text-align:center;padding-top:40mm}.cover p{font-size:13pt}
+.tip{background:#fff7d6;border:1px solid #e8cf6a;border-radius:6px;padding:6px 10px;margin:8px 0;break-inside:avoid}
+.warn{background:#fde4e0;border:1px solid #e7998c;border-radius:6px;padding:6px 10px;margin:8px 0;break-inside:avoid}
+.box{border:1px solid #b9cfb0;border-radius:8px;padding:6px 10px;margin:6px 0;break-inside:avoid}
+.steps li{margin-bottom:4px}.chk{font-size:12pt}.free{color:#2f7a2f;font-weight:bold}
+.flow{display:flex;gap:4px;align-items:center;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.flow div{background:#dcebd3;border:2px solid #3f7a3f;border-radius:8px;padding:6px 8px;text-align:center;font-size:9pt;width:108px}
+.flow span{font-size:16pt;color:#3f7a3f}

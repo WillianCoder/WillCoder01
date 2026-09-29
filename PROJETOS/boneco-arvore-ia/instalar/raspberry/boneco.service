@@ -1,0 +1,16 @@
+# Faz o boneco ligar sozinho quando o Raspberry liga (o instalar.sh copia este arquivo)
+[Unit]
+Description=Boneco Arvore IA
+After=sound.target network.target ollama.service
+Wants=ollama.service
+
+[Service]
+User=__USUARIO__
+WorkingDirectory=__SRC__
+ExecStartPre=/bin/sleep 10
+ExecStart=__PYTHON__ boneco.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
