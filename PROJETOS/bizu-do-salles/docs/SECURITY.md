@@ -17,10 +17,13 @@
 - Bloqueio de usuário derruba as sessões; admin não bloqueia a si mesmo.
 - Toda ação administrativa gravada em `AuditLog`.
 
+## Implementado (v0.3–v0.4)
+- Simulados: sorteio só entre questões liberadas; gabarito só após finalizar; envio fora do tempo (com tolerância) não conta; proteção contra envio duplo.
+- Recuperação de senha: token aleatório de 256 bits, só o hash no banco, uso único, expira em 60 min; trocar a senha desconecta todos os aparelhos; resposta genérica; limites por IP e por e-mail; `Referrer-Policy` impede o token de vazar para outros sites.
+
 ## Obrigatório nas próximas versões
 | Item | Versão |
 |---|---|
-| Recuperação de senha com token de uso único e expiração curta | v0.3 |
 | Limite de tentativas compartilhado (Upstash Redis) quando houver várias instâncias | v1.0 |
 | Webhook de pagamento com verificação de assinatura e idempotência | v0.8 |
 | Uploads: limite de tamanho, checagem de MIME real, bucket privado com URL assinada | v1.x |

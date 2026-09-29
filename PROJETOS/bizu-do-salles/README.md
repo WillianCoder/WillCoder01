@@ -2,7 +2,7 @@
 
 Plataforma de estudos por questões para a formação da Polícia Militar — **Ciclo Básico**, **Ciclo Específico** e plano **Básico + Específico**. Atende **todos os estados**, com foco inicial em **São Paulo**.
 
-**Versão 0.3.0** — site funcionando: cadastro, login (um aparelho por vez), **178 questões comentadas (109 do RDPM de SP)**, **simulados com cronômetro**, desempenho com raio-x, favoritas/revisão, planos e painel administrativo completo. [Roteiro](docs/PRODUCT_ROADMAP.md) · [Changelog](CHANGELOG.md)
+**Versão 0.4.0** — site funcionando: cadastro, login (um aparelho por vez), **178 questões comentadas (109 do RDPM de SP)**, **simulados com cronômetro**, recuperação de senha, meta diária, desempenho com raio-x, favoritas/revisão, planos e painel administrativo completo. [Roteiro](docs/PRODUCT_ROADMAP.md) · [Changelog](CHANGELOG.md)
 
 > 👋 **Começando agora?** Abra o **[Relatório em PDF](docs/RELATORIO.pdf)** — explica o projeto, o glossário e traz o **Guia de edição** (o que mudar e onde). Depois, o [Guia do iniciante](docs/GUIA_INICIANTE.md).
 >
@@ -41,5 +41,5 @@ npm run dev                          # http://localhost:3000
 ## Qualidade
 
 - `npm test` — regras de negócio e validação do banco de questões (16 testes).
-- `npm run test:e2e` — navegador real: cadastro, resposta, sessão única, bloqueio sem plano, liberação pelo admin, criação de questão, cabeçalhos de segurança, simulado (7 testes).
+- `npm run test:e2e` — navegador real: cadastro, resposta, sessão única, bloqueio sem plano, liberação pelo admin, criação de questão, cabeçalhos de segurança, simulado, recuperação de senha, meta diária (10 testes).
 - CI no GitHub roda tudo com PostgreSQL a cada envio.

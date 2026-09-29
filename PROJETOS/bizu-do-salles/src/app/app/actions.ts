@@ -85,6 +85,8 @@ export async function savePreferences(form: FormData) {
   const nickname = String(form.get("nickname") ?? "").trim().slice(0, 30);
   const user = await requireUser();
   await db.user.update({ where: { id: user.id }, data: { nickname: nickname || null } });
+  const meta = Math.min(Math.max(Math.round(Number(form.get("metaDiaria")) || 0), 0), 500);
+  await db.goal.upsert({ where: { userId: user.id }, update: { questionsDay: meta || null }, create: { userId: user.id, questionsDay: meta || null } });
   revalidatePath("/", "layout");
   redirect("/app/configuracoes?salvo=1");
 }

@@ -12,6 +12,11 @@
  */
 
 export const REGRAS = {
+  senha: {
+    // ✏️ EDITÁVEL: por quantos minutos o link de "esqueci minha senha" vale
+    linkMinutos: 60,
+  },
+
   sessao: {
     // ✏️ EDITÁVEL: por quantos dias o aluno fica logado sem precisar entrar de novo
     diasValidade: 30,
@@ -25,6 +30,8 @@ export const REGRAS = {
     cadastroPorIP: { max: 5, minutos: 60 },
     respostasPorAluno: { max: 120, minutos: 1 },
     relatosPorAluno: { max: 10, minutos: 60 },
+    recuperacaoPorIP: { max: 5, minutos: 60 },
+    recuperacaoPorEmail: { max: 3, minutos: 60 },
   },
 
   raioX: {

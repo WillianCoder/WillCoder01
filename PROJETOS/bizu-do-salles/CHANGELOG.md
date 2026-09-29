@@ -2,6 +2,14 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.4.0] — 2026-09-29
+### Adicionado
+- **Recuperação de senha**: "Esqueci minha senha" no login; link de uso único que expira (`REGRAS.senha.linkMinutos`, 60 min), enviado por e-mail via Resend quando `RESEND_API_KEY`/`EMAIL_FROM` estão configurados. Sem e-mail, o administrador gera o link em **Usuários → Link de senha** (mostrado uma vez, auditado) e envia ao aluno.
+- Trocar a senha desconecta todos os aparelhos e invalida links antigos; resposta sempre genérica (não revela se o e-mail tem conta); limites de tentativa por IP e por e-mail.
+- **Meta diária** de questões (Configurações) com barra de progresso no painel do aluno.
+- Migração `senha_e_meta` (tabela `PasswordReset`, uma meta por aluno). Novas variáveis: `APP_URL`, `RESEND_API_KEY`, `EMAIL_FROM`.
+- Testes de navegador: recuperação de senha, reutilização de link bloqueada, meta diária (10 no total). Cada teste simula um IP diferente (`e2e/fixtures.ts`), mantendo os limites de segurança ativos.
+
 ## [0.3.0] — 2026-09-29
 ### Adicionado
 - **Simulados** (`/app/simulados`): simulado rápido (10 questões) e personalizado (disciplina, só não respondidas/erradas/favoritas, quantidade, tempo). Cronômetro com aviso nos 5 minutos finais e envio automático; resultado com nota, aproveitamento, erros/em branco, tempo, desempenho por disciplina e correção comentada; histórico.

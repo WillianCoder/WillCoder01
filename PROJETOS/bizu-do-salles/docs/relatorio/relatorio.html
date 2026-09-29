@@ -52,7 +52,7 @@
   <div><span class="dot"></span>Relatório do projeto</div>
   <h1>Bizu do Salles</h1>
   <div class="sub">Plataforma de estudos por questões para a formação da Polícia Militar<br>Ciclo Básico + Ciclo Específico · foco em São Paulo</div>
-  <div class="meta">Versão 0.3.0 · 29 de setembro de 2026<br>Escrito para quem está começando: cada termo técnico é explicado.</div>
+  <div class="meta">Versão 0.4.0 · 29 de setembro de 2026<br>Escrito para quem está começando: cada termo técnico é explicado.</div>
 </div>
 
 <section>
@@ -77,13 +77,13 @@
   <div class="grid3">
     <div class="kpi"><b>178</b><span>questões originais comentadas</span></div>
     <div class="kpi"><b>109</b><span>do RDPM de São Paulo</span></div>
-    <div class="kpi"><b>23</b><span>testes automáticos passando</span></div>
+    <div class="kpi"><b>26</b><span>testes automáticos passando</span></div>
   </div>
   <div class="box tip"><b class="t">Em uma frase</b>
   O Bizu do Salles já é um <b>site funcionando</b>: o aluno cria conta, estuda por questões com explicação e vê o próprio desempenho; você, como administrador, cadastra questões, muda preços e libera o acesso de quem pagou — tudo por telas, sem mexer em código.</div>
   <ul>
-    <li><b>Pronto:</b> site, cadastro, login seguro (um aparelho por vez), questões, <b>simulados com cronômetro</b>, desempenho, planos, painel do administrador, testes, backups, documentação.</li>
-    <li><b>Ainda falta:</b> publicar na internet, pagamento automático (Mercado Pago), recuperação de senha por e-mail, aplicativo de celular nas lojas.</li>
+    <li><b>Pronto:</b> site, cadastro, login seguro (um aparelho por vez), questões, <b>simulados com cronômetro</b>, recuperação de senha, meta diária, desempenho, planos, painel do administrador, testes, backups, documentação.</li>
+    <li><b>Ainda falta:</b> publicar na internet, pagamento automático (Mercado Pago), aplicativo de celular nas lojas.</li>
     <li><b>Onde está tudo:</b> no seu GitHub, repositório <code>WillCoder01</code>, pasta <code>PROJETOS/bizu-do-salles</code>.</li>
   </ul>
 </section>
@@ -125,7 +125,9 @@
     <tr><td>Relatar problema</td><td>Botão "Encontrou um problema?" em cada questão; vai para o painel.</td><td class="ok">Pronto</td></tr>
     <tr><td>Painel do administrador</td><td>Questões, planos e preços, usuários, liberar pagamento, escolas, problemas relatados, configurações, auditoria.</td><td class="ok">Pronto</td></tr>
     <tr><td>Backups</td><td>Comandos para copiar e restaurar o banco de dados.</td><td class="ok">Pronto</td></tr>
-    <tr><td>Testes automáticos</td><td>16 testes das regras + 7 testes num navegador de verdade. Rodam sozinhos no GitHub.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Testes automáticos</td><td>16 testes das regras + 10 testes num navegador de verdade. Rodam sozinhos no GitHub.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Recuperação de senha</td><td>"Esqueci minha senha" com link por e-mail (quando configurado) ou gerado por você no painel para enviar pelo WhatsApp. Link vale 1 vez e expira em 60 min.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Meta diária</td><td>O aluno define quantas questões quer fazer por dia e acompanha a barra de progresso.</td><td class="ok">Pronto</td></tr>
     <tr><td>Simulados</td><td>Simulado rápido ou personalizado (disciplina, só as que errou, quantidade, tempo), cronômetro, nota, desempenho por disciplina e correção comentada.</td><td class="ok">Pronto</td></tr>
     <tr><td>Pagamento automático</td><td>Mercado Pago (Pix/cartão) liberando sozinho.</td><td class="no">A fazer</td></tr>
     <tr><td>Publicação na internet</td><td>Deixar o site acessível a todos com endereço próprio.</td><td class="no">A fazer</td></tr>
@@ -320,6 +322,7 @@
     <tr><td>Preço, nome, duração de um plano</td><td>Painel → <b>Planos e preços</b></td><td>🟢</td></tr>
     <tr><td>Tirar um plano de venda</td><td>Painel → Planos → desmarcar "Plano à venda"</td><td>🟢</td></tr>
     <tr><td>Liberar quem pagou</td><td>Painel → <b>Usuários e assinaturas</b> → Confirmar pagamento</td><td>🟢</td></tr>
+    <tr><td>Aluno esqueceu a senha</td><td>Painel → Usuários → <b>Link de senha</b> → copie e envie em conversa privada</td><td>🟢</td></tr>
     <tr><td>Cancelar o plano de alguém</td><td>Painel → Usuários → Cancelar</td><td>🟢</td></tr>
     <tr><td>WhatsApp e e-mail de suporte</td><td>Painel → <b>Visão geral</b> → Configurações gerais</td><td>🟢</td></tr>
     <tr><td>Ligar/desligar recursos (ranking, IA, áudio…)</td><td>Painel → Visão geral → Recursos ligados/desligados</td><td>🟢</td></tr>
@@ -356,6 +359,7 @@
   <table>
     <tr><th style="width:30%">Quero mudar…</th><th style="width:38%">Onde (<code>src/config/regras.ts</code>)</th><th>Padrão</th></tr>
     <tr><td>Questões do simulado rápido / limites de quantidade e tempo</td><td><code>simulado.rapidoQuestoes</code>, <code>minQuestoes</code>, <code>maxQuestoes</code>, <code>maxMinutos</code></td><td>10 / 5–60 / 240 min</td></tr>
+    <tr><td>Validade do link de nova senha</td><td><code>senha.linkMinutos</code></td><td>60 min</td></tr>
     <tr><td>Quantos dias o login dura</td><td><code>sessao.diasValidade</code></td><td>30 dias</td></tr>
     <tr><td>Tentativas de login antes de bloquear</td><td><code>limites.loginPorConta</code></td><td>8 em 15 min</td></tr>
     <tr><td>Cadastros por internet (IP)</td><td><code>limites.cadastroPorIP</code></td><td>5 por hora</td></tr>
@@ -414,7 +418,7 @@
     <tr><td>v0.1–0.2</td><td>Banco, regras, site, área do aluno, painel admin, testes</td><td class="ok">Feito</td></tr>
     <tr><td>v0.2.1</td><td>109 questões do RDPM de SP</td><td class="ok">Feito</td></tr>
     <tr><td>v0.3</td><td>Simulados (rápido, personalizado, com cronômetro) e resultado</td><td class="ok">Feito</td></tr>
-    <tr><td>v0.4</td><td>Recuperação de senha por e-mail; meta diária</td><td class="no">A fazer</td></tr>
+    <tr><td>v0.4</td><td>Recuperação de senha e meta diária</td><td class="ok">Feito</td></tr>
     <tr><td>v0.5</td><td>Cadernos, ranking por apelido, conquistas</td><td class="no">A fazer</td></tr>
     <tr><td>v0.6</td><td>Mais conteúdo de SP (Constituição Estadual, normas da escola)</td><td class="no">Depende de PDFs</td></tr>
     <tr><td>v0.8</td><td>Mercado Pago automático + cupons</td><td class="no">A fazer</td></tr>

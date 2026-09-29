@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("simulado: montar, responder, finalizar e ver a correção", async ({ page }) => {
   const email = `sim${Date.now()}@teste.dev`;

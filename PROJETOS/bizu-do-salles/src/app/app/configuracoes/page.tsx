@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { requireUser } from "@/lib/auth";
+import { db } from "@/lib/db";
 import { savePreferences } from "../actions";
 import { logout } from "../../auth-actions";
 
@@ -9,12 +10,14 @@ export default async function Configuracoes({ searchParams }: { searchParams: Pr
   const user = await requireUser();
   const jar = await cookies();
   const { salvo } = await searchParams;
+  const goal = await db.goal.findUnique({ where: { userId: user.id } });
   return (
     <div className="stack">
     <form action={savePreferences} className="card stack" style={{ maxWidth: 520 }}>
       <h1>Configurações</h1>
       {salvo && <p className="alert ok">Preferências salvas.</p>}
       <div className="field"><label htmlFor="nickname">Apelido (aparece no ranking)</label><input id="nickname" name="nickname" defaultValue={user.nickname ?? ""} maxLength={30} /></div>
+      <div className="field"><label htmlFor="metaDiaria">🎯 Meta diária de questões (0 = sem meta)</label><input id="metaDiaria" name="metaDiaria" type="number" min={0} max={500} defaultValue={goal?.questionsDay ?? 20} /></div>
       <h2>Aparência e acessibilidade</h2>
       <div className="field">
         <label htmlFor="tema">Tema</label>
