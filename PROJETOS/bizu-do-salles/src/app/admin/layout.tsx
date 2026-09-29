@@ -1,3 +1,9 @@
+/**
+ * 📄 O QUE É: MENU DO PAINEL DO ADMINISTRADOR.
+ * ✏️ EDITÁVEL: Lista nav: [endereço, nome, só-admin?]. true = só ADMIN vê; false = EDITOR também vê.
+ * ⚠️ CUIDADO: O bloqueio real de acesso está em cada página (requireAdmin) — não remova.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import Link from "next/link";
 import { requireAdmin } from "@/lib/auth";
 import { logout } from "../auth-actions";

@@ -1,3 +1,9 @@
+/**
+ * 📄 O QUE É: TERMOS DE USO (endereço /termos).
+ * ✏️ EDITÁVEL: Todo o texto entre as tags <p>…</p> e <h2>…</h2> pode ser reescrito.
+ * ⚠️ CUIDADO: Revise com um advogado antes de vender.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import { TextPage } from "@/components/TextPage";
 
 export const metadata = { title: "Termos de uso" };

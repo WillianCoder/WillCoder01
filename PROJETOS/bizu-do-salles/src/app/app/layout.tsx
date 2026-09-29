@@ -1,7 +1,14 @@
+/**
+ * 📄 O QUE É: MENU DA ÁREA DO ALUNO (barra lateral no computador, barra inferior no celular).
+ * ✏️ EDITÁVEL: Lista NAV: [endereço, ícone, nome]. MOBILE: quais itens aparecem no celular (máx. 5).
+ * ⚠️ CUIDADO: Não mude os endereços (primeiro valor) sem criar a página correspondente.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import Link from "next/link";
 import { requireUser } from "@/lib/auth";
 import { logout } from "../auth-actions";
 
+// ✏️ EDITÁVEL: itens do menu — [endereço, ícone, nome]
 const NAV = [
   ["/app", "🏠", "Início"],
   ["/app/questoes", "❓", "Questões"],
@@ -12,6 +19,7 @@ const NAV = [
   ["/app/planos", "💳", "Meu plano"],
   ["/app/configuracoes", "⚙️", "Configurações"],
 ] as const;
+// ✏️ EDITÁVEL: itens da barra inferior no celular (máximo 5)
 const MOBILE = [NAV[0], NAV[1], NAV[5], NAV[6], NAV[7]];
 
 export default async function StudentLayout({ children }: { children: React.ReactNode }) {

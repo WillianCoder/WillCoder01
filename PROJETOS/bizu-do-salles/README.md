@@ -2,9 +2,11 @@
 
 Plataforma de estudos por questões para a formação da Polícia Militar — **Ciclo Básico**, **Ciclo Específico** e plano **Básico + Específico**. Atende **todos os estados**, com foco inicial em **São Paulo**.
 
-**Versão 0.2.1** — site funcionando: cadastro, login (um aparelho por vez), **178 questões comentadas (109 do RDPM de SP)**, desempenho com raio-x, favoritas/revisão, planos e painel administrativo completo. [Roteiro](docs/PRODUCT_ROADMAP.md) · [Changelog](CHANGELOG.md)
+**Versão 0.2.2** — site funcionando: cadastro, login (um aparelho por vez), **178 questões comentadas (109 do RDPM de SP)**, desempenho com raio-x, favoritas/revisão, planos e painel administrativo completo. [Roteiro](docs/PRODUCT_ROADMAP.md) · [Changelog](CHANGELOG.md)
 
-> 👋 **Começando agora?** Leia primeiro o [Guia do iniciante](docs/GUIA_INICIANTE.md): explica cada termo, cada pasta e como rodar no seu computador.
+> 👋 **Começando agora?** Abra o **[Relatório em PDF](docs/RELATORIO.pdf)** — explica o projeto, o glossário e traz o **Guia de edição** (o que mudar e onde). Depois, o [Guia do iniciante](docs/GUIA_INICIANTE.md).
+>
+> ✏️ **Para editar:** textos do site em `src/config/site.ts`, números/regras em `src/config/regras.ts`. Todo arquivo importante começa com um cabeçalho `📄 O QUE É / ✏️ EDITÁVEL / ⚠️ CUIDADO` — pesquise por `✏️ EDITÁVEL`.
 
 | Página inicial | Questão respondida | Celular (tema escuro) |
 |---|---|---|

@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Relatório do Projeto — Bizu do Salles</title>
+<style>
+  @page { size: A4; margin: 16mm 14mm 18mm; }
+  :root { --brand:#0e6b5c; --brand2:#2bb39a; --accent:#d98e04; --ink:#14202b; --muted:#5b6b7a; --line:#d9dfe5; --soft:#eef4f2; --warn:#fff6e0; --bad:#fdecea; }
+  * { box-sizing:border-box; }
+  body { font-family: "Segoe UI", Inter, Roboto, Arial, sans-serif; color:var(--ink); font-size:10.5pt; line-height:1.5; margin:0; }
+  h1,h2,h3 { color:var(--brand); line-height:1.2; }
+  h2 { font-size:17pt; margin:0 0 8px; padding-bottom:6px; border-bottom:3px solid var(--brand2); page-break-after:avoid; }
+  h3 { font-size:12.5pt; margin:16px 0 6px; page-break-after:avoid; }
+  p { margin:6px 0; }
+  section { page-break-before:always; }
+  .cover { height:260mm; display:flex; flex-direction:column; justify-content:center; background:linear-gradient(160deg,#0e6b5c 0%,#0b3d35 100%); color:#fff; margin:-16mm -14mm 0; padding:0 22mm; }
+  .cover h1 { color:#fff; font-size:38pt; margin:0; }
+  .cover .sub { font-size:15pt; opacity:.92; margin-top:8px; }
+  .cover .meta { margin-top:40px; font-size:11pt; opacity:.85; }
+  .cover .dot { display:inline-block; width:14px; height:14px; border-radius:50%; background:#f2b53a; margin-right:8px; }
+  .box { border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin:10px 0; background:#fff; page-break-inside:avoid; }
+  .tip { background:var(--soft); border-left:5px solid var(--brand); }
+  .warn { background:var(--warn); border-left:5px solid var(--accent); }
+  .danger { background:var(--bad); border-left:5px solid #b42318; }
+  .tip b.t, .warn b.t, .danger b.t { display:block; margin-bottom:2px; }
+  table { width:100%; border-collapse:collapse; margin:8px 0; font-size:9.8pt; page-break-inside:auto; }
+  tr { page-break-inside:avoid; }
+  th { background:var(--brand); color:#fff; text-align:left; padding:6px 8px; }
+  td { padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+  tr:nth-child(even) td { background:#f7f9fa; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+  .kpi { border:1px solid var(--line); border-radius:10px; padding:10px; text-align:center; }
+  .kpi b { display:block; font-size:22pt; color:var(--brand); }
+  .kpi span { color:var(--muted); font-size:9pt; }
+  img.shot { width:100%; border:1px solid var(--line); border-radius:8px; }
+  .cap { color:var(--muted); font-size:8.5pt; text-align:center; margin-top:2px; }
+  th code { background:rgba(255,255,255,.18); color:#fff; }
+  code { background:#eef1f4; padding:1px 5px; border-radius:4px; font-size:9pt; }
+  pre { background:#0d141b; color:#e8eef3; padding:10px 12px; border-radius:8px; font-size:8.8pt; white-space:pre-wrap; page-break-inside:avoid; }
+  .flow { display:flex; align-items:stretch; gap:6px; margin:10px 0; }
+  .flow div { flex:1; border:2px solid var(--brand2); border-radius:10px; padding:8px; text-align:center; font-size:9.5pt; background:var(--soft); }
+  .flow .arr { flex:0 0 18px; border:0; background:none; font-size:16pt; color:var(--brand); padding:0; align-self:center; }
+  .ok { color:#157f3b; font-weight:700; } .no { color:#b42318; font-weight:700; } .wip { color:var(--accent); font-weight:700; }
+  ul { margin:4px 0 4px 18px; padding:0; } li { margin:2px 0; }
+  .toc li { margin:4px 0; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div><span class="dot"></span>Relatório do projeto</div>
+  <h1>Bizu do Salles</h1>
+  <div class="sub">Plataforma de estudos por questões para a formação da Polícia Militar<br>Ciclo Básico + Ciclo Específico · foco em São Paulo</div>
+  <div class="meta">Versão 0.2.2 · 29 de setembro de 2026<br>Escrito para quem está começando: cada termo técnico é explicado.</div>
+</div>
+
+<section>
+  <h2>Sumário</h2>
+  <ol class="toc">
+    <li>Resumo em 1 minuto</li>
+    <li>O que é o Bizu do Salles</li>
+    <li>O que já está pronto</li>
+    <li>Como o sistema funciona por dentro</li>
+    <li>Glossário — as palavras técnicas explicadas</li>
+    <li>Segurança — o que protege você e seus alunos</li>
+    <li>Conteúdo, questões e direitos autorais</li>
+    <li>Como usar o painel do administrador</li>
+    <li>Onde fica cada coisa (mapa do projeto)</li>
+    <li><b>Guia de edição — o que mudar e onde</b></li>
+    <li>Como colocar na internet e quanto custa</li>
+    <li>O que falta fazer (roteiro)</li>
+    <li>Cuidados importantes e checklist</li>
+  </ol>
+
+  <h2 style="margin-top:22px">1. Resumo em 1 minuto</h2>
+  <div class="grid3">
+    <div class="kpi"><b>178</b><span>questões originais comentadas</span></div>
+    <div class="kpi"><b>109</b><span>do RDPM de São Paulo</span></div>
+    <div class="kpi"><b>18</b><span>testes automáticos passando</span></div>
+  </div>
+  <div class="box tip"><b class="t">Em uma frase</b>
+  O Bizu do Salles já é um <b>site funcionando</b>: o aluno cria conta, estuda por questões com explicação e vê o próprio desempenho; você, como administrador, cadastra questões, muda preços e libera o acesso de quem pagou — tudo por telas, sem mexer em código.</div>
+  <ul>
+    <li><b>Pronto:</b> site, cadastro, login seguro (um aparelho por vez), questões, desempenho, planos, painel do administrador, testes, backups, documentação.</li>
+    <li><b>Ainda falta:</b> publicar na internet, pagamento automático (Mercado Pago), simulados, recuperação de senha por e-mail, aplicativo de celular nas lojas.</li>
+    <li><b>Onde está tudo:</b> no seu GitHub, repositório <code>WillCoder01</code>, pasta <code>PROJETOS/bizu-do-salles</code>.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>2. O que é o Bizu do Salles</h2>
+  <p>É uma <b>plataforma de estudos por questões</b> para alunos dos cursos de formação da Polícia Militar. A ideia é simples: o aluno responde questões, vê na hora se acertou, lê a explicação com o artigo da lei, e o sistema mostra em que matérias ele está forte ou fraco.</p>
+  <h3>Para quem</h3>
+  <p>Alunos do <b>Ciclo Básico</b> e do <b>Ciclo Específico</b>. O sistema atende <b>todos os estados</b>, mas o conteúdo estadual começou por <b>São Paulo</b>.</p>
+  <h3>Como o aluno paga</h3>
+  <table>
+    <tr><th>Plano</th><th>O que libera</th><th>Preço inicial*</th><th>Duração*</th></tr>
+    <tr><td>Ciclo Básico</td><td>Questões do Ciclo Básico</td><td>R$ 35,00</td><td>90 dias</td></tr>
+    <tr><td>Ciclo Específico</td><td>Questões do Ciclo Específico</td><td>R$ 35,00</td><td>90 dias</td></tr>
+    <tr><td>Básico + Específico</td><td>Tudo</td><td>R$ 60,00</td><td>90 dias (trimestral)</td></tr>
+  </table>
+  <p style="font-size:9pt" class="muted">* Valores de exemplo. Você muda no painel, em <b>Planos e preços</b>, sem programar.</p>
+  <div class="box tip"><b class="t">Amostra grátis</b>Quem cria conta sem pagar já pode responder as 3 primeiras questões de cada assunto. Serve para o aluno experimentar antes de comprar.</div>
+  <h3>O que nos diferencia</h3>
+  <ul>
+    <li><b>Foco:</b> conteúdo dirigido à formação policial, não a "qualquer concurso".</li>
+    <li><b>Lei na mão:</b> toda questão diz o artigo exato em que se baseia.</li>
+    <li><b>Raio-X:</b> o aluno sabe onde está errando ("você está com 54% em RDPM, revise antes de avançar").</li>
+    <li><b>Simples e barato:</b> telas limpas, funciona bem no celular.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>3. O que já está pronto</h2>
+  <table>
+    <tr><th style="width:32%">Parte</th><th>O que faz</th><th style="width:12%">Status</th></tr>
+    <tr><td>Página inicial</td><td>Apresenta a plataforma e mostra os planos (com os preços do banco de dados).</td><td class="ok">Pronto</td></tr>
+    <tr><td>Cadastro e login</td><td>Criar conta escolhendo o estado; entrar; sair. Senha guardada de forma segura.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Um aparelho por vez</td><td>Se o aluno entrar em outro aparelho, o anterior é desconectado com o aviso "Sua conta foi conectada em outro dispositivo". Evita compartilhar conta.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Questões</td><td>Filtros (não respondidas, que errei, favoritas, revisar depois, por disciplina). Alternativas embaralhadas por aluno. Gabarito só depois de responder.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Desempenho e Raio-X</td><td>Acertos, erros, aproveitamento por disciplina e assunto, tempo médio, recomendações.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Painel do aluno</td><td>Plano, validade, dias restantes, sequência de dias estudando.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Acessibilidade</td><td>Tema claro/escuro/automático e tamanho da letra.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Relatar problema</td><td>Botão "Encontrou um problema?" em cada questão; vai para o painel.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Painel do administrador</td><td>Questões, planos e preços, usuários, liberar pagamento, escolas, problemas relatados, configurações, auditoria.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Backups</td><td>Comandos para copiar e restaurar o banco de dados.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Testes automáticos</td><td>12 testes das regras + 6 testes num navegador de verdade. Rodam sozinhos no GitHub.</td><td class="ok">Pronto</td></tr>
+    <tr><td>Simulados</td><td>Provas com cronômetro e resultado.</td><td class="wip">Em andamento</td></tr>
+    <tr><td>Pagamento automático</td><td>Mercado Pago (Pix/cartão) liberando sozinho.</td><td class="no">A fazer</td></tr>
+    <tr><td>Publicação na internet</td><td>Deixar o site acessível a todos com endereço próprio.</td><td class="no">A fazer</td></tr>
+  </table>
+  <div class="grid">
+    <div><img class="shot" src="../screenshots/inicio-desktop.png"><div class="cap">Página inicial (computador)</div></div>
+    <div><img class="shot" src="../screenshots/resposta-desktop.png"><div class="cap">Questão respondida, com gabarito e explicação</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>4. Como o sistema funciona por dentro</h2>
+  <p>Pense no sistema como uma <b>loja</b>:</p>
+  <div class="flow">
+    <div><b>Vitrine</b><br>O navegador do aluno (celular ou computador) mostra as telas.</div>
+    <div class="arr">→</div>
+    <div><b>Balcão</b><br>O <i>servidor</i> (Next.js) confere quem é o aluno, o plano, e corrige a resposta.</div>
+    <div class="arr">→</div>
+    <div><b>Estoque</b><br>O <i>banco de dados</i> (PostgreSQL) guarda alunos, questões e respostas.</div>
+  </div>
+  <div class="box tip"><b class="t">A regra de ouro</b>A vitrine só <b>mostra</b>. Quem <b>decide</b> se o aluno pode ver a questão, se o plano está válido e se a resposta está certa é sempre o balcão (servidor). Por isso ninguém consegue "liberar" conteúdo pago mexendo no navegador.</div>
+  <h3>O caminho de uma resposta</h3>
+  <ol>
+    <li>O aluno escolhe a alternativa e clica em <b>Responder</b>.</li>
+    <li>O servidor confere: o aluno está logado? A sessão é a do aparelho atual? O plano dele libera essa questão?</li>
+    <li>O servidor "desembaralha" a alternativa (cada aluno vê as letras numa ordem diferente) e compara com o gabarito.</li>
+    <li>Grava a tentativa no banco (acertou/errou, tempo).</li>
+    <li>Só então devolve a tela com o gabarito, a explicação e o artigo da lei.</li>
+  </ol>
+  <h3>O caminho de um pagamento (hoje)</h3>
+  <ol>
+    <li>O aluno escolhe um plano → vira um <b>pedido pendente</b>.</li>
+    <li>O aluno paga (ex.: Pix) e manda o comprovante no WhatsApp de suporte.</li>
+    <li>Você confere <b>no extrato do banco</b> e clica em <b>Confirmar pagamento e liberar</b> no painel.</li>
+    <li>O plano fica ativo por 90 dias; o sistema registra que foi você quem liberou.</li>
+  </ol>
+  <div class="box warn"><b class="t">Atenção</b>Nunca libere pelo "print" do comprovante sem ver no extrato — prints são fáceis de falsificar. Quando o Mercado Pago for ligado, isso passa a ser automático.</div>
+</section>
+
+<section>
+  <h2>5. Glossário — as palavras técnicas explicadas</h2>
+  <table>
+    <tr><th style="width:26%">Termo</th><th>O que significa (com exemplo)</th></tr>
+    <tr><td><b>GitHub / Repositório</b></td><td>A "pasta na nuvem" onde fica todo o código, com histórico de cada mudança. O seu é <code>WillianCoder/WillCoder01</code>.</td></tr>
+    <tr><td><b>Commit</b></td><td>Uma "foto" das mudanças, com descrição. Dá para voltar a qualquer foto antiga — é o seu "desfazer" de segurança.</td></tr>
+    <tr><td><b>Branch</b></td><td>Uma cópia paralela para trabalhar sem mexer na versão principal (<code>main</code>). Eu trabalho na branch <code>claude/…</code>.</td></tr>
+    <tr><td><b>Pull Request (PR)</b></td><td>O pedido para juntar a branch na versão principal. É onde você revisa e clica em <b>Merge</b>.</td></tr>
+    <tr><td><b>Merge</b></td><td>Juntar as mudanças aprovadas na versão principal.</td></tr>
+    <tr><td><b>CI (verificação automática)</b></td><td>O GitHub roda todos os testes sozinho a cada mudança. Verde = tudo certo; vermelho = algo quebrou.</td></tr>
+    <tr><td><b>Front-end / Back-end</b></td><td>Front-end é a vitrine (telas). Back-end é o balcão (regras, segurança, banco).</td></tr>
+    <tr><td><b>Next.js</b></td><td>A ferramenta usada para construir o site (vitrine + balcão no mesmo projeto).</td></tr>
+    <tr><td><b>Banco de dados (PostgreSQL)</b></td><td>O "estoque": onde ficam guardados alunos, questões, respostas e planos.</td></tr>
+    <tr><td><b>Prisma</b></td><td>O "tradutor" entre o código e o banco de dados.</td></tr>
+    <tr><td><b>Migração</b></td><td>Uma mudança na estrutura do banco (ex.: criar uma coluna nova), feita de forma registrada e segura.</td></tr>
+    <tr><td><b>Seed</b></td><td>A "carga inicial": coloca no banco os planos, estados e questões dos arquivos.</td></tr>
+    <tr><td><b>.env</b></td><td>Arquivo secreto com senhas e chaves (banco, pagamento). <b>Nunca</b> vai para o GitHub.</td></tr>
+    <tr><td><b>Sessão / Cookie</b></td><td>O "crachá" que o site dá após o login. Só vale um por conta ao mesmo tempo.</td></tr>
+    <tr><td><b>Hash de senha (Argon2id)</b></td><td>A senha é embaralhada de forma irreversível. Nem você consegue ver a senha do aluno — só conferir se está certa.</td></tr>
+    <tr><td><b>Deploy</b></td><td>Publicar o site na internet.</td></tr>
+    <tr><td><b>Webhook</b></td><td>Aviso automático que o Mercado Pago manda ao nosso sistema dizendo "o pagamento X foi aprovado".</td></tr>
+    <tr><td><b>Backup</b></td><td>Cópia de segurança do banco para recuperar em caso de problema.</td></tr>
+    <tr><td><b>Auditoria</b></td><td>Registro de tudo que a equipe fez no painel: quem, quando e o quê.</td></tr>
+    <tr><td><b>PWA</b></td><td>Site que pode ser "instalado" na tela inicial do celular, parecendo um aplicativo.</td></tr>
+    <tr><td><b>LGPD</b></td><td>Lei Geral de Proteção de Dados: regras para tratar dados pessoais dos alunos.</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>6. Segurança — o que protege você e seus alunos</h2>
+  <table>
+    <tr><th style="width:30%">Proteção</th><th>O que evita</th></tr>
+    <tr><td>Decisões só no servidor</td><td>Aluno "esperto" liberando conteúdo pago pelo navegador.</td></tr>
+    <tr><td>Senha com Argon2id</td><td>Vazamento de senhas legíveis, mesmo se alguém copiar o banco.</td></tr>
+    <tr><td>Um aparelho por vez</td><td>Compartilhamento de conta (um paga, cinco usam).</td></tr>
+    <tr><td>Limite de tentativas</td><td>Robôs tentando adivinhar senhas (bloqueia após várias tentativas em 15 min).</td></tr>
+    <tr><td>Mensagem genérica no login</td><td>Descobrir quais e-mails têm conta ("e-mail ou senha incorretos").</td></tr>
+    <tr><td>Gabarito só depois de responder</td><td>Ver a resposta no código da página.</td></tr>
+    <tr><td>Alternativas embaralhadas por aluno</td><td>"Cola" do tipo "a da questão 12 é a letra C".</td></tr>
+    <tr><td>Cabeçalhos de segurança</td><td>Ataques comuns de sites (páginas falsas embutindo o seu site, scripts maliciosos).</td></tr>
+    <tr><td>Auditoria</td><td>Mudanças sem responsável; toda ação no painel fica registrada.</td></tr>
+    <tr><td>Segredos fora do código</td><td>Senhas e chaves vazando pelo GitHub.</td></tr>
+    <tr><td>Backups com conferência</td><td>Perder dados; cada cópia tem uma "impressão digital" (SHA-256) conferida na restauração.</td></tr>
+  </table>
+  <h3>Privacidade (LGPD)</h3>
+  <ul>
+    <li>Coletamos só o necessário: nome, e-mail, senha (embaralhada), estado e escola opcional. <b>Não pedimos CPF.</b></li>
+    <li>No ranking futuro aparece só o <b>apelido</b> que o aluno escolher.</li>
+    <li>Os textos de <b>Termos de uso</b> e <b>Privacidade</b> já existem como modelo — <b>revise com um advogado antes de vender</b>.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>7. Conteúdo, questões e direitos autorais</h2>
+  <div class="grid3">
+    <div class="kpi"><b>109</b><span>RDPM — SP</span></div>
+    <div class="kpi"><b>35</b><span>Constituição Federal</span></div>
+    <div class="kpi"><b>34</b><span>Leis penais, DUDH, Português, Matemática</span></div>
+  </div>
+  <h3>Como uma questão é feita</h3>
+  <ol>
+    <li>Parte do <b>texto oficial da lei</b> (ex.: o PDF da Alesp que você enviou).</li>
+    <li>É escrita do zero, com 5 alternativas (A a E), uma só correta.</li>
+    <li>Tem explicação, "por que as outras estão erradas" (quando útil) e a <b>referência exata</b> (ex.: LC 893/2001, art. 13, item 85).</li>
+    <li>Passa pelos controles automáticos: formato, código único, alternativas sem repetição, fonte informada, explicação mínima, gabaritos bem distribuídos entre as letras.</li>
+  </ol>
+  <div class="box tip"><b class="t">Conferência do RDPM</b>As 26 questões de classificação (grave, média ou leve) foram comparadas automaticamente com os 132 itens do art. 13 da lei oficial: <b>nenhuma divergência</b>.</div>
+  <div class="box danger"><b class="t">Regra de direitos autorais — muito importante</b>
+  Leis, decretos e textos oficiais <b>podem</b> ser usados (a Lei 9.610/98, art. 8º, IV, diz que não têm direito autoral). Apostilas, questões, PDFs e áudios de outros cursos — <b>mesmo gratuitos na internet</b> — <b>não podem</b> ser copiados, reescritos ou ter a marca d'água trocada. Isso pode gerar processo e derrubar o site. Use o material dos outros só para saber <i>quais assuntos</i> caem.</div>
+  <h3>Como você adiciona conteúdo</h3>
+  <ul>
+    <li><b>Pelo painel (mais fácil):</b> Admin → Questões → <b>+ Nova questão</b>. Preencha o formulário e salve.</li>
+    <li><b>Enviando PDFs para mim:</b> mande o texto oficial (ex.: Constituição de SP, normas da escola) e eu escrevo as questões.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>8. Como usar o painel do administrador</h2>
+  <p>Entre no site com sua conta de administrador e acesse <code>/admin</code>.</p>
+  <table>
+    <tr><th style="width:26%">Tela</th><th>Para que serve</th></tr>
+    <tr><td>Visão geral</td><td>Números do negócio (usuários, assinaturas, questões, problemas). Configura WhatsApp/e-mail de suporte e liga/desliga recursos.</td></tr>
+    <tr><td>Questões</td><td>Buscar, criar e editar. A questão só aparece para os alunos com status <b>Publicada</b>. Marque <b>Grátis</b> para usá-la como amostra.</td></tr>
+    <tr><td>Problemas relatados</td><td>O que os alunos apontaram. Corrija a questão e marque como resolvido.</td></tr>
+    <tr><td>Usuários e assinaturas</td><td>Liberar quem pagou, cancelar plano, desconectar aparelho, bloquear conta.</td></tr>
+    <tr><td>Planos e preços</td><td>Mudar nome, preço, duração e se o plano está à venda.</td></tr>
+    <tr><td>Escolas</td><td>Lista de escolas que o aluno escolhe no cadastro.</td></tr>
+    <tr><td>Auditoria</td><td>Histórico de tudo que a equipe fez.</td></tr>
+  </table>
+  <div class="grid">
+    <div><img class="shot" src="../screenshots/admin-desktop.png"><div class="cap">Painel do administrador</div></div>
+    <div><img class="shot" src="../screenshots/questao-celular.png" style="max-height:120mm;object-fit:cover;object-position:top"><div class="cap">Questão no celular (tema escuro)</div></div>
+  </div>
+  <h3>Papéis da equipe</h3>
+  <ul>
+    <li><b>Administrador:</b> pode tudo.</li>
+    <li><b>Editor:</b> cria e revisa questões, mas não publica nem vê pagamentos. Bom para um professor ajudante.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>9. Onde fica cada coisa (mapa do projeto)</h2>
+  <pre>PROJETOS/bizu-do-salles/
+├─ src/app/            ← TELAS do site (cada pasta = um endereço)
+│   ├─ page.tsx        → página inicial
+│   ├─ app/            → área do aluno
+│   ├─ admin/          → painel do administrador
+│   ├─ termos/ privacidade/ ajuda/  → textos (edite à vontade)
+│   └─ globals.css     → CORES do site
+├─ src/config/         ← ✏️ TEXTOS (site.ts) e NÚMEROS (regras.ts) para editar
+├─ src/core/           ← REGRAS (acesso, sessão, desempenho) — testadas
+├─ src/lib/            ← login, banco, auditoria, limites
+├─ content/questoes/   ← QUESTÕES em arquivos (uma pasta por assunto)
+├─ prisma/             ← estrutura do banco de dados
+├─ scripts/            ← criar admin, backup, restaurar, relatórios
+├─ tests/  e2e/        ← testes automáticos
+└─ docs/               ← toda a documentação (inclui este relatório)</pre>
+  <h3>"Quero mudar…" — onde mexer</h3>
+  <table>
+    <tr><th>Quero mudar…</th><th>Onde</th></tr>
+    <tr><td>Preço ou duração de plano</td><td>Painel → Planos e preços</td></tr>
+    <tr><td>Uma questão</td><td>Painel → Questões</td></tr>
+    <tr><td>WhatsApp de suporte</td><td>Painel → Visão geral</td></tr>
+    <tr><td>Cores do site</td><td><code>src/app/globals.css</code> (topo do arquivo)</td></tr>
+    <tr><td>Textos da página inicial e perguntas frequentes</td><td><code>src/config/site.ts</code></td></tr>
+    <tr><td>Prazos, limites e critérios do Raio-X</td><td><code>src/config/regras.ts</code></td></tr>
+    <tr><td>Termos / privacidade</td><td><code>src/app/termos</code>, <code>src/app/privacidade</code></td></tr>
+  </table>
+  <h3>Documentos de apoio (na pasta docs)</h3>
+  <p><code>GUIA_INICIANTE</code> (comece por aqui) · <code>ADMIN_GUIDE</code> · <code>CONTENT_GUIDE</code> · <code>SECURITY</code> · <code>BACKUP</code> · <code>DEPLOY</code> · <code>PAYMENTS</code> · <code>PRODUCT_ROADMAP</code></p>
+</section>
+
+
+<section>
+  <h2>10. Guia de edição — o que mudar e onde</h2>
+  <p>Este capítulo é o seu "manual de manutenção". Para cada coisa que você pode querer mudar, ele diz <b>onde</b>, <b>como</b> e <b>o nível de cuidado</b>.</p>
+  <div class="grid">
+    <div class="box tip"><b class="t">🟢 Sem código (painel)</b>Tudo que dá para mudar clicando em <code>/admin</code>. Seguro e registrado na auditoria.</div>
+    <div class="box warn"><b class="t">🟡 Arquivo de configuração</b>Um arquivo feito para você editar, com instruções dentro. Troque só o texto entre aspas ou os números.</div>
+  </div>
+  <div class="box"><b>🔍 Como achar os pontos editáveis no código:</b> todo arquivo importante começa com um cabeçalho padrão:
+  <pre>📄 O QUE É:   para que serve o arquivo
+✏️ EDITÁVEL:  o que você pode mudar nele
+⚠️ CUIDADO:   o que não deve mexer
+📘 Guia completo: docs/RELATORIO.pdf</pre>
+  No GitHub ou no editor (VS Code), pesquise por <code>✏️ EDITÁVEL</code> para ver <b>todos</b> os pontos editáveis de uma vez (são 41 marcações).</div>
+
+  <h3>A. Negócio e vendas</h3>
+  <table>
+    <tr><th style="width:30%">Quero mudar…</th><th style="width:38%">Onde</th><th>Nível</th></tr>
+    <tr><td>Preço, nome, duração de um plano</td><td>Painel → <b>Planos e preços</b></td><td>🟢</td></tr>
+    <tr><td>Tirar um plano de venda</td><td>Painel → Planos → desmarcar "Plano à venda"</td><td>🟢</td></tr>
+    <tr><td>Liberar quem pagou</td><td>Painel → <b>Usuários e assinaturas</b> → Confirmar pagamento</td><td>🟢</td></tr>
+    <tr><td>Cancelar o plano de alguém</td><td>Painel → Usuários → Cancelar</td><td>🟢</td></tr>
+    <tr><td>WhatsApp e e-mail de suporte</td><td>Painel → <b>Visão geral</b> → Configurações gerais</td><td>🟢</td></tr>
+    <tr><td>Ligar/desligar recursos (ranking, IA, áudio…)</td><td>Painel → Visão geral → Recursos ligados/desligados</td><td>🟢</td></tr>
+  </table>
+
+  <h3>B. Conteúdo</h3>
+  <table>
+    <tr><th style="width:30%">Quero mudar…</th><th style="width:38%">Onde</th><th>Nível</th></tr>
+    <tr><td>Criar ou corrigir uma questão</td><td>Painel → <b>Questões</b> → Nova questão / clicar no código</td><td>🟢</td></tr>
+    <tr><td>Esconder uma questão dos alunos</td><td>Painel → Questões → status <b>Arquivada</b></td><td>🟢</td></tr>
+    <tr><td>Deixar uma questão grátis (amostra)</td><td>Painel → Questões → marcar <b>Grátis</b></td><td>🟢</td></tr>
+    <tr><td>Resolver erro apontado por aluno</td><td>Painel → <b>Problemas relatados</b></td><td>🟢</td></tr>
+    <tr><td>Adicionar escolas da lista do cadastro</td><td>Painel → <b>Escolas</b></td><td>🟢</td></tr>
+    <tr><td>Adicionar muitas questões de uma vez</td><td><code>content/questoes/</code> (instruções no arquivo <code>LEIA-ME.md</code> da pasta)</td><td>🟡</td></tr>
+    <tr><td>Quantas questões de cada arquivo ficam grátis</td><td><code>src/config/regras.ts</code> → <code>gratisPorArquivo</code></td><td>🟡</td></tr>
+  </table>
+
+  <h3>C. Textos e aparência do site</h3>
+  <table>
+    <tr><th style="width:30%">Quero mudar…</th><th style="width:38%">Onde</th><th>Nível</th></tr>
+    <tr><td>Título, subtítulo e botões da página inicial</td><td><code>src/config/site.ts</code> → <code>titulo</code>, <code>subtitulo</code>, <code>botoes</code></td><td>🟡</td></tr>
+    <tr><td>Os 4 cartões de recursos da página inicial</td><td><code>src/config/site.ts</code> → <code>recursos</code></td><td>🟡</td></tr>
+    <tr><td>Perguntas frequentes (Ajuda)</td><td><code>src/config/site.ts</code> → <code>faq</code></td><td>🟡</td></tr>
+    <tr><td>Nome do site na aba do navegador</td><td><code>src/config/site.ts</code> → <code>nome</code>, <code>descricao</code></td><td>🟡</td></tr>
+    <tr><td>Cores (claro e escuro)</td><td><code>src/app/globals.css</code> → variáveis do topo (<code>--brand</code>, <code>--accent</code>…)</td><td>🟡</td></tr>
+    <tr><td>Termos de uso / Privacidade</td><td><code>src/app/termos/page.tsx</code>, <code>src/app/privacidade/page.tsx</code></td><td>🟡</td></tr>
+    <tr><td>Itens do menu do aluno</td><td><code>src/app/app/layout.tsx</code> → <code>NAV</code> e <code>MOBILE</code></td><td>🟡</td></tr>
+    <tr><td>Nomes dos filtros de questões</td><td><code>src/lib/questions.ts</code> → <code>FILTERS</code></td><td>🟡</td></tr>
+    <tr><td>Nomes "Ciclo Básico", "Fácil/Média/Difícil"</td><td><code>src/lib/format.ts</code> → <code>CYCLE_NAME</code>, <code>LEVEL_NAME</code></td><td>🟡</td></tr>
+    <tr><td>Ícone do site / do app no celular</td><td><code>public/icon.svg</code> e <code>src/app/icon.svg</code></td><td>🟡</td></tr>
+  </table>
+
+  <h3>D. Regras do sistema (números)</h3>
+  <table>
+    <tr><th style="width:30%">Quero mudar…</th><th style="width:38%">Onde (<code>src/config/regras.ts</code>)</th><th>Padrão</th></tr>
+    <tr><td>Quantos dias o login dura</td><td><code>sessao.diasValidade</code></td><td>30 dias</td></tr>
+    <tr><td>Tentativas de login antes de bloquear</td><td><code>limites.loginPorConta</code></td><td>8 em 15 min</td></tr>
+    <tr><td>Cadastros por internet (IP)</td><td><code>limites.cadastroPorIP</code></td><td>5 por hora</td></tr>
+    <tr><td>Mínimo de respostas para o Raio-X</td><td><code>raioX.minimoRespostas</code></td><td>5</td></tr>
+    <tr><td>O que é "ponto fraco" / "ponto forte"</td><td><code>raioX.fracoAbaixoDe</code> / <code>forteAPartirDe</code></td><td>60% / 80%</td></tr>
+  </table>
+
+  <h3>E. Não mexa sem ajuda 🔴</h3>
+  <table>
+    <tr><th style="width:38%">Arquivo</th><th>Por quê</th></tr>
+    <tr><td><code>src/lib/auth.ts</code></td><td>Login, senhas e "um aparelho por vez".</td></tr>
+    <tr><td><code>src/app/app/actions.ts</code>, <code>src/app/admin/actions.ts</code></td><td>Verificações de segurança e auditoria.</td></tr>
+    <tr><td><code>src/core/</code></td><td>Regras de acesso e cálculos, protegidos por testes.</td></tr>
+    <tr><td><code>prisma/schema.prisma</code></td><td>Estrutura do banco: mudança exige migração e backup.</td></tr>
+    <tr><td><code>next.config.ts</code></td><td>Cabeçalhos de segurança do servidor.</td></tr>
+    <tr><td><code>.env</code></td><td>Senhas e chaves. Nunca envie para o GitHub.</td></tr>
+  </table>
+
+  <h3>Passo a passo seguro para editar um arquivo 🟡</h3>
+  <ol>
+    <li>No GitHub, abra o arquivo e clique no <b>lápis</b> (Edit), ou abra no VS Code.</li>
+    <li>Leia o cabeçalho <code>📄 / ✏️ / ⚠️</code> no topo.</li>
+    <li>Mude <b>só</b> o texto entre aspas ou o número. Mantenha aspas, vírgulas e colchetes.</li>
+    <li>Salve com uma descrição clara (ex.: "muda título da página inicial").</li>
+    <li>Espere o <b>CI</b> ficar verde ✅. Se ficar vermelho ❌, algo quebrou: desfaça ou me chame.</li>
+  </ol>
+  <div class="box tip"><b class="t">Dica</b>Na dúvida, me mande: "quero mudar tal coisa". Eu faço a mudança, testo e te mostro.</div>
+</section>
+
+<section>
+  <h2>11. Como colocar na internet e quanto custa</h2>
+  <p>Recomendação para começar gastando pouco:</p>
+  <table>
+    <tr><th>Serviço</th><th>Para quê</th><th>Custo inicial</th></tr>
+    <tr><td>Vercel</td><td>Hospedar o site</td><td>Grátis → ~US$ 20/mês quando crescer</td></tr>
+    <tr><td>Neon</td><td>Banco de dados na nuvem, com backup</td><td>Grátis → ~US$ 19/mês</td></tr>
+    <tr><td>Registro.br</td><td>Endereço próprio (ex.: bizudosalles.com.br)</td><td>~R$ 40/ano</td></tr>
+    <tr><td>Mercado Pago</td><td>Receber Pix e cartão</td><td>Taxa por venda (Pix ~1%; cartão ~4–5%)</td></tr>
+    <tr><td>Apple / Google (futuro)</td><td>Aplicativo nas lojas</td><td>US$ 99/ano / US$ 25 uma vez</td></tr>
+  </table>
+  <h3>Passos (resumo — detalhes no DEPLOY)</h3>
+  <ol>
+    <li>Criar conta no <b>Neon</b> e copiar o endereço do banco.</li>
+    <li>Criar conta na <b>Vercel</b> com o GitHub e importar o repositório (pasta <code>PROJETOS/bizu-do-salles</code>).</li>
+    <li>Colar o endereço do banco nas <b>variáveis de ambiente</b> da Vercel.</li>
+    <li>Publicar. Depois, criar seu usuário administrador.</li>
+    <li>Comprar o domínio e ligar na Vercel.</li>
+  </ol>
+  <div class="box tip"><b class="t">Posso fazer isso com você</b>Quando quiser publicar, me avise: te guio clique a clique.</div>
+</section>
+
+<section>
+  <h2>12. O que falta fazer (roteiro)</h2>
+  <table>
+    <tr><th style="width:12%">Versão</th><th>Entrega</th><th style="width:14%">Status</th></tr>
+    <tr><td>v0.1–0.2</td><td>Banco, regras, site, área do aluno, painel admin, testes</td><td class="ok">Feito</td></tr>
+    <tr><td>v0.2.1</td><td>109 questões do RDPM de SP</td><td class="ok">Feito</td></tr>
+    <tr><td>v0.3</td><td>Simulados (rápido, por disciplina, personalizado, com cronômetro) e resultado</td><td class="wip">Em andamento</td></tr>
+    <tr><td>v0.4</td><td>Recuperação de senha por e-mail; meta diária</td><td class="no">A fazer</td></tr>
+    <tr><td>v0.5</td><td>Cadernos, ranking por apelido, conquistas</td><td class="no">A fazer</td></tr>
+    <tr><td>v0.6</td><td>Mais conteúdo de SP (Constituição Estadual, normas da escola)</td><td class="no">Depende de PDFs</td></tr>
+    <tr><td>v0.8</td><td>Mercado Pago automático + cupons</td><td class="no">A fazer</td></tr>
+    <tr><td>v1.0</td><td>Lançamento: internet, domínio, revisão jurídica, LGPD completa</td><td class="no">A fazer</td></tr>
+    <tr><td>v2.0</td><td>Aplicativo Android/iOS</td><td class="no">A fazer</td></tr>
+  </table>
+  <h3>O que eu preciso de você</h3>
+  <ul>
+    <li>PDFs oficiais das outras normas cobradas no curso (Constituição de SP, regulamentos da escola, instruções da PMESP).</li>
+    <li>Se possível, a <b>ementa</b> (lista de matérias) do seu curso.</li>
+    <li>Decidir o preço final do plano combinado (hoje: R$ 60 como exemplo).</li>
+    <li>Um CNPJ/MEI para receber pagamentos quando for vender.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>13. Cuidados importantes e checklist</h2>
+  <div class="box danger"><b class="t">Nunca</b>
+  <ul>
+    <li>Envie o arquivo <code>.env</code> ou senhas para o GitHub ou para outras pessoas.</li>
+    <li>Libere plano sem ver o dinheiro no extrato.</li>
+    <li>Publique questão copiada de outro curso ou apostila.</li>
+    <li>Apague dados do banco para "resolver" um problema — peça ajuda antes.</li>
+  </ul></div>
+  <div class="box tip"><b class="t">Sempre</b>
+  <ul>
+    <li>Revise o Pull Request antes de clicar em Merge (o CI precisa estar verde).</li>
+    <li>Faça backup antes de mudanças grandes.</li>
+    <li>Confira o artigo da lei antes de publicar uma questão nova.</li>
+    <li>Use senha forte (12+ caracteres) na conta de administrador.</li>
+  </ul></div>
+  <h3>Checklist antes de vender</h3>
+  <table>
+    <tr><th style="width:8%"></th><th>Item</th></tr>
+    <tr><td>☐</td><td>Site publicado com domínio próprio (HTTPS automático)</td></tr>
+    <tr><td>☐</td><td>Termos e privacidade revisados por advogado</td></tr>
+    <tr><td>☐</td><td>Backup diário ligado e <b>um teste de restauração feito</b></td></tr>
+    <tr><td>☐</td><td>Pagamento automático (Mercado Pago) testado</td></tr>
+    <tr><td>☐</td><td>Pelo menos 300 questões publicadas e revisadas</td></tr>
+    <tr><td>☐</td><td>WhatsApp e e-mail de suporte configurados no painel</td></tr>
+    <tr><td>☐</td><td>CNPJ/MEI para emitir recibos</td></tr>
+  </table>
+  <p style="margin-top:18px" class="muted">Relatório gerado automaticamente a partir de <code>docs/relatorio/relatorio.html</code> (comando <code>npm run relatorio</code>).</p>
+</section>
+
+</body>
+</html>

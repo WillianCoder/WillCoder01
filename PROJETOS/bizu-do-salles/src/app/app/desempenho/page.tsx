@@ -1,6 +1,7 @@
 import { requireUser } from "@/lib/auth";
 import { userAttempts } from "@/lib/stats";
 import { groupStats, xray, type Stat } from "@/core/performance";
+import { REGRAS } from "@/config/regras";
 
 export const metadata = { title: "Desempenho" };
 
@@ -36,7 +37,7 @@ export default async function Desempenho() {
         <p><strong>Pontos fortes:</strong> {x.strong.map((s) => s.key).join(", ") || "—"}</p>
         <p><strong>Pontos a melhorar:</strong> {x.weak.map((s) => s.key).join(", ") || "—"}</p>
         {x.tips.length > 0 && <ul>{x.tips.map((t) => <li key={t}>{t}</li>)}</ul>}
-        <p className="muted" style={{ fontSize: ".85rem" }}>O raio-x considera disciplinas com pelo menos 5 respostas.</p>
+        <p className="muted" style={{ fontSize: ".85rem" }}>O raio-x considera disciplinas com pelo menos {REGRAS.raioX.minimoRespostas} respostas.</p>
       </section>
       <section className="card stack"><h2>Por disciplina</h2><Bars items={groupStats(attempts, "subject")} /></section>
       <section className="card stack"><h2>Por assunto</h2><Bars items={groupStats(attempts, "topic")} /></section>

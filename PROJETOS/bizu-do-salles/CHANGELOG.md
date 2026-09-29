@@ -2,6 +2,12 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.2.2] — 2026-09-29
+### Adicionado
+- **Relatório em PDF** (`docs/RELATORIO.pdf`, gerado de `docs/relatorio/relatorio.html` com `npm run relatorio`): resumo, glossário, segurança, conteúdo, painel, mapa do projeto, **Guia de edição** por assunto, custos, roteiro e checklist.
+- Configuração central editável: `src/config/site.ts` (textos da página inicial e FAQ) e `src/config/regras.ts` (sessão, limites de tentativa, Raio-X, amostra grátis).
+- Cabeçalho padrão `📄 O QUE É / ✏️ EDITÁVEL / ⚠️ CUIDADO` em 20 arquivos-chave, marcações `✏️` nos pontos de edição, `content/questoes/LEIA-ME.md` e cabeçalho no `.env.example`.
+
 ## [0.2.1] — 2026-09-29
 ### Adicionado
 - **109 questões originais do RDPM de SP** (LC 893/2001, texto compilado da Alesp atualizado até a Lei 18.442/2026), cobrindo os 14 capítulos: disposições gerais, deontologia, disciplina, transgressões (26 de classificação G/M/L conferidas contra o texto oficial), sanções, recolhimento, procedimento, competência, aplicação, comportamento, recursos, revisão, recompensas e processo regular. Total do banco: 178.

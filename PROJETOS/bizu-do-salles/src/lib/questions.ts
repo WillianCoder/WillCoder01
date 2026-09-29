@@ -4,6 +4,7 @@ import { db } from "./db";
 import { stateWhere } from "../core/states";
 
 export type Filter = "nao-respondidas" | "erradas" | "favoritas" | "revisar" | "todas";
+// ✏️ EDITÁVEL: nomes dos filtros da tela de questões (mude só o texto à direita)
 export const FILTERS: Record<Filter, string> = {
   "nao-respondidas": "Não respondidas",
   erradas: "Que errei",

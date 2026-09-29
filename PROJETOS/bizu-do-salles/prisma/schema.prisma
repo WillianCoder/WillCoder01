@@ -1,3 +1,7 @@
+// 📄 O QUE É: ESTRUTURA DO BANCO DE DADOS (tabelas e campos).
+// ✏️ EDITÁVEL: Nada no dia a dia.
+// ⚠️ CUIDADO: Toda mudança aqui exige MIGRAÇÃO (npx prisma migrate dev) e backup antes em produção. Peça ajuda.
+// 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
 // Bizu do Salles — esquema do banco (v0.2.0). Documentação: docs/DATABASE.md
 generator client {
   provider = "prisma-client-js"

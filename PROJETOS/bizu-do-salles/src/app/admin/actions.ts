@@ -1,4 +1,10 @@
 "use server";
+/**
+ * 📄 O QUE É: AÇÕES DO ADMINISTRADOR no servidor: salvar questão, planos, liberar assinatura, bloquear, escolas, configurações.
+ * ✏️ EDITÁVEL: Regras de validação da questão (questionSchema): tamanhos mínimos, formato do código.
+ * ⚠️ CUIDADO: Área de SEGURANÇA e AUDITORIA: toda ação grava em AuditLog. Não remova as chamadas audit(...) nem requireAdmin().
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";

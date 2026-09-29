@@ -1,6 +1,6 @@
 {
   "name": "bizu-do-salles",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Bizu do Salles — plataforma de estudos por questões (Ciclo Básico + Específico).",
   "directories": {
     "doc": "docs",
@@ -20,7 +20,8 @@
     "start": "next start",
     "admin:create": "tsx scripts/create-admin.ts",
     "db:deploy": "prisma migrate deploy",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "relatorio": "node scripts/gerar-relatorio.mjs"
   },
   "author": "",
   "license": "UNLICENSED",

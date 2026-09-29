@@ -1,3 +1,9 @@
+/**
+ * 📄 O QUE É: TELA DE QUESTÕES (endereço /app/questoes): filtros, questão, resposta, favoritar, relatar problema.
+ * ✏️ EDITÁVEL: Textos da tela. Nomes dos filtros: src/lib/questions.ts (FILTERS).
+ * ⚠️ CUIDADO: A verificação de acesso e a correção acontecem no servidor (app/actions.ts) — não mover para o navegador.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { db } from "@/lib/db";

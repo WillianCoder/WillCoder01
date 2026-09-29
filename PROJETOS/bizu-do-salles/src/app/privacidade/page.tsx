@@ -1,3 +1,9 @@
+/**
+ * 📄 O QUE É: POLÍTICA DE PRIVACIDADE / LGPD (endereço /privacidade).
+ * ✏️ EDITÁVEL: Todo o texto entre as tags <p>…</p> e <h2>…</h2> pode ser reescrito.
+ * ⚠️ CUIDADO: Revise com um advogado antes de vender.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import { TextPage } from "@/components/TextPage";
 
 export const metadata = { title: "Política de privacidade" };

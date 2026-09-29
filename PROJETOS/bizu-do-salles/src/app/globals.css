@@ -1,3 +1,9 @@
+/*
+ * 📄 O QUE É: CORES E VISUAL do site inteiro (claro e escuro).
+ * ✏️ EDITÁVEL: As cores ficam nas variáveis do topo (--brand = cor principal, --accent = destaque, --bg = fundo). O bloco 'dark' define o tema escuro. --radius arredonda os cantos.
+ * ⚠️ CUIDADO: Mude só os valores (ex.: #0e6b5c). Não apague os nomes das variáveis.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 /* Identidade visual Bizu do Salles. Para mudar cores, edite APENAS as variáveis abaixo. */
 :root {
   --bg: #f6f7f9; --surface: #ffffff; --surface-2: #eef1f4; --text: #14202b; --muted: #5b6b7a;

@@ -1,4 +1,10 @@
 "use server";
+/**
+ * 📄 O QUE É: AÇÕES DO ALUNO no servidor: responder, favoritar, relatar problema, pedir plano, salvar preferências.
+ * ✏️ EDITÁVEL: Limites de tentativa: src/config/regras.ts.
+ * ⚠️ CUIDADO: Área de SEGURANÇA: toda ação confere login e acesso de novo. Não remova essas verificações.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
@@ -8,6 +14,7 @@ import { userAccess } from "@/lib/access";
 import { visibleWhere } from "@/lib/questions";
 import { originalLetter } from "@/core/shuffle";
 import { rateLimit } from "@/lib/rate-limit";
+import { REGRAS, janela } from "@/config/regras";
 
 const back = (form: FormData) => String(form.get("back") ?? "/app/questoes").replace(/[^\w\-/?=&%.]/g, "");
 
@@ -21,7 +28,7 @@ export async function answer(form: FormData) {
   const questionId = String(form.get("questionId"));
   const shown = Number(form.get("choice"));
   if (!Number.isInteger(shown) || shown < 0 || shown > 4) redirect(`${back(form)}&erro=escolha`);
-  if (!rateLimit(`answer:${user.id}`, 120, 60_000)) redirect(`${back(form)}&erro=limite`);
+  if (!rateLimit(`answer:${user.id}`, ...janela(REGRAS.limites.respostasPorAluno))) redirect(`${back(form)}&erro=limite`);
   const q = await loadVisible(user.id, user.stateCode, questionId, user.role);
   if (!q) redirect("/app/planos?bloqueado=1"); // sem acesso: nunca confiar no que veio do navegador
   const chosen = originalLetter(user.id, q!.id, shown);
@@ -49,7 +56,7 @@ const FLAG_KINDS = ["gabarito", "portugues", "duplicada", "alternativa", "explic
 export async function reportProblem(form: FormData) {
   const user = await requireUser();
   const kind = String(form.get("kind"));
-  if (!FLAG_KINDS.includes(kind) || !rateLimit(`flag:${user.id}`, 10, 60 * 60_000)) redirect(back(form));
+  if (!FLAG_KINDS.includes(kind) || !rateLimit(`flag:${user.id}`, ...janela(REGRAS.limites.relatosPorAluno))) redirect(back(form));
   const questionId = String(form.get("questionId"));
   if (!(await loadVisible(user.id, user.stateCode, questionId, user.role))) redirect(back(form));
   await db.questionFlag.create({ data: { userId: user.id, questionId, kind, message: String(form.get("message") ?? "").slice(0, 1000) || null } });

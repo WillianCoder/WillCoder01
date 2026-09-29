@@ -1,3 +1,9 @@
+/**
+ * 📄 O QUE É: PAINEL DO ALUNO (endereço /app): plano, validade, acertos, sequência, recomendações.
+ * ✏️ EDITÁVEL: Textos dos cartões (ex.: 'Respondidas', 'Continuar estudando').
+ * ⚠️ CUIDADO: Os cálculos ficam em src/core/performance.ts e src/lib/stats.ts.
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
 import Link from "next/link";
 import { requireUser } from "@/lib/auth";
 import { userAccess } from "@/lib/access";

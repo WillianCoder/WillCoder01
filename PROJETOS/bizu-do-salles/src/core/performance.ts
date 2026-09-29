@@ -1,3 +1,11 @@
+/**
+ * 📄 O QUE É: CÁLCULO DE DESEMPENHO E RAIO-X (acertos por disciplina, pontos fortes/fracos, recomendações).
+ * ✏️ EDITÁVEL: Limites do Raio-X: src/config/regras.ts. Textos das recomendações: função xray (tips).
+ * ⚠️ CUIDADO: Coberto por testes (npm test).
+ * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
+ */
+import { REGRAS } from "../config/regras";
+
 export interface Attempt {
   subject: string;
   topic?: string;
@@ -26,8 +34,13 @@ export function groupStats(attempts: Attempt[], by: "subject" | "topic"): Stat[]
   return [...groups].map(([k, l]) => stat(k, l)).sort((a, b) => b.rate - a.rate);
 }
 
-/** Raio-X: regras simples e auditáveis, sem IA. Mínimo de 5 respostas para opinar. */
-export function xray(attempts: Attempt[], minAnswers = 5, weakBelow = 60, strongFrom = 80) {
+/** Raio-X: regras simples e auditáveis, sem IA. Limites em src/config/regras.ts (✏️). */
+export function xray(
+  attempts: Attempt[],
+  minAnswers: number = REGRAS.raioX.minimoRespostas,
+  weakBelow: number = REGRAS.raioX.fracoAbaixoDe,
+  strongFrom: number = REGRAS.raioX.forteAPartirDe,
+) {
   const subjects = groupStats(attempts, "subject").filter((s) => s.answered >= minAnswers);
   const strong = subjects.filter((s) => s.rate >= strongFrom);
   const weak = subjects.filter((s) => s.rate < weakBelow).sort((a, b) => a.rate - b.rate);
