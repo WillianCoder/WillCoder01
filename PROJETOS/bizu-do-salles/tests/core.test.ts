@@ -4,6 +4,7 @@ import { checkSession, newSessionToken, hashToken, sessionsToRevoke } from "../s
 import { xray } from "../src/core/performance";
 import { loadQuestionFiles } from "../src/content";
 import { visibleForState } from "../src/core/states";
+import { displayOrder, originalLetter } from "../src/core/shuffle";
 
 const now = new Date("2026-10-01T12:00:00Z");
 const future = new Date("2026-12-30T12:00:00Z");
@@ -59,6 +60,10 @@ describe("banco de questões", () => {
     const files = loadQuestionFiles();
     expect(files.flatMap((f) => f.questions).length).toBeGreaterThan(0);
   });
+  it("nenhuma letra concentra mais de 35% dos gabaritos", () => {
+    const qs = loadQuestionFiles().flatMap((f) => f.questions);
+    for (const l of "ABCDE") expect(qs.filter((q) => q.correct === l).length / qs.length).toBeLessThanOrEqual(0.35);
+  });
 });
 
 describe("conteúdo por estado", () => {
@@ -67,5 +72,18 @@ describe("conteúdo por estado", () => {
     expect(visibleForState("SP", "SP")).toBe(true);
     expect(visibleForState("SP", "MG")).toBe(false);
     expect(visibleForState("SP", null)).toBe(false);
+  });
+});
+
+describe("embaralhamento das alternativas", () => {
+  it("é uma permutação estável por aluno e questão", () => {
+    const a = displayOrder("u1", "q1");
+    expect([...a].sort()).toEqual(["A", "B", "C", "D", "E"]);
+    expect(displayOrder("u1", "q1")).toEqual(a);
+    expect(originalLetter("u1", "q1", 2)).toBe(a[2]);
+  });
+  it("varia entre alunos", () => {
+    const orders = new Set(Array.from({ length: 20 }, (_, i) => displayOrder(`u${i}`, "q1").join("")));
+    expect(orders.size).toBeGreaterThan(5);
   });
 });

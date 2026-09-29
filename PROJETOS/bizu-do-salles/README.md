@@ -2,7 +2,7 @@
 
 Plataforma de estudos por questões para cursos de formação da Polícia Militar de **todos os estados** (começando por São Paulo) — **Ciclo Básico**, **Ciclo Específico** e plano **Básico + Específico**.
 
-Versão **0.1.1** — fundação: banco de dados, regras de acesso, sessão única, desempenho e primeiras questões originais. Interface web vem na v0.2 ([roadmap](docs/AUDITORIA.md#12-roadmap-mvp-primeiro)).
+Versão **0.1.2** — fundação: banco de dados, regras de acesso, sessão única, desempenho e primeiras questões originais. Interface web vem na v0.2 ([roadmap](docs/AUDITORIA.md#12-roadmap-mvp-primeiro)).
 
 ## Onde fica cada coisa
 
@@ -14,6 +14,10 @@ Versão **0.1.1** — fundação: banco de dados, regras de acesso, sessão úni
 | Regra de acesso por plano | `src/core/access.ts` |
 | Sessão única | `src/core/session.ts` |
 | Raio-X / desempenho | `src/core/performance.ts` |
+| Embaralhar alternativas | `src/core/shuffle.ts` |
+| Relatório do banco de questões | `npm run content:report` |
+| Backup / restauração | `npm run db:backup` · [docs/BACKUP.md](docs/BACKUP.md) |
+| Segurança | [docs/SECURITY.md](docs/SECURITY.md) |
 | Variáveis de ambiente | `.env.example` · `src/config/env.ts` |
 | Arquitetura e decisões | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · [docs/AUDITORIA.md](docs/AUDITORIA.md) |
 

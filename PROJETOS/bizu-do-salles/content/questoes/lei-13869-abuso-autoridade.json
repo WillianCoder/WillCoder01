@@ -1,0 +1,84 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Legislação Penal Especial",
+  "topic": "Abuso de Autoridade (Lei 13.869/2019)",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir de texto legal/oficial (não protegido por direito autoral, Lei 9.610/98, art. 8º, IV).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "ABU-ABU-001",
+      "difficulty": "MEDIUM",
+      "statement": "Para configurar crime de abuso de autoridade, a Lei 13.869/2019 exige que o agente pratique a conduta com a finalidade específica de:",
+      "options": {
+        "A": "cumprir ordem superior",
+        "B": "manter a ordem pública",
+        "C": "prejudicar outrem ou beneficiar a si mesmo ou a terceiro, ou por mero capricho ou satisfação pessoal",
+        "D": "atender à imprensa",
+        "E": "obter promoção por merecimento"
+      },
+      "correct": "C",
+      "explanation": "Art. 1º, § 1º: é o dolo específico exigido pela lei.",
+      "reference": "Lei 13.869/2019, art. 1º, § 1º"
+    },
+    {
+      "code": "ABU-ABU-002",
+      "difficulty": "EASY",
+      "statement": "Segundo a Lei de Abuso de Autoridade, a divergência na interpretação de lei ou na avaliação de fatos e provas:",
+      "options": {
+        "A": "sempre configura abuso",
+        "B": "configura crime culposo",
+        "C": "configura abuso se houver recurso",
+        "D": "não configura, por si só, abuso de autoridade",
+        "E": "gera perda automática do cargo"
+      },
+      "correct": "D",
+      "explanation": "Art. 1º, § 2º — afasta o chamado 'crime de hermenêutica'.",
+      "reference": "Lei 13.869/2019, art. 1º, § 2º"
+    },
+    {
+      "code": "ABU-ABU-003",
+      "difficulty": "EASY",
+      "statement": "Os crimes previstos na Lei 13.869/2019 são de ação penal:",
+      "options": {
+        "A": "privada",
+        "B": "pública condicionada à representação",
+        "C": "privada personalíssima",
+        "D": "pública condicionada à requisição do Ministro da Justiça",
+        "E": "pública incondicionada"
+      },
+      "correct": "E",
+      "explanation": "Art. 3º: ação penal pública incondicionada, admitida a ação privada subsidiária se a pública não for intentada no prazo legal.",
+      "reference": "Lei 13.869/2019, art. 3º"
+    },
+    {
+      "code": "ABU-ABU-004",
+      "difficulty": "MEDIUM",
+      "statement": "Quanto ao sujeito ativo, a Lei de Abuso de Autoridade alcança:",
+      "options": {
+        "A": "qualquer agente público, servidor ou não, incluindo militares",
+        "B": "somente servidores efetivos",
+        "C": "apenas membros do Poder Judiciário",
+        "D": "apenas policiais civis",
+        "E": "somente autoridades eleitas"
+      },
+      "correct": "A",
+      "explanation": "Art. 2º: qualquer agente público, servidor ou não, da administração direta ou indireta, incluindo servidores públicos e militares.",
+      "reference": "Lei 13.869/2019, art. 2º"
+    },
+    {
+      "code": "ABU-ABU-005",
+      "difficulty": "HARD",
+      "statement": "Segundo a Lei 13.869/2019, a inabilitação para cargo público e a perda do cargo, como efeitos da condenação:",
+      "options": {
+        "A": "são automáticas em qualquer condenação",
+        "B": "dependem de autorização do Governador",
+        "C": "são condicionadas à reincidência em crime de abuso de autoridade e devem ser declaradas motivadamente na sentença",
+        "D": "não existem nessa lei",
+        "E": "aplicam-se só a militares"
+      },
+      "correct": "C",
+      "explanation": "Art. 4º, parágrafo único: os efeitos dos incisos II e III são condicionados à reincidência e não são automáticos.",
+      "reference": "Lei 13.869/2019, art. 4º, parágrafo único"
+    }
+  ]
+}

@@ -11,17 +11,17 @@
       "statement": "Segundo a Constituição Federal, a casa é asilo inviolável do indivíduo. Em qual situação é permitido entrar nela sem o consentimento do morador, durante a noite?",
       "options": {
         "A": "Para cumprir mandado de busca e apreensão expedido por juiz.",
-        "B": "Em caso de flagrante delito, desastre ou para prestar socorro.",
+        "B": "Para realizar vistoria administrativa da prefeitura.",
         "C": "Para cumprir requisição do delegado de polícia.",
-        "D": "Para realizar vistoria administrativa da prefeitura.",
+        "D": "Em caso de flagrante delito, desastre ou para prestar socorro.",
         "E": "Em nenhuma hipótese."
       },
-      "correct": "B",
+      "correct": "D",
       "explanation": "O art. 5º, XI, permite a entrada sem consentimento a qualquer hora em flagrante delito, desastre ou para prestar socorro. A ordem judicial só autoriza a entrada durante o dia.",
       "whyWrong": {
         "A": "Por ordem judicial, a entrada só pode ocorrer durante o dia.",
+        "B": "Não há previsão constitucional.",
         "C": "Requisição policial não autoriza a entrada.",
-        "D": "Não há previsão constitucional.",
         "E": "Há exceções expressas."
       },
       "reference": "CF/88, art. 5º, XI"
@@ -32,12 +32,12 @@
       "statement": "De acordo com a CF/88, ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada de autoridade:",
       "options": {
         "A": "policial",
-        "B": "judiciária competente",
+        "B": "do Ministério Público",
         "C": "administrativa superior",
-        "D": "do Ministério Público",
+        "D": "judiciária competente",
         "E": "militar de qualquer posto"
       },
-      "correct": "B",
+      "correct": "D",
       "explanation": "O art. 5º, LXI, exige ordem escrita e fundamentada de autoridade judiciária competente, salvo transgressão militar ou crime propriamente militar definidos em lei.",
       "reference": "CF/88, art. 5º, LXI"
     },
@@ -48,16 +48,16 @@
       "options": {
         "A": "Mandado de segurança",
         "B": "Habeas data",
-        "C": "Habeas corpus",
-        "D": "Mandado de injunção",
+        "C": "Mandado de injunção",
+        "D": "Habeas corpus",
         "E": "Ação popular"
       },
-      "correct": "C",
+      "correct": "D",
       "explanation": "O habeas corpus protege o direito de locomoção (art. 5º, LXVIII).",
       "whyWrong": {
         "A": "Protege direito líquido e certo não amparado por HC ou HD.",
         "B": "Garante acesso e retificação de informações pessoais.",
-        "D": "Supre falta de norma regulamentadora.",
+        "C": "Supre falta de norma regulamentadora.",
         "E": "Anula ato lesivo ao patrimônio público, à moralidade etc."
       },
       "reference": "CF/88, art. 5º, LXVIII"
@@ -68,12 +68,12 @@
       "statement": "Para conhecer informações relativas à sua pessoa constantes de bancos de dados de entidades governamentais, o cidadão deve utilizar:",
       "options": {
         "A": "Habeas corpus",
-        "B": "Habeas data",
-        "C": "Mandado de segurança coletivo",
+        "B": "Mandado de segurança coletivo",
+        "C": "Habeas data",
         "D": "Ação civil pública",
         "E": "Mandado de injunção"
       },
-      "correct": "B",
+      "correct": "C",
       "explanation": "O habeas data assegura o conhecimento e a retificação de dados pessoais em registros governamentais ou de caráter público (art. 5º, LXXII).",
       "reference": "CF/88, art. 5º, LXXII"
     },
@@ -113,12 +113,12 @@
       "statement": "Conforme a CF/88, a pena de morte é admitida:",
       "options": {
         "A": "para crimes hediondos",
-        "B": "em caso de guerra declarada",
+        "B": "mediante plebiscito",
         "C": "para terrorismo",
-        "D": "mediante plebiscito",
+        "D": "em caso de guerra declarada",
         "E": "em nenhuma hipótese"
       },
-      "correct": "B",
+      "correct": "D",
       "explanation": "Art. 5º, XLVII, 'a': não haverá pena de morte, salvo em caso de guerra declarada, nos termos do art. 84, XIX.",
       "reference": "CF/88, art. 5º, XLVII, a"
     },
@@ -143,12 +143,12 @@
       "statement": "O preso será informado de seus direitos, entre os quais o de permanecer calado. A prisão de qualquer pessoa e o local onde se encontre devem ser comunicados imediatamente:",
       "options": {
         "A": "somente ao juiz competente",
-        "B": "ao juiz competente e à família do preso ou à pessoa por ele indicada",
+        "B": "à OAB",
         "C": "ao Ministério Público e à Defensoria",
         "D": "ao comandante da unidade",
-        "E": "à OAB"
+        "E": "ao juiz competente e à família do preso ou à pessoa por ele indicada"
       },
-      "correct": "B",
+      "correct": "E",
       "explanation": "Art. 5º, LXII: comunicação imediata ao juiz competente e à família do preso ou à pessoa por ele indicada. O inciso LXIII trata do direito ao silêncio.",
       "reference": "CF/88, art. 5º, LXII e LXIII"
     },
@@ -158,12 +158,12 @@
       "statement": "Em relação à extradição, a CF/88 determina que:",
       "options": {
         "A": "o brasileiro nato pode ser extraditado por tráfico de drogas",
-        "B": "nenhum brasileiro nato será extraditado",
-        "C": "o estrangeiro pode ser extraditado por crime político",
+        "B": "o estrangeiro pode ser extraditado por crime político",
+        "C": "nenhum brasileiro nato será extraditado",
         "D": "o naturalizado nunca será extraditado",
         "E": "a extradição depende de plebiscito"
       },
-      "correct": "B",
+      "correct": "C",
       "explanation": "Art. 5º, LI: o brasileiro nato nunca é extraditado; o naturalizado pode ser, por crime comum anterior à naturalização ou tráfico de entorpecentes. Inciso LII: estrangeiro não é extraditado por crime político ou de opinião.",
       "reference": "CF/88, art. 5º, LI e LII"
     },
@@ -172,13 +172,13 @@
       "difficulty": "EASY",
       "statement": "Segundo a CF/88, ninguém será submetido a tortura nem a tratamento:",
       "options": {
-        "A": "diferenciado",
-        "B": "desumano ou degradante",
+        "A": "desumano ou degradante",
+        "B": "diferenciado",
         "C": "sigiloso",
         "D": "de urgência",
         "E": "sem ordem judicial"
       },
-      "correct": "B",
+      "correct": "A",
       "explanation": "Art. 5º, III.",
       "reference": "CF/88, art. 5º, III"
     }

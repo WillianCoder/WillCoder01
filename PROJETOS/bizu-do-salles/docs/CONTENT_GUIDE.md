@@ -32,3 +32,26 @@ Fontes oficiais para as questões de SP, a conferir sempre no texto consolidado 
 - demais leis e decretos da PMESP indicados no edital/currículo do curso.
 
 Regra: só escrever questão estadual com o texto oficial vigente em mãos (as leis mudam; confira alterações posteriores).
+
+## Plano de conteúdo — foco São Paulo (PMESP)
+Status em 29/09/2026: **69 questões nacionais publicadas**; estaduais de SP aguardando acesso ao texto oficial (os domínios de legislação estão bloqueados no ambiente de desenvolvimento em nuvem — ver README).
+
+| Bloco | Base legal (texto oficial) | Abrangência | Status |
+|---|---|---|---|
+| Constituição Federal (direitos fundamentais, adm. pública, nacionalidade, militares, segurança pública) | CF/88 | Nacional | ✅ 50 |
+| Direitos Humanos | DUDH (1948); depois Pacto de San José (Dec. 678/1992) | Nacional | ✅ 5 |
+| Tortura, Abuso de Autoridade | Lei 9.455/97; Lei 13.869/19 | Nacional | ✅ 11 |
+| Português, Matemática | Conteúdo próprio | Nacional | ✅ 18 |
+| Código Penal, CPP, Código Penal Militar, CPPM | Decretos-Leis 2.848/40, 3.689/41, 1.001/69, 1.002/69 | Nacional | ⏳ |
+| ECA, Estatuto do Desarmamento, Maria da Penha, Lei de Drogas | Leis 8.069/90, 10.826/03, 11.340/06, 11.343/06 | Nacional | ⏳ |
+| Constituição do Estado de SP — segurança pública e servidores militares | CE-SP/1989 | SP | ⏳ precisa texto |
+| Regulamento Disciplinar da PM (RDPM) | LC 893/2001 e alterações | SP | ⏳ precisa texto |
+| Demais normas das aulas internas (estatuto, polícia comunitária, POP etc.) | Conforme ementa do curso | SP | ⏳ precisa ementa |
+
+### Uso de material gratuito da internet
+Apostilas e questões de cursos (mesmo gratuitas) servem **apenas como mapa de assuntos**: quais artigos e temas são mais cobrados nas aulas internas. Nenhum texto, questão, imagem ou arquivo delas é copiado, parafraseado ou redistribuído. Cada questão do Bizu é escrita do zero a partir da lei, com o artigo em `reference`.
+
+### Controles automáticos de qualidade (`npm test` / `npm run content:report`)
+- esquema, códigos únicos, alternativas sem repetição, fonte/licença obrigatória;
+- nenhuma letra com mais de 35% dos gabaritos;
+- relatório por ciclo, disciplina, dificuldade, abrangência e letra.

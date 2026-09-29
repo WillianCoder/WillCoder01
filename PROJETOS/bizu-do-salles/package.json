@@ -1,6 +1,6 @@
 {
   "name": "bizu-do-salles",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Bizu do Salles — plataforma de estudos por questões (Ciclo Básico + Específico).",
   "directories": {
     "doc": "docs",
@@ -11,7 +11,10 @@
     "typecheck": "prisma generate && tsc",
     "validate": "prisma validate",
     "db:migrate": "prisma migrate dev",
-    "db:seed": "tsx prisma/seed.ts"
+    "db:seed": "tsx prisma/seed.ts",
+    "content:report": "tsx scripts/content-report.ts",
+    "db:backup": "bash scripts/backup.sh",
+    "db:restore": "bash scripts/restore.sh"
   },
   "author": "",
   "license": "UNLICENSED",
