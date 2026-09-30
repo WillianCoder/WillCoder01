@@ -105,6 +105,14 @@ bizu-do-salles/
    ```
 4. Abra **http://localhost:3000**. Entre com seu e-mail de admin para ver o painel em `/admin`.
 
+### Erros comuns no Windows
+| Mensagem | Solução |
+|---|---|
+| "a execução de scripts foi desabilitada" | No terminal: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` (responda S), ou use o terminal **Command Prompt**. |
+| `EPERM` / `ENOTEMPTY` no `npm install` | Feche outros terminais, rode `rmdir /s /q node_modules` e `npm install` de novo. |
+| "@prisma/client did not initialize yet" | Rode `npx prisma generate` e depois `npm run dev`. |
+| Página em branco no `npm run dev` | Atualize o projeto (`git pull`); corrigido na versão 0.8.1. |
+
 ## 6. Comandos do dia a dia
 
 | Comando | Para quê |
