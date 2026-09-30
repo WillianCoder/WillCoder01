@@ -2,6 +2,10 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.8.1] — 2026-09-30
+### Corrigido
+- Página em branco no modo de desenvolvimento (`npm run dev`): a política de segurança (CSP) bloqueava recursos que o Next.js usa só em desenvolvimento. Agora `unsafe-eval` e WebSocket são liberados **apenas** em desenvolvimento; produção continua igual.
+
 ## [0.8.0] — 2026-09-29
 ### Adicionado
 - **Biblioteca de materiais** (`/app/materiais`): resumos em texto (subtítulos, listas, negrito — sem HTML, seguro), áudios com player de velocidade (0,75×–2×) e "continuar de onde parou", e PDFs por link https. Mesma regra de acesso das questões (plano, estado, amostra grátis); recurso "Áudios" respeita a chave liga/desliga.
