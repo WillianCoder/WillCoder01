@@ -22,7 +22,8 @@
     "db:deploy": "prisma migrate deploy",
     "test:e2e": "playwright test",
     "relatorio": "node scripts/gerar-relatorio.mjs",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "comandos": "node scripts/gerar-comandos.mjs"
   },
   "author": "",
   "license": "UNLICENSED",

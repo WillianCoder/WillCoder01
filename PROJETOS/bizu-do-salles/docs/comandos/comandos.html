@@ -1,0 +1,154 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Guia de Comandos</title>
+<style>
+body{font-family:Segoe UI,Arial,sans-serif;color:#1c2733;margin:0 16mm;font-size:10.5pt;line-height:1.45}
+h1{color:#0e6b5c;font-size:22pt;margin:6mm 0 2mm}h2{color:#0e6b5c;border-bottom:2px solid #0e6b5c;padding-bottom:2px;margin-top:7mm;page-break-after:avoid}
+h3{margin:4mm 0 1mm;page-break-after:avoid}
+code,pre{font-family:Consolas,monospace;background:#eef3f2;border-radius:4px}code{padding:1px 4px}
+pre{padding:6px 9px;white-space:pre-wrap;page-break-inside:avoid;border-left:3px solid #0e6b5c}
+table{border-collapse:collapse;width:100%;margin:2mm 0;page-break-inside:avoid}td,th{border:1px solid #c9d4d2;padding:4px 6px;vertical-align:top;text-align:left}th{background:#0e6b5c;color:#fff}
+.box{background:#fff6e0;border:1px solid #e7b94a;padding:6px 10px;border-radius:6px;margin:3mm 0;page-break-inside:avoid}
+.ok{background:#e8f6ee;border-color:#5bb07f}
+.pb{page-break-before:always}
+</style></head><body>
+<h1>Bizu do Salles: guia rápido de comandos</h1>
+<p>Um mapa para você <b>abrir, conferir, adicionar e remover</b> cada parte do projeto no VS Code (Windows). Guarde este PDF junto do <code>docs/RELATORIO.pdf</code>, que explica o projeto em detalhe.</p>
+
+<div class="box"><b>Regra de ouro:</b> antes de mexer, rode <code>git pull</code>. Depois de mexer, rode <code>npm test</code>. Se passar, está seguro.</div>
+
+<h2>1. Abrir o projeto e o terminal</h2>
+<ol>
+<li>No VS Code: <b>Arquivo → Abrir Pasta…</b> e escolha <code>WillCoder01\PROJETOS\bizu-do-salles</code>.</li>
+<li>Abra o terminal: menu <b>Terminal → Novo Terminal</b> (ou <code>Ctrl + '</code>).</li>
+<li>Se o PowerShell bloquear scripts, clique na setinha ao lado do <b>+</b> do terminal e escolha <b>Command Prompt</b>.</li>
+</ol>
+<table><tr><th>Atalho do VS Code</th><th>Para quê</th></tr>
+<tr><td><code>Ctrl + P</code></td><td>Achar um arquivo pelo nome (digite, por exemplo, <code>site.ts</code>).</td></tr>
+<tr><td><code>Ctrl + Shift + F</code></td><td>Procurar um texto em todo o projeto (por exemplo, uma frase da página inicial).</td></tr>
+<tr><td><code>Ctrl + F</code></td><td>Procurar dentro do arquivo aberto.</td></tr>
+<tr><td><code>Ctrl + S</code></td><td>Salvar.</td></tr>
+<tr><td><code>Ctrl + Z</code></td><td>Desfazer.</td></tr>
+<tr><td><code>Ctrl + C</code> (no terminal)</td><td>Parar o site que está rodando.</td></tr></table>
+
+<h2>2. Comandos do dia a dia</h2>
+<table><tr><th>Comando</th><th>O que faz</th><th>Quando usar</th></tr>
+<tr><td><code>npm install</code></td><td>Baixa as bibliotecas e gera o Prisma.</td><td>Na primeira vez e depois de cada <code>git pull</code> que mude o <code>package.json</code>.</td></tr>
+<tr><td><code>npm run dev</code></td><td>Liga o site em <b>http://localhost:3000</b>.</td><td>Para ver e testar. A tela atualiza sozinha quando você salva.</td></tr>
+<tr><td><code>npm test</code></td><td>Confere regras, questões e conteúdo.</td><td>Sempre depois de editar.</td></tr>
+<tr><td><code>npm run build</code></td><td>Monta a versão final, como no servidor.</td><td>Antes de publicar.</td></tr>
+<tr><td><code>npm run db:seed</code></td><td>Carrega no banco as questões e os materiais <b>novos</b> dos arquivos JSON.</td><td>Depois de adicionar arquivos em <code>content/</code>.</td></tr>
+<tr><td><code>npx prisma migrate deploy</code></td><td>Cria ou atualiza as tabelas do banco.</td><td>Na primeira vez e quando vier migração nova.</td></tr>
+<tr><td><code>npm run admin:create -- email@x.com "Nome"</code></td><td>Cria um usuário administrador.</td><td>Uma vez, ou para criar outro admin.</td></tr>
+<tr><td><code>npx prisma studio</code></td><td>Abre o banco no navegador, como uma planilha.</td><td>Para <b>conferir</b> dados. Evite apagar por lá.</td></tr>
+<tr><td><code>npm run content:report</code></td><td>Mostra quantas questões existem por disciplina e por gabarito.</td><td>Para ver o tamanho do banco de questões.</td></tr>
+<tr><td><code>npm run relatorio</code></td><td>Gera de novo o <code>docs/RELATORIO.pdf</code>.</td><td>Depois de mudar a documentação.</td></tr></table>
+
+<h3>Git: salvar e baixar alterações</h3>
+<pre>git pull                      ← baixa o que foi mergeado no GitHub
+git status                    ← mostra o que você mudou
+git add .                     ← marca tudo para salvar
+git commit -m "o que eu fiz"  ← salva uma versão
+git push                      ← envia para o GitHub</pre>
+<div class="box">Desfazer mudanças de um arquivo que você ainda <b>não</b> commitou: <code>git restore caminho/do/arquivo</code>.</div>
+
+<h2 class="pb">3. Mapa: onde está cada coisa</h2>
+<table><tr><th>Quero mudar…</th><th>Arquivo ou lugar</th></tr>
+<tr><td>Nome do site, textos da página inicial, cartões e perguntas frequentes</td><td><code>src/config/site.ts</code></td></tr>
+<tr><td>Prazos, limites de tentativas, simulado, ranking, Raio-X e questões grátis</td><td><code>src/config/regras.ts</code></td></tr>
+<tr><td>Cores e visual (claro e escuro)</td><td><code>src/app/globals.css</code> (variáveis <code>--brand</code>, <code>--accent</code> e <code>--bg</code> no topo)</td></tr>
+<tr><td>Nomes "Ciclo Básico" e "Fácil/Média/Difícil"</td><td><code>src/lib/format.ts</code></td></tr>
+<tr><td>Menu do aluno</td><td><code>src/app/app/layout.tsx</code> (lista <code>NAV</code>)</td></tr>
+<tr><td>Menu do admin</td><td><code>src/app/admin/layout.tsx</code></td></tr>
+<tr><td>Termos de uso e privacidade</td><td><code>src/app/termos/page.tsx</code> e <code>src/app/privacidade/page.tsx</code></td></tr>
+<tr><td>Questões em lote</td><td><code>content/questoes/*.json</code></td></tr>
+<tr><td>Resumos e materiais</td><td><code>content/materiais/*.json</code></td></tr>
+<tr><td>Senhas, banco e chaves (Neon, Mercado Pago, e-mail)</td><td><code>.env</code> (nunca envie para o GitHub)</td></tr>
+<tr><td>Preços, planos, cupons, usuários e escolas</td><td><b>Painel do admin no site</b>: <code>/admin</code></td></tr>
+<tr><td>Estrutura do banco (tabelas)</td><td><code>prisma/schema.prisma</code> (só com ajuda: exige migração)</td></tr></table>
+<p>Cada arquivo importante começa com um cabeçalho <b>📄 O QUE É / ✏️ EDITÁVEL / ⚠️ CUIDADO</b>. Para achar todos os pontos editáveis, use <code>Ctrl + Shift + F</code> e busque <code>✏️</code>.</p>
+
+<h3>Pastas principais</h3>
+<pre>bizu-do-salles/
+├─ src/app/          ← as páginas (cada pasta vira um endereço)
+│   ├─ page.tsx      ← página inicial  (/)
+│   ├─ app/          ← área do aluno   (/app/…)
+│   └─ admin/        ← painel do admin (/admin/…)
+├─ src/config/       ← ✏️ textos e regras (comece por aqui)
+├─ src/lib, src/core ← lógica e segurança (não mexa sem ajuda)
+├─ content/          ← ✏️ questões e materiais em JSON
+├─ prisma/           ← banco de dados e carga inicial
+├─ tests/, e2e/      ← testes automáticos
+└─ docs/             ← guias e o RELATORIO.pdf</pre>
+
+<h2 class="pb">4. Adicionar e remover: passo a passo</h2>
+
+<h3>4.1 Questões</h3>
+<p><b>Uma questão (mais fácil):</b> entre no site como admin, vá em <b>Admin → Questões → Nova questão</b>, preencha e salve.</p>
+<p><b>Várias questões (arquivo):</b></p>
+<ol><li>Em <code>content/questoes/</code>, copie um arquivo parecido e renomeie (por exemplo, <code>sp-cesp-01-seguranca.json</code>).</li>
+<li>Troque o conteúdo mantendo o formato abaixo. O <code>code</code> de cada questão precisa ser único.</li>
+<li>Rode <code>npm test</code> e depois <code>npm run db:seed</code>.</li></ol>
+<pre>{
+  "cycle": "SPECIFIC",           ← "BASIC" ou "SPECIFIC"
+  "subject": "Disciplina",
+  "topic": "Assunto",
+  "state": "SP",                 ← apague esta linha para valer no Brasil todo
+  "sourceLicense": "Questões originais Bizu do Salles.",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "CESP-SEG-001",
+      "difficulty": "EASY",      ← EASY, MEDIUM ou HARD
+      "statement": "Enunciado…",
+      "options": { "A": "…", "B": "…", "C": "…", "D": "…", "E": "…" },
+      "correct": "C",
+      "explanation": "Por que a C está certa (mínimo 20 letras).",
+      "reference": "Art. 5º, inciso X"
+    }
+  ]
+}</pre>
+<p><b>Também dá para importar CSV:</b> <b>Admin → Importar</b>.</p>
+<p><b>Remover uma questão:</b> em <b>Admin → Questões</b>, abra a questão e mude o status para <b>Arquivada</b>. Assim ela some para os alunos, mas o histórico deles continua certo.</p>
+<div class="box">Apagar do JSON <b>não</b> tira a questão do banco: o seed só adiciona. Remova sempre pelo painel.</div>
+
+<h3>4.2 Materiais e resumos</h3>
+<p><b>Pelo painel:</b> <b>Admin → Materiais</b>, para criar, editar ou despublicar.</p>
+<p><b>Por arquivo:</b> copie um arquivo de <code>content/materiais/</code>, troque <code>title</code> e <code>body</code> (aceita <code>## títulos</code>, <code>**negrito**</code> e listas com <code>-</code>) e rode <code>npm run db:seed</code>. Com <code>"free": true</code>, o material fica liberado para todos.</p>
+
+<h3>4.3 Planos, preços e cupons</h3>
+<p>Tudo pelo painel: <b>Admin → Planos e preços</b> e <b>Admin → Cupons</b>. Não precisa mexer em código.</p>
+
+<h3>4.4 Usuários e acesso</h3>
+<p><b>Admin → Usuários</b>: liberar ou estender um plano, bloquear, trocar o papel (ADMIN/EDITOR). Para criar um admin, use <code>npm run admin:create</code>.</p>
+
+<h3>4.5 Textos, cartões e perguntas frequentes</h3>
+<p>Abra <code>src/config/site.ts</code>.</p>
+<ul><li><b>Adicionar um cartão:</b> copie uma linha <code>{ icone: …, titulo: …, texto: … },</code> e cole logo abaixo.</li>
+<li><b>Adicionar uma pergunta frequente:</b> copie uma linha <code>["pergunta", "resposta"],</code>.</li>
+<li><b>Remover:</b> apague a linha inteira, incluindo a vírgula do fim.</li></ul>
+
+<h3>4.6 Item do menu do aluno</h3>
+<p>Em <code>src/app/app/layout.tsx</code>, na lista <code>NAV</code>: cada linha é um item. <b>Cuidado:</b> a lista <code>MOBILE</code>, logo abaixo, usa as posições da <code>NAV</code> (<code>NAV[0]</code>, <code>NAV[9]</code>…); se apagar uma linha, confira essas posições. Para acrescentar, a página precisa existir em <code>src/app/app/NOME/page.tsx</code>. Peça ajuda nesse caso.</p>
+
+<h3>4.7 Regras e números</h3>
+<p>Em <code>src/config/regras.ts</code>, troque só os números. Exemplos: <code>diasValidade: 30</code> define quantos dias o aluno fica logado; <code>gratisPorArquivo: 3</code> define quantas questões grátis cada arquivo novo libera.</p>
+
+<h2 class="pb">5. Conferir se está tudo certo</h2>
+<table><tr><th>Verificação</th><th>Como</th></tr>
+<tr><td>O site abre?</td><td><code>npm run dev</code> e abra http://localhost:3000</td></tr>
+<tr><td>Minhas edições estão válidas?</td><td><code>npm test</code> (tudo verde = ok)</td></tr>
+<tr><td>Vai funcionar no servidor?</td><td><code>npm run build</code></td></tr>
+<tr><td>O banco tem os dados?</td><td><code>npx prisma studio</code></td></tr>
+<tr><td>Quantas questões tenho?</td><td><code>npm run content:report</code></td></tr>
+<tr><td>O que eu mudei?</td><td><code>git status</code> e <code>git diff</code></td></tr></table>
+
+<h2>6. Erros comuns</h2>
+<table><tr><th>Mensagem</th><th>Solução</th></tr>
+<tr><td>"execução de scripts foi desabilitada"</td><td>Use o Command Prompt ou rode <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code></td></tr>
+<tr><td><code>EPERM</code> ou <code>ENOTEMPTY</code> no <code>npm install</code></td><td>Feche o VS Code e o site, rode <code>rmdir /s /q node_modules</code> e depois <code>npm install</code></td></tr>
+<tr><td>"@prisma/client did not initialize yet"</td><td><code>npx prisma generate</code></td></tr>
+<tr><td>"Port 3000 is in use"</td><td>Já existe um site rodando: feche o outro terminal ou use <code>Ctrl + C</code></td></tr>
+<tr><td>Erro no <code>npm test</code> apontando um JSON</td><td>Vírgula faltando ou sobrando, ou <code>code</code> repetido. O erro mostra o arquivo e a linha.</td></tr>
+<tr><td>Página em branco</td><td>Pare com <code>Ctrl + C</code>, rode <code>git pull</code> e <code>npm install</code>, depois <code>npm run dev</code> de novo.</td></tr></table>
+
+<div class="box ok"><b>Resumo:</b> textos em <code>src/config/site.ts</code> · regras em <code>src/config/regras.ts</code> · cores em <code>globals.css</code> · questões e materiais em <code>content/</code> ou no painel · preços, cupons e usuários no painel · depois de editar, sempre <code>npm test</code>.</div>
+</body></html>
