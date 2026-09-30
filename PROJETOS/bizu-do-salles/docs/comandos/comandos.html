@@ -1,0 +1,255 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Guia de Comandos</title>
+<style>
+body{font-family:Segoe UI,Arial,sans-serif;color:#1c2733;margin:0 16mm;font-size:10.5pt;line-height:1.45}
+h1{color:#0e6b5c;font-size:22pt;margin:6mm 0 2mm}h2{color:#0e6b5c;border-bottom:2px solid #0e6b5c;padding-bottom:2px;margin-top:7mm;page-break-after:avoid}
+h3{margin:4mm 0 1mm;page-break-after:avoid}
+code,pre{font-family:Consolas,monospace;background:#eef3f2;border-radius:4px}code{padding:1px 4px}
+pre{padding:6px 9px;white-space:pre-wrap;page-break-inside:avoid;border-left:3px solid #0e6b5c}
+table{border-collapse:collapse;width:100%;margin:2mm 0;page-break-inside:avoid}td,th{border:1px solid #c9d4d2;padding:4px 6px;vertical-align:top;text-align:left}th{background:#0e6b5c;color:#fff}
+.box{background:#fff6e0;border:1px solid #e7b94a;padding:6px 10px;border-radius:6px;margin:3mm 0;page-break-inside:avoid}
+.ok{background:#e8f6ee;border-color:#5bb07f}
+.pb{page-break-before:always}.bad{background:#fdecec;border-color:#d9534f}a{color:#0e6b5c}
+</style></head><body>
+<h1>Bizu do Salles: guia de comandos, banco, segurança e hospedagem</h1>
+<p>Um mapa para você <b>abrir, conferir, adicionar e remover</b> cada parte do projeto no VS Code (Windows). Guarde este PDF junto do <code>docs/RELATORIO.pdf</code>, que explica o projeto em detalhe.</p>
+
+<h3>Sumário</h3><ol><li>Abrir o projeto e o terminal</li><li>Comandos do dia a dia</li><li>Mapa: onde está cada coisa</li><li>Adicionar e remover</li><li>Conferir se está tudo certo</li><li>Erros comuns</li><li>Banco de dados: acessar, ver e editar</li><li>Pagamentos, acesso dos alunos e o seu dinheiro</li><li>Segurança: como se proteger</li><li>Deixar o site online 24 horas de graça</li><li>Servidor em casa: peças, links e montagem</li></ol><div class="box"><b>Regra de ouro:</b> antes de mexer, rode <code>git pull</code>. Depois de mexer, rode <code>npm test</code>. Se passar, está seguro.</div>
+
+<h2>1. Abrir o projeto e o terminal</h2>
+<ol>
+<li>No VS Code: <b>Arquivo → Abrir Pasta…</b> e escolha <code>WillCoder01\PROJETOS\bizu-do-salles</code>.</li>
+<li>Abra o terminal: menu <b>Terminal → Novo Terminal</b> (ou <code>Ctrl + '</code>).</li>
+<li>Se o PowerShell bloquear scripts, clique na setinha ao lado do <b>+</b> do terminal e escolha <b>Command Prompt</b>.</li>
+</ol>
+<table><tr><th>Atalho do VS Code</th><th>Para quê</th></tr>
+<tr><td><code>Ctrl + P</code></td><td>Achar um arquivo pelo nome (digite, por exemplo, <code>site.ts</code>).</td></tr>
+<tr><td><code>Ctrl + Shift + F</code></td><td>Procurar um texto em todo o projeto (por exemplo, uma frase da página inicial).</td></tr>
+<tr><td><code>Ctrl + F</code></td><td>Procurar dentro do arquivo aberto.</td></tr>
+<tr><td><code>Ctrl + S</code></td><td>Salvar.</td></tr>
+<tr><td><code>Ctrl + Z</code></td><td>Desfazer.</td></tr>
+<tr><td><code>Ctrl + C</code> (no terminal)</td><td>Parar o site que está rodando.</td></tr></table>
+
+<h2>2. Comandos do dia a dia</h2>
+<table><tr><th>Comando</th><th>O que faz</th><th>Quando usar</th></tr>
+<tr><td><code>npm install</code></td><td>Baixa as bibliotecas e gera o Prisma.</td><td>Na primeira vez e depois de cada <code>git pull</code> que mude o <code>package.json</code>.</td></tr>
+<tr><td><code>npm run dev</code></td><td>Liga o site em <b>http://localhost:3000</b>.</td><td>Para ver e testar. A tela atualiza sozinha quando você salva.</td></tr>
+<tr><td><code>npm test</code></td><td>Confere regras, questões e conteúdo.</td><td>Sempre depois de editar.</td></tr>
+<tr><td><code>npm run build</code></td><td>Monta a versão final, como no servidor.</td><td>Antes de publicar.</td></tr>
+<tr><td><code>npm run db:seed</code></td><td>Carrega no banco as questões e os materiais <b>novos</b> dos arquivos JSON.</td><td>Depois de adicionar arquivos em <code>content/</code>.</td></tr>
+<tr><td><code>npx prisma migrate deploy</code></td><td>Cria ou atualiza as tabelas do banco.</td><td>Na primeira vez e quando vier migração nova.</td></tr>
+<tr><td><code>npm run admin:create -- email@x.com "Nome"</code></td><td>Cria um usuário administrador.</td><td>Uma vez, ou para criar outro admin.</td></tr>
+<tr><td><code>npx prisma studio</code></td><td>Abre o banco no navegador, como uma planilha.</td><td>Para <b>conferir</b> dados. Evite apagar por lá.</td></tr>
+<tr><td><code>npm run content:report</code></td><td>Mostra quantas questões existem por disciplina e por gabarito.</td><td>Para ver o tamanho do banco de questões.</td></tr>
+<tr><td><code>npm run relatorio</code></td><td>Gera de novo o <code>docs/RELATORIO.pdf</code>.</td><td>Depois de mudar a documentação.</td></tr></table>
+
+<h3>Git: salvar e baixar alterações</h3>
+<pre>git pull                      ← baixa o que foi mergeado no GitHub
+git status                    ← mostra o que você mudou
+git add .                     ← marca tudo para salvar
+git commit -m "o que eu fiz"  ← salva uma versão
+git push                      ← envia para o GitHub</pre>
+<div class="box">Desfazer mudanças de um arquivo que você ainda <b>não</b> commitou: <code>git restore caminho/do/arquivo</code>.</div>
+
+<h2 class="pb">3. Mapa: onde está cada coisa</h2>
+<table><tr><th>Quero mudar…</th><th>Arquivo ou lugar</th></tr>
+<tr><td>Nome do site, textos da página inicial, cartões e perguntas frequentes</td><td><code>src/config/site.ts</code></td></tr>
+<tr><td>Prazos, limites de tentativas, simulado, ranking, Raio-X e questões grátis</td><td><code>src/config/regras.ts</code></td></tr>
+<tr><td>Cores e visual (claro e escuro)</td><td><code>src/app/globals.css</code> (variáveis <code>--brand</code>, <code>--accent</code> e <code>--bg</code> no topo)</td></tr>
+<tr><td>Nomes "Ciclo Básico" e "Fácil/Média/Difícil"</td><td><code>src/lib/format.ts</code></td></tr>
+<tr><td>Menu do aluno</td><td><code>src/app/app/layout.tsx</code> (lista <code>NAV</code>)</td></tr>
+<tr><td>Menu do admin</td><td><code>src/app/admin/layout.tsx</code></td></tr>
+<tr><td>Termos de uso e privacidade</td><td><code>src/app/termos/page.tsx</code> e <code>src/app/privacidade/page.tsx</code></td></tr>
+<tr><td>Questões em lote</td><td><code>content/questoes/*.json</code></td></tr>
+<tr><td>Resumos e materiais</td><td><code>content/materiais/*.json</code></td></tr>
+<tr><td>Senhas, banco e chaves (Neon, Mercado Pago, e-mail)</td><td><code>.env</code> (nunca envie para o GitHub)</td></tr>
+<tr><td>Preços, planos, cupons, usuários e escolas</td><td><b>Painel do admin no site</b>: <code>/admin</code></td></tr>
+<tr><td>Estrutura do banco (tabelas)</td><td><code>prisma/schema.prisma</code> (só com ajuda: exige migração)</td></tr></table>
+<p>Cada arquivo importante começa com um cabeçalho <b>📄 O QUE É / ✏️ EDITÁVEL / ⚠️ CUIDADO</b>. Para achar todos os pontos editáveis, use <code>Ctrl + Shift + F</code> e busque <code>✏️</code>.</p>
+
+<h3>Pastas principais</h3>
+<pre>bizu-do-salles/
+├─ src/app/          ← as páginas (cada pasta vira um endereço)
+│   ├─ page.tsx      ← página inicial  (/)
+│   ├─ app/          ← área do aluno   (/app/…)
+│   └─ admin/        ← painel do admin (/admin/…)
+├─ src/config/       ← ✏️ textos e regras (comece por aqui)
+├─ src/lib, src/core ← lógica e segurança (não mexa sem ajuda)
+├─ content/          ← ✏️ questões e materiais em JSON
+├─ prisma/           ← banco de dados e carga inicial
+├─ tests/, e2e/      ← testes automáticos
+└─ docs/             ← guias e o RELATORIO.pdf</pre>
+
+<h2 class="pb">4. Adicionar e remover: passo a passo</h2>
+
+<h3>4.1 Questões</h3>
+<p><b>Uma questão (mais fácil):</b> entre no site como admin, vá em <b>Admin → Questões → Nova questão</b>, preencha e salve.</p>
+<p><b>Várias questões (arquivo):</b></p>
+<ol><li>Em <code>content/questoes/</code>, copie um arquivo parecido e renomeie (por exemplo, <code>sp-cesp-01-seguranca.json</code>).</li>
+<li>Troque o conteúdo mantendo o formato abaixo. O <code>code</code> de cada questão precisa ser único.</li>
+<li>Rode <code>npm test</code> e depois <code>npm run db:seed</code>.</li></ol>
+<pre>{
+  "cycle": "SPECIFIC",           ← "BASIC" ou "SPECIFIC"
+  "subject": "Disciplina",
+  "topic": "Assunto",
+  "state": "SP",                 ← apague esta linha para valer no Brasil todo
+  "sourceLicense": "Questões originais Bizu do Salles.",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "CESP-SEG-001",
+      "difficulty": "EASY",      ← EASY, MEDIUM ou HARD
+      "statement": "Enunciado…",
+      "options": { "A": "…", "B": "…", "C": "…", "D": "…", "E": "…" },
+      "correct": "C",
+      "explanation": "Por que a C está certa (mínimo 20 letras).",
+      "reference": "Art. 5º, inciso X"
+    }
+  ]
+}</pre>
+<p><b>Também dá para importar CSV:</b> <b>Admin → Importar</b>.</p>
+<p><b>Remover uma questão:</b> em <b>Admin → Questões</b>, abra a questão e mude o status para <b>Arquivada</b>. Assim ela some para os alunos, mas o histórico deles continua certo.</p>
+<div class="box">Apagar do JSON <b>não</b> tira a questão do banco: o seed só adiciona. Remova sempre pelo painel.</div>
+
+<h3>4.2 Materiais e resumos</h3>
+<p><b>Pelo painel:</b> <b>Admin → Materiais</b>, para criar, editar ou despublicar.</p>
+<p><b>Por arquivo:</b> copie um arquivo de <code>content/materiais/</code>, troque <code>title</code> e <code>body</code> (aceita <code>## títulos</code>, <code>**negrito**</code> e listas com <code>-</code>) e rode <code>npm run db:seed</code>. Com <code>"free": true</code>, o material fica liberado para todos.</p>
+
+<h3>4.3 Planos, preços e cupons</h3>
+<p>Tudo pelo painel: <b>Admin → Planos e preços</b> e <b>Admin → Cupons</b>. Não precisa mexer em código.</p>
+
+<h3>4.4 Usuários e acesso</h3>
+<p><b>Admin → Usuários</b>: liberar ou estender um plano, bloquear, trocar o papel (ADMIN/EDITOR). Para criar um admin, use <code>npm run admin:create</code>.</p>
+
+<h3>4.5 Textos, cartões e perguntas frequentes</h3>
+<p>Abra <code>src/config/site.ts</code>.</p>
+<ul><li><b>Adicionar um cartão:</b> copie uma linha <code>{ icone: …, titulo: …, texto: … },</code> e cole logo abaixo.</li>
+<li><b>Adicionar uma pergunta frequente:</b> copie uma linha <code>["pergunta", "resposta"],</code>.</li>
+<li><b>Remover:</b> apague a linha inteira, incluindo a vírgula do fim.</li></ul>
+
+<h3>4.6 Item do menu do aluno</h3>
+<p>Em <code>src/app/app/layout.tsx</code>, na lista <code>NAV</code>: cada linha é um item. <b>Cuidado:</b> a lista <code>MOBILE</code>, logo abaixo, usa as posições da <code>NAV</code> (<code>NAV[0]</code>, <code>NAV[9]</code>…); se apagar uma linha, confira essas posições. Para acrescentar, a página precisa existir em <code>src/app/app/NOME/page.tsx</code>. Peça ajuda nesse caso.</p>
+
+<h3>4.7 Regras e números</h3>
+<p>Em <code>src/config/regras.ts</code>, troque só os números. Exemplos: <code>diasValidade: 30</code> define quantos dias o aluno fica logado; <code>gratisPorArquivo: 3</code> define quantas questões grátis cada arquivo novo libera.</p>
+
+<h2 class="pb">5. Conferir se está tudo certo</h2>
+<table><tr><th>Verificação</th><th>Como</th></tr>
+<tr><td>O site abre?</td><td><code>npm run dev</code> e abra http://localhost:3000</td></tr>
+<tr><td>Minhas edições estão válidas?</td><td><code>npm test</code> (tudo verde = ok)</td></tr>
+<tr><td>Vai funcionar no servidor?</td><td><code>npm run build</code></td></tr>
+<tr><td>O banco tem os dados?</td><td><code>npx prisma studio</code></td></tr>
+<tr><td>Quantas questões tenho?</td><td><code>npm run content:report</code></td></tr>
+<tr><td>O que eu mudei?</td><td><code>git status</code> e <code>git diff</code></td></tr></table>
+
+<h2>6. Erros comuns</h2>
+<table><tr><th>Mensagem</th><th>Solução</th></tr>
+<tr><td>"execução de scripts foi desabilitada"</td><td>Use o Command Prompt ou rode <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code></td></tr>
+<tr><td><code>EPERM</code> ou <code>ENOTEMPTY</code> no <code>npm install</code></td><td>Feche o VS Code e o site, rode <code>rmdir /s /q node_modules</code> e depois <code>npm install</code></td></tr>
+<tr><td>"@prisma/client did not initialize yet"</td><td><code>npx prisma generate</code></td></tr>
+<tr><td>"Port 3000 is in use"</td><td>Já existe um site rodando: feche o outro terminal ou use <code>Ctrl + C</code></td></tr>
+<tr><td>Erro no <code>npm test</code> apontando um JSON</td><td>Vírgula faltando ou sobrando, ou <code>code</code> repetido. O erro mostra o arquivo e a linha.</td></tr>
+<tr><td>Página em branco</td><td>Pare com <code>Ctrl + C</code>, rode <code>git pull</code> e <code>npm install</code>, depois <code>npm run dev</code> de novo.</td></tr></table>
+
+
+<h2 class="pb">7. Banco de dados: acessar, ver e editar</h2>
+<p>O banco é um <b>PostgreSQL</b> hospedado no <b>Neon</b>. O endereço e a senha dele ficam no arquivo <code>.env</code>, nas linhas <code>DATABASE_URL</code> e <code>DATABASE_URL_POOLED</code>.</p>
+<h3>Três formas de acessar (da mais segura para a mais arriscada)</h3>
+<table><tr><th>Forma</th><th>Como</th><th>Use para</th></tr>
+<tr><td><b>1. Painel do admin</b> (recomendado)</td><td>Entre no site com a sua conta admin e acesse <code>/admin</code></td><td>Tudo do dia a dia: questões, materiais, planos, cupons, usuários, escolas. Fica registrado na <b>Auditoria</b>.</td></tr>
+<tr><td><b>2. Prisma Studio</b></td><td>No terminal: <code>npx prisma studio</code>. Abre http://localhost:5555 com as tabelas em formato de planilha.</td><td>Conferir dados, corrigir um campo pontual.</td></tr>
+<tr><td><b>3. Console do Neon</b></td><td><a href="https://console.neon.tech">console.neon.tech</a> → seu projeto → <b>Tables</b> (planilha) ou <b>SQL Editor</b> (comandos)</td><td>Ver o banco de qualquer lugar, criar backups (branches), trocar a senha.</td></tr></table>
+<h3>Tabelas principais</h3>
+<table><tr><th>Tabela</th><th>O que guarda</th></tr>
+<tr><td><code>User</code></td><td>Alunos e admins (e-mail, nome, papel, estado). A senha fica embaralhada (hash); ninguém consegue lê-la.</td></tr>
+<tr><td><code>Plan</code></td><td>Planos à venda (nome, preço em centavos, dias de acesso, ciclos).</td></tr>
+<tr><td><code>Subscription</code></td><td>O acesso de cada aluno: <code>status</code> (PENDING, ACTIVE, CANCELED, EXPIRED) e <code>endsAt</code> (até quando vale).</td></tr>
+<tr><td><code>Payment</code></td><td>Cada pagamento recebido do Mercado Pago (valor, status, data).</td></tr>
+<tr><td><code>Coupon</code></td><td>Cupons de desconto.</td></tr>
+<tr><td><code>Question</code> e <code>QuestionOption</code></td><td>Questões e alternativas.</td></tr>
+<tr><td><code>QuestionAttempt</code></td><td>Cada resposta de cada aluno (base do Raio-X e do ranking).</td></tr>
+<tr><td><code>Material</code></td><td>Resumos e PDFs.</td></tr>
+<tr><td><code>AuditLog</code></td><td>Histórico do que os admins fizeram. <b>Nunca apague.</b></td></tr></table>
+<h3>Editar ou acrescentar pelo Prisma Studio</h3>
+<ol><li>Rode <code>npx prisma studio</code> e abra http://localhost:5555.</li>
+<li>Clique na tabela (por exemplo, <code>Subscription</code>).</li>
+<li><b>Editar:</b> dê dois cliques na célula, mude o valor e clique em <b>Save 1 change</b>.</li>
+<li><b>Acrescentar:</b> botão <b>Add record</b>, preencha e salve.</li>
+<li><b>Remover:</b> marque a linha e clique em <b>Delete</b>. Evite fazer isso: prefira desativar ou arquivar pelo painel.</li></ol>
+<div class="box bad"><b>Antes de editar direto no banco:</b> faça um backup. No Neon, crie um <b>Branch</b> (uma cópia instantânea), ou rode <code>npm run db:backup</code> (precisa do <code>pg_dump</code>; no Windows, use o Branch do Neon). Nunca edite <code>AuditLog</code>, <code>Payment</code> nem a senha (<code>passwordHash</code>) de ninguém.</div>
+
+<h2 class="pb">8. Pagamentos, acesso dos alunos e o seu dinheiro</h2>
+<p>O site <b>não guarda dinheiro nem "saldo"</b> de aluno. Funciona assim:</p>
+<ol><li>O aluno escolhe um plano e paga no <b>Mercado Pago</b> (Pix ou cartão).</li>
+<li>O Mercado Pago avisa o site (webhook). O site confere a assinatura do aviso e o valor, e grava um <code>Payment</code> APPROVED.</li>
+<li>O acesso (<code>Subscription</code>) fica <b>ACTIVE</b> até a data <code>endsAt</code>.</li>
+<li>O <b>dinheiro</b> cai na <b>sua conta do Mercado Pago</b>.</li></ol>
+<table><tr><th>Quero…</th><th>Onde</th></tr>
+<tr><td>Ver quanto recebi, sacar ou transferir</td><td>App ou site do Mercado Pago → <b>Seu dinheiro</b> / <b>Atividade</b>. É lá que fica o seu saldo real.</td></tr>
+<tr><td>Ver quem pagou</td><td>Painel <code>/admin</code> (visão geral) ou a tabela <code>Payment</code> no Prisma Studio</td></tr>
+<tr><td>Liberar acesso de quem pagou por fora (Pix direto)</td><td><b>Admin → Usuários → Pedidos aguardando pagamento → Confirmar pagamento e liberar</b>. Só faça isso depois de ver o dinheiro no extrato.</td></tr>
+<tr><td>Dar mais dias a um aluno</td><td><b>Admin → Usuários</b>: liberar ou estender o plano. Fica registrado na auditoria.</td></tr>
+<tr><td>Devolver dinheiro (reembolso)</td><td>No Mercado Pago, na venda → <b>Devolver dinheiro</b>. Depois bloqueie ou encerre o acesso no painel.</td></tr>
+<tr><td>Mudar preços ou criar cupom</td><td><b>Admin → Planos e preços</b> e <b>Admin → Cupons</b></td></tr>
+<tr><td>Ligar o Mercado Pago</td><td>No <code>.env</code>: <code>MERCADOPAGO_ACCESS_TOKEN</code> e <code>MERCADOPAGO_WEBHOOK_SECRET</code> (veja <code>docs/PAYMENTS.md</code>)</td></tr></table>
+<div class="box">Não mude <code>status</code> nem <code>endsAt</code> na mão pelo banco se puder fazer pelo painel: pelo painel fica registrado quem mudou e quando.</div>
+
+<h2 class="pb">9. Segurança: como se proteger</h2>
+<p><b>O que o site já faz sozinho:</b> senhas com Argon2id (não dá para descobrir), um aparelho por conta, limite de tentativas de login, verificação de acesso no servidor, cabeçalhos de segurança (CSP), conferência de assinatura e valor nos pagamentos, e auditoria das ações do admin.</p>
+<h3>O que depende de você: checklist</h3>
+<table><tr><th>✔</th><th>Ação</th><th>Como</th></tr>
+<tr><td>☐</td><td><b>Trocar a senha do banco</b> (ela apareceu em um print)</td><td>Neon → <b>Roles</b> → <code>neondb_owner</code> → <b>Reset password</b>. Depois atualize <code>DATABASE_URL</code> e <code>DATABASE_URL_POOLED</code> no <code>.env</code> (e na Vercel, se já tiver publicado).</td></tr>
+<tr><td>☐</td><td>Nunca enviar o <code>.env</code> para o GitHub nem mostrar em print</td><td>Ele já está no <code>.gitignore</code>. Antes de mandar um print, esconda senhas e chaves.</td></tr>
+<tr><td>☐</td><td>Senha forte e única no admin</td><td>Com 14 ou mais caracteres. Use um gerenciador (Bitwarden, gratuito).</td></tr>
+<tr><td>☐</td><td>Ativar a verificação em duas etapas (2FA)</td><td>No GitHub, Neon, Vercel, Mercado Pago e no seu e-mail.</td></tr>
+<tr><td>☐</td><td>Poucos admins</td><td>Dê o papel EDITOR para quem só cuida de questões.</td></tr>
+<tr><td>☐</td><td>Backups</td><td><code>npm run db:backup</code> toda semana. O Neon também guarda um histórico curto.</td></tr>
+<tr><td>☐</td><td>Atualizar as bibliotecas</td><td>Uma vez por mês: <code>npm audit</code>. Peça ajuda para atualizar e rode <code>npm test</code>.</td></tr>
+<tr><td>☐</td><td>Revisar a auditoria</td><td><b>Admin → Auditoria</b>: veja se há ações que você não reconhece.</td></tr>
+<tr><td>☐</td><td>Usar só HTTPS</td><td>A Vercel e o Cloudflare já dão HTTPS grátis.</td></tr>
+<tr><td>☐</td><td>Proteção extra contra ataques</td><td>Coloque o domínio no <a href="https://www.cloudflare.com/pt-br/plans/free/">Cloudflare (plano grátis)</a>: esconde o servidor e barra robôs.</td></tr>
+<tr><td>☐</td><td>Termos e privacidade (LGPD)</td><td>Revise <code>/termos</code> e <code>/privacidade</code> com um advogado antes de vender.</td></tr></table>
+<div class="box bad"><b>Se desconfiar de invasão:</b> 1) troque a senha do banco e do admin; 2) troque as chaves do Mercado Pago; 3) veja <b>Admin → Auditoria</b>; 4) restaure o backup se algum dado sumiu.</div>
+
+<h2 class="pb">10. Deixar o site online 24 horas de graça</h2>
+<p><b>Recomendação:</b> <b>Vercel</b> (site) + <b>Neon</b> (banco). As duas têm plano gratuito, ficam no ar 24 horas, dão HTTPS e não dependem da sua luz ou internet. É o caminho mais seguro para começar.</p>
+<ol><li>Crie a conta em <a href="https://vercel.com/signup">vercel.com/signup</a> entrando com o GitHub.</li>
+<li><b>Add New → Project</b> → escolha o repositório <code>WillCoder01</code>.</li>
+<li>Em <b>Root Directory</b>, coloque <code>PROJETOS/bizu-do-salles</code>.</li>
+<li>Em <b>Environment Variables</b>, copie as linhas do seu <code>.env</code> (<code>DATABASE_URL</code>, <code>DATABASE_URL_POOLED</code>, <code>APP_URL</code>, as chaves do Mercado Pago…). <code>APP_URL</code> passa a ser o endereço da Vercel.</li>
+<li><b>Deploy</b>. Em cerca de 2 minutos, o site estará em <code>https://seu-projeto.vercel.app</code>.</li>
+<li>A cada merge no GitHub, a Vercel publica sozinha.</li>
+<li>(Opcional) Domínio próprio (<code>bizudosalles.com.br</code>, cerca de R$ 40 por ano em <a href="https://registro.br">registro.br</a>): Vercel → <b>Settings → Domains</b>.</li></ol>
+<p>Passo a passo completo em <code>docs/DEPLOY.md</code>.</p>
+<table><tr><th>Opção</th><th>Custo</th><th>Prós</th><th>Contras</th></tr>
+<tr><td><b>Vercel + Neon</b> ⭐</td><td>R$ 0</td><td>Zero manutenção, rápido, HTTPS, não cai com a sua luz</td><td>Limites do plano grátis (sobram para começar). O plano grátis da Vercel é para uso pessoal: quando começar a vender, avalie o plano Pro.</td></tr>
+<tr><td>Servidor em casa + Cloudflare Tunnel</td><td>Peças + cerca de R$ 5 a 15 por mês de luz</td><td>Controle total, aprendizado</td><td>Cai se faltar luz ou internet; você cuida das atualizações e da segurança</td></tr>
+<tr><td>Oracle Cloud (Always Free)</td><td>R$ 0</td><td>Servidor Linux real e grátis</td><td>Cadastro pede cartão; é mais técnico</td></tr></table>
+
+<h2 class="pb">11. Servidor em casa: peças, links e montagem</h2>
+<p>Se quiser mesmo ter o seu servidor, abaixo estão duas configurações. Os links levam para o site oficial ou para uma busca no Mercado Livre: <b>confira o vendedor, a reputação e o preço atual</b> antes de comprar. Os preços são estimativas.</p>
+<h3>Opção A: econômica (Raspberry Pi 5), cerca de R$ 900 a 1.300</h3>
+<table><tr><th>Peça</th><th>Por quê</th><th>Link</th></tr>
+<tr><td>Raspberry Pi 5, 8 GB</td><td>Computador pequeno que gasta pouca luz (cerca de 5 a 10 W)</td><td><a href="https://www.raspberrypi.com/products/raspberry-pi-5/">site oficial</a> · <a href="https://lista.mercadolivre.com.br/raspberry-pi-5-8gb">Mercado Livre</a></td></tr>
+<tr><td>Fonte oficial 27 W USB-C</td><td>Fonte fraca trava o Pi</td><td><a href="https://www.raspberrypi.com/products/27w-power-supply/">oficial</a> · <a href="https://lista.mercadolivre.com.br/fonte-raspberry-pi-5-27w">ML</a></td></tr>
+<tr><td>Case com cooler ativo</td><td>Evita superaquecimento 24 horas por dia</td><td><a href="https://www.raspberrypi.com/products/active-cooler/">oficial</a> · <a href="https://lista.mercadolivre.com.br/case-raspberry-pi-5-cooler">ML</a></td></tr>
+<tr><td>SSD NVMe 256 GB + adaptador (HAT) M.2</td><td>Muito mais durável e rápido que o cartão SD</td><td><a href="https://www.raspberrypi.com/products/m2-hat-plus/">HAT oficial</a> · <a href="https://lista.mercadolivre.com.br/ssd-nvme-256gb">SSD no ML</a></td></tr>
+<tr><td>Cartão microSD 32 GB</td><td>Só para instalar o sistema</td><td><a href="https://lista.mercadolivre.com.br/cartao-microsd-32gb-sandisk">ML</a></td></tr>
+<tr><td>Cabo de rede (Ethernet)</td><td>Mais estável que Wi-Fi</td><td><a href="https://lista.mercadolivre.com.br/cabo-de-rede-cat6-2m">ML</a></td></tr>
+<tr><td>Nobreak 600 VA</td><td>Segura quedas curtas de energia</td><td><a href="https://lista.mercadolivre.com.br/nobreak-600va">ML</a></td></tr></table>
+<h3>Opção B: mais forte (mini PC), cerca de R$ 1.200 a 2.000</h3>
+<table><tr><th>Peça</th><th>Por quê</th><th>Link</th></tr>
+<tr><td>Mini PC Intel N100, 16 GB de RAM, SSD de 512 GB</td><td>Mais potente que o Pi, gasta cerca de 10 a 15 W e já vem montado</td><td><a href="https://lista.mercadolivre.com.br/mini-pc-n100-16gb">Mercado Livre</a></td></tr>
+<tr><td>Nobreak 600 VA</td><td>Segura quedas de energia</td><td><a href="https://lista.mercadolivre.com.br/nobreak-600va">ML</a></td></tr>
+<tr><td>Cabo de rede</td><td>Estabilidade</td><td><a href="https://lista.mercadolivre.com.br/cabo-de-rede-cat6-2m">ML</a></td></tr></table>
+<p>Um notebook velho com 8 GB de RAM também serve para testar, e custa R$ 0.</p>
+<h3>Montagem do software (resumo)</h3>
+<ol><li>Instale o sistema: <b>Raspberry Pi OS Lite 64-bit</b> (com o <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a>) ou <b><a href="https://ubuntu.com/download/server">Ubuntu Server 24.04</a></b> no mini PC.</li>
+<li>Instale o Node.js 22 e o git; clone o repositório; crie o <code>.env</code>.</li>
+<li>Banco: continue usando o Neon (mais fácil) ou instale o PostgreSQL 16 no próprio servidor.</li>
+<li><code>npm install</code> → <code>npx prisma migrate deploy</code> → <code>npm run build</code>.</li>
+<li>Deixe rodando sempre com o <b>PM2</b>: <code>npm i -g pm2</code>, depois <code>pm2 start "npm start" --name bizu</code>, depois <code>pm2 startup</code> e <code>pm2 save</code>. Assim o site religa sozinho se o servidor reiniciar.</li>
+<li>Coloque na internet <b>sem abrir portas no roteador</b> com o <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/">Cloudflare Tunnel</a> (grátis). Ele dá HTTPS, esconde o IP da sua casa e protege contra ataques. É preciso ter um domínio no Cloudflare.</li>
+<li>Segurança do servidor: atualizações automáticas (<code>unattended-upgrades</code>), firewall (<code>ufw enable</code>), login SSH só com chave e backup diário do banco.</li></ol>
+<div class="box"><b>Minha sugestão:</b> publique agora na <b>Vercel + Neon</b> (grátis e estável). Monte o servidor em casa como projeto de aprendizado e use-o como <b>ambiente de testes</b>. Se um dia ele estiver bem estável, você decide migrar.</div>
+<div class="box ok"><b>Resumo:</b> textos em <code>src/config/site.ts</code> · regras em <code>src/config/regras.ts</code> · cores em <code>globals.css</code> · questões e materiais em <code>content/</code> ou no painel · preços, cupons e usuários no painel · depois de editar, sempre <code>npm test</code>.</div>
+</body></html>

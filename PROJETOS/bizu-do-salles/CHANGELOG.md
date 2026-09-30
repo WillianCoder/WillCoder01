@@ -2,6 +2,10 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.8.2] — 2026-09-30
+### Corrigido
+- `npm install` agora roda `prisma generate` automaticamente (`postinstall`), evitando o erro "@prisma/client did not initialize yet" quando a instalação é refeita.
+
 ## [0.8.1] — 2026-09-30
 ### Corrigido
 - Página em branco no modo de desenvolvimento (`npm run dev`): a política de segurança (CSP) bloqueava recursos que o Next.js usa só em desenvolvimento. Agora `unsafe-eval` e WebSocket são liberados **apenas** em desenvolvimento; produção continua igual.

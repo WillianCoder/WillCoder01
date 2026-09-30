@@ -21,7 +21,9 @@
     "admin:create": "tsx scripts/create-admin.ts",
     "db:deploy": "prisma migrate deploy",
     "test:e2e": "playwright test",
-    "relatorio": "node scripts/gerar-relatorio.mjs"
+    "relatorio": "node scripts/gerar-relatorio.mjs",
+    "postinstall": "prisma generate",
+    "comandos": "node scripts/gerar-comandos.mjs"
   },
   "author": "",
   "license": "UNLICENSED",
