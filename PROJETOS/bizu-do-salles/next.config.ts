@@ -6,6 +6,10 @@
  */
 import type { NextConfig } from "next";
 
+// No modo de desenvolvimento (npm run dev) o Next.js precisa de 'unsafe-eval' e de conexão
+// WebSocket para recarregar a página sozinho. Em produção isso continua BLOQUEADO.
+const dev = process.env.NODE_ENV !== "production";
+
 // Cabeçalhos de segurança aplicados a todas as páginas.
 const security = [
   { key: "X-Frame-Options", value: "DENY" }, // impede o site de ser embutido (clickjacking)
@@ -15,7 +19,7 @@ const security = [
   { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
   {
     key: "Content-Security-Policy",
-    value: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self' https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://*.mercadopago.com.br https://*.mercadopago.com https://*.mercadolivre.com",
+    value: `default-src 'self'; script-src 'self' 'unsafe-inline'${dev ? " 'unsafe-eval'" : ""}; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self' https:; connect-src 'self'${dev ? " ws: wss:" : ""}; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://*.mercadopago.com.br https://*.mercadopago.com https://*.mercadolivre.com`,
   },
 ];
 
