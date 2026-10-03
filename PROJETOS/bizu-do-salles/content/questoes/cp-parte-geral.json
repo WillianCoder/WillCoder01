@@ -1,0 +1,189 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Direito Penal",
+  "topic": "Parte geral: crime, tentativa e excludentes",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "CP-GER-001",
+      "difficulty": "EASY",
+      "statement": "\"Não há crime sem lei anterior que o defina. Não há pena sem prévia cominação legal.\" Esse enunciado expressa o princípio da:",
+      "options": {
+        "A": "legalidade (reserva legal e anterioridade).",
+        "B": "insignificância.",
+        "C": "proporcionalidade.",
+        "D": "presunção de inocência.",
+        "E": "individualização da pena."
+      },
+      "correct": "A",
+      "explanation": "Art. 1º do Código Penal e art. 5º, XXXIX, da CF: o crime e a pena precisam estar previstos em lei anterior ao fato.",
+      "reference": "Código Penal, art. 1º; CF/88, art. 5º, XXXIX"
+    },
+    {
+      "code": "CP-GER-002",
+      "difficulty": "EASY",
+      "statement": "São causas de exclusão da ilicitude previstas no art. 23 do Código Penal:",
+      "options": {
+        "A": "coação irresistível, obediência hierárquica, embriaguez e menoridade.",
+        "B": "estado de necessidade, legítima defesa, estrito cumprimento de dever legal e exercício regular de direito.",
+        "C": "legítima defesa, arrependimento posterior, perdão judicial e prescrição.",
+        "D": "estado de necessidade, erro de tipo, desistência voluntária e menoridade.",
+        "E": "doença mental, embriaguez completa, coação física e caso fortuito."
+      },
+      "correct": "B",
+      "explanation": "Art. 23: não há crime quando o agente pratica o fato em estado de necessidade, em legítima defesa, em estrito cumprimento de dever legal ou no exercício regular de direito. Coação irresistível e obediência hierárquica excluem a culpabilidade (art. 22).",
+      "reference": "Código Penal, art. 23"
+    },
+    {
+      "code": "CP-GER-003",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o Código Penal, entende-se em legítima defesa quem:",
+      "options": {
+        "A": "pratica o fato para salvar de perigo atual, que não provocou por sua vontade, direito próprio ou alheio.",
+        "B": "cumpre ordem não manifestamente ilegal de superior hierárquico.",
+        "C": "usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente, a direito seu ou de outrem.",
+        "D": "age sob coação moral irresistível.",
+        "E": "reage a agressão já encerrada, por vingança."
+      },
+      "correct": "C",
+      "explanation": "Definição do art. 25. A alternativa sobre perigo atual que não provocou descreve o estado de necessidade (art. 24). Reação a agressão já terminada não é legítima defesa.",
+      "reference": "Código Penal, art. 25"
+    },
+    {
+      "code": "CP-GER-004",
+      "difficulty": "HARD",
+      "statement": "Pelo parágrafo único do art. 25 do Código Penal (incluído pela Lei 13.964/2019), considera-se também em legítima defesa:",
+      "options": {
+        "A": "o policial que atira em qualquer suspeito em fuga.",
+        "B": "o agente que reage a agressão já encerrada.",
+        "C": "qualquer pessoa que porte arma legalmente.",
+        "D": "o agente de segurança pública que repele agressão ou risco de agressão a vítima mantida refém durante a prática de crimes.",
+        "E": "o agente que age por vingança contra autor de crime."
+      },
+      "correct": "D",
+      "explanation": "O parágrafo único trata do agente de segurança pública que repele agressão ou risco de agressão a vítima refém, desde que observados os requisitos do caput (moderação, meios necessários, agressão injusta atual ou iminente).",
+      "reference": "Código Penal, art. 25, parágrafo único"
+    },
+    {
+      "code": "CP-GER-005",
+      "difficulty": "MEDIUM",
+      "statement": "Diz-se o crime tentado quando:",
+      "options": {
+        "A": "nele se reúnem todos os elementos da definição legal.",
+        "B": "o agente desiste voluntariamente de prosseguir.",
+        "C": "o agente impede que o resultado se produza.",
+        "D": "o meio empregado é absolutamente ineficaz.",
+        "E": "iniciada a execução, não se consuma por circunstâncias alheias à vontade do agente."
+      },
+      "correct": "E",
+      "explanation": "Art. 14, II. Consumado é quando se reúnem todos os elementos (art. 14, I). Desistir ou impedir o resultado é desistência voluntária ou arrependimento eficaz (art. 15). Meio absolutamente ineficaz é crime impossível (art. 17).",
+      "reference": "Código Penal, art. 14"
+    },
+    {
+      "code": "CP-GER-006",
+      "difficulty": "MEDIUM",
+      "statement": "Salvo disposição em contrário, a tentativa é punida com a pena do crime consumado:",
+      "options": {
+        "A": "diminuída de um a dois terços.",
+        "B": "aumentada de um terço.",
+        "C": "sem qualquer redução.",
+        "D": "diminuída da metade, obrigatoriamente.",
+        "E": "reduzida a um sexto."
+      },
+      "correct": "A",
+      "explanation": "Art. 14, parágrafo único: pena do consumado diminuída de 1/3 a 2/3. Quanto mais perto da consumação, menor a redução.",
+      "reference": "Código Penal, art. 14, parágrafo único"
+    },
+    {
+      "code": "CP-GER-007",
+      "difficulty": "MEDIUM",
+      "statement": "O crime é culposo quando o agente deu causa ao resultado por:",
+      "options": {
+        "A": "vontade livre e consciente.",
+        "B": "imprudência, negligência ou imperícia.",
+        "C": "assumir o risco de produzi-lo.",
+        "D": "coação irresistível.",
+        "E": "estado de necessidade."
+      },
+      "correct": "B",
+      "explanation": "Art. 18, II. Dolo é querer o resultado ou assumir o risco (dolo eventual, art. 18, I).",
+      "reference": "Código Penal, art. 18"
+    },
+    {
+      "code": "CP-GER-008",
+      "difficulty": "EASY",
+      "statement": "Pelo Código Penal, os menores de 18 anos são:",
+      "options": {
+        "A": "imputáveis, com pena reduzida.",
+        "B": "imputáveis apenas em crimes hediondos.",
+        "C": "penalmente inimputáveis, ficando sujeitos às normas da legislação especial.",
+        "D": "semi-imputáveis.",
+        "E": "imputáveis se emancipados civilmente."
+      },
+      "correct": "C",
+      "explanation": "Art. 27 do CP e art. 228 da CF. Os menores respondem conforme o ECA (Lei 8.069/1990), por ato infracional.",
+      "reference": "Código Penal, art. 27; CF/88, art. 228"
+    },
+    {
+      "code": "CP-GER-009",
+      "difficulty": "HARD",
+      "statement": "O agente que, voluntariamente, desiste de prosseguir na execução ou impede que o resultado se produza:",
+      "options": {
+        "A": "responde pela tentativa, com pena reduzida.",
+        "B": "fica isento de qualquer pena.",
+        "C": "responde pelo crime consumado.",
+        "D": "só responde pelos atos já praticados.",
+        "E": "tem a pena reduzida de um a dois terços."
+      },
+      "correct": "D",
+      "explanation": "Art. 15: desistência voluntária e arrependimento eficaz. O agente não responde pela tentativa, apenas pelos atos que já praticou (por exemplo, lesão já causada).",
+      "reference": "Código Penal, art. 15"
+    },
+    {
+      "code": "CP-GER-010",
+      "difficulty": "HARD",
+      "statement": "No arrependimento posterior (art. 16 do CP), nos crimes cometidos sem violência ou grave ameaça, reparado o dano ou restituída a coisa por ato voluntário até o recebimento da denúncia, a pena será:",
+      "options": {
+        "A": "extinta.",
+        "B": "aumentada de um terço.",
+        "C": "substituída obrigatoriamente por multa.",
+        "D": "reduzida pela metade, em qualquer crime.",
+        "E": "reduzida de um a dois terços."
+      },
+      "correct": "E",
+      "explanation": "Art. 16. Não se aplica a crimes com violência ou grave ameaça à pessoa, e a reparação deve ocorrer até o recebimento da denúncia ou da queixa.",
+      "reference": "Código Penal, art. 16"
+    },
+    {
+      "code": "CP-GER-011",
+      "difficulty": "MEDIUM",
+      "statement": "Considera-se em estado de necessidade quem pratica o fato para salvar de perigo atual:",
+      "options": {
+        "A": "que não provocou por sua vontade, nem podia de outro modo evitar, direito próprio ou alheio, cujo sacrifício não era razoável exigir-se.",
+        "B": "que provocou intencionalmente, para obter vantagem.",
+        "C": "já encerrado, para punir o responsável.",
+        "D": "criado por terceiro, apenas para proteger patrimônio próprio.",
+        "E": "qualquer, mesmo tendo o dever legal de enfrentá-lo."
+      },
+      "correct": "A",
+      "explanation": "Art. 24. O § 1º diz que não pode alegar estado de necessidade quem tinha o dever legal de enfrentar o perigo (como bombeiros e policiais, nos limites da função).",
+      "reference": "Código Penal, art. 24"
+    },
+    {
+      "code": "CP-GER-012",
+      "difficulty": "HARD",
+      "statement": "Em qualquer das excludentes de ilicitude do art. 23, o agente:",
+      "options": {
+        "A": "nunca responde por nada.",
+        "B": "responderá pelo excesso doloso ou culposo.",
+        "C": "responde apenas por multa.",
+        "D": "responde só se for agente público.",
+        "E": "responde pelo crime consumado, com aumento de pena."
+      },
+      "correct": "B",
+      "explanation": "Art. 23, parágrafo único: o excesso, doloso ou culposo, é punível.",
+      "reference": "Código Penal, art. 23, parágrafo único"
+    }
+  ]
+}

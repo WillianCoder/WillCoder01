@@ -1,0 +1,54 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Legislação de Trânsito",
+  "topic": "Crimes e infrações do CTB",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "CTB-TRA-001",
+      "difficulty": "EASY",
+      "statement": "Pelo Código de Trânsito Brasileiro, conduzir veículo automotor com capacidade psicomotora alterada em razão da influência de álcool configura crime previsto no:",
+      "options": {
+        "A": "art. 302 do CTB.",
+        "B": "art. 303 do CTB.",
+        "C": "art. 306 do CTB.",
+        "D": "art. 309 do CTB.",
+        "E": "art. 310 do CTB."
+      },
+      "correct": "C",
+      "explanation": "Art. 306: embriaguez ao volante. Art. 302: homicídio culposo na direção; art. 303: lesão corporal culposa; art. 309: dirigir sem habilitação gerando perigo de dano; art. 310: entregar a direção a pessoa não habilitada.",
+      "reference": "Lei 9.503/1997 (CTB), art. 306"
+    },
+    {
+      "code": "CTB-TRA-002",
+      "difficulty": "MEDIUM",
+      "statement": "A recusa do condutor em se submeter ao teste do etilômetro (bafômetro), segundo o CTB:",
+      "options": {
+        "A": "não gera nenhuma consequência.",
+        "B": "é infração gravíssima, com multa e suspensão do direito de dirigir (art. 165-A).",
+        "C": "é crime punido com reclusão.",
+        "D": "impede apenas o licenciamento do veículo.",
+        "E": "só é infração se houver acidente."
+      },
+      "correct": "B",
+      "explanation": "Art. 165-A do CTB (incluído pela Lei 13.281/2016): as mesmas penalidades do art. 165, independentemente de sinais de embriaguez.",
+      "reference": "Lei 9.503/1997 (CTB), art. 165-A"
+    },
+    {
+      "code": "CTB-TRA-003",
+      "difficulty": "MEDIUM",
+      "statement": "Ao condutor de veículo que causa acidente com vítima, segundo o art. 301 do CTB:",
+      "options": {
+        "A": "sempre se imporá prisão em flagrante.",
+        "B": "exige-se fiança em qualquer caso.",
+        "C": "não se imporá prisão em flagrante nem se exigirá fiança se ele prestar pronto e integral socorro à vítima.",
+        "D": "impõe-se prisão em flagrante só se ele prestar socorro.",
+        "E": "aplica-se apenas multa administrativa, em qualquer caso."
+      },
+      "correct": "C",
+      "explanation": "Art. 301 do CTB: o socorro imediato à vítima afasta a prisão em flagrante e a fiança.",
+      "reference": "Lei 9.503/1997 (CTB), art. 301"
+    }
+  ]
+}

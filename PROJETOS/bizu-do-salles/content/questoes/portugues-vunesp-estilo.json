@@ -1,0 +1,384 @@
+{
+  "cycle": "BASIC",
+  "subject": "Língua Portuguesa",
+  "topic": "Interpretação e norma-padrão (estilo VUNESP)",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "POR-INT-001",
+      "difficulty": "EASY",
+      "statement": "Assinale a alternativa em que o acento indicativo de crase está empregado corretamente.",
+      "options": {
+        "A": "O soldado dirigiu-se à base comunitária no início do turno.",
+        "B": "O policial começou à patrulhar o bairro.",
+        "C": "A ocorrência foi registrada à partir das 8 horas.",
+        "D": "Entregaram o relatório à todos os presentes.",
+        "E": "O sargento referiu-se à ela durante a instrução."
+      },
+      "correct": "A",
+      "explanation": "Há crase quando o termo regente exige a preposição \"a\" e o termo seguinte admite o artigo \"a\": dirigir-se A + A base = à base. Não há crase antes de verbo (patrulhar), na expressão \"a partir de\", antes de pronome indefinido (todos) e antes de pronome pessoal (ela).",
+      "reference": "Gramática normativa: crase"
+    },
+    {
+      "code": "POR-INT-002",
+      "difficulty": "MEDIUM",
+      "statement": "Assinale a frase em que a concordância verbal está de acordo com a norma-padrão.",
+      "options": {
+        "A": "Fazem dois anos que ele aguardava a convocação.",
+        "B": "Fazia dois anos que ele aguardava a convocação.",
+        "C": "Houveram muitas ocorrências durante o carnaval.",
+        "D": "Devem haver soluções para o problema do trânsito.",
+        "E": "Existe, na corporação, normas rígidas de conduta."
+      },
+      "correct": "B",
+      "explanation": "O verbo \"fazer\" indicando tempo decorrido é impessoal e fica no singular (fazia dois anos). \"Haver\" no sentido de existir também é impessoal, e o auxiliar acompanha (deve haver). Já \"existir\" é pessoal e concorda com o sujeito: existem normas.",
+      "reference": "Gramática normativa: concordância verbal (verbos impessoais)"
+    },
+    {
+      "code": "POR-INT-003",
+      "difficulty": "MEDIUM",
+      "statement": "Considerando a regência verbal na norma-padrão, assinale a alternativa correta.",
+      "options": {
+        "A": "Os alunos assistiram a palestra sobre direitos humanos.",
+        "B": "O comandante preferiu mais a disciplina do que a punição.",
+        "C": "Os alunos assistiram à palestra sobre direitos humanos.",
+        "D": "Ele obedeceu o regulamento sem questionar.",
+        "E": "Esqueci-me o horário da formatura."
+      },
+      "correct": "C",
+      "explanation": "\"Assistir\" no sentido de ver/presenciar é transitivo indireto (assistir a algo): assistiram à palestra. \"Preferir\" rege \"a\" e não admite \"mais... do que\"; \"obedecer\" é transitivo indireto (obedecer ao regulamento); \"esquecer-se\" pronominal exige \"de\".",
+      "reference": "Gramática normativa: regência verbal"
+    },
+    {
+      "code": "POR-INT-004",
+      "difficulty": "MEDIUM",
+      "statement": "Assinale a alternativa em que a colocação pronominal está correta segundo a norma-padrão.",
+      "options": {
+        "A": "Nunca esqueça-se do equipamento de proteção.",
+        "B": "Me entregue o relatório até amanhã.",
+        "C": "Os policiais que apresentaram-se foram elogiados.",
+        "D": "Nunca se esqueça do equipamento de proteção.",
+        "E": "Tudo resolveu-se após a mediação."
+      },
+      "correct": "D",
+      "explanation": "Palavras negativas (nunca), pronomes relativos (que) e pronomes indefinidos (tudo) atraem o pronome oblíquo para antes do verbo (próclise). Na norma-padrão, não se inicia frase com pronome oblíquo átono.",
+      "reference": "Gramática normativa: colocação pronominal"
+    },
+    {
+      "code": "POR-INT-005",
+      "difficulty": "EASY",
+      "statement": "Assinale a alternativa pontuada corretamente.",
+      "options": {
+        "A": "Durante a operação os policiais, que estavam bem treinados agiram com cautela.",
+        "B": "Os policiais, agiram com cautela durante a operação.",
+        "C": "Durante, a operação, os policiais agiram com cautela.",
+        "D": "Os policiais que, estavam bem treinados agiram com cautela.",
+        "E": "Durante a operação, os policiais, que estavam bem treinados, agiram com cautela."
+      },
+      "correct": "E",
+      "explanation": "O adjunto adverbial deslocado (Durante a operação) pode ser separado por vírgula, e a oração adjetiva explicativa (que estavam bem treinados) deve vir entre vírgulas. Nunca se separa o sujeito do verbo por vírgula.",
+      "reference": "Gramática normativa: pontuação"
+    },
+    {
+      "code": "POR-INT-006",
+      "difficulty": "EASY",
+      "statement": "Na frase \"O policial agiu de maneira prudente\", o termo \"prudente\" pode ser substituído, sem alteração de sentido, por:",
+      "options": {
+        "A": "cautelosa.",
+        "B": "imprudente.",
+        "C": "negligente.",
+        "D": "precipitada.",
+        "E": "hesitante."
+      },
+      "correct": "A",
+      "explanation": "Prudente é quem age com cautela, com cuidado. Imprudente, negligente e precipitada têm sentido oposto; hesitante indica dúvida, e não cuidado.",
+      "reference": "Semântica: sinonímia"
+    },
+    {
+      "code": "POR-INT-007",
+      "difficulty": "MEDIUM",
+      "statement": "Na frase \"Embora estivesse cansado, o soldado concluiu a ronda\", a conjunção destacada \"Embora\" estabelece relação de:",
+      "options": {
+        "A": "causa.",
+        "B": "concessão.",
+        "C": "conclusão.",
+        "D": "finalidade.",
+        "E": "condição."
+      },
+      "correct": "B",
+      "explanation": "\"Embora\" introduz um fato contrário que não impede a ação principal: relação concessiva. Equivale a \"apesar de\" ou \"ainda que\".",
+      "reference": "Gramática normativa: conjunções subordinativas"
+    },
+    {
+      "code": "POR-INT-008",
+      "difficulty": "HARD",
+      "statement": "Assinale a alternativa em que a concordância nominal está correta.",
+      "options": {
+        "A": "Segue anexo as fotografias da ocorrência.",
+        "B": "É proibido a entrada de pessoas estranhas no quartel.",
+        "C": "Seguem anexas as fotografias da ocorrência.",
+        "D": "Elas mesmo assinaram o termo de compromisso.",
+        "E": "Bastante pessoas compareceram à cerimônia."
+      },
+      "correct": "C",
+      "explanation": "\"Anexo\" é adjetivo e concorda com o substantivo: anexas as fotografias. \"Mesmo\" concorda com o pronome (elas mesmas) e \"bastante\" como adjetivo varia (bastantes pessoas). A alternativa com \"é proibido a entrada\" erra: com artigo, a concordância é \"é proibida a entrada\".",
+      "reference": "Gramática normativa: concordância nominal"
+    },
+    {
+      "code": "POR-INT-009",
+      "difficulty": "EASY",
+      "statement": "Assinale a alternativa em que a palavra está grafada corretamente.",
+      "options": {
+        "A": "excessão",
+        "B": "esceção",
+        "C": "exseção",
+        "D": "exceção",
+        "E": "ecessão"
+      },
+      "correct": "D",
+      "explanation": "A grafia correta é \"exceção\" (com xc e ç).",
+      "reference": "Ortografia oficial"
+    },
+    {
+      "code": "POR-INT-010",
+      "difficulty": "MEDIUM",
+      "statement": "Na frase \"Os moradores, cujas casas foram atingidas, receberam apoio\", o pronome \"cujas\" indica:",
+      "options": {
+        "A": "tempo.",
+        "B": "lugar.",
+        "C": "causa.",
+        "D": "modo.",
+        "E": "posse."
+      },
+      "correct": "E",
+      "explanation": "\"Cujo\" e suas flexões são pronomes relativos que indicam posse: as casas dos moradores. Concorda com o termo possuído (casas → cujas) e não admite artigo depois (\"cujas as\" é erro).",
+      "reference": "Gramática normativa: pronomes relativos"
+    },
+    {
+      "code": "POR-INT-011",
+      "difficulty": "MEDIUM",
+      "statement": "Assinale a frase em que o termo destacado é um advérbio.",
+      "options": {
+        "A": "O comandante falou calmamente com a tropa.",
+        "B": "O comandante calmo falou com a tropa.",
+        "C": "A calma do comandante tranquilizou a tropa.",
+        "D": "O comandante acalmou a tropa.",
+        "E": "A tropa ficou calma."
+      },
+      "correct": "A",
+      "explanation": "\"Calmamente\" modifica o verbo \"falou\", indicando modo: é advérbio. \"Calmo\" e \"calma\" (adjetivos), \"calma\" (substantivo) e \"acalmou\" (verbo) pertencem a outras classes.",
+      "reference": "Gramática normativa: classes de palavras"
+    },
+    {
+      "code": "POR-INT-012",
+      "difficulty": "HARD",
+      "statement": "Assinale a alternativa em que o verbo está corretamente flexionado.",
+      "options": {
+        "A": "Se ele ver o suspeito, avisará a central.",
+        "B": "Se ele vir o suspeito, avisará a central.",
+        "C": "Quando ele propor a mudança, será ouvido.",
+        "D": "Os policiais interviram na briga.",
+        "E": "Se nós mantermos a calma, tudo dará certo."
+      },
+      "correct": "B",
+      "explanation": "No futuro do subjuntivo: ver → vir; propor → propuser; intervir segue vir → intervieram; manter segue ter → mantivermos.",
+      "reference": "Gramática normativa: flexão verbal (verbos irregulares)"
+    },
+    {
+      "code": "POR-INT-013",
+      "difficulty": "EASY",
+      "statement": "No texto \"A comunidade confia na polícia quando ela age com respeito\", o pronome \"ela\" retoma:",
+      "options": {
+        "A": "a comunidade.",
+        "B": "a confiança.",
+        "C": "a polícia.",
+        "D": "o respeito.",
+        "E": "o texto."
+      },
+      "correct": "C",
+      "explanation": "Pela coerência, quem \"age com respeito\" é a polícia. O pronome retoma o termo mais próximo que faz sentido no contexto (coesão referencial).",
+      "reference": "Interpretação de texto: coesão referencial"
+    },
+    {
+      "code": "POR-INT-014",
+      "difficulty": "MEDIUM",
+      "statement": "Na frase \"O policial é um verdadeiro leão na defesa da comunidade\", há linguagem em sentido:",
+      "options": {
+        "A": "próprio, sem figura de linguagem.",
+        "B": "figurado, por meio de eufemismo.",
+        "C": "próprio, por meio de hipérbole.",
+        "D": "figurado, por meio de metáfora.",
+        "E": "figurado, por meio de ironia."
+      },
+      "correct": "D",
+      "explanation": "O policial não é literalmente um leão: atribui-se a ele a coragem do animal por comparação implícita, ou seja, metáfora (sentido figurado).",
+      "reference": "Semântica: sentido próprio e figurado"
+    },
+    {
+      "code": "POR-INT-015",
+      "difficulty": "MEDIUM",
+      "statement": "Assinale a alternativa em que \"porque\" está empregado corretamente.",
+      "options": {
+        "A": "Ele faltou porquê estava doente.",
+        "B": "Por que ele faltou? Não sei o porque.",
+        "C": "Ele faltou, por que estava doente.",
+        "D": "Ele faltou por quê estava doente.",
+        "E": "Não sei por que ele faltou à instrução."
+      },
+      "correct": "E",
+      "explanation": "\"Por que\" (separado e sem acento) é usado em perguntas diretas e indiretas (não sei por que...). \"Porque\" junto explica a causa; \"porquê\" é substantivo (o porquê); \"por quê\" vai no fim da frase.",
+      "reference": "Ortografia: uso dos porquês"
+    },
+    {
+      "code": "POR-INT-016",
+      "difficulty": "HARD",
+      "statement": "Assinale a alternativa que completa corretamente: \"___ dez anos que ele serve na corporação; ___ de ser promovido em breve; o quartel fica ___ duas quadras daqui.\"",
+      "options": {
+        "A": "Há / Há de / a",
+        "B": "A / Há de / há",
+        "C": "Há / A de / há",
+        "D": "A / A de / a",
+        "E": "Há / Há de / à"
+      },
+      "correct": "A",
+      "explanation": "\"Há\" (verbo haver) indica tempo decorrido: há dez anos. \"Haver de\" indica intenção/futuro: há de ser promovido. Distância futura ou espacial usa a preposição \"a\": fica a duas quadras.",
+      "reference": "Gramática normativa: há / a"
+    },
+    {
+      "code": "POR-INT-017",
+      "difficulty": "EASY",
+      "statement": "Assinale o antônimo de \"rigoroso\".",
+      "options": {
+        "A": "severo",
+        "B": "tolerante",
+        "C": "exigente",
+        "D": "rígido",
+        "E": "austero"
+      },
+      "correct": "B",
+      "explanation": "Rigoroso significa severo, exigente. O oposto é tolerante, condescendente. As demais alternativas são sinônimos.",
+      "reference": "Semântica: antonímia"
+    },
+    {
+      "code": "POR-INT-018",
+      "difficulty": "MEDIUM",
+      "statement": "Na frase \"Os soldados chegaram cedo ao quartel\", o sujeito é:",
+      "options": {
+        "A": "composto.",
+        "B": "oculto.",
+        "C": "simples, \"Os soldados\".",
+        "D": "indeterminado.",
+        "E": "inexistente."
+      },
+      "correct": "C",
+      "explanation": "O sujeito tem um só núcleo (soldados) e está expresso: sujeito simples.",
+      "reference": "Gramática normativa: termos da oração"
+    },
+    {
+      "code": "POR-INT-019",
+      "difficulty": "HARD",
+      "statement": "Assinale a alternativa em que a regência nominal está correta.",
+      "options": {
+        "A": "O policial tem respeito com os direitos de todos.",
+        "B": "Ele estava ansioso em começar e era favorável com a mudança.",
+        "C": "Ela tinha aversão com mentiras.",
+        "D": "O policial tem respeito aos direitos de todos e é apto para a função.",
+        "E": "O soldado é obediente com os superiores."
+      },
+      "correct": "D",
+      "explanation": "Respeito pede \"a\" (ou \"por\"); apto pede \"para\" ou \"a\"; ansioso pede \"por\" ou \"para\"; favorável pede \"a\"; aversão pede \"a\" ou \"por\"; obediente pede \"a\".",
+      "reference": "Gramática normativa: regência nominal"
+    },
+    {
+      "code": "POR-INT-020",
+      "difficulty": "MEDIUM",
+      "statement": "Na frase \"Encontraram o suspeito escondido\", a forma verbal \"encontraram\" indica sujeito:",
+      "options": {
+        "A": "simples.",
+        "B": "oculto, \"nós\".",
+        "C": "inexistente.",
+        "D": "composto.",
+        "E": "indeterminado."
+      },
+      "correct": "E",
+      "explanation": "Verbo na 3ª pessoa do plural sem referência a quem praticou a ação indica sujeito indeterminado.",
+      "reference": "Gramática normativa: tipos de sujeito"
+    },
+    {
+      "code": "POR-INT-021",
+      "difficulty": "EASY",
+      "statement": "Assinale a alternativa em que todas as palavras são acentuadas pela mesma regra de \"polícia\".",
+      "options": {
+        "A": "série, história, água",
+        "B": "café, sofá, você",
+        "C": "lápis, táxi, júri",
+        "D": "público, médico, prático",
+        "E": "herói, céu, chapéu"
+      },
+      "correct": "A",
+      "explanation": "Polícia é paroxítona terminada em ditongo crescente (ia); série (ie), história (ia) e água (ua) seguem a mesma regra.",
+      "reference": "Ortografia: acentuação gráfica"
+    },
+    {
+      "code": "POR-INT-022",
+      "difficulty": "MEDIUM",
+      "statement": "\"O sargento pediu que os soldados se apresentassem.\" A oração destacada \"que os soldados se apresentassem\" exerce função de:",
+      "options": {
+        "A": "sujeito do verbo \"pediu\".",
+        "B": "objeto direto do verbo \"pediu\".",
+        "C": "adjunto adverbial de causa.",
+        "D": "complemento nominal.",
+        "E": "aposto explicativo."
+      },
+      "correct": "B",
+      "explanation": "Quem pede, pede algo: \"que os soldados se apresentassem\" completa o sentido de \"pediu\" sem preposição, sendo oração subordinada substantiva objetiva direta.",
+      "reference": "Gramática normativa: orações subordinadas substantivas"
+    },
+    {
+      "code": "POR-INT-023",
+      "difficulty": "MEDIUM",
+      "statement": "Assinale a alternativa em que o uso do sinal indicativo de crase é facultativo.",
+      "options": {
+        "A": "Fui à Bahia no ano passado.",
+        "B": "Ficou frente à frente com o suspeito.",
+        "C": "Entregou o documento à sua superiora.",
+        "D": "Saiu às pressas.",
+        "E": "Chegou à uma hora da tarde."
+      },
+      "correct": "C",
+      "explanation": "Antes de pronome possessivo feminino singular (sua, minha), o artigo é facultativo, portanto a crase também. \"À Bahia\" e \"às pressas\" são obrigatórias; \"frente a frente\" (palavras repetidas) não tem crase; em horas, \"à uma hora\" é obrigatória.",
+      "reference": "Gramática normativa: crase facultativa"
+    },
+    {
+      "code": "POR-INT-024",
+      "difficulty": "EASY",
+      "statement": "Assinale a frase escrita de acordo com a norma-padrão.",
+      "options": {
+        "A": "Falta dois policiais para completar a escala.",
+        "B": "Sobrou muitas vagas no curso.",
+        "C": "Ocorreu vários acidentes na rodovia.",
+        "D": "Faltam dois policiais para completar a escala.",
+        "E": "Chegou, ontem, os novos uniformes."
+      },
+      "correct": "D",
+      "explanation": "Quando o sujeito vem depois do verbo, o verbo continua concordando com ele: faltam dois policiais, sobraram vagas, ocorreram acidentes, chegaram os uniformes.",
+      "reference": "Gramática normativa: concordância com sujeito posposto"
+    },
+    {
+      "code": "POR-INT-025",
+      "difficulty": "HARD",
+      "statement": "Em \"Os policiais estavam exaustos; contudo, permaneceram no posto\", o conectivo \"contudo\" pode ser substituído, sem prejuízo de sentido, por:",
+      "options": {
+        "A": "portanto.",
+        "B": "porque.",
+        "C": "assim que.",
+        "D": "além disso.",
+        "E": "no entanto."
+      },
+      "correct": "E",
+      "explanation": "\"Contudo\" é conjunção adversativa (oposição). Equivale a no entanto, entretanto, todavia, porém. Portanto é conclusiva; porque, explicativa/causal; assim que, temporal; além disso, aditiva.",
+      "reference": "Gramática normativa: conjunções coordenativas"
+    }
+  ]
+}

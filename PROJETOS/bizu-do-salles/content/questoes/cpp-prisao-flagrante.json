@@ -1,0 +1,129 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Processo Penal",
+  "topic": "Prisão em flagrante, busca pessoal e uso de algemas",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "CPP-FLA-001",
+      "difficulty": "EASY",
+      "statement": "Segundo o Código de Processo Penal, quanto à prisão em flagrante:",
+      "options": {
+        "A": "somente a autoridade judicial pode prender em flagrante.",
+        "B": "qualquer do povo deverá prender, sob pena de crime.",
+        "C": "qualquer do povo poderá e as autoridades policiais e seus agentes deverão prender quem seja encontrado em flagrante delito.",
+        "D": "os policiais poderão prender, mas não são obrigados.",
+        "E": "a prisão em flagrante depende de mandado."
+      },
+      "correct": "C",
+      "explanation": "Art. 301 do CPP: para o cidadão, é faculdade (flagrante facultativo); para a polícia, é dever (flagrante obrigatório).",
+      "reference": "CPP, art. 301"
+    },
+    {
+      "code": "CPP-FLA-002",
+      "difficulty": "MEDIUM",
+      "statement": "Considera-se em flagrante delito, segundo o art. 302 do CPP, quem:",
+      "options": {
+        "A": "é apontado como suspeito três dias depois do fato.",
+        "B": "confessou o crime em depoimento uma semana depois.",
+        "C": "foi reconhecido por foto em rede social.",
+        "D": "é perseguido, logo após, em situação que faça presumir ser autor da infração.",
+        "E": "possui antecedentes criminais."
+      },
+      "correct": "D",
+      "explanation": "Art. 302: está cometendo; acaba de cometer; é perseguido logo após em situação que faça presumir ser o autor (flagrante impróprio); ou é encontrado logo depois com instrumentos, armas, objetos ou papéis que façam presumir ser ele o autor (flagrante presumido).",
+      "reference": "CPP, art. 302"
+    },
+    {
+      "code": "CPP-FLA-003",
+      "difficulty": "MEDIUM",
+      "statement": "Nas infrações permanentes, como o tráfico na modalidade \"ter em depósito\", entende-se o agente em flagrante:",
+      "options": {
+        "A": "apenas no primeiro dia da conduta.",
+        "B": "somente com mandado judicial.",
+        "C": "só se houver confissão.",
+        "D": "apenas no momento da venda.",
+        "E": "enquanto não cessar a permanência."
+      },
+      "correct": "E",
+      "explanation": "Art. 303 do CPP. Por isso é possível o flagrante enquanto a conduta continua acontecendo.",
+      "reference": "CPP, art. 303"
+    },
+    {
+      "code": "CPP-FLA-004",
+      "difficulty": "MEDIUM",
+      "statement": "A busca pessoal independe de mandado, entre outras hipóteses, quando:",
+      "options": {
+        "A": "houver fundada suspeita de que a pessoa esteja na posse de arma proibida ou de objetos ou papéis que constituam corpo de delito.",
+        "B": "o policial simplesmente quiser.",
+        "C": "a pessoa estiver em local público, em qualquer caso.",
+        "D": "a pessoa se recusar a informar seu endereço.",
+        "E": "for período noturno."
+      },
+      "correct": "A",
+      "explanation": "Art. 244 do CPP. A fundada suspeita deve ser objetiva e justificável, não baseada em impressões subjetivas ou na aparência da pessoa (entendimento do STF e do STJ).",
+      "reference": "CPP, art. 244"
+    },
+    {
+      "code": "CPP-FLA-005",
+      "difficulty": "HARD",
+      "statement": "Sobre o emprego de força na prisão, o CPP determina que:",
+      "options": {
+        "A": "a força pode ser usada sempre que o preso for reincidente.",
+        "B": "não será permitido o emprego de força, salvo a indispensável no caso de resistência ou de tentativa de fuga do preso.",
+        "C": "é permitido qualquer meio para garantir a prisão.",
+        "D": "a força só pode ser usada com autorização judicial.",
+        "E": "é vedado qualquer uso de força, em qualquer situação."
+      },
+      "correct": "B",
+      "explanation": "Art. 284 do CPP. O art. 292 trata da resistência: podem ser usados os meios necessários para se defender ou vencê-la, lavrando-se auto.",
+      "reference": "CPP, arts. 284 e 292"
+    },
+    {
+      "code": "CPP-FLA-006",
+      "difficulty": "HARD",
+      "statement": "Sobre o uso de algemas, a Súmula Vinculante 11 do STF estabelece que é lícito apenas em casos de:",
+      "options": {
+        "A": "qualquer prisão, como regra geral.",
+        "B": "crimes hediondos, independentemente de justificativa.",
+        "C": "resistência e de fundado receio de fuga ou de perigo à integridade física própria ou alheia, por parte do preso ou de terceiros, justificada a excepcionalidade por escrito.",
+        "D": "presos com antecedentes, sem necessidade de justificar.",
+        "E": "escolha livre do policial, sem formalidade."
+      },
+      "correct": "C",
+      "explanation": "Súmula Vinculante 11. Algemar fora dessas hipóteses ou sem justificar por escrito gera responsabilidade disciplinar, civil e penal do agente e pode anular a prisão.",
+      "reference": "STF, Súmula Vinculante 11"
+    },
+    {
+      "code": "CPP-FLA-007",
+      "difficulty": "MEDIUM",
+      "statement": "Após a prisão em flagrante, o preso deve ser apresentado ao juiz em audiência de custódia no prazo máximo de:",
+      "options": {
+        "A": "5 dias.",
+        "B": "12 horas.",
+        "C": "24 horas.",
+        "D": "48 horas.",
+        "E": "72 horas."
+      },
+      "correct": "C",
+      "explanation": "Art. 310 do CPP (redação da Lei 13.964/2019): o juiz deve promover a audiência de custódia em até 24 horas após a realização da prisão.",
+      "reference": "CPP, art. 310"
+    },
+    {
+      "code": "CPP-FLA-008",
+      "difficulty": "MEDIUM",
+      "statement": "Em regra, a entrada forçada em domicílio, sem consentimento do morador, é permitida:",
+      "options": {
+        "A": "por determinação judicial, a qualquer hora.",
+        "B": "sempre que houver denúncia anônima.",
+        "C": "apenas durante a noite.",
+        "D": "em caso de flagrante delito, desastre ou para prestar socorro, a qualquer hora; e por determinação judicial, durante o dia.",
+        "E": "somente com autorização do delegado."
+      },
+      "correct": "D",
+      "explanation": "CF/88, art. 5º, XI. Para o STF (Tema 280), a entrada sem mandado exige fundadas razões, justificadas depois, de que há flagrante dentro da casa.",
+      "reference": "CF/88, art. 5º, XI"
+    }
+  ]
+}

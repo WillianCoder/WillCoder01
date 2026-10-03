@@ -1,0 +1,99 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Legislação Penal Especial",
+  "topic": "Lei Maria da Penha (Lei 11.340/2006)",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "LMP-VIO-001",
+      "difficulty": "EASY",
+      "statement": "Segundo a Lei Maria da Penha, são formas de violência doméstica e familiar contra a mulher, entre outras:",
+      "options": {
+        "A": "física, psicológica, sexual, patrimonial e moral.",
+        "B": "física, apenas.",
+        "C": "física e sexual, apenas.",
+        "D": "física, eleitoral, sexual, tributária e moral.",
+        "E": "psicológica e econômica internacional."
+      },
+      "correct": "A",
+      "explanation": "Art. 7º da Lei 11.340/2006 lista cinco formas: física, psicológica, sexual, patrimonial e moral.",
+      "reference": "Lei 11.340/2006, art. 7º"
+    },
+    {
+      "code": "LMP-VIO-002",
+      "difficulty": "MEDIUM",
+      "statement": "A violência doméstica e familiar contra a mulher, para fins da Lei Maria da Penha, pode ocorrer:",
+      "options": {
+        "A": "somente entre marido e mulher casados no civil.",
+        "B": "no âmbito da unidade doméstica, da família ou em qualquer relação íntima de afeto, independentemente de coabitação.",
+        "C": "apenas quando agressor e vítima moram juntos.",
+        "D": "apenas entre pessoas de sexos diferentes.",
+        "E": "somente dentro da residência."
+      },
+      "correct": "B",
+      "explanation": "Art. 5º. O parágrafo único diz que as relações independem de orientação sexual. A Súmula 600 do STJ dispensa a coabitação.",
+      "reference": "Lei 11.340/2006, art. 5º; STJ, Súmula 600"
+    },
+    {
+      "code": "LMP-VIO-003",
+      "difficulty": "HARD",
+      "statement": "Aos crimes praticados com violência doméstica e familiar contra a mulher, independentemente da pena prevista:",
+      "options": {
+        "A": "aplica-se sempre a transação penal.",
+        "B": "aplica-se a suspensão condicional do processo como regra.",
+        "C": "não se aplica a Lei 9.099/1995 (Juizados Especiais Criminais).",
+        "D": "cabe apenas pena de cesta básica.",
+        "E": "aplica-se a Lei 9.099/1995 se a pena máxima for inferior a 2 anos."
+      },
+      "correct": "C",
+      "explanation": "Art. 41 da Lei 11.340/2006. A Súmula 536 do STJ veda suspensão condicional do processo e transação penal nesses casos; o art. 17 proíbe penas de cesta básica ou só de multa.",
+      "reference": "Lei 11.340/2006, arts. 17 e 41"
+    },
+    {
+      "code": "LMP-VIO-004",
+      "difficulty": "HARD",
+      "statement": "Verificada a existência de risco atual ou iminente à vida ou à integridade da mulher, o agressor será imediatamente afastado do lar. Quando o Município não for sede de comarca e não houver delegado disponível no momento da denúncia, essa medida pode ser determinada:",
+      "options": {
+        "A": "somente pelo juiz, em qualquer caso.",
+        "B": "pelo Ministério Público, exclusivamente.",
+        "C": "pelo prefeito.",
+        "D": "pelo policial.",
+        "E": "pela própria vítima, por escrito."
+      },
+      "correct": "D",
+      "explanation": "Art. 12-C: pela autoridade judicial; pelo delegado, quando o Município não for sede de comarca; ou pelo policial, quando o Município não for sede de comarca e não houver delegado disponível. O juiz deve ser comunicado em até 24 horas.",
+      "reference": "Lei 11.340/2006, art. 12-C"
+    },
+    {
+      "code": "LMP-VIO-005",
+      "difficulty": "MEDIUM",
+      "statement": "Descumprir decisão judicial que defere medida protetiva de urgência prevista na Lei Maria da Penha:",
+      "options": {
+        "A": "é apenas infração administrativa.",
+        "B": "não tem consequência penal.",
+        "C": "é crime somente se houver nova agressão física.",
+        "D": "é crime de desobediência do Código Penal, apenas.",
+        "E": "é crime previsto no próprio art. 24-A da Lei 11.340/2006."
+      },
+      "correct": "E",
+      "explanation": "O art. 24-A tipifica o descumprimento de medidas protetivas, e a configuração independe da competência civil ou criminal do juiz que deferiu a medida. A pena foi endurecida pelo Pacote Antifeminicídio (Lei 14.994/2024).",
+      "reference": "Lei 11.340/2006, art. 24-A"
+    },
+    {
+      "code": "LMP-VIO-006",
+      "difficulty": "MEDIUM",
+      "statement": "Ao atender ocorrência de violência doméstica, entre as providências da autoridade policial previstas na Lei Maria da Penha está:",
+      "options": {
+        "A": "garantir proteção policial e encaminhar a ofendida ao hospital ou posto de saúde e ao IML, quando necessário.",
+        "B": "exigir que a vítima retire a queixa.",
+        "C": "promover a reconciliação do casal no local.",
+        "D": "liberar o agressor sem registro.",
+        "E": "aguardar 48 horas antes de agir."
+      },
+      "correct": "A",
+      "explanation": "Art. 11: garantir proteção policial, encaminhar a ofendida ao atendimento de saúde e ao IML, fornecer transporte para abrigo seguro, acompanhá-la para retirar seus pertences e informá-la de seus direitos.",
+      "reference": "Lei 11.340/2006, art. 11"
+    }
+  ]
+}

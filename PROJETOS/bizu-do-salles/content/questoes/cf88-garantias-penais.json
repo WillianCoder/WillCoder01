@@ -1,0 +1,99 @@
+{
+  "cycle": "BASIC",
+  "subject": "Direito Constitucional",
+  "topic": "Garantias penais e remédios constitucionais",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "CON-GAR-001",
+      "difficulty": "EASY",
+      "statement": "Segundo a Constituição, ninguém será preso senão:",
+      "options": {
+        "A": "por ordem verbal de qualquer autoridade.",
+        "B": "por decisão do delegado, em qualquer caso.",
+        "C": "por suspeita fundada de qualquer cidadão.",
+        "D": "após 24 horas de investigação policial.",
+        "E": "em flagrante delito ou por ordem escrita e fundamentada de autoridade judiciária competente, salvo nos casos de transgressão militar ou crime propriamente militar, definidos em lei."
+      },
+      "correct": "E",
+      "explanation": "Art. 5º, LXI, da CF/88. Note a ressalva das transgressões militares e dos crimes propriamente militares.",
+      "reference": "CF/88, art. 5º, LXI"
+    },
+    {
+      "code": "CON-GAR-002",
+      "difficulty": "MEDIUM",
+      "statement": "O preso será informado de seus direitos, entre os quais o de permanecer calado, sendo-lhe assegurada:",
+      "options": {
+        "A": "a assistência da família e de advogado.",
+        "B": "a liberdade imediata em qualquer caso.",
+        "C": "a escolha do juiz que vai julgá-lo.",
+        "D": "a dispensa de identificação.",
+        "E": "a proibição de qualquer registro da prisão."
+      },
+      "correct": "A",
+      "explanation": "Art. 5º, LXIII. O inciso LXIV garante o direito de saber quem o prendeu ou interrogou, e o LXII manda comunicar a prisão imediatamente ao juiz e à família ou pessoa indicada.",
+      "reference": "CF/88, art. 5º, LXII a LXIV"
+    },
+    {
+      "code": "CON-GAR-003",
+      "difficulty": "MEDIUM",
+      "statement": "Conceder-se-á habeas corpus sempre que alguém sofrer ou se achar ameaçado de sofrer:",
+      "options": {
+        "A": "lesão a direito líquido e certo não amparado por outro remédio.",
+        "B": "violência ou coação em sua liberdade de locomoção, por ilegalidade ou abuso de poder.",
+        "C": "negativa de acesso a informações pessoais em banco de dados público.",
+        "D": "falta de norma regulamentadora de direito constitucional.",
+        "E": "dano ao patrimônio público."
+      },
+      "correct": "B",
+      "explanation": "Art. 5º, LXVIII. Mandado de segurança protege direito líquido e certo; habeas data, acesso a informações pessoais; mandado de injunção, falta de norma; ação popular, patrimônio público.",
+      "reference": "CF/88, art. 5º, LXVIII"
+    },
+    {
+      "code": "CON-GAR-004",
+      "difficulty": "HARD",
+      "statement": "Sobre habeas corpus e punições disciplinares militares, a Constituição dispõe que:",
+      "options": {
+        "A": "sempre caberá habeas corpus contra punição militar.",
+        "B": "cabe habeas corpus apenas para oficiais.",
+        "C": "não caberá habeas corpus em relação a punições disciplinares militares.",
+        "D": "cabe habeas corpus só para punições acima de 30 dias.",
+        "E": "a punição militar só pode ser aplicada pelo juiz."
+      },
+      "correct": "C",
+      "explanation": "Art. 142, § 2º. O STF admite, porém, a análise da legalidade da punição (competência, cerimonial, pena prevista), mas não do mérito.",
+      "reference": "CF/88, art. 142, § 2º"
+    },
+    {
+      "code": "CON-GAR-005",
+      "difficulty": "EASY",
+      "statement": "A Constituição estabelece que a prática do racismo constitui crime:",
+      "options": {
+        "A": "afiançável e prescritível.",
+        "B": "apenas contravenção penal.",
+        "C": "inafiançável, mas prescritível em 5 anos.",
+        "D": "inafiançável e imprescritível, sujeito à pena de reclusão.",
+        "E": "sujeito apenas a multa."
+      },
+      "correct": "D",
+      "explanation": "Art. 5º, XLII. Também são imprescritíveis as ações de grupos armados contra a ordem constitucional e o Estado Democrático (XLIV).",
+      "reference": "CF/88, art. 5º, XLII"
+    },
+    {
+      "code": "CON-GAR-006",
+      "difficulty": "MEDIUM",
+      "statement": "São inafiançáveis e insuscetíveis de graça ou anistia, segundo a Constituição:",
+      "options": {
+        "A": "apenas os crimes contra a vida.",
+        "B": "todos os crimes militares.",
+        "C": "os crimes de trânsito.",
+        "D": "somente o racismo.",
+        "E": "a tortura, o tráfico ilícito de entorpecentes e drogas afins, o terrorismo e os crimes definidos como hediondos."
+      },
+      "correct": "E",
+      "explanation": "Art. 5º, XLIII (mnemônico 3TH: tortura, tráfico, terrorismo e hediondos).",
+      "reference": "CF/88, art. 5º, XLIII"
+    }
+  ]
+}

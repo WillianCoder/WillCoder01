@@ -1,0 +1,99 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Uso da Força e Direitos Humanos",
+  "topic": "Uso diferenciado da força (Lei 13.060/2014)",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "USO-FOR-001",
+      "difficulty": "EASY",
+      "statement": "Segundo a Lei 13.060/2014, os órgãos de segurança pública deverão priorizar a utilização de:",
+      "options": {
+        "A": "armas de fogo em qualquer ocorrência.",
+        "B": "instrumentos de menor potencial ofensivo, desde que o seu uso não coloque em risco a integridade física ou psíquica dos policiais.",
+        "C": "força física como primeira opção.",
+        "D": "armamento pesado em abordagens.",
+        "E": "cães em todas as abordagens."
+      },
+      "correct": "B",
+      "explanation": "Art. 2º da Lei 13.060/2014.",
+      "reference": "Lei 13.060/2014, art. 2º"
+    },
+    {
+      "code": "USO-FOR-002",
+      "difficulty": "MEDIUM",
+      "statement": "Os princípios que devem ser obedecidos no uso de instrumentos de menor potencial ofensivo, segundo o art. 2º da Lei 13.060/2014, são:",
+      "options": {
+        "A": "hierarquia, disciplina, lealdade e coragem.",
+        "B": "celeridade, oralidade, informalidade e economia.",
+        "C": "legalidade, necessidade, razoabilidade e proporcionalidade.",
+        "D": "publicidade, eficiência, moralidade e impessoalidade.",
+        "E": "conveniência, oportunidade, discricionariedade e sigilo."
+      },
+      "correct": "C",
+      "explanation": "Art. 2º, incisos I a IV.",
+      "reference": "Lei 13.060/2014, art. 2º"
+    },
+    {
+      "code": "USO-FOR-003",
+      "difficulty": "HARD",
+      "statement": "Segundo a Lei 13.060/2014, não é legítimo o uso de arma de fogo:",
+      "options": {
+        "A": "em legítima defesa própria contra agressão armada.",
+        "B": "para proteger a vida de refém em risco imediato.",
+        "C": "contra agressor que atira contra a guarnição.",
+        "D": "contra pessoa em fuga que esteja desarmada ou que não represente risco imediato de morte ou de lesão aos agentes ou a terceiros.",
+        "E": "em defesa de terceiro sob ameaça de morte."
+      },
+      "correct": "D",
+      "explanation": "Art. 2º, parágrafo único, I. O inciso II proíbe também o uso contra veículo que desrespeite bloqueio policial, salvo quando o ato represente risco de morte ou lesão.",
+      "reference": "Lei 13.060/2014, art. 2º, parágrafo único"
+    },
+    {
+      "code": "USO-FOR-004",
+      "difficulty": "MEDIUM",
+      "statement": "Instrumentos de menor potencial ofensivo são aqueles:",
+      "options": {
+        "A": "que nunca causam qualquer lesão.",
+        "B": "de uso exclusivo das Forças Armadas.",
+        "C": "usados apenas em treinamento.",
+        "D": "que substituem totalmente a arma de fogo.",
+        "E": "projetados especificamente para, com baixa probabilidade de causar mortes ou lesões permanentes, conter, debilitar ou incapacitar temporariamente pessoas."
+      },
+      "correct": "E",
+      "explanation": "Art. 4º da Lei 13.060/2014. Exemplos: espargidor de agente químico, dispositivo elétrico incapacitante e munição de impacto controlado.",
+      "reference": "Lei 13.060/2014, art. 4º"
+    },
+    {
+      "code": "USO-FOR-005",
+      "difficulty": "HARD",
+      "statement": "O Decreto 12.341/2024, que regulamenta a Lei 13.060/2014, prevê como princípios do uso da força, entre outros:",
+      "options": {
+        "A": "legalidade, precaução, necessidade, proporcionalidade, razoabilidade, responsabilização e não discriminação.",
+        "B": "hierarquia, disciplina e obediência irrestrita.",
+        "C": "celeridade e economia processual.",
+        "D": "sigilo absoluto das operações.",
+        "E": "discricionariedade total do agente."
+      },
+      "correct": "A",
+      "explanation": "O decreto reforça que a força só se usa para objetivos legais, quando meios de menor intensidade forem insuficientes, e em grau compatível com a ameaça. Verifique sempre a norma vigente no seu estado.",
+      "reference": "Decreto 12.341/2024"
+    },
+    {
+      "code": "USO-FOR-006",
+      "difficulty": "MEDIUM",
+      "statement": "O documento da ONU de 1979 que orienta a conduta dos policiais e demais encarregados da aplicação da lei é o:",
+      "options": {
+        "A": "Estatuto de Roma.",
+        "B": "Código de Conduta para os Funcionários Responsáveis pela Aplicação da Lei.",
+        "C": "Pacto de San José da Costa Rica.",
+        "D": "Protocolo de Kyoto.",
+        "E": "Tratado de Tordesilhas."
+      },
+      "correct": "B",
+      "explanation": "Adotado pela Assembleia Geral da ONU (Resolução 34/169, de 1979). Em 1990, vieram os Princípios Básicos sobre o Uso da Força e de Armas de Fogo.",
+      "reference": "ONU, Resolução 34/169 (1979)"
+    }
+  ]
+}

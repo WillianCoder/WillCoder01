@@ -27,8 +27,11 @@ export async function ranking(opts: { periodo: Periodo; ciclo?: "BASIC" | "SPECI
   const escola = opts.schoolId ? Prisma.sql`AND u."schoolId" = ${opts.schoolId}` : Prisma.empty;
   const rows = await db.$queryRaw<{ userId: string; nickname: string; school: string | null; points: bigint; answered: bigint }[]>`
     WITH first AS (
+      -- Só processa respostas de quem pode aparecer no ranking (mesmos critérios do WHERE abaixo).
       SELECT DISTINCT ON (a."userId", a."questionId") a."userId", a."questionId", a."correct", a."createdAt"
       FROM "QuestionAttempt" a
+      JOIN "User" ua ON ua."id" = a."userId"
+      WHERE ua."rankingOptIn" = true AND ua."nickname" IS NOT NULL AND ua."blocked" = false AND ua."role" = 'STUDENT'
       ORDER BY a."userId", a."questionId", a."createdAt" ASC
     )
     SELECT u."id" AS "userId", u."nickname", s."name" AS "school",

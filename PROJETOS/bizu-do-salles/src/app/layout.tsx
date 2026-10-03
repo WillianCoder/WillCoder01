@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: { default: SITE.nome, template: `%s · ${SITE.nome}` },
   description: SITE.descricao,
   manifest: "/manifest.webmanifest",
+  // Endereço público (APP_URL no .env) usado nos links de compartilhamento (WhatsApp, redes sociais).
+  metadataBase: new URL(process.env.APP_URL || "http://localhost:3000"),
+  openGraph: { type: "website", locale: "pt_BR", siteName: SITE.nome, title: SITE.nome, description: SITE.descricao },
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0e6b5c" };
 

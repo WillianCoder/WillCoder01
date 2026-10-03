@@ -1,0 +1,129 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Legislação Penal Especial",
+  "topic": "ECA: ato infracional (Lei 8.069/1990)",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "ECA-ATO-001",
+      "difficulty": "EASY",
+      "statement": "Para o Estatuto da Criança e do Adolescente, considera-se criança a pessoa:",
+      "options": {
+        "A": "até 10 anos completos.",
+        "B": "até 12 anos de idade incompletos.",
+        "C": "até 14 anos incompletos.",
+        "D": "até 16 anos incompletos.",
+        "E": "até 18 anos incompletos."
+      },
+      "correct": "B",
+      "explanation": "Art. 2º do ECA: criança, até 12 anos incompletos; adolescente, entre 12 e 18 anos.",
+      "reference": "Lei 8.069/1990, art. 2º"
+    },
+    {
+      "code": "ECA-ATO-002",
+      "difficulty": "MEDIUM",
+      "statement": "Ao ato infracional praticado por criança corresponderão:",
+      "options": {
+        "A": "as medidas de proteção previstas no art. 101.",
+        "B": "as medidas socioeducativas, inclusive internação.",
+        "C": "as penas do Código Penal, reduzidas.",
+        "D": "a prisão temporária.",
+        "E": "exclusivamente a advertência."
+      },
+      "correct": "A",
+      "explanation": "Art. 105 do ECA. Criança não recebe medida socioeducativa, só medidas de proteção (encaminhamento aos pais, orientação, matrícula em escola etc.).",
+      "reference": "Lei 8.069/1990, art. 105"
+    },
+    {
+      "code": "ECA-ATO-003",
+      "difficulty": "MEDIUM",
+      "statement": "Nenhum adolescente será privado de sua liberdade senão:",
+      "options": {
+        "A": "por ordem verbal de qualquer policial.",
+        "B": "em flagrante de ato infracional ou por ordem escrita e fundamentada da autoridade judiciária competente.",
+        "C": "por decisão do conselho tutelar.",
+        "D": "a pedido dos pais.",
+        "E": "por suspeita de qualquer pessoa."
+      },
+      "correct": "B",
+      "explanation": "Art. 106 do ECA. O adolescente tem direito à identificação dos responsáveis pela apreensão e deve ser informado de seus direitos.",
+      "reference": "Lei 8.069/1990, art. 106"
+    },
+    {
+      "code": "ECA-ATO-004",
+      "difficulty": "MEDIUM",
+      "statement": "São medidas socioeducativas previstas no art. 112 do ECA:",
+      "options": {
+        "A": "reclusão, detenção e multa.",
+        "B": "prisão preventiva e prisão temporária.",
+        "C": "advertência, obrigação de reparar o dano, prestação de serviços à comunidade, liberdade assistida, semiliberdade e internação.",
+        "D": "advertência, prisão domiciliar e fiança.",
+        "E": "acolhimento institucional e adoção."
+      },
+      "correct": "C",
+      "explanation": "Art. 112. Acolhimento institucional é medida de proteção (art. 101), não socioeducativa.",
+      "reference": "Lei 8.069/1990, art. 112"
+    },
+    {
+      "code": "ECA-ATO-005",
+      "difficulty": "HARD",
+      "statement": "Em nenhuma hipótese o período máximo de internação do adolescente excederá:",
+      "options": {
+        "A": "um ano.",
+        "B": "dois anos.",
+        "C": "cinco anos.",
+        "D": "três anos.",
+        "E": "dez anos."
+      },
+      "correct": "D",
+      "explanation": "Art. 121, § 3º. A liberação é compulsória aos 21 anos de idade (§ 5º), e a medida deve ser reavaliada no máximo a cada seis meses (§ 2º).",
+      "reference": "Lei 8.069/1990, art. 121"
+    },
+    {
+      "code": "ECA-ATO-006",
+      "difficulty": "MEDIUM",
+      "statement": "O adolescente apreendido em flagrante de ato infracional será, desde logo, encaminhado:",
+      "options": {
+        "A": "diretamente a um presídio.",
+        "B": "à casa de um vizinho.",
+        "C": "ao quartel, para custódia.",
+        "D": "ao Ministério Público, sem passar pela polícia.",
+        "E": "à autoridade policial competente."
+      },
+      "correct": "E",
+      "explanation": "Art. 172 do ECA. Havendo repartição especializada, o encaminhamento é feito a ela.",
+      "reference": "Lei 8.069/1990, art. 172"
+    },
+    {
+      "code": "ECA-ATO-007",
+      "difficulty": "HARD",
+      "statement": "O adolescente a quem se atribua autoria de ato infracional:",
+      "options": {
+        "A": "não pode ser conduzido ou transportado em compartimento fechado de veículo policial, em condições atentatórias à sua dignidade ou que impliquem risco à sua integridade.",
+        "B": "deve sempre ser algemado e transportado no compartimento de presos.",
+        "C": "pode ser transportado junto com presos adultos.",
+        "D": "deve ser fotografado e ter a foto divulgada.",
+        "E": "pode ser mantido em cela comum com adultos."
+      },
+      "correct": "A",
+      "explanation": "Art. 178 do ECA. A divulgação de imagem e nome também é vedada (art. 143).",
+      "reference": "Lei 8.069/1990, arts. 143 e 178"
+    },
+    {
+      "code": "ECA-ATO-008",
+      "difficulty": "EASY",
+      "statement": "Considera-se ato infracional:",
+      "options": {
+        "A": "qualquer desobediência aos pais.",
+        "B": "a conduta descrita como crime ou contravenção penal.",
+        "C": "apenas crimes hediondos.",
+        "D": "somente infrações de trânsito.",
+        "E": "apenas faltas escolares."
+      },
+      "correct": "B",
+      "explanation": "Art. 103 do ECA. Quem tem menos de 18 anos não comete crime: comete ato infracional, apurado conforme o ECA.",
+      "reference": "Lei 8.069/1990, art. 103"
+    }
+  ]
+}

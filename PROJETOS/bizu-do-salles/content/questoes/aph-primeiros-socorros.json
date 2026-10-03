@@ -1,0 +1,99 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Atendimento Pré-Hospitalar",
+  "topic": "Primeiros socorros e emergências",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "APH-SOC-001",
+      "difficulty": "EASY",
+      "statement": "O número de telefone do SAMU no Brasil é:",
+      "options": {
+        "A": "190",
+        "B": "192",
+        "C": "193",
+        "D": "197",
+        "E": "199"
+      },
+      "correct": "B",
+      "explanation": "190 = Polícia Militar; 192 = SAMU; 193 = Corpo de Bombeiros; 197 = Polícia Civil (em vários estados); 199 = Defesa Civil.",
+      "reference": "Telefones de emergência"
+    },
+    {
+      "code": "APH-SOC-002",
+      "difficulty": "MEDIUM",
+      "statement": "Antes de abordar uma vítima em um acidente, o primeiro cuidado do socorrista deve ser:",
+      "options": {
+        "A": "remover imediatamente a vítima do veículo.",
+        "B": "oferecer água à vítima.",
+        "C": "retirar o capacete do motociclista.",
+        "D": "fazer massagem cardíaca em todos os envolvidos.",
+        "E": "avaliar a segurança da cena, para não se tornar outra vítima."
+      },
+      "correct": "E",
+      "explanation": "Segurança da cena vem primeiro: sinalizar o local, observar riscos (trânsito, fogo, fios, agressores) e usar equipamento de proteção individual.",
+      "reference": "Atendimento pré-hospitalar: avaliação da cena"
+    },
+    {
+      "code": "APH-SOC-003",
+      "difficulty": "MEDIUM",
+      "statement": "Em um adulto em parada cardiorrespiratória, as compressões torácicas devem ser feitas, segundo as diretrizes atuais, com frequência de:",
+      "options": {
+        "A": "100 a 120 por minuto.",
+        "B": "40 a 60 por minuto.",
+        "C": "60 a 80 por minuto.",
+        "D": "140 a 160 por minuto.",
+        "E": "200 por minuto."
+      },
+      "correct": "A",
+      "explanation": "As diretrizes de RCP (American Heart Association) recomendam 100 a 120 compressões por minuto, com profundidade de 5 a 6 cm no adulto, permitindo o retorno total do tórax.",
+      "reference": "Diretrizes de RCP (AHA)"
+    },
+    {
+      "code": "APH-SOC-004",
+      "difficulty": "MEDIUM",
+      "statement": "Diante de uma hemorragia externa em um braço, a primeira medida recomendada é:",
+      "options": {
+        "A": "aplicar gelo e aguardar.",
+        "B": "compressão direta sobre o ferimento.",
+        "C": "dar bebida alcoólica à vítima.",
+        "D": "lavar o ferimento com álcool e não cobrir.",
+        "E": "elevar a vítima de cabeça para baixo."
+      },
+      "correct": "B",
+      "explanation": "A compressão direta controla a maior parte dos sangramentos. Em hemorragia grave de membro que não para com a compressão, indica-se o torniquete.",
+      "reference": "Atendimento pré-hospitalar: controle de hemorragias"
+    },
+    {
+      "code": "APH-SOC-005",
+      "difficulty": "MEDIUM",
+      "statement": "Em vítima de trauma com suspeita de lesão na coluna, o socorrista leigo deve:",
+      "options": {
+        "A": "sentar a vítima para facilitar a respiração.",
+        "B": "dar água para acalmá-la.",
+        "C": "evitar movimentar a vítima e manter a cabeça alinhada, salvo risco iminente no local.",
+        "D": "virar o pescoço para verificar ferimentos.",
+        "E": "levantá-la imediatamente para colocá-la no carro."
+      },
+      "correct": "C",
+      "explanation": "Movimentos desnecessários podem agravar a lesão na medula. Só se remove a vítima em risco iminente, como incêndio.",
+      "reference": "Atendimento pré-hospitalar: trauma raquimedular"
+    },
+    {
+      "code": "APH-SOC-006",
+      "difficulty": "HARD",
+      "statement": "Na RCP de adulto feita por um socorrista sem via aérea avançada, a relação compressões/ventilações recomendada é:",
+      "options": {
+        "A": "5 compressões para 1 ventilação.",
+        "B": "15 compressões para 1 ventilação.",
+        "C": "10 compressões para 5 ventilações.",
+        "D": "30 compressões para 2 ventilações.",
+        "E": "50 compressões para 5 ventilações."
+      },
+      "correct": "D",
+      "explanation": "Relação 30:2 no adulto. Quem não sabe ou não quer fazer ventilações deve manter compressões contínuas (RCP somente com as mãos).",
+      "reference": "Diretrizes de RCP (AHA)"
+    }
+  ]
+}

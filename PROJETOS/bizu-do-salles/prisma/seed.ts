@@ -40,7 +40,10 @@ async function main() {
   };
 
   let n = 0;
-  for (const file of loadQuestionFiles()) {
+  const files = loadQuestionFiles();
+  console.log("Carregando questões (pode levar alguns minutos na primeira vez)…");
+  for (const [f, file] of files.entries()) {
+    console.log(`  [${f + 1}/${files.length}] ${file.subject} — ${file.topic}`);
     const cycle = cycles[file.cycle];
     const subject = await db.subject.upsert({
       where: { cycleId_slug: { cycleId: cycle.id, slug: slug(file.subject) } },
@@ -68,6 +71,7 @@ async function main() {
   }
   // Materiais da biblioteca: só cria os que ainda não existem (pelo título); edições do painel prevalecem.
   let m = 0;
+  console.log("Carregando materiais…");
   for (const mat of loadMaterialFiles()) {
     if (await db.material.findFirst({ where: { title: mat.title } })) continue;
     const cycle = mat.cycle ? cycles[mat.cycle] : null;

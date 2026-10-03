@@ -2,6 +2,15 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.9.0] — 2026-10-03
+### Adicionado
+- **152 questões originais novas** (total: 330) no estilo das provas: Português, Matemática e Raciocínio Lógico, Informática, Administração Pública, Direito Penal, Processo Penal, Penal Militar (CPM), Estatuto do Desarmamento, Maria da Penha, Lei de Drogas, ECA, uso da força (Lei 13.060), garantias constitucionais, Direitos Humanos, Polícia Comunitária, Trânsito (CTB) e Primeiros Socorros.
+- **9 resumos novos** na biblioteca (4 gratuitos).
+- `docs/APRENDIZADO.pdf` (`npm run aprendizado`): caderno "O que eu aprendi", com etapas, comandos, banco de dados, serviços, segurança, erros resolvidos e glossário.
+- `npm run db:seed` mostra o andamento por arquivo.
+### Melhorado
+- Ranking mais leve, limpeza do limite de tentativas em memória, `robots.txt` e Open Graph.
+
 ## [0.8.2] — 2026-09-30
 ### Corrigido
 - `npm install` agora roda `prisma generate` automaticamente (`postinstall`), evitando o erro "@prisma/client did not initialize yet" quando a instalação é refeita.

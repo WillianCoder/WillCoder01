@@ -1,0 +1,250 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>O que eu aprendi</title>
+<style>
+body{font-family:Segoe UI,Arial,sans-serif;color:#1c2733;margin:0 16mm;font-size:10.5pt;line-height:1.5}
+h1{color:#0e6b5c;font-size:24pt;margin:8mm 0 1mm}h2{color:#0e6b5c;border-bottom:2px solid #0e6b5c;padding-bottom:2px;margin-top:6mm;page-break-after:avoid}
+h3{margin:4mm 0 1mm;color:#13423a;page-break-after:avoid}
+code,pre{font-family:Consolas,monospace;background:#eef3f2;border-radius:4px}code{padding:1px 4px}
+pre{padding:6px 9px;white-space:pre-wrap;page-break-inside:avoid;border-left:3px solid #0e6b5c}
+table{border-collapse:collapse;width:100%;margin:2mm 0}tr{page-break-inside:avoid}td,th{border:1px solid #c9d4d2;padding:4px 6px;vertical-align:top;text-align:left}th{background:#0e6b5c;color:#fff}
+.box{background:#fff6e0;border:1px solid #e7b94a;padding:6px 10px;border-radius:6px;margin:3mm 0;page-break-inside:avoid}
+.ok{background:#e8f6ee;border-color:#5bb07f}.bad{background:#fdecec;border-color:#d9534f}
+.pb{page-break-before:always}.capa{text-align:center;padding-top:40mm}.capa p{font-size:13pt}
+.parte{color:#e7b94a;font-weight:700;letter-spacing:1px;text-transform:uppercase;font-size:9pt;margin-top:8mm}
+td:first-child{white-space:nowrap;font-weight:600}
+</style></head><body>
+
+<div class="capa">
+<h1>O que eu aprendi construindo o Bizu do Salles</h1>
+<p>Caderno de estudo de Willian Salles: cada etapa, cada comando e cada termo técnico, explicados do zero.</p>
+<p style="color:#5b6b7a">Outubro de 2026</p>
+</div>
+
+<h2 class="pb">Como usar este caderno</h2>
+<p>O caderno está dividido em <b>partes independentes</b>. Leia na ordem da primeira vez; depois, use como consulta.</p>
+<table><tr><th>Parte</th><th>Assunto</th></tr>
+<tr><td>1</td><td>A jornada: o que construímos, em etapas</td></tr>
+<tr><td>2</td><td>Os programas que você instalou e para que servem</td></tr>
+<tr><td>3</td><td>Os comandos que você usou, explicados um por um</td></tr>
+<tr><td>4</td><td>Banco de dados: o que é, onde fica e como mexer</td></tr>
+<tr><td>5</td><td>Os arquivos que importam no projeto</td></tr>
+<tr><td>6</td><td>Os serviços na internet (GitHub, Neon, Vercel, Mercado Pago…)</td></tr>
+<tr><td>7</td><td>Segurança na prática: o que aprendemos com os erros</td></tr>
+<tr><td>8</td><td>Erros que apareceram e como foram resolvidos</td></tr>
+<tr><td>9</td><td>Glossário de A a Z: siglas e termos técnicos</td></tr>
+<tr><td>10</td><td>Próximos passos</td></tr></table>
+
+<p class="parte pb">Parte 1</p>
+<h2>A jornada: o que construímos</h2>
+<table><tr><th>Etapa</th><th>O que aconteceu</th><th>O que você aprendeu</th></tr>
+<tr><td>1. Ideia</td><td>Uma plataforma de estudo por questões para o curso de formação de soldados, com Ciclo Básico e Ciclo Específico.</td><td>Todo sistema começa por um problema real e por quem vai usá-lo (o aluno).</td></tr>
+<tr><td>2. Conteúdo original</td><td>Decidimos escrever questões e resumos próprios a partir da lei, em vez de copiar materiais de terceiros.</td><td>Direito autoral (Lei 9.610/98): o texto da lei é livre (art. 8º, IV); apostilas e questões de cursinhos têm dono.</td></tr>
+<tr><td>3. Código</td><td>O site foi construído em Next.js (React + TypeScript), com banco PostgreSQL acessado pelo Prisma.</td><td>Um site moderno tem <b>frente</b> (o que o aluno vê) e <b>servidor</b> (regras, segurança, banco).</td></tr>
+<tr><td>4. GitHub</td><td>Todo o código ficou no repositório <code>WillCoder01</code>, com cada mudança em um <i>Pull Request</i>.</td><td>Versionamento: nada se perde, tudo pode ser revisado e desfeito.</td></tr>
+<tr><td>5. Testes automáticos</td><td>Cada PR roda testes (regras, questões, navegador) antes do merge.</td><td>CI: o robô confere se nada quebrou antes de juntar ao código principal.</td></tr>
+<tr><td>6. Rodar no notebook</td><td>Instalamos Git, Node.js e VS Code; criamos o banco no Neon; configuramos o <code>.env</code>.</td><td>Terminal, pastas, variáveis de ambiente e como ler mensagens de erro.</td></tr>
+<tr><td>7. Banco de dados</td><td>Rodamos <code>migrate deploy</code> (tabelas), <code>db:seed</code> (conteúdo) e <code>admin:create</code> (seu login).</td><td>A diferença entre <b>estrutura</b> do banco e <b>dados</b>.</td></tr>
+<tr><td>8. Auditoria</td><td>Revisamos segurança, desempenho e organização sem apagar nada.</td><td>Mexer com cuidado: medir, testar e só então mudar.</td></tr>
+<tr><td>9. Mais conteúdo</td><td>O banco passou de 178 para 330 questões originais, e os resumos foram de 3 para 12.</td><td>Conteúdo é o produto: o código é a vitrine.</td></tr></table>
+
+<p class="parte pb">Parte 2</p>
+<h2>Os programas que você instalou</h2>
+<table><tr><th>Programa</th><th>O que é</th><th>Por que precisamos</th></tr>
+<tr><td>Git</td><td>Programa de controle de versões. Guarda o histórico de cada mudança.</td><td>Para baixar o projeto do GitHub (<code>git clone</code>) e receber atualizações (<code>git pull</code>).</td></tr>
+<tr><td>Node.js</td><td>"Motor" que roda JavaScript fora do navegador.</td><td>O site (Next.js) roda em cima dele. Vem com o <b>npm</b>.</td></tr>
+<tr><td>npm</td><td><i>Node Package Manager</i>: a "loja de peças" do Node.</td><td>Baixa as bibliotecas do projeto (<code>npm install</code>) e roda os scripts (<code>npm run dev</code>).</td></tr>
+<tr><td>VS Code</td><td>Editor de código da Microsoft, gratuito.</td><td>Para abrir as pastas, editar arquivos e usar o terminal integrado.</td></tr>
+<tr><td>Navegador</td><td>Chrome, Edge etc.</td><td>Para ver o site em <code>http://localhost:3000</code>.</td></tr></table>
+<div class="box"><b>Lição:</b> depois de instalar um programa novo (como o Node), <b>feche e abra o VS Code</b>. O terminal só "enxerga" os programas que existiam quando ele foi aberto. Foi por isso que apareceu "npm não é reconhecido".</div>
+
+<p class="parte pb">Parte 3</p>
+<h2>Os comandos que você usou</h2>
+<h3>Navegação no terminal</h3>
+<table><tr><th>Comando</th><th>O que faz</th></tr>
+<tr><td><code>cd "PROJETOS\bizu-do-salles"</code></td><td><i>change directory</i>: entra em uma pasta. Use aspas quando o caminho tem espaços.</td></tr>
+<tr><td><code>cd ..</code></td><td>Volta uma pasta.</td></tr>
+<tr><td><code>dir</code> (Windows) / <code>ls</code></td><td>Lista os arquivos da pasta atual.</td></tr>
+<tr><td><code>copy A B</code></td><td>Copia o arquivo A para B (usamos para criar o <code>.env</code>).</td></tr>
+<tr><td><code>Ctrl + C</code></td><td>Interrompe o que está rodando (por exemplo, desliga o site) ou limpa a linha.</td></tr></table>
+<h3>Comandos do projeto</h3>
+<table><tr><th>Comando</th><th>O que faz por dentro</th><th>Quando usar</th></tr>
+<tr><td><code>npm install</code></td><td>Lê o <code>package.json</code>, baixa as bibliotecas para <code>node_modules</code> e gera o Prisma (postinstall).</td><td>Primeira vez e depois de atualizações.</td></tr>
+<tr><td><code>npx prisma generate</code></td><td>Cria o "tradutor" entre o código e o banco a partir do <code>schema.prisma</code>.</td><td>Se aparecer "@prisma/client did not initialize".</td></tr>
+<tr><td><code>npx prisma migrate deploy</code></td><td>Aplica as <b>migrações</b>: cria ou altera as tabelas do banco.</td><td>Banco novo ou atualização com migração nova.</td></tr>
+<tr><td><code>npm run db:seed</code></td><td>Lê <code>content/</code> e insere planos, questões e resumos novos. Não duplica nada.</td><td>Depois de adicionar conteúdo.</td></tr>
+<tr><td><code>npm run admin:create -- email "Nome"</code></td><td>Cria (ou promove) um administrador. A senha é guardada como <b>hash</b>.</td><td>Uma vez por banco.</td></tr>
+<tr><td><code>npm run dev</code></td><td>Liga o site em modo desenvolvimento, em <code>localhost:3000</code>.</td><td>Para ver e testar.</td></tr>
+<tr><td><code>npm test</code></td><td>Roda os testes de regras e do banco de questões.</td><td>Sempre depois de editar.</td></tr>
+<tr><td><code>npm run build</code></td><td>Monta a versão final otimizada, como na Vercel.</td><td>Antes de publicar.</td></tr>
+<tr><td><code>npx prisma studio</code></td><td>Abre o banco como planilha em <code>localhost:5555</code>.</td><td>Para conferir dados.</td></tr></table>
+<h3>Git</h3>
+<table><tr><th>Comando</th><th>O que faz</th></tr>
+<tr><td><code>git clone URL</code></td><td>Baixa o repositório inteiro pela primeira vez.</td></tr>
+<tr><td><code>git pull</code></td><td>Traz as mudanças novas do GitHub.</td></tr>
+<tr><td><code>git status</code></td><td>Mostra o que você mudou.</td></tr>
+<tr><td><code>git add .</code> + <code>git commit -m "msg"</code></td><td>Salva uma "foto" das mudanças com uma descrição.</td></tr>
+<tr><td><code>git push</code></td><td>Envia os commits para o GitHub.</td></tr></table>
+<h3>PowerShell (Windows)</h3>
+<table><tr><th>Comando</th><th>O que faz</th></tr>
+<tr><td><code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code></td><td>Permite rodar scripts (como o <code>npm.ps1</code>) para o seu usuário. O padrão do Windows bloqueia.</td></tr>
+<tr><td><code>$env:Path = ...</code></td><td>Recarrega a lista de pastas onde o terminal procura programas (PATH), sem fechar o VS Code.</td></tr></table>
+
+<p class="parte pb">Parte 4</p>
+<h2>Banco de dados: o que é, onde fica e como mexer</h2>
+<h3>O que é</h3>
+<p>Um <b>banco de dados</b> é um "arquivo inteligente" organizado em <b>tabelas</b> (como planilhas). Cada linha é um registro (um aluno, uma questão) e cada coluna é uma informação (e-mail, enunciado). O nosso é um <b>PostgreSQL</b>, hospedado no <b>Neon</b>.</p>
+<h3>As peças</h3>
+<table><tr><th>Peça</th><th>Papel</th><th>Onde fica</th></tr>
+<tr><td>PostgreSQL</td><td>O banco em si.</td><td>Nos servidores do Neon (EUA).</td></tr>
+<tr><td>Neon</td><td>Empresa que hospeda o banco na nuvem.</td><td><code>console.neon.tech</code></td></tr>
+<tr><td>Prisma</td><td>Biblioteca que conversa com o banco pelo código (ORM).</td><td><code>prisma/schema.prisma</code></td></tr>
+<tr><td>Migrações</td><td>"Receitas" que criam ou alteram tabelas, em ordem.</td><td><code>prisma/migrations/</code></td></tr>
+<tr><td>Seed</td><td>Carga inicial de conteúdo.</td><td><code>prisma/seed.ts</code> + <code>content/</code></td></tr>
+<tr><td>String de conexão</td><td>Endereço + usuário + senha do banco, em uma linha.</td><td><code>.env</code> → <code>DATABASE_URL</code></td></tr></table>
+<h3>Anatomia da string de conexão</h3>
+<pre>postgresql://neondb_owner:SENHA@ep-xxxx.us-east-2.aws.neon.tech/neondb?sslmode=require
+└── tipo ──┘ └ usuário ┘ └senha┘ └──────── servidor (host) ───────┘ └banco┘ └─ opções ─┘</pre>
+<p><code>sslmode=require</code> obriga a conexão a ser criptografada. O <b>pooler</b> (<code>-pooler</code> no endereço) é um "porteiro" que reaproveita conexões; para criar tabelas (migrate), usamos o endereço <b>sem</b> pooler.</p>
+<h3>Três jeitos de mexer, do mais seguro ao mais arriscado</h3>
+<table><tr><th>Jeito</th><th>Como</th><th>Use para</th></tr>
+<tr><td>1. Painel do site</td><td><code>/admin</code></td><td>Tudo do dia a dia. Fica registrado na Auditoria.</td></tr>
+<tr><td>2. Prisma Studio</td><td><code>npx prisma studio</code></td><td>Conferir e corrigir pontualmente.</td></tr>
+<tr><td>3. Neon</td><td>console.neon.tech → Tables / SQL Editor</td><td>Ver de qualquer lugar, backup (branch), trocar senha.</td></tr></table>
+<h3>Tabelas principais</h3>
+<table><tr><th>Tabela</th><th>Guarda</th></tr>
+<tr><td>User</td><td>Alunos e admins. A senha fica como hash, nunca em texto.</td></tr>
+<tr><td>Session</td><td>Quem está logado e em qual aparelho. O token fica como hash.</td></tr>
+<tr><td>Plan / Subscription / Payment / Coupon</td><td>Planos, acesso de cada aluno, pagamentos e cupons.</td></tr>
+<tr><td>Question / QuestionOption / QuestionAttempt</td><td>Questões, alternativas e cada resposta dos alunos.</td></tr>
+<tr><td>Material</td><td>Resumos e PDFs.</td></tr>
+<tr><td>AuditLog</td><td>Histórico das ações dos admins. Nunca apague.</td></tr></table>
+<div class="box"><b>Regra de ouro:</b> antes de editar direto no banco, crie um <b>branch</b> no Neon (uma cópia instantânea). Se algo der errado, você volta.</div>
+
+<p class="parte pb">Parte 5</p>
+<h2>Os arquivos que importam</h2>
+<table><tr><th>Arquivo</th><th>Para que serve</th></tr>
+<tr><td><code>.env</code></td><td>Segredos e configurações (banco, chaves). <b>Nunca</b> vai para o GitHub nem para prints.</td></tr>
+<tr><td><code>.env.example</code></td><td>Modelo do <code>.env</code>, sem valores secretos.</td></tr>
+<tr><td><code>package.json</code></td><td>Lista de bibliotecas e de scripts (<code>dev</code>, <code>test</code>, <code>db:seed</code>…).</td></tr>
+<tr><td><code>src/config/site.ts</code></td><td>Textos do site.</td></tr>
+<tr><td><code>src/config/regras.ts</code></td><td>Números do sistema (prazos, limites).</td></tr>
+<tr><td><code>src/app/globals.css</code></td><td>Cores e visual.</td></tr>
+<tr><td><code>content/questoes/*.json</code></td><td>Questões em lote.</td></tr>
+<tr><td><code>content/materiais/*.json</code></td><td>Resumos.</td></tr>
+<tr><td><code>prisma/schema.prisma</code></td><td>Estrutura do banco. Mudou aqui, precisa de migração.</td></tr>
+<tr><td><code>next.config.ts</code></td><td>Cabeçalhos de segurança do servidor.</td></tr>
+<tr><td><code>.gitignore</code></td><td>Lista do que o Git deve ignorar (por isso o <code>.env</code> aparece em cinza no VS Code).</td></tr></table>
+
+<p class="parte pb">Parte 6</p>
+<h2>Os serviços na internet</h2>
+<table><tr><th>Serviço</th><th>O que faz no projeto</th><th>O que você configura lá</th></tr>
+<tr><td>GitHub</td><td>Guarda o código e roda os testes (Actions).</td><td>Merge dos Pull Requests.</td></tr>
+<tr><td>Neon</td><td>Banco PostgreSQL na nuvem.</td><td>Senha (Reset password), string de conexão, branches de backup.</td></tr>
+<tr><td>Vercel</td><td>Deixa o site no ar 24 horas e publica a cada merge.</td><td>Root Directory, Build Command, variáveis de ambiente, domínio.</td></tr>
+<tr><td>Mercado Pago</td><td>Recebe Pix e cartão e avisa o site (webhook).</td><td>Access Token, URL do webhook, assinatura secreta.</td></tr>
+<tr><td>Resend</td><td>Envia e-mails (esqueci minha senha).</td><td>API Key e remetente.</td></tr>
+<tr><td>registro.br</td><td>Registro de domínio <code>.com.br</code>.</td><td>Apontar o domínio para a Vercel.</td></tr></table>
+
+<p class="parte pb">Parte 7</p>
+<h2>Segurança na prática</h2>
+<table><tr><th>Situação real</th><th>O risco</th><th>A lição</th></tr>
+<tr><td>A senha do banco apareceu em um print.</td><td>Quem vê o print pode ler e apagar todo o banco.</td><td>Trocar a senha (Reset password) e não fotografar o <code>.env</code>.</td></tr>
+<tr><td>Senha do admin digitada aparecendo na tela.</td><td>Ficou visível no print.</td><td>Use outra senha, longa e única, e um gerenciador de senhas.</td></tr>
+<tr><td>Projeto dentro do OneDrive.</td><td>A sincronização trava arquivos (EPERM).</td><td>Projetos em pastas fora do OneDrive, como <code>C:\Projetos</code>.</td></tr>
+<tr><td>Repositório público.</td><td>Qualquer pessoa vê o código.</td><td>Código pode ser público; <b>segredos nunca</b>.</td></tr></table>
+<h3>O que o site já faz para proteger</h3>
+<ul>
+<li><b>Hash de senha (Argon2id):</b> nem você consegue ler a senha dos alunos.</li>
+<li><b>Sessão única:</b> o login vale em um aparelho por vez.</li>
+<li><b>Limite de tentativas:</b> barra robôs que testam senhas.</li>
+<li><b>Cabeçalhos de segurança (CSP, HSTS…):</b> dificultam ataques pelo navegador.</li>
+<li><b>Webhook assinado:</b> só o Mercado Pago consegue liberar acesso.</li>
+<li><b>Auditoria:</b> registra o que cada admin fez.</li>
+</ul>
+
+<p class="parte pb">Parte 8</p>
+<h2>Erros que apareceram e como foram resolvidos</h2>
+<table><tr><th>Mensagem</th><th>O que significava</th><th>Solução</th></tr>
+<tr><td>npm não é reconhecido</td><td>O terminal não achava o Node.</td><td>Instalar o Node e reabrir o VS Code (ou recarregar o PATH).</td></tr>
+<tr><td>execução de scripts foi desabilitada</td><td>Política de segurança do PowerShell.</td><td><code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code></td></tr>
+<tr><td>npm should be run outside of the Node.js REPL</td><td>Foi aberto o programa "Node.js", não o terminal.</td><td>Usar o terminal do VS Code.</td></tr>
+<tr><td>ENOENT package.json</td><td>Terminal na pasta errada.</td><td><code>cd "PROJETOS\bizu-do-salles"</code></td></tr>
+<tr><td>EPERM / ENOTEMPTY</td><td>Arquivo travado (OneDrive ou programa aberto).</td><td>Apagar <code>node_modules</code> e reinstalar.</td></tr>
+<tr><td>Environment variable not found: DATABASE_URL</td><td><code>.env</code> faltando ou não salvo.</td><td>Criar o <code>.env</code>, preencher e salvar (Ctrl + S).</td></tr>
+<tr><td>PrismaClientInitializationError</td><td>O Prisma não estava pronto para falar com o banco.</td><td><code>npx prisma generate</code></td></tr>
+<tr><td>Página em branco</td><td>Regra de segurança (CSP) bloqueava o modo dev.</td><td>Corrigido no código (CSP mais flexível só no dev).</td></tr>
+<tr><td>bvngfnnpm não é reconhecido</td><td>Comando digitado errado ou emendado.</td><td><code>Ctrl + C</code> para limpar a linha e colar de novo.</td></tr></table>
+
+<p class="parte pb">Parte 9</p>
+<h2>Glossário de A a Z</h2>
+<table><tr><th>Termo</th><th>O que é, em palavras simples</th></tr>
+<tr><td>Access Token</td><td>Uma "chave de acesso" em forma de texto longo. Quem tem o token age em seu nome naquele serviço (o do Mercado Pago cria cobranças). Trate como senha.</td></tr>
+<tr><td>Admin</td><td>Administrador: usuário com acesso ao painel <code>/admin</code>.</td></tr>
+<tr><td>API</td><td><i>Application Programming Interface</i>. Uma "porta de serviço" para um programa conversar com outro. O site usa a API do Mercado Pago para criar pagamentos.</td></tr>
+<tr><td>API Key</td><td>Chave que identifica quem está usando uma API (por exemplo, a do Resend).</td></tr>
+<tr><td>Argon2id</td><td>Método moderno de transformar senhas em hash, lento de propósito para dificultar ataques.</td></tr>
+<tr><td>Assinatura (HMAC)</td><td>Um "lacre" calculado com uma chave secreta. O Mercado Pago assina cada aviso; o site recalcula e só aceita se bater. HMAC = <i>Hash-based Message Authentication Code</i>.</td></tr>
+<tr><td>Backup</td><td>Cópia de segurança para recuperar dados.</td></tr>
+<tr><td>Branch</td><td>No Git: uma linha paralela de trabalho. No Neon: uma cópia instantânea do banco.</td></tr>
+<tr><td>Build</td><td>"Montar" a versão final e otimizada do site.</td></tr>
+<tr><td>Cache</td><td>Guardar um resultado para não refazer o trabalho.</td></tr>
+<tr><td>CI</td><td><i>Continuous Integration</i>: robô que roda os testes a cada mudança (GitHub Actions).</td></tr>
+<tr><td>Commit</td><td>Uma "foto" salva das mudanças, com descrição.</td></tr>
+<tr><td>Cookie</td><td>Pequeno dado que o site guarda no navegador (o nosso guarda o login e o tema).</td></tr>
+<tr><td>CRUD</td><td><i>Create, Read, Update, Delete</i>: criar, ler, atualizar e apagar dados.</td></tr>
+<tr><td>CSP</td><td><i>Content Security Policy</i>: regra que diz ao navegador de onde o site pode carregar código. Bloqueia scripts maliciosos.</td></tr>
+<tr><td>CSV</td><td>Planilha em texto, com valores separados por vírgula ou ponto e vírgula (usada na importação de questões).</td></tr>
+<tr><td>Criptografia</td><td>Embaralhar dados para que só quem tem a chave consiga ler.</td></tr>
+<tr><td>Deploy</td><td>Publicar o site em um servidor na internet.</td></tr>
+<tr><td>DNS</td><td><i>Domain Name System</i>: a "agenda" da internet, que transforma <code>bizudosalles.com.br</code> no endereço do servidor.</td></tr>
+<tr><td>Domínio</td><td>O nome do site (<code>bizudosalles.com.br</code>).</td></tr>
+<tr><td>e2e</td><td><i>End-to-end</i>: teste que usa o site de verdade, no navegador, como um aluno.</td></tr>
+<tr><td>Framework</td><td>Estrutura pronta para construir sistemas (o Next.js é um framework).</td></tr>
+<tr><td>Git / GitHub</td><td>Git é o programa de versões; o GitHub é o site que guarda os repositórios.</td></tr>
+<tr><td>Hash</td><td>"Impressão digital" de um texto: transformação de mão única. Não dá para voltar ao original, mas dá para comparar. Senhas e tokens de sessão ficam assim no banco.</td></tr>
+<tr><td>Host</td><td>O computador ou servidor onde algo está (o host do banco é o endereço do Neon).</td></tr>
+<tr><td>HSTS</td><td>Regra que obriga o navegador a usar sempre HTTPS no site.</td></tr>
+<tr><td>HTTP / HTTPS</td><td>Protocolo da web. O "S" significa conexão criptografada (segura).</td></tr>
+<tr><td>JSON</td><td>Formato de texto para dados: <code>{"nome": "valor"}</code>. Nossas questões ficam em JSON.</td></tr>
+<tr><td>LGPD</td><td>Lei Geral de Proteção de Dados (Lei 13.709/2018): regras para guardar dados pessoais. O site tem "baixar meus dados" e "excluir conta".</td></tr>
+<tr><td>localhost</td><td>"Este computador". <code>localhost:3000</code> é o site rodando no seu notebook, porta 3000.</td></tr>
+<tr><td>Merge</td><td>Juntar as mudanças de um branch (PR) ao código principal.</td></tr>
+<tr><td>Migração</td><td>Arquivo que cria ou altera tabelas do banco de forma controlada.</td></tr>
+<tr><td>Next.js</td><td>Framework de sites baseado em React que roda no servidor e no navegador.</td></tr>
+<tr><td>node_modules</td><td>Pasta com as bibliotecas baixadas pelo npm. Pode ser apagada e baixada de novo.</td></tr>
+<tr><td>ORM</td><td><i>Object-Relational Mapping</i>: tradutor entre o código e o banco (o Prisma).</td></tr>
+<tr><td>PATH</td><td>Lista de pastas onde o terminal procura programas.</td></tr>
+<tr><td>Pooling / pooler</td><td>Reaproveitamento de conexões com o banco. Melhora o desempenho, mas não serve para migrações.</td></tr>
+<tr><td>Porta</td><td>"Número da porta" de um programa no computador (3000 = site; 5432 = PostgreSQL; 5555 = Prisma Studio).</td></tr>
+<tr><td>PostgreSQL</td><td>Sistema de banco de dados gratuito e robusto.</td></tr>
+<tr><td>PR (Pull Request)</td><td>Pedido para juntar mudanças ao código principal, com revisão e testes.</td></tr>
+<tr><td>Rate limit</td><td>Limite de tentativas em um período (8 logins errados em 15 minutos, por exemplo).</td></tr>
+<tr><td>React</td><td>Biblioteca para montar telas com componentes.</td></tr>
+<tr><td>Repositório</td><td>A "pasta" do projeto no GitHub, com todo o histórico.</td></tr>
+<tr><td>robots.txt</td><td>Arquivo que diz ao Google o que pode aparecer na busca.</td></tr>
+<tr><td>Schema</td><td>Desenho da estrutura do banco (tabelas e campos).</td></tr>
+<tr><td>Seed</td><td>Carga inicial de dados no banco.</td></tr>
+<tr><td>Serverless</td><td>Modelo da Vercel: o servidor "liga" sob demanda, e você não administra máquina.</td></tr>
+<tr><td>Sessão</td><td>O "estar logado". Nosso site guarda um token aleatório no cookie e o hash dele no banco.</td></tr>
+<tr><td>SQL</td><td>Linguagem para consultar bancos de dados (<code>SELECT * FROM "User"</code>).</td></tr>
+<tr><td>SSL / TLS</td><td>A criptografia por trás do HTTPS e do <code>sslmode=require</code>.</td></tr>
+<tr><td>String de conexão</td><td>Linha com tipo, usuário, senha, servidor e banco (ver Parte 4).</td></tr>
+<tr><td>Terminal</td><td>Janela onde se digitam comandos (PowerShell, Command Prompt).</td></tr>
+<tr><td>Token</td><td>Texto secreto que prova uma permissão ou identidade. Há tokens de acesso (APIs), de sessão (login) e de redefinição de senha (link de uso único).</td></tr>
+<tr><td>TypeScript</td><td>JavaScript com "tipos", que aponta erros antes de rodar.</td></tr>
+<tr><td>Variável de ambiente</td><td>Configuração lida pelo programa fora do código (as linhas do <code>.env</code> e da Vercel).</td></tr>
+<tr><td>Webhook</td><td>"Aviso automático": um serviço chama uma URL do seu site quando algo acontece (pagamento aprovado).</td></tr>
+<tr><td>2FA</td><td>Verificação em duas etapas: senha + código no celular.</td></tr></table>
+
+<p class="parte pb">Parte 10</p>
+<h2>Próximos passos</h2>
+<ol>
+<li>Trocar a senha do Neon.</li>
+<li>Fazer o merge dos PRs abertos no GitHub.</li>
+<li>Publicar na Vercel (Root Directory <code>PROJETOS/bizu-do-salles</code>).</li>
+<li>Ligar o Mercado Pago e testar com um cupom de 99%.</li>
+<li>Registrar o domínio e configurar e-mails (Resend).</li>
+<li>Continuar ampliando as questões; meta de 500 ou mais.</li>
+<li>Divulgar: questão do dia nas redes, grupos de alunos e parcerias com cupons.</li>
+</ol>
+<div class="box ok"><b>Resumo do que você domina agora:</b> abrir um projeto no VS Code, usar o terminal, instalar dependências, conectar um banco na nuvem, criar tabelas e dados, criar um administrador, ligar o site e entender a função de cada serviço e de cada termo técnico.</div>
+</body></html>

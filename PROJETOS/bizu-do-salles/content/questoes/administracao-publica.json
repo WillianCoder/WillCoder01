@@ -1,0 +1,159 @@
+{
+  "cycle": "BASIC",
+  "subject": "Noções de Administração Pública",
+  "topic": "Princípios, poderes e atos administrativos",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "ADM-PUB-001",
+      "difficulty": "EASY",
+      "statement": "Os princípios expressos da administração pública no caput do art. 37 da Constituição Federal são:",
+      "options": {
+        "A": "legalidade, hierarquia, disciplina, publicidade e eficiência.",
+        "B": "legalidade, imparcialidade, moralidade, probidade e economia.",
+        "C": "legalidade, impessoalidade, moralidade, publicidade e eficiência.",
+        "D": "supremacia, indisponibilidade, moralidade, publicidade e eficiência.",
+        "E": "legalidade, impessoalidade, motivação, publicidade e celeridade."
+      },
+      "correct": "C",
+      "explanation": "Mnemônico LIMPE: Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência (eficiência incluída pela EC 19/1998).",
+      "reference": "CF/88, art. 37, caput"
+    },
+    {
+      "code": "ADM-PUB-002",
+      "difficulty": "MEDIUM",
+      "statement": "Pelo princípio da legalidade aplicado à administração pública, o agente público:",
+      "options": {
+        "A": "pode fazer tudo o que a lei não proíbe.",
+        "B": "pode agir conforme sua convicção pessoal.",
+        "C": "deve seguir apenas ordens verbais do superior.",
+        "D": "só pode fazer o que a lei autoriza ou determina.",
+        "E": "pode deixar de cumprir a lei por conveniência."
+      },
+      "correct": "D",
+      "explanation": "Para o particular, vale \"pode tudo o que a lei não proíbe\". Para a administração, só o que a lei permite.",
+      "reference": "Direito Administrativo: princípio da legalidade"
+    },
+    {
+      "code": "ADM-PUB-003",
+      "difficulty": "MEDIUM",
+      "statement": "O atributo do ato administrativo que permite à administração executá-lo diretamente, sem precisar de ordem judicial, é a:",
+      "options": {
+        "A": "tipicidade.",
+        "B": "publicidade.",
+        "C": "motivação.",
+        "D": "discricionariedade.",
+        "E": "autoexecutoriedade."
+      },
+      "correct": "E",
+      "explanation": "Atributos clássicos: presunção de legitimidade, imperatividade, autoexecutoriedade e tipicidade. A autoexecutoriedade permite executar sem o Judiciário, como na apreensão de mercadoria imprópria.",
+      "reference": "Direito Administrativo: atributos do ato administrativo"
+    },
+    {
+      "code": "ADM-PUB-004",
+      "difficulty": "MEDIUM",
+      "statement": "O poder que permite à administração limitar direitos individuais em favor do interesse coletivo, como na fiscalização de estabelecimentos, é o poder:",
+      "options": {
+        "A": "de polícia.",
+        "B": "hierárquico.",
+        "C": "regulamentar.",
+        "D": "disciplinar.",
+        "E": "legislativo."
+      },
+      "correct": "A",
+      "explanation": "Poder de polícia é a atividade que condiciona e restringe o uso de bens, atividades e direitos individuais em benefício da coletividade (CTN, art. 78).",
+      "reference": "Direito Administrativo: poder de polícia"
+    },
+    {
+      "code": "ADM-PUB-005",
+      "difficulty": "MEDIUM",
+      "statement": "O poder que permite punir servidores por infrações funcionais chama-se poder:",
+      "options": {
+        "A": "de polícia.",
+        "B": "disciplinar.",
+        "C": "regulamentar.",
+        "D": "normativo do Legislativo.",
+        "E": "jurisdicional."
+      },
+      "correct": "B",
+      "explanation": "Poder disciplinar: apurar e punir infrações de quem tem vínculo especial com a administração (servidores). O poder de polícia atinge os particulares em geral.",
+      "reference": "Direito Administrativo: poder disciplinar"
+    },
+    {
+      "code": "ADM-PUB-006",
+      "difficulty": "HARD",
+      "statement": "Segundo a Constituição, os atos de improbidade administrativa importarão:",
+      "options": {
+        "A": "apenas multa civil.",
+        "B": "cassação definitiva dos direitos políticos.",
+        "C": "suspensão dos direitos políticos, perda da função pública, indisponibilidade dos bens e ressarcimento ao erário, sem prejuízo da ação penal.",
+        "D": "prisão administrativa do servidor.",
+        "E": "perda da nacionalidade brasileira."
+      },
+      "correct": "C",
+      "explanation": "Texto do art. 37, § 4º: suspensão dos direitos políticos, perda da função pública, indisponibilidade dos bens e ressarcimento ao erário, na forma e gradação previstas em lei, sem prejuízo da ação penal cabível. A CF proíbe cassação de direitos políticos (art. 15).",
+      "reference": "CF/88, art. 37, § 4º"
+    },
+    {
+      "code": "ADM-PUB-007",
+      "difficulty": "MEDIUM",
+      "statement": "O princípio que proíbe a promoção pessoal de autoridades em publicidade oficial é o da:",
+      "options": {
+        "A": "eficiência.",
+        "B": "legalidade estrita.",
+        "C": "continuidade.",
+        "D": "impessoalidade.",
+        "E": "autotutela."
+      },
+      "correct": "D",
+      "explanation": "O art. 37, § 1º, determina que a publicidade oficial tenha caráter educativo, informativo ou de orientação social, sem nomes, símbolos ou imagens de promoção pessoal: expressão da impessoalidade.",
+      "reference": "CF/88, art. 37, § 1º"
+    },
+    {
+      "code": "ADM-PUB-008",
+      "difficulty": "HARD",
+      "statement": "Sobre a responsabilidade civil do Estado, a Constituição estabelece que as pessoas jurídicas de direito público responderão pelos danos que seus agentes causarem a terceiros:",
+      "options": {
+        "A": "somente se ficar provada a culpa do agente.",
+        "B": "apenas quando o agente estiver fora de serviço.",
+        "C": "de forma subsidiária, após o agente.",
+        "D": "somente se houver condenação criminal do agente.",
+        "E": "de forma objetiva, assegurado o direito de regresso contra o agente nos casos de dolo ou culpa."
+      },
+      "correct": "E",
+      "explanation": "Art. 37, § 6º: responsabilidade objetiva do Estado (independe de culpa), com direito de regresso contra o agente que agiu com dolo ou culpa.",
+      "reference": "CF/88, art. 37, § 6º"
+    },
+    {
+      "code": "ADM-PUB-009",
+      "difficulty": "EASY",
+      "statement": "A investidura em cargo ou emprego público, como regra, depende de:",
+      "options": {
+        "A": "aprovação prévia em concurso público de provas ou de provas e títulos.",
+        "B": "indicação de autoridade.",
+        "C": "entrevista pessoal.",
+        "D": "sorteio público.",
+        "E": "tempo de experiência na iniciativa privada."
+      },
+      "correct": "A",
+      "explanation": "Art. 37, II. Exceção: cargos em comissão declarados em lei de livre nomeação e exoneração.",
+      "reference": "CF/88, art. 37, II"
+    },
+    {
+      "code": "ADM-PUB-010",
+      "difficulty": "MEDIUM",
+      "statement": "A administração pode anular seus próprios atos ilegais e revogar os inconvenientes ou inoportunos. Isso decorre do princípio da:",
+      "options": {
+        "A": "inércia.",
+        "B": "autotutela.",
+        "C": "hierarquia militar.",
+        "D": "separação dos Poderes.",
+        "E": "reserva legal."
+      },
+      "correct": "B",
+      "explanation": "Autotutela (Súmula 473 do STF): anulação por ilegalidade; revogação por conveniência e oportunidade, respeitados os direitos adquiridos.",
+      "reference": "Súmula 473 do STF"
+    }
+  ]
+}
