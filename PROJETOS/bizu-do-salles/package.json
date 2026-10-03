@@ -23,7 +23,8 @@
     "test:e2e": "playwright test",
     "relatorio": "node scripts/gerar-relatorio.mjs",
     "postinstall": "prisma generate",
-    "comandos": "node scripts/gerar-comandos.mjs"
+    "comandos": "node scripts/gerar-comandos.mjs",
+    "aprendizado": "node scripts/gerar-aprendizado.mjs"
   },
   "author": "",
   "license": "UNLICENSED",
