@@ -1,0 +1,54 @@
+{
+  "cycle": "BASIC",
+  "subject": "Direitos Humanos",
+  "topic": "Tratados e garantias internacionais",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "DIR-HUM-001",
+      "difficulty": "EASY",
+      "statement": "A Convenção Americana sobre Direitos Humanos, ratificada pelo Brasil, é conhecida como:",
+      "options": {
+        "A": "Estatuto de Roma.",
+        "B": "Carta de Bogotá.",
+        "C": "Tratado de Versalhes.",
+        "D": "Pacto de São José da Costa Rica.",
+        "E": "Convenção de Genebra sobre refugiados."
+      },
+      "correct": "D",
+      "explanation": "Adotada em 1969 e promulgada no Brasil pelo Decreto 678/1992. Ela fundamenta, por exemplo, a audiência de custódia (apresentação do preso ao juiz sem demora).",
+      "reference": "Convenção Americana sobre Direitos Humanos (Decreto 678/1992)"
+    },
+    {
+      "code": "DIR-HUM-002",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo a Constituição, os tratados internacionais de direitos humanos aprovados em cada Casa do Congresso, em dois turnos, por três quintos dos votos dos membros, serão equivalentes a:",
+      "options": {
+        "A": "leis ordinárias.",
+        "B": "decretos regulamentares.",
+        "C": "resoluções do Senado.",
+        "D": "portarias ministeriais.",
+        "E": "emendas constitucionais."
+      },
+      "correct": "E",
+      "explanation": "Art. 5º, § 3º, incluído pela EC 45/2004. Tratados de direitos humanos aprovados sem esse rito têm status supralegal (STF, RE 466.343).",
+      "reference": "CF/88, art. 5º, § 3º"
+    },
+    {
+      "code": "DIR-HUM-003",
+      "difficulty": "MEDIUM",
+      "statement": "A Súmula Vinculante 25 do STF, com base no Pacto de São José da Costa Rica, estabelece que é ilícita a prisão civil:",
+      "options": {
+        "A": "do depositário infiel, qualquer que seja a modalidade do depósito.",
+        "B": "do devedor de pensão alimentícia.",
+        "C": "de qualquer pessoa em flagrante.",
+        "D": "do preso por crime hediondo.",
+        "E": "do militar por transgressão disciplinar."
+      },
+      "correct": "A",
+      "explanation": "Hoje, a única prisão civil admitida no Brasil é a do devedor voluntário e inescusável de pensão alimentícia.",
+      "reference": "STF, Súmula Vinculante 25"
+    }
+  ]
+}

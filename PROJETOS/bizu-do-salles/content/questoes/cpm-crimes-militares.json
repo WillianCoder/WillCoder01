@@ -1,0 +1,114 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Direito Penal Militar",
+  "topic": "Crimes militares em espécie (CPM)",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "CPM-CRI-001",
+      "difficulty": "MEDIUM",
+      "statement": "No Código Penal Militar, o crime de deserção consiste em:",
+      "options": {
+        "A": "faltar a uma única formatura.",
+        "B": "chegar atrasado ao serviço.",
+        "C": "ausentar-se o militar, sem licença, da unidade em que serve ou do lugar em que deve permanecer, por mais de oito dias.",
+        "D": "dormir em serviço.",
+        "E": "recusar ordem de superior."
+      },
+      "correct": "C",
+      "explanation": "Art. 187 do CPM (Decreto-Lei 1.001/1969). O prazo de mais de oito dias é chamado de \"prazo de graça\".",
+      "reference": "CPM, art. 187"
+    },
+    {
+      "code": "CPM-CRI-002",
+      "difficulty": "MEDIUM",
+      "statement": "Abandonar, sem ordem superior, o posto ou lugar de serviço que lhe tenha sido designado, ou o serviço que lhe cumpria, antes de terminá-lo, configura o crime militar de:",
+      "options": {
+        "A": "deserção.",
+        "B": "motim.",
+        "C": "insubordinação.",
+        "D": "abandono de posto.",
+        "E": "desacato."
+      },
+      "correct": "D",
+      "explanation": "Art. 195 do CPM. Diferente da deserção (art. 187), não exige o prazo de mais de oito dias de ausência.",
+      "reference": "CPM, art. 195"
+    },
+    {
+      "code": "CPM-CRI-003",
+      "difficulty": "EASY",
+      "statement": "Dormir o militar, quando em serviço, como oficial de quarto ou de ronda, ou em situação equivalente, ou, não sendo oficial, em serviço de sentinela, vigia, plantão às máquinas, ao leme, de ronda ou em qualquer serviço de natureza semelhante, configura o crime de:",
+      "options": {
+        "A": "abandono de posto.",
+        "B": "deserção.",
+        "C": "embriaguez em serviço.",
+        "D": "omissão de eficiência.",
+        "E": "dormir em serviço."
+      },
+      "correct": "E",
+      "explanation": "Art. 203 do CPM. Atenção: no RDPM de SP, dormir em serviço de policiamento também é transgressão disciplinar grave.",
+      "reference": "CPM, art. 203"
+    },
+    {
+      "code": "CPM-CRI-004",
+      "difficulty": "MEDIUM",
+      "statement": "Embriagar-se o militar, quando em serviço, ou apresentar-se embriagado para prestá-lo, configura:",
+      "options": {
+        "A": "o crime de embriaguez em serviço (art. 202 do CPM).",
+        "B": "mera falta leve, sem previsão penal.",
+        "C": "o crime de deserção.",
+        "D": "o crime de motim.",
+        "E": "o crime de dormir em serviço."
+      },
+      "correct": "A",
+      "explanation": "Art. 202 do CPM. Também há a correspondente transgressão disciplinar no regulamento.",
+      "reference": "CPM, art. 202"
+    },
+    {
+      "code": "CPM-CRI-005",
+      "difficulty": "HARD",
+      "statement": "Após a Lei 13.491/2017, consideram-se crimes militares em tempo de paz, nas hipóteses do art. 9º, II, do CPM:",
+      "options": {
+        "A": "somente os crimes previstos no CPM.",
+        "B": "os crimes previstos no CPM e os previstos na legislação penal comum, quando praticados nas situações do inciso II.",
+        "C": "apenas os crimes cometidos dentro de quartéis.",
+        "D": "apenas os crimes contra civis.",
+        "E": "somente os crimes de deserção e insubordinação."
+      },
+      "correct": "B",
+      "explanation": "A Lei 13.491/2017 ampliou o art. 9º, II, para abranger também crimes da legislação penal comum (como abuso de autoridade e tortura) quando cometidos pelo militar nas situações ali previstas, por exemplo em serviço.",
+      "reference": "CPM, art. 9º, II (redação da Lei 13.491/2017)"
+    },
+    {
+      "code": "CPM-CRI-006",
+      "difficulty": "MEDIUM",
+      "statement": "Recusar obedecer a ordem do superior sobre assunto ou matéria de serviço, ou relativamente a dever imposto em lei, regulamento ou instrução, configura o crime de:",
+      "options": {
+        "A": "desrespeito a superior.",
+        "B": "deserção.",
+        "C": "recusa de obediência.",
+        "D": "abandono de posto.",
+        "E": "violência contra superior."
+      },
+      "correct": "C",
+      "explanation": "Art. 163 do CPM. Desrespeitar superior diante de outro militar é o art. 160; praticar violência contra superior é o art. 157.",
+      "reference": "CPM, arts. 157, 160 e 163"
+    },
+    {
+      "code": "CPM-CRI-007",
+      "difficulty": "HARD",
+      "statement": "Reunirem-se militares agindo contra a ordem recebida de superior, ou negando-se a cumpri-la, configura o crime de:",
+      "options": {
+        "A": "deserção coletiva.",
+        "B": "abandono de posto.",
+        "C": "quadrilha.",
+        "D": "motim.",
+        "E": "desacato."
+      },
+      "correct": "D",
+      "explanation": "Art. 149 do CPM. Se os agentes estiverem armados, o crime passa a ser revolta (parágrafo único).",
+      "reference": "CPM, art. 149"
+    }
+  ]
+}

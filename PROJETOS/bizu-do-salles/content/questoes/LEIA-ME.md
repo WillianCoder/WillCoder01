@@ -16,3 +16,8 @@
 | `lei-*`, `dudh-*` | Leis federais e Direitos Humanos |
 | `portugues-*`, `matematica-*` | Disciplinas gerais |
 | `sp-rdpm-01` … `08` | Regulamento Disciplinar da PM de SP (por capítulo) |
+| `portugues-vunesp-estilo`, `matematica-vunesp-estilo` | Português e Matemática no estilo das provas VUNESP |
+| `informatica-nocoes`, `administracao-publica` | Noções de Informática e de Administração Pública |
+| `cp-*`, `cpp-*`, `cpm-*` | Direito Penal, Processo Penal e Penal Militar |
+| `lei-10826-*`, `lei-11340-*`, `lei-11343-*`, `lei-13060-*`, `eca-*`, `ctb-*` | Leis especiais da rotina policial |
+| `aph-*`, `policia-comunitaria`, `direitos-humanos-*` | Primeiros socorros, polícia comunitária e direitos humanos |

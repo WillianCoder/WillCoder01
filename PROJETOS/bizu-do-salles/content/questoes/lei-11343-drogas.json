@@ -1,0 +1,69 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Legislação Penal Especial",
+  "topic": "Lei de Drogas (Lei 11.343/2006)",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "DRO-LEI-001",
+      "difficulty": "MEDIUM",
+      "statement": "Quem adquire, guarda, tem em depósito, transporta ou traz consigo drogas para consumo pessoal está sujeito, segundo o art. 28 da Lei 11.343/2006, a:",
+      "options": {
+        "A": "advertência sobre os efeitos das drogas, prestação de serviços à comunidade e medida educativa de comparecimento a programa ou curso educativo.",
+        "B": "reclusão de 5 a 15 anos.",
+        "C": "detenção de 1 a 3 anos.",
+        "D": "prisão em flagrante e recolhimento ao presídio.",
+        "E": "multa e prisão domiciliar obrigatória."
+      },
+      "correct": "A",
+      "explanation": "Art. 28: não há pena de prisão para o usuário. O § 2º manda o juiz considerar natureza e quantidade da substância, local, condições da ação, circunstâncias sociais e pessoais, conduta e antecedentes para diferenciar uso de tráfico.",
+      "reference": "Lei 11.343/2006, art. 28"
+    },
+    {
+      "code": "DRO-LEI-002",
+      "difficulty": "MEDIUM",
+      "statement": "Para o usuário surpreendido com droga para consumo pessoal (art. 28 da Lei 11.343/2006):",
+      "options": {
+        "A": "impõe-se prisão em flagrante e fiança.",
+        "B": "não se imporá prisão em flagrante; o autor é encaminhado ao juízo competente ou assume o compromisso de a ele comparecer, lavrando-se termo circunstanciado.",
+        "C": "a autoridade deve encaminhá-lo diretamente ao presídio.",
+        "D": "a conduta é atípica e nada deve ser registrado.",
+        "E": "aplica-se prisão temporária de 5 dias."
+      },
+      "correct": "B",
+      "explanation": "Art. 48, §§ 2º e 3º, da Lei 11.343/2006. Atenção: em 2024 o STF (RE 635.659) definiu critérios sobre porte de maconha para consumo; acompanhe a regulamentação vigente.",
+      "reference": "Lei 11.343/2006, art. 48"
+    },
+    {
+      "code": "DRO-LEI-003",
+      "difficulty": "EASY",
+      "statement": "O crime de tráfico de drogas (art. 33, caput, da Lei 11.343/2006) tem pena de:",
+      "options": {
+        "A": "detenção de 6 meses a 2 anos.",
+        "B": "reclusão de 1 a 4 anos.",
+        "C": "reclusão de 5 a 15 anos e multa.",
+        "D": "reclusão de 2 a 8 anos.",
+        "E": "apenas advertência e prestação de serviços."
+      },
+      "correct": "C",
+      "explanation": "Art. 33, caput. O § 4º prevê redução de 1/6 a 2/3 para o agente primário, de bons antecedentes, que não se dedique a atividades criminosas nem integre organização criminosa (tráfico privilegiado).",
+      "reference": "Lei 11.343/2006, art. 33"
+    },
+    {
+      "code": "DRO-LEI-004",
+      "difficulty": "HARD",
+      "statement": "Associarem-se duas ou mais pessoas para o fim de praticar, reiteradamente ou não, o tráfico de drogas configura:",
+      "options": {
+        "A": "associação criminosa do Código Penal, que exige 3 ou mais pessoas.",
+        "B": "mero concurso de pessoas, sem crime autônomo.",
+        "C": "organização criminosa, que exige 2 pessoas.",
+        "D": "associação para o tráfico (art. 35 da Lei 11.343/2006).",
+        "E": "contravenção penal."
+      },
+      "correct": "D",
+      "explanation": "Art. 35: basta a associação estável de duas ou mais pessoas. A associação criminosa do CP (art. 288) exige três ou mais; organização criminosa (Lei 12.850/2013) exige quatro ou mais.",
+      "reference": "Lei 11.343/2006, art. 35"
+    }
+  ]
+}

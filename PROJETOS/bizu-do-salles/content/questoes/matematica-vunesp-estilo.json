@@ -1,0 +1,384 @@
+{
+  "cycle": "BASIC",
+  "subject": "Matemática",
+  "topic": "Matemática e raciocínio lógico (estilo VUNESP)",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "MAT-RAC-001",
+      "difficulty": "EASY",
+      "statement": "Uma equipe percorreu 3/5 de um trajeto de 40 km. Quantos quilômetros faltam?",
+      "options": {
+        "A": "12 km",
+        "B": "16 km",
+        "C": "20 km",
+        "D": "24 km",
+        "E": "28 km"
+      },
+      "correct": "B",
+      "explanation": "Percorrido: 3/5 × 40 = 24 km. Faltam 40 − 24 = 16 km.",
+      "reference": "Frações"
+    },
+    {
+      "code": "MAT-RAC-002",
+      "difficulty": "EASY",
+      "statement": "Um batalhão tem 250 policiais, e 12% estão de férias. Quantos estão de férias?",
+      "options": {
+        "A": "12",
+        "B": "25",
+        "C": "30",
+        "D": "35",
+        "E": "50"
+      },
+      "correct": "C",
+      "explanation": "12% de 250 = 0,12 × 250 = 30.",
+      "reference": "Porcentagem"
+    },
+    {
+      "code": "MAT-RAC-003",
+      "difficulty": "MEDIUM",
+      "statement": "Um produto custava R$ 80,00 e passou a custar R$ 92,00. O aumento foi de:",
+      "options": {
+        "A": "10%",
+        "B": "12%",
+        "C": "15%",
+        "D": "18%",
+        "E": "20%"
+      },
+      "correct": "C",
+      "explanation": "Aumento: 92 − 80 = 12. 12 ÷ 80 = 0,15 = 15%.",
+      "reference": "Porcentagem: variação percentual"
+    },
+    {
+      "code": "MAT-RAC-004",
+      "difficulty": "MEDIUM",
+      "statement": "Três viaturas fazem uma ronda em 6 horas. Mantido o ritmo, quantas horas levariam 2 viaturas para a mesma ronda?",
+      "options": {
+        "A": "4 horas",
+        "B": "6 horas",
+        "C": "8 horas",
+        "D": "9 horas",
+        "E": "12 horas"
+      },
+      "correct": "D",
+      "explanation": "Grandezas inversamente proporcionais: 3 × 6 = 2 × x → x = 9 horas.",
+      "reference": "Regra de três simples inversa"
+    },
+    {
+      "code": "MAT-RAC-005",
+      "difficulty": "EASY",
+      "statement": "Um carro consome 8 litros a cada 100 km. Quantos litros consome em 350 km?",
+      "options": {
+        "A": "24 litros",
+        "B": "26 litros",
+        "C": "28 litros",
+        "D": "30 litros",
+        "E": "32 litros"
+      },
+      "correct": "C",
+      "explanation": "Regra de três direta: 8/100 = x/350 → x = 28 litros.",
+      "reference": "Regra de três simples direta"
+    },
+    {
+      "code": "MAT-RAC-006",
+      "difficulty": "MEDIUM",
+      "statement": "Dois turnos se repetem a cada 6 dias e a cada 8 dias. Se coincidiram hoje, voltarão a coincidir em:",
+      "options": {
+        "A": "14 dias",
+        "B": "16 dias",
+        "C": "24 dias",
+        "D": "32 dias",
+        "E": "48 dias"
+      },
+      "correct": "C",
+      "explanation": "Múltiplos de 6: 6, 12, 18, 24... Múltiplos de 8: 8, 16, 24... O primeiro comum é o MMC(6, 8) = 24.",
+      "reference": "Mínimo múltiplo comum"
+    },
+    {
+      "code": "MAT-RAC-007",
+      "difficulty": "EASY",
+      "statement": "As notas de um aluno foram 6, 7, 8 e 9. A média aritmética simples é:",
+      "options": {
+        "A": "7",
+        "B": "7,25",
+        "C": "7,5",
+        "D": "8",
+        "E": "8,5"
+      },
+      "correct": "C",
+      "explanation": "(6 + 7 + 8 + 9) ÷ 4 = 30 ÷ 4 = 7,5.",
+      "reference": "Média aritmética simples"
+    },
+    {
+      "code": "MAT-RAC-008",
+      "difficulty": "MEDIUM",
+      "statement": "Resolva: 3x − 7 = 2x + 5.",
+      "options": {
+        "A": "x = 12",
+        "B": "x = −2",
+        "C": "x = 2",
+        "D": "x = 6",
+        "E": "x = 15"
+      },
+      "correct": "A",
+      "explanation": "3x − 2x = 5 + 7 → x = 12.",
+      "reference": "Equação do 1º grau"
+    },
+    {
+      "code": "MAT-RAC-009",
+      "difficulty": "MEDIUM",
+      "statement": "A soma de dois números é 50 e a diferença entre eles é 14. O maior número é:",
+      "options": {
+        "A": "18",
+        "B": "28",
+        "C": "30",
+        "D": "32",
+        "E": "36"
+      },
+      "correct": "D",
+      "explanation": "x + y = 50 e x − y = 14 → 2x = 64 → x = 32 (e y = 18).",
+      "reference": "Sistema de equações do 1º grau"
+    },
+    {
+      "code": "MAT-RAC-010",
+      "difficulty": "EASY",
+      "statement": "Quantos minutos há em 2 horas e 45 minutos?",
+      "options": {
+        "A": "145",
+        "B": "150",
+        "C": "160",
+        "D": "165",
+        "E": "175"
+      },
+      "correct": "D",
+      "explanation": "2 × 60 + 45 = 165 minutos.",
+      "reference": "Sistema de medidas de tempo"
+    },
+    {
+      "code": "MAT-RAC-011",
+      "difficulty": "EASY",
+      "statement": "Quantos metros há em 3,2 km?",
+      "options": {
+        "A": "32",
+        "B": "320",
+        "C": "3.200",
+        "D": "32.000",
+        "E": "320.000"
+      },
+      "correct": "C",
+      "explanation": "1 km = 1.000 m → 3,2 × 1.000 = 3.200 m.",
+      "reference": "Sistema métrico: comprimento"
+    },
+    {
+      "code": "MAT-RAC-012",
+      "difficulty": "MEDIUM",
+      "statement": "Um terreno retangular mede 12 m por 25 m. Sua área é:",
+      "options": {
+        "A": "74 m²",
+        "B": "150 m²",
+        "C": "250 m²",
+        "D": "300 m²",
+        "E": "370 m²"
+      },
+      "correct": "D",
+      "explanation": "Área = 12 × 25 = 300 m².",
+      "reference": "Sistema métrico: superfície"
+    },
+    {
+      "code": "MAT-RAC-013",
+      "difficulty": "MEDIUM",
+      "statement": "Uma caixa d'água tem 2 m³. Quantos litros cabem nela?",
+      "options": {
+        "A": "20 litros",
+        "B": "200 litros",
+        "C": "2.000 litros",
+        "D": "20.000 litros",
+        "E": "200.000 litros"
+      },
+      "correct": "C",
+      "explanation": "1 m³ = 1.000 litros → 2 m³ = 2.000 litros.",
+      "reference": "Sistema métrico: capacidade e volume"
+    },
+    {
+      "code": "MAT-RAC-014",
+      "difficulty": "MEDIUM",
+      "statement": "Uma verba de R$ 1.200,00 será dividida entre duas equipes na razão 1 : 3. A equipe maior recebe:",
+      "options": {
+        "A": "R$ 300,00",
+        "B": "R$ 400,00",
+        "C": "R$ 600,00",
+        "D": "R$ 800,00",
+        "E": "R$ 900,00"
+      },
+      "correct": "E",
+      "explanation": "Total de partes: 1 + 3 = 4. Cada parte vale 1.200 ÷ 4 = 300. A maior recebe 3 × 300 = 900.",
+      "reference": "Razão e proporção"
+    },
+    {
+      "code": "MAT-RAC-015",
+      "difficulty": "EASY",
+      "statement": "O resultado de 0,25 + 1/2 é:",
+      "options": {
+        "A": "0,27",
+        "B": "0,5",
+        "C": "0,75",
+        "D": "1,25",
+        "E": "2,5"
+      },
+      "correct": "C",
+      "explanation": "1/2 = 0,5 → 0,25 + 0,5 = 0,75.",
+      "reference": "Números decimais e frações"
+    },
+    {
+      "code": "MAT-RAC-016",
+      "difficulty": "MEDIUM",
+      "statement": "Uma pessoa pagou R$ 170,00 por um produto com 15% de desconto. O preço original era:",
+      "options": {
+        "A": "R$ 185,00",
+        "B": "R$ 195,50",
+        "C": "R$ 200,00",
+        "D": "R$ 210,00",
+        "E": "R$ 225,00"
+      },
+      "correct": "C",
+      "explanation": "Pagou 85% do preço: 0,85 × P = 170 → P = 200.",
+      "reference": "Porcentagem: desconto"
+    },
+    {
+      "code": "MAT-RAC-017",
+      "difficulty": "HARD",
+      "statement": "Em uma ocorrência, 2/3 dos envolvidos eram adultos e 1/4 dos adultos tinha antecedentes. Que fração do total eram adultos com antecedentes?",
+      "options": {
+        "A": "1/12",
+        "B": "1/6",
+        "C": "1/4",
+        "D": "1/3",
+        "E": "5/12"
+      },
+      "correct": "B",
+      "explanation": "1/4 de 2/3 = 2/12 = 1/6.",
+      "reference": "Frações: fração de fração"
+    },
+    {
+      "code": "MAT-RAC-018",
+      "difficulty": "MEDIUM",
+      "statement": "Se 5 policiais preenchem 40 relatórios em 2 horas, quantos relatórios 8 policiais preenchem em 3 horas, no mesmo ritmo?",
+      "options": {
+        "A": "64",
+        "B": "72",
+        "C": "80",
+        "D": "96",
+        "E": "120"
+      },
+      "correct": "D",
+      "explanation": "Cada policial faz 40 ÷ 5 ÷ 2 = 4 relatórios por hora. 8 × 3 × 4 = 96.",
+      "reference": "Regra de três composta"
+    },
+    {
+      "code": "MAT-RAC-019",
+      "difficulty": "EASY",
+      "statement": "Qual é o valor de (−3) × (−4) + (−5)?",
+      "options": {
+        "A": "−17",
+        "B": "−7",
+        "C": "7",
+        "D": "−2",
+        "E": "17"
+      },
+      "correct": "C",
+      "explanation": "(−3) × (−4) = 12 → 12 + (−5) = 7.",
+      "reference": "Números inteiros: operações"
+    },
+    {
+      "code": "MAT-RAC-020",
+      "difficulty": "HARD",
+      "statement": "A média de idade de 4 soldados é 25 anos. Um quinto soldado entra e a média passa a 26 anos. A idade do quinto soldado é:",
+      "options": {
+        "A": "26 anos",
+        "B": "27 anos",
+        "C": "28 anos",
+        "D": "30 anos",
+        "E": "31 anos"
+      },
+      "correct": "D",
+      "explanation": "Soma inicial: 4 × 25 = 100. Soma final: 5 × 26 = 130. Idade do quinto: 130 − 100 = 30.",
+      "reference": "Média aritmética"
+    },
+    {
+      "code": "MAT-RAC-021",
+      "difficulty": "MEDIUM",
+      "statement": "Uma viatura a 60 km/h percorre quanto em 25 minutos?",
+      "options": {
+        "A": "15 km",
+        "B": "20 km",
+        "C": "25 km",
+        "D": "30 km",
+        "E": "35 km"
+      },
+      "correct": "C",
+      "explanation": "60 km/h = 1 km por minuto → 25 minutos = 25 km.",
+      "reference": "Relação entre grandezas: velocidade"
+    },
+    {
+      "code": "MAT-RAC-022",
+      "difficulty": "MEDIUM",
+      "statement": "Um gráfico mostra 120 ocorrências no mês, das quais 30 foram furtos. Em um gráfico de setores, o setor dos furtos mede:",
+      "options": {
+        "A": "30°",
+        "B": "45°",
+        "C": "60°",
+        "D": "90°",
+        "E": "120°"
+      },
+      "correct": "D",
+      "explanation": "30/120 = 1/4 do total → 1/4 de 360° = 90°.",
+      "reference": "Tabelas e gráficos"
+    },
+    {
+      "code": "MAT-RAC-023",
+      "difficulty": "HARD",
+      "statement": "Se todo policial é servidor público e alguns servidores públicos são advogados, então, necessariamente:",
+      "options": {
+        "A": "todo policial é advogado.",
+        "B": "algum policial é advogado.",
+        "C": "nenhum policial é advogado.",
+        "D": "nenhuma conclusão sobre policiais advogados pode ser garantida.",
+        "E": "todo advogado é policial."
+      },
+      "correct": "D",
+      "explanation": "As premissas não ligam os policiais ao grupo dos advogados: os advogados podem estar entre os servidores que não são policiais. Logo, nada se conclui com certeza.",
+      "reference": "Raciocínio lógico: silogismos"
+    },
+    {
+      "code": "MAT-RAC-024",
+      "difficulty": "MEDIUM",
+      "statement": "Qual é a negação de \"Todos os soldados estão presentes\"?",
+      "options": {
+        "A": "Nenhum soldado está presente.",
+        "B": "Todos os soldados estão ausentes.",
+        "C": "Alguns soldados estão presentes.",
+        "D": "Nenhum soldado está ausente.",
+        "E": "Pelo menos um soldado não está presente."
+      },
+      "correct": "E",
+      "explanation": "A negação de \"todos são\" é \"pelo menos um não é\" (algum não é).",
+      "reference": "Raciocínio lógico: negação de proposições"
+    },
+    {
+      "code": "MAT-RAC-025",
+      "difficulty": "HARD",
+      "statement": "Na sequência 2, 6, 12, 20, 30, ..., o próximo número é:",
+      "options": {
+        "A": "36",
+        "B": "40",
+        "C": "42",
+        "D": "44",
+        "E": "48"
+      },
+      "correct": "C",
+      "explanation": "As diferenças crescem de 2 em 2: +4, +6, +8, +10 → o próximo é 30 + 12 = 42.",
+      "reference": "Raciocínio lógico: sequências"
+    }
+  ]
+}

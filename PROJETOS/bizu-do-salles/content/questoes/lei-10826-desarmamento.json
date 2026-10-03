@@ -1,0 +1,129 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Legislação Penal Especial",
+  "topic": "Estatuto do Desarmamento (Lei 10.826/2003)",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "DES-ARM-001",
+      "difficulty": "MEDIUM",
+      "statement": "Possuir ou manter sob sua guarda arma de fogo de uso permitido, em desacordo com determinação legal, no interior de sua residência ou no local de trabalho (sendo o titular ou responsável pelo estabelecimento), configura, em tese, o crime de:",
+      "options": {
+        "A": "posse irregular de arma de fogo de uso permitido (art. 12).",
+        "B": "porte ilegal de arma de fogo de uso permitido (art. 14).",
+        "C": "disparo de arma de fogo (art. 15).",
+        "D": "comércio ilegal de arma de fogo (art. 17).",
+        "E": "tráfico internacional de arma de fogo (art. 18)."
+      },
+      "correct": "A",
+      "explanation": "Posse = arma dentro de casa ou no próprio local de trabalho (art. 12). Porte = arma fora desses locais, como na rua ou no carro (art. 14).",
+      "reference": "Lei 10.826/2003, arts. 12 e 14"
+    },
+    {
+      "code": "DES-ARM-002",
+      "difficulty": "EASY",
+      "statement": "Portar arma de fogo de uso permitido em via pública, sem autorização e em desacordo com determinação legal, configura:",
+      "options": {
+        "A": "porte ilegal de arma de fogo de uso permitido.",
+        "B": "posse irregular de arma de fogo.",
+        "C": "mero ilícito administrativo.",
+        "D": "contravenção de vadiagem.",
+        "E": "omissão de cautela."
+      },
+      "correct": "A",
+      "explanation": "Art. 14 do Estatuto do Desarmamento: portar, deter, adquirir, transportar etc. arma de uso permitido, fora de casa ou do local de trabalho, sem autorização.",
+      "reference": "Lei 10.826/2003, art. 14"
+    },
+    {
+      "code": "DES-ARM-003",
+      "difficulty": "MEDIUM",
+      "statement": "Deixar de observar as cautelas necessárias para impedir que menor de 18 anos ou pessoa com deficiência mental se apodere de arma de fogo que esteja sob sua posse configura:",
+      "options": {
+        "A": "omissão de cautela (art. 13).",
+        "B": "porte ilegal (art. 14).",
+        "C": "disparo de arma de fogo (art. 15).",
+        "D": "posse irregular de arma de uso restrito (art. 16).",
+        "E": "comércio ilegal (art. 17)."
+      },
+      "correct": "A",
+      "explanation": "Art. 13: omissão de cautela. É crime culposo previsto no Estatuto.",
+      "reference": "Lei 10.826/2003, art. 13"
+    },
+    {
+      "code": "DES-ARM-004",
+      "difficulty": "MEDIUM",
+      "statement": "Disparar arma de fogo ou acionar munição em lugar habitado ou em suas adjacências, em via pública ou em direção a ela, desde que a conduta não tenha como finalidade a prática de outro crime, configura:",
+      "options": {
+        "A": "porte ilegal (art. 14).",
+        "B": "disparo de arma de fogo (art. 15).",
+        "C": "omissão de cautela (art. 13).",
+        "D": "tentativa de homicídio, sempre.",
+        "E": "posse irregular (art. 12)."
+      },
+      "correct": "B",
+      "explanation": "Art. 15. Se o disparo tiver por finalidade outro crime (como homicídio), responde-se por esse outro crime.",
+      "reference": "Lei 10.826/2003, art. 15"
+    },
+    {
+      "code": "DES-ARM-005",
+      "difficulty": "HARD",
+      "statement": "Após a Lei 13.964/2019 (Pacote Anticrime), se a posse ou o porte ilegal envolver arma de fogo de uso proibido, a pena prevista no art. 16, § 2º, é de:",
+      "options": {
+        "A": "detenção, de 1 a 3 anos.",
+        "B": "reclusão, de 2 a 4 anos.",
+        "C": "reclusão, de 4 a 12 anos.",
+        "D": "reclusão, de 3 a 6 anos.",
+        "E": "detenção, de 6 meses a 2 anos."
+      },
+      "correct": "C",
+      "explanation": "O Pacote Anticrime separou a arma de uso proibido (art. 16, § 2º: reclusão de 4 a 12 anos) da arma de uso restrito (caput: reclusão de 3 a 6 anos e multa).",
+      "reference": "Lei 10.826/2003, art. 16, § 2º (redação da Lei 13.964/2019)"
+    },
+    {
+      "code": "DES-ARM-006",
+      "difficulty": "MEDIUM",
+      "statement": "Possuir, deter, portar ou transportar arma de fogo com numeração raspada, suprimida ou adulterada:",
+      "options": {
+        "A": "é mero ilícito administrativo.",
+        "B": "só é crime se a arma for de uso restrito.",
+        "C": "é crime apenas se houver disparo.",
+        "D": "sujeita o agente às mesmas penas do art. 16, ainda que a arma seja de uso permitido.",
+        "E": "é punido com advertência."
+      },
+      "correct": "D",
+      "explanation": "Art. 16, § 1º, IV: a numeração raspada atrai as penas do art. 16 mesmo para armas de calibre permitido (entendimento consolidado no STJ).",
+      "reference": "Lei 10.826/2003, art. 16, § 1º, IV"
+    },
+    {
+      "code": "DES-ARM-007",
+      "difficulty": "EASY",
+      "statement": "Como regra, a idade mínima para adquirir arma de fogo no Brasil, segundo o Estatuto do Desarmamento, é de:",
+      "options": {
+        "A": "18 anos.",
+        "B": "21 anos.",
+        "C": "25 anos.",
+        "D": "30 anos.",
+        "E": "35 anos."
+      },
+      "correct": "C",
+      "explanation": "Art. 28: é vedado ao menor de 25 anos adquirir arma de fogo, ressalvados os integrantes das instituições previstas na lei (como as polícias).",
+      "reference": "Lei 10.826/2003, art. 28"
+    },
+    {
+      "code": "DES-ARM-008",
+      "difficulty": "MEDIUM",
+      "statement": "Vender ou fornecer arma de fogo, acessório, munição ou explosivo a criança ou adolescente:",
+      "options": {
+        "A": "é apenas infração administrativa.",
+        "B": "não é crime se for arma de pressão.",
+        "C": "só é crime se a arma for de uso restrito.",
+        "D": "é crime apenas se houver lucro.",
+        "E": "é crime previsto no art. 16, § 1º, V, do Estatuto do Desarmamento."
+      },
+      "correct": "E",
+      "explanation": "Art. 16, § 1º, V. O ECA (art. 242) também trata do tema, mas para arma de fogo prevalece o Estatuto do Desarmamento.",
+      "reference": "Lei 10.826/2003, art. 16, § 1º, V"
+    }
+  ]
+}

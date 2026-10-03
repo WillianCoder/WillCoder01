@@ -1,0 +1,189 @@
+{
+  "cycle": "BASIC",
+  "subject": "Noções de Informática",
+  "topic": "Windows, Office, internet e segurança",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "INF-BAS-001",
+      "difficulty": "EASY",
+      "statement": "No Windows, o atalho de teclado para copiar um item selecionado é:",
+      "options": {
+        "A": "Ctrl + C",
+        "B": "Ctrl + V",
+        "C": "Ctrl + X",
+        "D": "Ctrl + Z",
+        "E": "Ctrl + P"
+      },
+      "correct": "A",
+      "explanation": "Ctrl + C copia; Ctrl + V cola; Ctrl + X recorta; Ctrl + Z desfaz; Ctrl + P imprime.",
+      "reference": "Noções de informática: atalhos do Windows"
+    },
+    {
+      "code": "INF-BAS-002",
+      "difficulty": "EASY",
+      "statement": "No Microsoft Excel, a fórmula que soma os valores das células A1 até A10 é:",
+      "options": {
+        "A": "=SOMA(A1;A10)",
+        "B": "=SOMA(A1:A10)",
+        "C": "=SOMAR(A1-A10)",
+        "D": "SOMA(A1:A10)",
+        "E": "=TOTAL(A1:A10)"
+      },
+      "correct": "B",
+      "explanation": "No Excel em português, a função é SOMA e o intervalo usa dois-pontos (A1:A10). O ponto e vírgula soma só as duas células citadas, e toda fórmula começa com =.",
+      "reference": "Noções de informática: planilhas"
+    },
+    {
+      "code": "INF-BAS-003",
+      "difficulty": "MEDIUM",
+      "statement": "Em um e-mail, o campo que envia uma cópia oculta, sem que os demais destinatários vejam o endereço, é:",
+      "options": {
+        "A": "Para.",
+        "B": "Cc (cópia carbono).",
+        "C": "Cco (cópia carbono oculta).",
+        "D": "Assunto.",
+        "E": "Responder a todos."
+      },
+      "correct": "C",
+      "explanation": "Os endereços em Cco não aparecem para os outros destinatários. Em Cc, todos veem quem recebeu a cópia.",
+      "reference": "Noções de informática: correio eletrônico"
+    },
+    {
+      "code": "INF-BAS-004",
+      "difficulty": "MEDIUM",
+      "statement": "A prática de enviar mensagens falsas que imitam instituições conhecidas para roubar senhas e dados chama-se:",
+      "options": {
+        "A": "backup.",
+        "B": "firewall.",
+        "C": "download.",
+        "D": "phishing.",
+        "E": "spam legítimo."
+      },
+      "correct": "D",
+      "explanation": "Phishing é a \"pescaria\" de dados por mensagens ou páginas falsas. Backup é cópia de segurança; firewall é proteção de rede; download é baixar arquivos.",
+      "reference": "Noções de informática: segurança da informação"
+    },
+    {
+      "code": "INF-BAS-005",
+      "difficulty": "EASY",
+      "statement": "No Microsoft Word, o atalho Ctrl + N aplica:",
+      "options": {
+        "A": "um novo documento.",
+        "B": "itálico ao texto selecionado.",
+        "C": "sublinhado ao texto selecionado.",
+        "D": "numeração automática.",
+        "E": "negrito ao texto selecionado."
+      },
+      "correct": "E",
+      "explanation": "No Word em português: Ctrl + N = negrito, Ctrl + I = itálico, Ctrl + S = sublinhado. Para novo documento, usa-se Ctrl + O.",
+      "reference": "Noções de informática: processador de texto"
+    },
+    {
+      "code": "INF-BAS-006",
+      "difficulty": "MEDIUM",
+      "statement": "O endereço de um site que começa com \"https\" indica que:",
+      "options": {
+        "A": "a comunicação entre o navegador e o site é criptografada.",
+        "B": "o site é do governo.",
+        "C": "o site não tem vírus.",
+        "D": "o site é gratuito.",
+        "E": "a página não usa a internet."
+      },
+      "correct": "A",
+      "explanation": "O \"s\" de https significa conexão segura: os dados trafegam criptografados. Isso não garante, sozinho, que o site seja confiável.",
+      "reference": "Noções de informática: navegação segura"
+    },
+    {
+      "code": "INF-BAS-007",
+      "difficulty": "MEDIUM",
+      "statement": "A cópia de segurança dos arquivos, guardada em outro local para recuperação em caso de perda, é chamada de:",
+      "options": {
+        "A": "cookie.",
+        "B": "backup.",
+        "C": "malware.",
+        "D": "spam.",
+        "E": "cache."
+      },
+      "correct": "B",
+      "explanation": "Backup é a cópia de segurança. Cookies e cache são dados guardados pelo navegador; malware é programa malicioso; spam é mensagem indesejada.",
+      "reference": "Noções de informática: backup"
+    },
+    {
+      "code": "INF-BAS-008",
+      "difficulty": "HARD",
+      "statement": "No Excel, se A1 contém 10 e A2 contém 4, o resultado de =SE(A1>A2;\"MAIOR\";\"MENOR\") é:",
+      "options": {
+        "A": "MENOR",
+        "B": "10",
+        "C": "MAIOR",
+        "D": "4",
+        "E": "VERDADEIRO"
+      },
+      "correct": "C",
+      "explanation": "A função SE testa a condição (10 > 4, verdadeira) e devolve o primeiro valor: \"MAIOR\".",
+      "reference": "Noções de informática: função SE"
+    },
+    {
+      "code": "INF-BAS-009",
+      "difficulty": "EASY",
+      "statement": "Para excluir um arquivo permanentemente no Windows, sem enviá-lo à Lixeira, usa-se:",
+      "options": {
+        "A": "Ctrl + Delete",
+        "B": "Alt + F4",
+        "C": "Ctrl + A",
+        "D": "Shift + Delete",
+        "E": "Tecla Windows + D"
+      },
+      "correct": "D",
+      "explanation": "Shift + Delete exclui direto, sem passar pela Lixeira. Alt + F4 fecha a janela; Ctrl + A seleciona tudo; Windows + D mostra a área de trabalho.",
+      "reference": "Noções de informática: gerenciamento de arquivos"
+    },
+    {
+      "code": "INF-BAS-010",
+      "difficulty": "MEDIUM",
+      "statement": "Programa malicioso que sequestra os dados do computador, criptografando-os e exigindo pagamento para devolvê-los:",
+      "options": {
+        "A": "antivírus",
+        "B": "navegador",
+        "C": "firewall",
+        "D": "sistema operacional",
+        "E": "ransomware"
+      },
+      "correct": "E",
+      "explanation": "Ransomware \"sequestra\" os arquivos e pede resgate (ransom). Backups atualizados e fora do computador são a melhor proteção.",
+      "reference": "Noções de informática: códigos maliciosos"
+    },
+    {
+      "code": "INF-BAS-011",
+      "difficulty": "EASY",
+      "statement": "Qual destes é um navegador de internet?",
+      "options": {
+        "A": "Google Chrome",
+        "B": "Microsoft Excel",
+        "C": "Windows Explorer de arquivos",
+        "D": "Bloco de Notas",
+        "E": "Paint"
+      },
+      "correct": "A",
+      "explanation": "Chrome, Edge e Firefox são navegadores. Excel é planilha; o Explorador de Arquivos gerencia pastas; Bloco de Notas e Paint são aplicativos de texto e desenho.",
+      "reference": "Noções de informática: internet"
+    },
+    {
+      "code": "INF-BAS-012",
+      "difficulty": "MEDIUM",
+      "statement": "Uma senha forte deve, preferencialmente:",
+      "options": {
+        "A": "ser a data de nascimento do usuário.",
+        "B": "ser longa e misturar letras, números e símbolos, sem dados pessoais.",
+        "C": "ser igual em todos os serviços.",
+        "D": "ter apenas números, para facilitar a memorização.",
+        "E": "ser anotada em papel colado no monitor."
+      },
+      "correct": "B",
+      "explanation": "Senhas longas, variadas e únicas por serviço dificultam ataques. Datas pessoais e reutilização facilitam invasões.",
+      "reference": "Noções de informática: segurança"
+    }
+  ]
+}

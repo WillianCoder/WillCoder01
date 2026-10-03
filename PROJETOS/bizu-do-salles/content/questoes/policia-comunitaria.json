@@ -1,0 +1,54 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Polícia Comunitária",
+  "topic": "Filosofia, CONSEG e solução de problemas",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "questions": [
+    {
+      "code": "POL-COM-001",
+      "difficulty": "EASY",
+      "statement": "A filosofia de polícia comunitária baseia-se, principalmente, na:",
+      "options": {
+        "A": "parceria entre polícia e comunidade para identificar e resolver problemas de segurança.",
+        "B": "atuação exclusivamente repressiva da polícia.",
+        "C": "substituição da polícia por vigilância privada.",
+        "D": "atuação policial sem contato com moradores.",
+        "E": "transferência da segurança pública aos municípios."
+      },
+      "correct": "A",
+      "explanation": "Polícia comunitária é uma filosofia e estratégia de organização baseada na parceria com a população, na prevenção e na solução de problemas locais.",
+      "reference": "Doutrina de polícia comunitária"
+    },
+    {
+      "code": "POL-COM-002",
+      "difficulty": "MEDIUM",
+      "statement": "No policiamento comunitário, os Conselhos Comunitários de Segurança (CONSEG), em São Paulo, têm como finalidade:",
+      "options": {
+        "A": "julgar crimes de menor potencial ofensivo.",
+        "B": "reunir moradores, lideranças e autoridades policiais para discutir e encaminhar soluções aos problemas de segurança local.",
+        "C": "nomear comandantes de batalhão.",
+        "D": "substituir o Ministério Público.",
+        "E": "aplicar multas de trânsito."
+      },
+      "correct": "B",
+      "explanation": "Os CONSEGs são grupos de pessoas do mesmo bairro ou município que se reúnem com as polícias para planejar, analisar e acompanhar soluções para os problemas comunitários de segurança.",
+      "reference": "Polícia comunitária: CONSEG (SP)"
+    },
+    {
+      "code": "POL-COM-003",
+      "difficulty": "MEDIUM",
+      "statement": "O método de solução de problemas conhecido pela sigla IARA envolve as etapas de:",
+      "options": {
+        "A": "Investigação, Abordagem, Revista e Apreensão.",
+        "B": "Intervenção, Ação, Repressão e Arquivamento.",
+        "C": "Identificação, Análise, Resposta e Avaliação.",
+        "D": "Inspeção, Autuação, Registro e Arquivo.",
+        "E": "Informação, Alerta, Reação e Afastamento."
+      },
+      "correct": "C",
+      "explanation": "O método IARA (versão do SARA em inglês: Scanning, Analysis, Response, Assessment) é usado no policiamento orientado para o problema.",
+      "reference": "Policiamento orientado para o problema: método IARA/SARA"
+    }
+  ]
+}
