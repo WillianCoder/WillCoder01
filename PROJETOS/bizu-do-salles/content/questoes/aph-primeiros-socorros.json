@@ -4,6 +4,11 @@
   "topic": "Primeiros socorros e emergências",
   "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "aha-rcp"
+  ],
   "questions": [
     {
       "code": "APH-SOC-001",

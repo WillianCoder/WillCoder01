@@ -22,3 +22,11 @@
 | `lei-10826-*`, `lei-11340-*`, `lei-11343-*`, `lei-13060-*`, `eca-*`, `ctb-*` | Leis especiais da rotina policial |
 | `aph-*`, `policia-comunitaria`, `direitos-humanos-*` | Primeiros socorros, polícia comunitária e direitos humanos |
 | ~~`matematica-*`~~ | Movidos para `content/fora-do-escopo/` (não constam na grade do CFSd) |
+| `historia-pmesp`, `dh-igualdade-racial`, `ctb-normas-gerais`, `direito-civil-*`, `criminalistica-*`, `medicina-legal-*`, `policia-ostensiva-*`, `gerenciamento-de-crises` | Matérias da grade oficial (0.12.0) |
+
+## Campos de rastreabilidade (obrigatórios em arquivos novos)
+- `"origem"`: `AUTORAL` (criada do zero) · `BASEADA_EM_PROVA` (nova, inspirada no tema de uma prova) · `OFICIAL` (reprodução autorizada).
+- `"confianca"`: `ALTA` (conferida no texto oficial vigente) · `MEDIA` (precisa de revisão) · `REVISAO` (não vai para o aluno).
+- `"verificadoEm"`: data da conferência da lei (AAAA-MM-DD).
+- `"fontes"`: ids de `content/fontes/fontes.json`.
+- `"subject"` precisa ser o nome de uma matéria de `src/config/grade.ts`, no ciclo certo.

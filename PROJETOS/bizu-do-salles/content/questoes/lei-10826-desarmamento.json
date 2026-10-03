@@ -4,6 +4,11 @@
   "topic": "Estatuto do Desarmamento (Lei 10.826/2003)",
   "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "lei-10826"
+  ],
   "questions": [
     {
       "code": "DES-ARM-001",

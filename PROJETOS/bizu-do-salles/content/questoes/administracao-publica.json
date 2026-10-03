@@ -4,6 +4,12 @@
   "topic": "Princípios, poderes e atos administrativos",
   "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "cf88",
+    "stf-sumulas"
+  ],
   "questions": [
     {
       "code": "ADM-PUB-001",

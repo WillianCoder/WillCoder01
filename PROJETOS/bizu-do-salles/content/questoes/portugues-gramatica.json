@@ -4,6 +4,11 @@
   "topic": "Gramática",
   "sourceLicense": "Questões originais Bizu do Salles (conteúdo próprio).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "edital-soldado-2025"
+  ],
   "questions": [
     {
       "code": "POR-GRA-001",

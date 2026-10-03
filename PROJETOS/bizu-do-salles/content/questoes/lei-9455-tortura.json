@@ -4,6 +4,11 @@
   "topic": "Lei de Tortura (Lei 9.455/1997)",
   "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir de texto legal/oficial (não protegido por direito autoral, Lei 9.610/98, art. 8º, IV).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "lei-9455"
+  ],
   "questions": [
     {
       "code": "TOR-TOR-001",

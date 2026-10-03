@@ -4,6 +4,11 @@
   "topic": "Nacionalidade e direitos políticos",
   "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir de texto legal/oficial (não protegido por direito autoral, Lei 9.610/98, art. 8º, IV).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "cf88"
+  ],
   "questions": [
     {
       "code": "CF-NDP-001",

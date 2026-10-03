@@ -174,3 +174,77 @@ Proposta de equivalência: **1º CENS = "Ciclo Básico"** e **2º CENS = "Ciclo 
    - v1.2: novas matérias.
    - v1.3: revisão e simulados inteligentes.
    - v1.4: flashcards, busca e XP.
+
+---
+
+## 9. Atualização 0.12.0 (03/10/2026)
+
+**Feito nesta etapa:**
+- **Ciclos e nomes alinhados à grade oficial:** 1º CENS = Básico, 2º CENS = Específico.
+- **Preços abaixo da concorrência:**
+  - Ciclo Básico: R$ 29,90 por 6 meses.
+  - Ciclo Específico: R$ 29,90 por 6 meses.
+  - Completo: R$ 49,90 por 12 meses.
+  - Comparação: QAP Bizurado R$ 72,90 por 6 meses e R$ 125 por 12 meses; Bizu do Souza R$ 99,90.
+- **Sistema de confiabilidade:**
+  - Cada arquivo de questões tem `origem`, `confianca`, `verificadoEm` e `fontes`.
+  - Questões com confiança **REVISAO** entram "em revisão", não vão para o aluno.
+  - A rastreabilidade fica gravada em cada questão, visível no painel.
+- **Banco de fontes:** `content/fontes/fontes.json`, com 30 fontes e categoria de uso. Um teste confere se toda fonte citada existe.
+- **+52 questões autorais** em 8 matérias que estavam vazias: História da PMESP, Igualdade Racial, Trânsito, Direito Civil, Criminalística, Medicina Legal, Polícia Ostensiva e Gerenciamento de Crises. **+4 resumos.**
+
+**Banco ativo: 347 questões** (confiança: 109 ALTA · 238 MÉDIA · 0 REVISÃO). Todas são **AUTORAIS**.
+
+> A confiança é **MÉDIA** quando a questão foi escrita a partir da lei, mas sem conferência no texto oficial neste ambiente: os sites oficiais estão bloqueados aqui. O RDPM é **ALTA** porque foi conferido no texto compilado enviado pelo Willian.
+
+**1º CENS — Ciclo Básico**
+
+| Matéria oficial | Questões |
+|---|---:|
+| Direito Administrativo Disciplinar Militar | 109 |
+| Direito Penal I | 12 |
+| Direitos Humanos e Ações Afirmativas | 14 |
+| Direito de Trânsito | 11 |
+| Direito Processual Penal | 8 |
+| Direito Constitucional | 41 |
+| Procedimentos Operacionais Padrão I | — |
+| Tiro Defensivo na Preservação da Vida — Método Giraldi I | — |
+| Defesa Pessoal I | — |
+| Direção Policial Preventiva de Viaturas I | — |
+| Legislação Policial-Militar I | — |
+| História da PMESP | 6 |
+| Escrituração Profissional I | — |
+| Comandos e Exercícios de Ordem Unida | — |
+| Tecnologia da Informação e Comunicações | 12 |
+| Comunicação e Expressão | 33 |
+| Resgate I | 6 |
+| Educação Física I | — |
+
+**2º CENS — Ciclo Específico**
+
+| Matéria oficial | Questões |
+|---|---:|
+| Direito Penal II | 37 |
+| Direito Penal Militar | 7 |
+| Direito Administrativo | 10 |
+| Direito Civil | 8 |
+| Procedimentos Operacionais Padrão II | — |
+| Tiro Defensivo na Preservação da Vida — Método Giraldi II | — |
+| Menor Potencial Ofensivo | 6 |
+| Polícia de Choque | — |
+| Defesa Pessoal II | — |
+| Doutrina de Polícia Ostensiva | 6 |
+| Doutrina de Polícia Comunitária | 3 |
+| Doutrina de Gerenciamento de Crises | 6 |
+| Prevenção, Mediação e Resolução de Conflitos I | — |
+| Direção Policial Preventiva de Viaturas II | — |
+| Escrituração Profissional II | — |
+| Inteligência Policial | — |
+| Comunicação Social | — |
+| Criminalística | 6 |
+| Psicologia | — |
+| Medicina Legal | 6 |
+| Incêndios | — |
+| Educação Física II | — |
+
+**Apostilas da ESSd:** não estão acessíveis por este ambiente, porque o site da PMESP está bloqueado na rede. Os POPs são normas **internas** da PMESP, sem texto público; por isso **POP I e II, Tiro Defensivo, Legislação Policial-Militar e Escrituração** continuam sem questões. Elas dependem das apostilas ou da liberação da rede.

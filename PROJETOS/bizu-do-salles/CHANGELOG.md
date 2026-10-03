@@ -2,6 +2,23 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.12.0] — 2026-10-03
+### Adicionado
+- **Sistema de confiabilidade:** `origem` (AUTORAL / BASEADA_EM_PROVA / OFICIAL), `confianca` (ALTA / MEDIA / REVISAO), `verificadoEm` e `fontes` em cada arquivo de questões.
+  - Confiança REVISAO não é publicada para o aluno.
+  - A rastreabilidade fica gravada em cada questão.
+- **Banco de fontes** `content/fontes/fontes.json` (30 fontes, com categoria de uso), validado por teste.
+- **+52 questões autorais** (total ativo: 347) em 8 matérias da grade que estavam vazias:
+  - História da PMESP
+  - Direitos Humanos (igualdade racial)
+  - Direito de Trânsito
+  - Direito Civil
+  - Criminalística
+  - Medicina Legal
+  - Doutrina de Polícia Ostensiva
+  - Gerenciamento de Crises
+- **+4 resumos:** História da PMESP, Crises, Polícia Ostensiva e Local de crime.
+
 ## [0.11.0] — 2026-10-03
 ### Alterado
 - **Ciclos alinhados à grade oficial:** 1º CENS = Ciclo Básico e 2º CENS = Ciclo Específico.

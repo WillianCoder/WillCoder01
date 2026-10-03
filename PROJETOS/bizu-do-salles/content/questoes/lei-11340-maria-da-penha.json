@@ -4,6 +4,12 @@
   "topic": "Lei Maria da Penha (Lei 11.340/2006)",
   "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "lei-11340",
+    "stf-sumulas"
+  ],
   "questions": [
     {
       "code": "LMP-VIO-001",

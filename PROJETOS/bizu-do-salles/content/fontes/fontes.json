@@ -1,0 +1,270 @@
+[
+  {
+    "id": "manual-aluno-essd-2019",
+    "titulo": "Manual do Aluno — CFSd (6ª ed.), Grade Curricular",
+    "orgao": "PMESP · Diretoria de Ensino e Cultura · ESSd",
+    "url": "https://www.policiamilitar.sp.gov.br/unidades/essd/dowloads-uteis/Manual_Aluno_4.pdf",
+    "categoria": "OFICIAL",
+    "uso": "Matriz curricular oficial, ciclos, cargas horárias e regras de avaliação",
+    "dataDocumento": "2019-12",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "alesp-cfsd-2021",
+    "titulo": "Documento PMESP enviado à Alesp sobre o CFSd",
+    "orgao": "PMESP / Alesp",
+    "url": "https://www.al.sp.gov.br/spl/2021/02/Acessorio/1000359770_1000420177_Acessorio.pdf",
+    "categoria": "OFICIAL",
+    "uso": "Estrutura dos módulos (confere com o Manual)",
+    "dataDocumento": "2021",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "edital-soldado-2025",
+    "titulo": "Edital do concurso de Soldado PM 2ª Classe (2025)",
+    "orgao": "PMESP / VUNESP",
+    "categoria": "OFICIAL",
+    "uso": "Separar o que é do CONCURSO de ingresso (não do curso)",
+    "dataDocumento": "2025-09",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "lc893-2001",
+    "titulo": "Lei Complementar 893/2001 — Regulamento Disciplinar da PM (texto compilado até a Lei 18.442/2026)",
+    "orgao": "Alesp",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Base das questões e resumos do RDPM (PDF enviado pelo Willian)",
+    "dataDocumento": "2026",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "cf88",
+    "titulo": "Constituição Federal de 1988",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direito Constitucional e garantias",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "cp-1940",
+    "titulo": "Código Penal (Decreto-Lei 2.848/1940)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del2848compilado.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direito Penal I",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "cpp-1941",
+    "titulo": "Código de Processo Penal (Decreto-Lei 3.689/1941)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689compilado.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Processo Penal e Criminalística (cadeia de custódia)",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "cpm-1969",
+    "titulo": "Código Penal Militar (Decreto-Lei 1.001/1969)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del1001.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direito Penal Militar",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "ctb-1997",
+    "titulo": "Código de Trânsito Brasileiro (Lei 9.503/1997)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direito de Trânsito",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "cc-2002",
+    "titulo": "Código Civil (Lei 10.406/2002)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10406compilada.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direito Civil",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "lei-10826",
+    "titulo": "Estatuto do Desarmamento (Lei 10.826/2003)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.826compilado.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direito Penal II",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "lei-11340",
+    "titulo": "Lei Maria da Penha (Lei 11.340/2006)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direito Penal II",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "lei-11343",
+    "titulo": "Lei de Drogas (Lei 11.343/2006)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11343.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direito Penal II",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "lei-13060",
+    "titulo": "Lei 13.060/2014 (instrumentos de menor potencial ofensivo)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13060.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Menor Potencial Ofensivo",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "decreto-12341-2024",
+    "titulo": "Decreto 12.341/2024 (uso da força)",
+    "orgao": "Planalto",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Menor Potencial Ofensivo",
+    "dataDocumento": "2024-12-24",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "eca-1990",
+    "titulo": "Estatuto da Criança e do Adolescente (Lei 8.069/1990)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direito Penal II",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "lei-13869",
+    "titulo": "Lei de Abuso de Autoridade (Lei 13.869/2019)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13869.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direito Penal II",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "lei-9455",
+    "titulo": "Lei de Tortura (Lei 9.455/1997)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/leis/l9455.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direito Penal II",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "lei-12288",
+    "titulo": "Estatuto da Igualdade Racial (Lei 12.288/2010)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12288.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direitos Humanos e Ações Afirmativas",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "lei-7716",
+    "titulo": "Lei 7.716/1989 (crimes de racismo), com a Lei 14.532/2023",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/leis/l7716.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direitos Humanos e Ações Afirmativas",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "dudh-1948",
+    "titulo": "Declaração Universal dos Direitos Humanos",
+    "orgao": "ONU",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direitos Humanos",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "cadh-1969",
+    "titulo": "Convenção Americana sobre Direitos Humanos (Decreto 678/1992)",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/decreto/d0678.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Direitos Humanos",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "onu-codigo-conduta-1979",
+    "titulo": "Código de Conduta para Funcionários Responsáveis pela Aplicação da Lei (Res. 34/169)",
+    "orgao": "ONU",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Uso da força e Direitos Humanos",
+    "dataDocumento": "1979",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "r200-decreto-88777",
+    "titulo": "Decreto 88.777/1983 (R-200) — conceitos de policiamento ostensivo e ordem pública",
+    "orgao": "Planalto",
+    "url": "https://www.planalto.gov.br/ccivil_03/decreto/d88777.htm",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Doutrina de Polícia Ostensiva",
+    "dataDocumento": "1983",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "dl-217-1970",
+    "titulo": "Decreto-Lei estadual 217/1970 (cria a PMESP: fusão Força Pública + Guarda Civil)",
+    "orgao": "Alesp",
+    "url": "https://www.al.sp.gov.br/repositorio/legislacao/decreto.lei/1970/decreto.lei-217-08.04.1970.html",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "História da PMESP",
+    "dataDocumento": "1970-04-08",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "historia-pmesp-publica",
+    "titulo": "Histórico institucional da PMESP (fontes públicas: PMESP, Alesp, Câmaras)",
+    "orgao": "PMESP / fontes públicas",
+    "categoria": "PUBLICO_COM_DIREITOS",
+    "uso": "Fatos históricos (fundação, patrono) — usados como fatos, sem copiar texto",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "stf-sumulas",
+    "titulo": "Súmulas e Súmulas Vinculantes do STF/STJ citadas",
+    "orgao": "STF / STJ",
+    "categoria": "DOMINIO_PUBLICO",
+    "uso": "Jurisprudência citada nas explicações",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "doutrina-crises",
+    "titulo": "Doutrina de gerenciamento de crises (FBI; manuais públicos de PMs)",
+    "orgao": "Diversos",
+    "categoria": "PUBLICO_COM_DIREITOS",
+    "uso": "Conceitos de doutrina (critérios de ação, alternativas táticas) — sem copiar texto",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "doutrina-medicina-legal",
+    "titulo": "Doutrina de Medicina Legal (conceitos clássicos de traumatologia e tanatologia)",
+    "orgao": "Diversos",
+    "categoria": "PUBLICO_COM_DIREITOS",
+    "uso": "Conceitos — sem copiar texto",
+    "acessadoEm": "2026-10-03"
+  },
+  {
+    "id": "aha-rcp",
+    "titulo": "Diretrizes de RCP e ACE",
+    "orgao": "American Heart Association",
+    "categoria": "PUBLICO_COM_DIREITOS",
+    "uso": "Parâmetros de RCP citados como fatos",
+    "acessadoEm": "2026-10-03"
+  }
+]

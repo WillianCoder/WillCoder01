@@ -9,7 +9,7 @@ import { visibleForState } from "../src/core/states";
 import { displayOrder, isNumericOptions, orderFor, originalLetter } from "../src/core/shuffle";
 import { gradeSimulation, pickRandom, secondsLeft } from "../src/core/simulation";
 import { csvToObjects, parseCsv } from "../src/core/csv";
-import { loadMaterialFiles } from "../src/content";
+import { loadFontes, loadMaterialFiles } from "../src/content";
 import { applyCoupon } from "../src/core/pricing";
 import { isSafeUrl, parseBody, splitBold } from "../src/core/material";
 import { signWebhook, verifyWebhookSignature } from "../src/core/mercadopago-signature";
@@ -79,6 +79,11 @@ describe("banco de questões", () => {
       .filter((f) => ordemNaGrade(f.cycle as "BASIC" | "SPECIFIC", f.subject as string) < 0)
       .map((f) => `${f.cycle} · ${f.subject}`);
     expect(fora).toEqual([]);
+  });
+  it("toda fonte citada existe no banco de fontes (content/fontes/fontes.json)", () => {
+    const ids = new Set(loadFontes().map((f) => f.id));
+    const faltando = loadQuestionFiles().flatMap((f) => f.fontes).filter((id) => !ids.has(id));
+    expect(faltando).toEqual([]);
   });
   it("nenhuma letra concentra mais de 35% dos gabaritos", () => {
     const qs = loadQuestionFiles().flatMap((f) => f.questions);
