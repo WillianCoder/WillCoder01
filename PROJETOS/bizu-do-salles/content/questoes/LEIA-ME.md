@@ -14,10 +14,11 @@
 |---|---|
 | `cf88-*` | Constituição Federal |
 | `lei-*`, `dudh-*` | Leis federais e Direitos Humanos |
-| `portugues-*`, `matematica-*` | Disciplinas gerais |
+| `portugues-*` | Língua Portuguesa (ver Comunicação e Expressão na grade) |
 | `sp-rdpm-01` … `08` | Regulamento Disciplinar da PM de SP (por capítulo) |
-| `portugues-vunesp-estilo`, `matematica-vunesp-estilo` | Português e Matemática no estilo das provas VUNESP |
+| `portugues-vunesp-estilo` | Português no estilo VUNESP (escopo em verificação) |
 | `informatica-nocoes`, `administracao-publica` | Noções de Informática e de Administração Pública |
 | `cp-*`, `cpp-*`, `cpm-*` | Direito Penal, Processo Penal e Penal Militar |
 | `lei-10826-*`, `lei-11340-*`, `lei-11343-*`, `lei-13060-*`, `eca-*`, `ctb-*` | Leis especiais da rotina policial |
 | `aph-*`, `policia-comunitaria`, `direitos-humanos-*` | Primeiros socorros, polícia comunitária e direitos humanos |
+| ~~`matematica-*`~~ | Movidos para `content/fora-do-escopo/` (não constam na grade do CFSd) |

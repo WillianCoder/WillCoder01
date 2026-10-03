@@ -2,6 +2,13 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.10.0] — 2026-10-03
+### Auditoria curricular (CFSd PMESP)
+- `docs/AUDITORIA_CFSD.md`: grade curricular oficial (Manual do Aluno ESSd, 6ª ed.) cruzada com o banco de questões, com lacunas e decisões pendentes.
+- **Matemática fora do escopo do CFSd** (não consta na grade). As 35 questões foram **movidas**, não apagadas, para `content/fora-do-escopo/`.
+- `npm run content:arquivar`: oculta essas questões no banco (status ARQUIVADA), registra na Auditoria e pode ser desfeito pelo painel.
+- Novo teste garante que conteúdo fora do escopo não volte ao banco ativo.
+
 ## [0.9.0] — 2026-10-03
 ### Adicionado
 - **152 questões originais novas** (total: 330) no estilo das provas: Português, Matemática e Raciocínio Lógico, Informática, Administração Pública, Direito Penal, Processo Penal, Penal Militar (CPM), Estatuto do Desarmamento, Maria da Penha, Lei de Drogas, ECA, uso da força (Lei 13.060), garantias constitucionais, Direitos Humanos, Polícia Comunitária, Trânsito (CTB) e Primeiros Socorros.

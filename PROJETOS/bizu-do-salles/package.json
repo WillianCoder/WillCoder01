@@ -24,7 +24,8 @@
     "relatorio": "node scripts/gerar-relatorio.mjs",
     "postinstall": "prisma generate",
     "comandos": "node scripts/gerar-comandos.mjs",
-    "aprendizado": "node scripts/gerar-aprendizado.mjs"
+    "aprendizado": "node scripts/gerar-aprendizado.mjs",
+    "content:arquivar": "tsx scripts/arquivar-fora-do-escopo.ts"
   },
   "author": "",
   "license": "UNLICENSED",

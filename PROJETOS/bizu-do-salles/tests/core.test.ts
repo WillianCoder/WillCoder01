@@ -1,3 +1,4 @@
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { activationWindow, canAccess, daysRemaining } from "../src/core/access";
 import { checkSession, newSessionToken, hashToken, sessionsToRevoke } from "../src/core/session";
@@ -65,6 +66,12 @@ describe("banco de questões", () => {
   it("todos os arquivos são válidos e têm fonte/licença", () => {
     const files = loadQuestionFiles();
     expect(files.flatMap((f) => f.questions).length).toBeGreaterThan(0);
+  });
+  it("questões fora do escopo são válidas e não voltam para o banco ativo", () => {
+    const ativos = new Set(loadQuestionFiles().flatMap((f) => f.questions.map((q) => q.code)));
+    const fora = loadQuestionFiles(join(__dirname, "..", "content", "fora-do-escopo")).flatMap((f) => f.questions.map((q) => q.code));
+    expect(fora.length).toBeGreaterThan(0);
+    expect(fora.filter((c) => ativos.has(c))).toEqual([]);
   });
   it("nenhuma letra concentra mais de 35% dos gabaritos", () => {
     const qs = loadQuestionFiles().flatMap((f) => f.questions);
