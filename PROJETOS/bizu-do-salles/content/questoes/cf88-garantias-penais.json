@@ -4,6 +4,11 @@
   "topic": "Garantias penais e remédios constitucionais",
   "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "cf88"
+  ],
   "questions": [
     {
       "code": "CON-GAR-001",

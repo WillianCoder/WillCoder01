@@ -1,9 +1,16 @@
 {
   "cycle": "SPECIFIC",
-  "subject": "Uso da Força e Direitos Humanos",
+  "subject": "Menor Potencial Ofensivo",
   "topic": "Uso diferenciado da força (Lei 13.060/2014)",
   "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "lei-13060",
+    "decreto-12341-2024",
+    "onu-codigo-conduta-1979"
+  ],
   "questions": [
     {
       "code": "USO-FOR-001",

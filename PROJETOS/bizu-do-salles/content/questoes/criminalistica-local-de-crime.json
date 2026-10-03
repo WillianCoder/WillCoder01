@@ -1,0 +1,104 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Criminalística",
+  "topic": "Local de crime e cadeia de custódia",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "cpp-1941"
+  ],
+  "questions": [
+    {
+      "code": "CRI-LOC-001",
+      "difficulty": "EASY",
+      "statement": "Logo que tiver conhecimento da prática da infração penal, a autoridade policial deverá dirigir-se ao local e:",
+      "options": {
+        "A": "recolher todos os objetos para a delegacia.",
+        "B": "providenciar para que não se alterem o estado e a conservação das coisas até a chegada dos peritos criminais.",
+        "C": "liberar o local para limpeza imediata.",
+        "D": "permitir a entrada da imprensa para registro.",
+        "E": "remover o corpo da vítima antes da perícia."
+      },
+      "correct": "B",
+      "explanation": "Art. 6º, I, do CPP. O primeiro policial no local é decisivo para preservar os vestígios.",
+      "reference": "CPP, art. 6º, I"
+    },
+    {
+      "code": "CRI-LOC-002",
+      "difficulty": "MEDIUM",
+      "statement": "Quando a infração deixar vestígios, o exame de corpo de delito:",
+      "options": {
+        "A": "é dispensável se houver confissão.",
+        "B": "só é feito a pedido da vítima.",
+        "C": "será indispensável, direto ou indireto, não podendo supri-lo a confissão do acusado.",
+        "D": "pode ser substituído pelo boletim de ocorrência.",
+        "E": "é facultativo em crimes contra o patrimônio."
+      },
+      "correct": "C",
+      "explanation": "Art. 158 do CPP. Por isso, preservar o local é tão importante: sem perícia, a prova do crime pode se perder.",
+      "reference": "CPP, art. 158"
+    },
+    {
+      "code": "CRI-LOC-003",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o CPP, cadeia de custódia é:",
+      "options": {
+        "A": "a cela onde o preso aguarda a audiência de custódia.",
+        "B": "a lista de testemunhas do inquérito.",
+        "C": "o registro de entrada e saída de viaturas do batalhão.",
+        "D": "o conjunto de procedimentos para manter e documentar a história cronológica do vestígio, rastreando sua posse e manuseio desde o reconhecimento até o descarte.",
+        "E": "a sequência de recursos do processo penal."
+      },
+      "correct": "D",
+      "explanation": "Art. 158-A do CPP, incluído pela Lei 13.964/2019 (Pacote Anticrime).",
+      "reference": "CPP, art. 158-A"
+    },
+    {
+      "code": "CRI-LOC-004",
+      "difficulty": "HARD",
+      "statement": "Entre as etapas da cadeia de custódia previstas no art. 158-B do CPP, a etapa \"isolamento\" consiste em:",
+      "options": {
+        "A": "descrever detalhadamente o vestígio com fotografias e croquis.",
+        "B": "embalar cada vestígio de forma individualizada.",
+        "C": "levar o vestígio ao laboratório.",
+        "D": "destruir o vestígio após o processo.",
+        "E": "evitar que se altere o estado das coisas, isolando e preservando o ambiente relacionado aos vestígios e ao local de crime."
+      },
+      "correct": "E",
+      "explanation": "Art. 158-B, II, do CPP. As etapas são: reconhecimento, isolamento, fixação, coleta, acondicionamento, transporte, recebimento, processamento, armazenamento e descarte.",
+      "reference": "CPP, art. 158-B"
+    },
+    {
+      "code": "CRI-LOC-005",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o CPP, o agente público que reconhecer um elemento como de potencial interesse para a prova pericial:",
+      "options": {
+        "A": "fica responsável por sua preservação.",
+        "B": "deve descartá-lo se não houver perito no local.",
+        "C": "deve entregá-lo à vítima.",
+        "D": "pode levá-lo para casa até o fim do turno.",
+        "E": "não tem nenhuma responsabilidade sobre ele."
+      },
+      "correct": "A",
+      "explanation": "Art. 158-A, § 2º, do CPP.",
+      "reference": "CPP, art. 158-A, § 2º"
+    },
+    {
+      "code": "CRI-LOC-006",
+      "difficulty": "HARD",
+      "statement": "Segundo o CPP, é proibida a entrada em locais isolados e a remoção de quaisquer vestígios de locais de crime antes da liberação por parte do perito responsável, sendo tipificada como:",
+      "options": {
+        "A": "desobediência, sempre.",
+        "B": "fraude processual a sua realização.",
+        "C": "mera falta disciplinar.",
+        "D": "contravenção penal de vadiagem.",
+        "E": "conduta permitida ao primeiro policial que chegar."
+      },
+      "correct": "B",
+      "explanation": "Art. 158-C, § 2º, do CPP.",
+      "reference": "CPP, art. 158-C, § 2º"
+    }
+  ]
+}

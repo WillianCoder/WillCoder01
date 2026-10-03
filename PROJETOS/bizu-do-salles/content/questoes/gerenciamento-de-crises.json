@@ -1,0 +1,104 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Doutrina de Gerenciamento de Crises",
+  "topic": "Conceitos, critérios de ação e alternativas táticas",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "doutrina-crises"
+  ],
+  "questions": [
+    {
+      "code": "GCR-DOU-001",
+      "difficulty": "MEDIUM",
+      "statement": "Na doutrina de gerenciamento de crises, os objetivos fundamentais são, nesta ordem de prioridade:",
+      "options": {
+        "A": "prender os criminosos e preservar o patrimônio.",
+        "B": "encerrar a crise rapidamente e evitar a imprensa.",
+        "C": "aplicar a lei e depois preservar vidas.",
+        "D": "proteger o patrimônio público e privado.",
+        "E": "preservar vidas e aplicar a lei."
+      },
+      "correct": "E",
+      "explanation": "A preservação de vidas (reféns, público, policiais e até dos causadores) vem antes da aplicação da lei.",
+      "reference": "Doutrina de gerenciamento de crises"
+    },
+    {
+      "code": "GCR-DOU-002",
+      "difficulty": "MEDIUM",
+      "statement": "Os critérios de ação usados para decidir uma medida durante uma crise são:",
+      "options": {
+        "A": "necessidade, validade do risco e aceitabilidade (legal, moral e ética).",
+        "B": "rapidez, força e surpresa.",
+        "C": "hierarquia, disciplina e obediência.",
+        "D": "custo, prazo e visibilidade na mídia.",
+        "E": "legalidade, publicidade e eficiência."
+      },
+      "correct": "A",
+      "explanation": "Toda ação deve ser necessária, ter risco que compense e ser aceitável legal, moral e eticamente.",
+      "reference": "Doutrina de gerenciamento de crises"
+    },
+    {
+      "code": "GCR-DOU-003",
+      "difficulty": "EASY",
+      "statement": "São alternativas táticas no gerenciamento de crises com reféns:",
+      "options": {
+        "A": "negociação, perseguição, abordagem e revista.",
+        "B": "negociação, técnicas não letais, tiro de comprometimento e invasão tática.",
+        "C": "isolamento, contenção, flagrante e condução.",
+        "D": "patrulhamento, permanência, diligência e escolta.",
+        "E": "advertência, repreensão, detenção e prisão."
+      },
+      "correct": "B",
+      "explanation": "A negociação é considerada a principal alternativa (\"rainha das alternativas\"); as demais são usadas quando a negociação não basta.",
+      "reference": "Doutrina de gerenciamento de crises"
+    },
+    {
+      "code": "GCR-DOU-004",
+      "difficulty": "HARD",
+      "statement": "Ao chegar a uma ocorrência com reféns, as primeiras ações esperadas do policial interventor (antes do grupo especializado) são:",
+      "options": {
+        "A": "invadir imediatamente o local para resgatar os reféns.",
+        "B": "atender a todas as exigências para ganhar tempo.",
+        "C": "conter a crise, isolar o ponto crítico e estabelecer contato sem fazer concessões.",
+        "D": "liberar a entrada da imprensa e de familiares.",
+        "E": "negociar a troca de reféns por policiais."
+      },
+      "correct": "C",
+      "explanation": "O primeiro interventor deve conter (impedir que a crise se espalhe), isolar o local e iniciar o contato, sem negociar concessões, até a chegada das equipes especializadas.",
+      "reference": "Doutrina de gerenciamento de crises"
+    },
+    {
+      "code": "GCR-DOU-005",
+      "difficulty": "MEDIUM",
+      "statement": "Os perímetros táticos de uma crise servem para:",
+      "options": {
+        "A": "impedir qualquer comunicação com o causador da crise.",
+        "B": "delimitar a área de patrulhamento rotineiro.",
+        "C": "definir a competência do juiz.",
+        "D": "controlar o acesso ao local, garantindo a segurança da população, das autoridades, da imprensa, das vítimas e das equipes.",
+        "E": "marcar a área de estacionamento das viaturas."
+      },
+      "correct": "D",
+      "explanation": "Em geral, há um perímetro interno (só equipes táticas e negociação) e um externo (apoio e controle de público); algumas doutrinas também usam um intermediário.",
+      "reference": "Doutrina de gerenciamento de crises"
+    },
+    {
+      "code": "GCR-DOU-006",
+      "difficulty": "HARD",
+      "statement": "Segundo a doutrina, uma das características essenciais de uma crise é:",
+      "options": {
+        "A": "a previsibilidade total dos acontecimentos.",
+        "B": "a ausência de ameaça à vida.",
+        "C": "a possibilidade de resolvê-la com procedimentos de rotina.",
+        "D": "a dispensa de considerações legais especiais.",
+        "E": "a imprevisibilidade e a compressão de tempo (urgência)."
+      },
+      "correct": "E",
+      "explanation": "Características: imprevisibilidade, compressão de tempo, ameaça de vida, necessidade de postura organizacional não rotineira, planejamento analítico especial e considerações legais especiais.",
+      "reference": "Doutrina de gerenciamento de crises"
+    }
+  ]
+}

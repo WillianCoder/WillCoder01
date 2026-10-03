@@ -1,0 +1,134 @@
+{
+  "cycle": "BASIC",
+  "subject": "Direito de Trânsito",
+  "topic": "Normas gerais, infrações e habilitação",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "ctb-1997"
+  ],
+  "questions": [
+    {
+      "code": "CTB-NOR-001",
+      "difficulty": "EASY",
+      "statement": "Nas vias urbanas, onde não houver sinalização regulamentadora, a velocidade máxima numa via arterial é de:",
+      "options": {
+        "A": "30 km/h",
+        "B": "40 km/h",
+        "C": "60 km/h",
+        "D": "80 km/h",
+        "E": "110 km/h"
+      },
+      "correct": "C",
+      "explanation": "Art. 61, § 1º, I, do CTB: 80 km/h nas vias de trânsito rápido, 60 km/h nas arteriais, 40 km/h nas coletoras e 30 km/h nas locais.",
+      "reference": "CTB, art. 61, § 1º, I"
+    },
+    {
+      "code": "CTB-NOR-002",
+      "difficulty": "MEDIUM",
+      "statement": "Considera-se trânsito, segundo o CTB:",
+      "options": {
+        "A": "apenas a circulação de veículos automotores em rodovias.",
+        "B": "somente o deslocamento de pedestres em calçadas.",
+        "C": "a utilização das vias por pessoas, veículos e animais, isolados ou em grupos, conduzidos ou não, para fins de circulação, parada, estacionamento e operação de carga ou descarga.",
+        "D": "exclusivamente o transporte remunerado de passageiros.",
+        "E": "o conjunto de placas e semáforos de uma cidade."
+      },
+      "correct": "C",
+      "explanation": "Art. 1º, § 1º, do CTB.",
+      "reference": "CTB, art. 1º, § 1º"
+    },
+    {
+      "code": "CTB-NOR-003",
+      "difficulty": "MEDIUM",
+      "statement": "Dirigir veículo sem possuir Carteira Nacional de Habilitação, Permissão para Dirigir ou Autorização para Conduzir Ciclomotor é infração:",
+      "options": {
+        "A": "leve.",
+        "B": "média.",
+        "C": "grave.",
+        "D": "gravíssima.",
+        "E": "que não gera penalidade, apenas orientação."
+      },
+      "correct": "D",
+      "explanation": "Art. 162, I, do CTB: infração gravíssima, com multa (três vezes) e retenção do veículo até a apresentação de condutor habilitado. Se gerar perigo de dano, também é crime (art. 309).",
+      "reference": "CTB, art. 162, I"
+    },
+    {
+      "code": "CTB-NOR-004",
+      "difficulty": "HARD",
+      "statement": "Pelo CTB, com a redação da Lei 14.071/2020, a suspensão do direito de dirigir ocorre quando o condutor atinge, em 12 meses:",
+      "options": {
+        "A": "20 pontos em qualquer caso.",
+        "B": "40 pontos em qualquer caso.",
+        "C": "10 pontos, se tiver uma infração gravíssima.",
+        "D": "60 pontos, para motoristas profissionais e não profissionais.",
+        "E": "20 pontos, se tiver duas ou mais infrações gravíssimas; 30, se tiver uma; 40, se não tiver nenhuma."
+      },
+      "correct": "E",
+      "explanation": "Art. 261, I, do CTB. Para motoristas profissionais, há regra própria de 40 pontos.",
+      "reference": "CTB, art. 261, I"
+    },
+    {
+      "code": "CTB-NOR-005",
+      "difficulty": "MEDIUM",
+      "statement": "A categoria de habilitação que permite conduzir veículo motorizado não abrangido pela categoria A, com peso bruto total de até 3.500 kg e lotação de até 8 lugares, excluído o motorista, é a:",
+      "options": {
+        "A": "categoria B.",
+        "B": "categoria A.",
+        "C": "categoria C.",
+        "D": "categoria D.",
+        "E": "categoria E."
+      },
+      "correct": "A",
+      "explanation": "Art. 143, II, do CTB. A: duas ou três rodas; C: carga acima de 3.500 kg; D: passageiros com mais de 8 lugares; E: combinações com unidade acoplada acima dos limites legais.",
+      "reference": "CTB, art. 143"
+    },
+    {
+      "code": "CTB-NOR-006",
+      "difficulty": "MEDIUM",
+      "statement": "Dirigir sob a influência de álcool ou de qualquer outra substância psicoativa que determine dependência é infração:",
+      "options": {
+        "A": "leve, com advertência por escrito.",
+        "B": "gravíssima, com multa multiplicada por dez e suspensão do direito de dirigir por 12 meses.",
+        "C": "média, com multa simples.",
+        "D": "grave, sem suspensão.",
+        "E": "gravíssima, apenas com retenção do veículo."
+      },
+      "correct": "B",
+      "explanation": "Art. 165 do CTB. Com capacidade psicomotora alterada, também configura o crime do art. 306.",
+      "reference": "CTB, art. 165"
+    },
+    {
+      "code": "CTB-NOR-007",
+      "difficulty": "HARD",
+      "statement": "Segundo o CTB, compete às Polícias Militares executar a fiscalização de trânsito:",
+      "options": {
+        "A": "de forma exclusiva, em todas as vias do país.",
+        "B": "somente nas rodovias federais.",
+        "C": "quando e conforme convênio firmado, como agente do órgão ou entidade executivos de trânsito ou executivos rodoviários, concomitantemente com os demais agentes credenciados.",
+        "D": "apenas quando houver acidente com vítima.",
+        "E": "sem qualquer necessidade de convênio, como órgão executivo de trânsito."
+      },
+      "correct": "C",
+      "explanation": "Art. 23, III, do CTB.",
+      "reference": "CTB, art. 23, III"
+    },
+    {
+      "code": "CTB-NOR-008",
+      "difficulty": "MEDIUM",
+      "statement": "O homicídio culposo praticado na direção de veículo automotor (art. 302 do CTB), em sua forma simples, tem pena de:",
+      "options": {
+        "A": "reclusão de 12 a 30 anos.",
+        "B": "detenção de 6 meses a 1 ano.",
+        "C": "apenas multa.",
+        "D": "detenção de 2 a 4 anos e suspensão ou proibição de obter a permissão ou a habilitação para dirigir.",
+        "E": "reclusão de 1 a 2 anos, sem suspensão da habilitação."
+      },
+      "correct": "D",
+      "explanation": "Art. 302, caput, do CTB. Se o agente estiver sob influência de álcool ou outra substância psicoativa, a pena é de reclusão de 5 a 8 anos (§ 3º).",
+      "reference": "CTB, art. 302"
+    }
+  ]
+}

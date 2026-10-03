@@ -1,0 +1,105 @@
+{
+  "cycle": "BASIC",
+  "subject": "História da PMESP",
+  "topic": "Origem e evolução da corporação",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "historia-pmesp-publica",
+    "dl-217-1970"
+  ],
+  "questions": [
+    {
+      "code": "HIS-PMESP-001",
+      "difficulty": "EASY",
+      "statement": "A Polícia Militar do Estado de São Paulo tem como data de fundação:",
+      "options": {
+        "A": "15 de dezembro de 1831.",
+        "B": "7 de setembro de 1822.",
+        "C": "9 de julho de 1932.",
+        "D": "8 de abril de 1970.",
+        "E": "15 de novembro de 1889."
+      },
+      "correct": "A",
+      "explanation": "A corporação nasceu em 15/12/1831, com a criação do Corpo de Guardas Municipais Permanentes. 9 de julho de 1932 é o início da Revolução Constitucionalista; 8 de abril de 1970 é a data do Decreto-Lei 217, que deu o nome atual.",
+      "reference": "Histórico institucional da PMESP"
+    },
+    {
+      "code": "HIS-PMESP-002",
+      "difficulty": "EASY",
+      "statement": "O patrono da Polícia Militar do Estado de São Paulo é:",
+      "options": {
+        "A": "o Duque de Caxias.",
+        "B": "o Brigadeiro Rafael Tobias de Aguiar.",
+        "C": "Tiradentes.",
+        "D": "o Marechal Deodoro da Fonseca.",
+        "E": "Dom Pedro II."
+      },
+      "correct": "B",
+      "explanation": "Rafael Tobias de Aguiar, presidente da Província de São Paulo, criou o Corpo de Guardas Municipais Permanentes em 1831 e é o patrono da corporação. Caxias é patrono do Exército; Tiradentes, das Polícias Militares em âmbito nacional.",
+      "reference": "Histórico institucional da PMESP"
+    },
+    {
+      "code": "HIS-PMESP-003",
+      "difficulty": "MEDIUM",
+      "statement": "A corporação criada em 1831, origem da atual PMESP, chamava-se:",
+      "options": {
+        "A": "Guarda Civil Metropolitana.",
+        "B": "Brigada Militar.",
+        "C": "Corpo de Guardas Municipais Permanentes.",
+        "D": "Polícia Federal de São Paulo.",
+        "E": "Corpo de Fuzileiros Paulistas."
+      },
+      "correct": "C",
+      "explanation": "O nome original era Corpo de Guardas Municipais Permanentes. A instituição teve vários nomes ao longo da história, entre eles Força Pública, até chegar à denominação atual.",
+      "reference": "Histórico institucional da PMESP"
+    },
+    {
+      "code": "HIS-PMESP-004",
+      "difficulty": "MEDIUM",
+      "statement": "A atual Polícia Militar do Estado de São Paulo foi constituída, em 1970, pela fusão de:",
+      "options": {
+        "A": "Exército e Marinha.",
+        "B": "Polícia Civil e Polícia Federal.",
+        "C": "Guarda Nacional e Polícia Rodoviária Federal.",
+        "D": "Força Pública e Guarda Civil.",
+        "E": "Corpo de Bombeiros e Defesa Civil."
+      },
+      "correct": "D",
+      "explanation": "O Decreto-Lei estadual 217, de 8 de abril de 1970, integrou os integrantes da Força Pública e da Guarda Civil de São Paulo na Polícia Militar do Estado de São Paulo.",
+      "reference": "Decreto-Lei estadual 217/1970"
+    },
+    {
+      "code": "HIS-PMESP-005",
+      "difficulty": "HARD",
+      "statement": "Na Revolução Constitucionalista de 1932, a então Força Pública de São Paulo:",
+      "options": {
+        "A": "permaneceu neutra durante todo o conflito.",
+        "B": "combateu ao lado do Governo Federal contra os paulistas.",
+        "C": "foi extinta antes do início do movimento.",
+        "D": "atuou apenas na defesa do litoral contra invasão estrangeira.",
+        "E": "combateu ao lado das forças paulistas contra o Governo Provisório de Getúlio Vargas."
+      },
+      "correct": "E",
+      "explanation": "Em 1932, a Força Pública lutou ao lado dos constitucionalistas paulistas. O movimento começou em 9 de julho, hoje feriado estadual.",
+      "reference": "Histórico institucional da PMESP"
+    },
+    {
+      "code": "HIS-PMESP-006",
+      "difficulty": "MEDIUM",
+      "statement": "Na criação, em 1831, o Corpo de Guardas Municipais Permanentes era composto por:",
+      "options": {
+        "A": "100 homens a pé e 30 a cavalo.",
+        "B": "1.000 homens a pé e 300 a cavalo.",
+        "C": "30 homens a pé e 100 a cavalo.",
+        "D": "50 homens a pé e 50 a cavalo.",
+        "E": "apenas 12 oficiais."
+      },
+      "correct": "A",
+      "explanation": "Segundo o histórico institucional, o efetivo inicial era de 100 guardas a pé e 30 a cavalo.",
+      "reference": "Histórico institucional da PMESP"
+    }
+  ]
+}

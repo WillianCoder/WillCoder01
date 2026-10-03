@@ -4,6 +4,11 @@
   "topic": "Administração pública",
   "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto da CF/88 (lei — não protegida por direito autoral, Lei 9.610/98, art. 8º, IV).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "cf88"
+  ],
   "questions": [
     {
       "code": "CF-AP-001",

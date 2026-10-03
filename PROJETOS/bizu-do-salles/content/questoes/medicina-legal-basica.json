@@ -1,0 +1,105 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Medicina Legal",
+  "topic": "Traumatologia e tanatologia",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "doutrina-medicina-legal",
+    "cp-1940"
+  ],
+  "questions": [
+    {
+      "code": "MED-LEG-001",
+      "difficulty": "MEDIUM",
+      "statement": "Um projétil de arma de fogo produz, em regra, lesão classificada como:",
+      "options": {
+        "A": "incisa.",
+        "B": "punctória.",
+        "C": "perfurocontusa.",
+        "D": "cortocontusa.",
+        "E": "perfuroincisa."
+      },
+      "correct": "C",
+      "explanation": "Projéteis perfuram e contundem (perfurocontundentes), gerando lesão perfurocontusa. Faca gera lesão perfuroincisa; navalha, incisa; agulha, punctória; machado, cortocontusa.",
+      "reference": "Medicina Legal: traumatologia (instrumentos e lesões)"
+    },
+    {
+      "code": "MED-LEG-002",
+      "difficulty": "EASY",
+      "statement": "Uma faca, ao penetrar o corpo pela ponta e cortar pelo gume, produz lesão:",
+      "options": {
+        "A": "contusa.",
+        "B": "incisa.",
+        "C": "perfurocontusa.",
+        "D": "perfuroincisa.",
+        "E": "cortocontusa."
+      },
+      "correct": "D",
+      "explanation": "A faca é instrumento perfurocortante: atua por ponta e gume, produzindo lesão perfuroincisa.",
+      "reference": "Medicina Legal: traumatologia"
+    },
+    {
+      "code": "MED-LEG-003",
+      "difficulty": "MEDIUM",
+      "statement": "Instrumentos como machado e foice, que agem pelo peso e por um gume, são classificados como:",
+      "options": {
+        "A": "perfurantes.",
+        "B": "cortantes puros.",
+        "C": "contundentes puros.",
+        "D": "perfurocontundentes.",
+        "E": "cortocontundentes."
+      },
+      "correct": "E",
+      "explanation": "Instrumentos cortocontundentes (machado, foice, facão pesado) produzem lesões cortocontusas.",
+      "reference": "Medicina Legal: traumatologia"
+    },
+    {
+      "code": "MED-LEG-004",
+      "difficulty": "MEDIUM",
+      "statement": "Os livores cadavéricos (hipóstases) são manchas que surgem:",
+      "options": {
+        "A": "nas partes mais baixas do corpo, pela ação da gravidade sobre o sangue após a morte.",
+        "B": "apenas no rosto, logo após a morte.",
+        "C": "somente em vítimas de envenenamento.",
+        "D": "nas partes mais altas do corpo.",
+        "E": "exclusivamente em feridas abertas."
+      },
+      "correct": "A",
+      "explanation": "Com a parada da circulação, o sangue se acumula por gravidade nas regiões de declive. A posição dos livores ajuda a perícia a saber se o corpo foi movido.",
+      "reference": "Medicina Legal: tanatologia"
+    },
+    {
+      "code": "MED-LEG-005",
+      "difficulty": "HARD",
+      "statement": "Segundo a Lei de Nysten, a rigidez cadavérica costuma se instalar:",
+      "options": {
+        "A": "no sentido dos pés para a cabeça.",
+        "B": "no sentido crânio-caudal, começando pela mandíbula e pela nuca.",
+        "C": "ao mesmo tempo em todo o corpo, logo no primeiro minuto.",
+        "D": "somente nos membros inferiores.",
+        "E": "apenas após 7 dias da morte."
+      },
+      "correct": "B",
+      "explanation": "A rigidez cadavérica segue, em geral, a ordem descendente: mandíbula, nuca, tronco, membros superiores e inferiores.",
+      "reference": "Medicina Legal: tanatologia"
+    },
+    {
+      "code": "MED-LEG-006",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o Código Penal, a lesão corporal que resulta em incapacidade para as ocupações habituais por mais de 30 dias é classificada como:",
+      "options": {
+        "A": "lesão corporal leve.",
+        "B": "lesão corporal gravíssima.",
+        "C": "lesão corporal grave.",
+        "D": "vias de fato.",
+        "E": "lesão culposa, sempre."
+      },
+      "correct": "C",
+      "explanation": "Art. 129, § 1º, I, do CP (lesão grave). São gravíssimas, entre outras, as que resultam incapacidade permanente para o trabalho ou perda de membro (§ 2º).",
+      "reference": "Código Penal, art. 129, §§ 1º e 2º"
+    }
+  ]
+}

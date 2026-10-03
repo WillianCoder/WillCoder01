@@ -1,9 +1,16 @@
 {
   "cycle": "BASIC",
-  "subject": "Direitos Humanos",
+  "subject": "Direitos Humanos e Ações Afirmativas",
   "topic": "Tratados e garantias internacionais",
   "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "cadh-1969",
+    "cf88",
+    "stf-sumulas"
+  ],
   "questions": [
     {
       "code": "DIR-HUM-001",

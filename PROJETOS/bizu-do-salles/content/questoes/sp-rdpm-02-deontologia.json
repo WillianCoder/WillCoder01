@@ -1,10 +1,16 @@
 {
-  "cycle": "SPECIFIC",
-  "subject": "Regulamento Disciplinar da PM (RDPM)",
+  "cycle": "BASIC",
+  "subject": "Direito Administrativo Disciplinar Militar",
   "topic": "Deontologia: valores e deveres",
   "state": "SP",
   "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto oficial compilado da LC 893/2001 (Alesp, última atualização: Lei 18.442/2026). Texto legal não protegido por direito autoral (Lei 9.610/98, art. 8º, IV).",
   "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "ALTA",
+  "fontes": [
+    "lc893-2001"
+  ],
+  "verificadoEm": "2026-09-29",
   "questions": [
     {
       "code": "RDPM-DEO-001",

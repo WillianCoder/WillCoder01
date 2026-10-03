@@ -1,0 +1,108 @@
+{
+  "cycle": "BASIC",
+  "subject": "Direitos Humanos e Ações Afirmativas",
+  "topic": "Igualdade racial e ações afirmativas",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "lei-12288",
+    "lei-7716",
+    "cf88",
+    "cpp-1941",
+    "stf-sumulas"
+  ],
+  "questions": [
+    {
+      "code": "DHR-RAC-001",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o Estatuto da Igualdade Racial, \"população negra\" é o conjunto de pessoas que:",
+      "options": {
+        "A": "comprovam ascendência africana por documento oficial.",
+        "B": "se autodeclaram pretas e pardas, conforme o quesito cor ou raça usado pelo IBGE.",
+        "C": "são classificadas por um agente público pela aparência.",
+        "D": "residem em comunidades quilombolas, exclusivamente.",
+        "E": "nasceram no continente africano."
+      },
+      "correct": "B",
+      "explanation": "Art. 1º, parágrafo único, IV, da Lei 12.288/2010: o critério é a autodeclaração, nos termos do IBGE.",
+      "reference": "Lei 12.288/2010, art. 1º, parágrafo único, IV"
+    },
+    {
+      "code": "DHR-RAC-002",
+      "difficulty": "MEDIUM",
+      "statement": "Para o Estatuto da Igualdade Racial, ações afirmativas são:",
+      "options": {
+        "A": "punições aplicadas a quem pratica racismo.",
+        "B": "benefícios fiscais concedidos a empresas estrangeiras.",
+        "C": "programas e medidas especiais adotados pelo Estado e pela iniciativa privada para a correção das desigualdades raciais e a promoção da igualdade de oportunidades.",
+        "D": "campanhas exclusivamente educativas em escolas públicas.",
+        "E": "normas que proíbem qualquer tratamento diferenciado."
+      },
+      "correct": "C",
+      "explanation": "Art. 1º, parágrafo único, VI, da Lei 12.288/2010.",
+      "reference": "Lei 12.288/2010, art. 1º, parágrafo único, VI"
+    },
+    {
+      "code": "DHR-RAC-003",
+      "difficulty": "HARD",
+      "statement": "Após a Lei 14.532/2023, injuriar alguém, ofendendo-lhe a dignidade ou o decoro, em razão de raça, cor, etnia ou procedência nacional, configura:",
+      "options": {
+        "A": "injúria simples do Código Penal, com pena de detenção de 1 a 6 meses.",
+        "B": "mera contravenção penal.",
+        "C": "infração administrativa, sem natureza penal.",
+        "D": "injúria racial, prevista na Lei 7.716/1989 (art. 2º-A), com pena de reclusão de 2 a 5 anos e multa.",
+        "E": "difamação, prevista no art. 139 do Código Penal."
+      },
+      "correct": "D",
+      "explanation": "A Lei 14.532/2023 levou a injúria racial para a Lei do Racismo (art. 2º-A da Lei 7.716/1989), com reclusão de 2 a 5 anos e multa, equiparando-a ao racismo.",
+      "reference": "Lei 7.716/1989, art. 2º-A (redação da Lei 14.532/2023)"
+    },
+    {
+      "code": "DHR-RAC-004",
+      "difficulty": "EASY",
+      "statement": "Segundo a Constituição Federal, a prática do racismo constitui crime:",
+      "options": {
+        "A": "afiançável, com pena de multa.",
+        "B": "prescritível em 2 anos.",
+        "C": "de ação penal privada.",
+        "D": "punível apenas com advertência.",
+        "E": "inafiançável e imprescritível, sujeito à pena de reclusão."
+      },
+      "correct": "E",
+      "explanation": "Art. 5º, XLII, da CF/88.",
+      "reference": "CF/88, art. 5º, XLII"
+    },
+    {
+      "code": "DHR-RAC-005",
+      "difficulty": "HARD",
+      "statement": "Segundo a Lei 7.716/1989 (incluído pela Lei 14.532/2023), os crimes de injúria racial e de racismo têm a pena aumentada quando praticados:",
+      "options": {
+        "A": "por funcionário público, no exercício de suas funções ou a pretexto de exercê-las.",
+        "B": "por pessoa maior de 60 anos.",
+        "C": "em local privado sem testemunhas.",
+        "D": "contra pessoa que não seja brasileira.",
+        "E": "em dias de feriado."
+      },
+      "correct": "A",
+      "explanation": "O art. 20-B da Lei 7.716/1989 prevê aumento de 1/3 até a metade quando o crime é praticado por funcionário público, no exercício das funções ou a pretexto de exercê-las. Isso reforça a responsabilidade do policial.",
+      "reference": "Lei 7.716/1989, art. 20-B"
+    },
+    {
+      "code": "DHR-RAC-006",
+      "difficulty": "MEDIUM",
+      "statement": "Na atuação policial, a escolha de quem será abordado com base apenas na cor da pele ou na aparência:",
+      "options": {
+        "A": "é permitida quando o policial tiver experiência.",
+        "B": "é discriminatória e ilegal, pois a busca pessoal exige fundada suspeita baseada em elementos objetivos.",
+        "C": "é obrigatória em áreas de alta criminalidade.",
+        "D": "é permitida no período noturno.",
+        "E": "depende apenas de autorização verbal do superior."
+      },
+      "correct": "B",
+      "explanation": "O art. 244 do CPP exige fundada suspeita. O STF (HC 208.240) e o STJ entendem que raça, aparência ou impressões subjetivas não justificam a abordagem: a doutrina é de \"atitude suspeita\", não de \"pessoa suspeita\".",
+      "reference": "CPP, art. 244; CF/88, art. 5º, caput e XLI"
+    }
+  ]
+}

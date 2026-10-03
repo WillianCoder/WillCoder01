@@ -52,12 +52,12 @@ test("admin cria cupom; aluno paga com desconto; webhook assinado libera o acess
   await expect(aluno.getByText("Pedido registrado:")).toBeVisible(); // o simulador devolve para esta página
 
   const pref = await (await aluno.request.get(`${MOCK}/__preferences/last`)).json();
-  expect(pref.items[0].unit_price).toBe(54); // R$ 60,00 − 10% = R$ 54,00, calculado no servidor
+  expect(pref.items[0].unit_price).toBe(44.91); // R$ 49,90 − 10% = R$ 44,91, calculado no servidor
   const subscriptionId = pref.external_reference;
 
   // Assinatura errada: recusado, nada é liberado.
   const pid = String(Date.now());
-  await aluno.request.post(`${MOCK}/__payments`, { data: { id: pid, status: "approved", external_reference: subscriptionId, transaction_amount: 54, currency_id: "BRL" } });
+  await aluno.request.post(`${MOCK}/__payments`, { data: { id: pid, status: "approved", external_reference: subscriptionId, transaction_amount: 44.91, currency_id: "BRL" } });
   expect((await webhook(aluno, pid, { secretOk: false })).status()).toBe(401);
   await aluno.goto("/app");
   await expect(aluno.getByText(/dias restantes/)).toHaveCount(0);

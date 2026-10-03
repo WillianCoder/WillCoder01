@@ -1,0 +1,105 @@
+{
+  "cycle": "SPECIFIC",
+  "subject": "Doutrina de Polícia Ostensiva",
+  "topic": "Conceitos e variáveis do policiamento ostensivo",
+  "sourceLicense": "Questões originais Bizu do Salles, elaboradas a partir do texto legal/conteúdo programático (estilo das provas oficiais; nenhuma questão copiada).",
+  "author": "Bizu do Salles",
+  "origem": "AUTORAL",
+  "confianca": "MEDIA",
+  "fontes": [
+    "cf88",
+    "r200-decreto-88777"
+  ],
+  "questions": [
+    {
+      "code": "POS-DOU-001",
+      "difficulty": "EASY",
+      "statement": "Segundo a Constituição Federal, às polícias militares cabem:",
+      "options": {
+        "A": "a apuração de infrações penais e as funções de polícia judiciária.",
+        "B": "o patrulhamento ostensivo das rodovias federais.",
+        "C": "a defesa da Pátria e a garantia dos poderes constitucionais.",
+        "D": "a polícia ostensiva e a preservação da ordem pública.",
+        "E": "a execução das penas privativas de liberdade."
+      },
+      "correct": "D",
+      "explanation": "Art. 144, § 5º, da CF/88. A polícia judiciária é da Polícia Civil (§ 4º); as rodovias federais, da PRF (§ 2º); a defesa da Pátria, das Forças Armadas (art. 142).",
+      "reference": "CF/88, art. 144, § 5º"
+    },
+    {
+      "code": "POS-DOU-002",
+      "difficulty": "MEDIUM",
+      "statement": "Segundo o R-200 (Decreto 88.777/1983), o policiamento ostensivo é a ação policial exclusiva das Polícias Militares em que o policial ou a fração de tropa:",
+      "options": {
+        "A": "atua sempre à paisana, para não ser reconhecido.",
+        "B": "atua somente após o crime, investigando a autoria.",
+        "C": "depende de mandado judicial para agir.",
+        "D": "atua apenas em grandes eventos.",
+        "E": "é identificado de relance, pela farda, pelo equipamento ou pela viatura, com o objetivo de manter a ordem pública."
+      },
+      "correct": "E",
+      "explanation": "Definição do R-200: a ostensividade (ser visto) é o que diferencia esse policiamento e produz o efeito preventivo.",
+      "reference": "Decreto 88.777/1983 (R-200), art. 2º"
+    },
+    {
+      "code": "POS-DOU-003",
+      "difficulty": "MEDIUM",
+      "statement": "São modalidades do policiamento ostensivo:",
+      "options": {
+        "A": "patrulhamento, permanência, diligência e escolta.",
+        "B": "a pé, motorizado, montado e aéreo.",
+        "C": "ordinário, extraordinário e especial.",
+        "D": "urbano e rural.",
+        "E": "turno e jornada."
+      },
+      "correct": "A",
+      "explanation": "Modalidade é a forma de execução. \"A pé, motorizado, montado e aéreo\" são processos; \"ordinário, extraordinário e especial\" são circunstâncias; \"urbano e rural\" é o lugar; \"turno e jornada\" é a duração.",
+      "reference": "Doutrina de policiamento ostensivo"
+    },
+    {
+      "code": "POS-DOU-004",
+      "difficulty": "MEDIUM",
+      "statement": "No policiamento ostensivo, \"a pé\", \"motorizado\", \"montado\", \"aéreo\" e \"em embarcação\" são exemplos de:",
+      "options": {
+        "A": "modalidades.",
+        "B": "processos.",
+        "C": "circunstâncias.",
+        "D": "tipos.",
+        "E": "formas."
+      },
+      "correct": "B",
+      "explanation": "O processo é o meio de locomoção empregado pelo policiamento.",
+      "reference": "Doutrina de policiamento ostensivo"
+    },
+    {
+      "code": "POS-DOU-005",
+      "difficulty": "HARD",
+      "statement": "Quanto à circunstância, o policiamento realizado para um evento previsto e programado, de grande porte e fora da rotina (como um grande show), é classificado como:",
+      "options": {
+        "A": "ordinário, sempre.",
+        "B": "rural.",
+        "C": "especial ou extraordinário, conforme a doutrina adotada, por fugir do policiamento ordinário (rotineiro).",
+        "D": "de permanência, obrigatoriamente.",
+        "E": "aéreo."
+      },
+      "correct": "C",
+      "explanation": "Circunstâncias: ordinário (rotineiro), extraordinário (eventual, não previsto na rotina) e especial (com características específicas). Confira a nomenclatura exata na apostila da sua turma.",
+      "reference": "Doutrina de policiamento ostensivo"
+    },
+    {
+      "code": "POS-DOU-006",
+      "difficulty": "MEDIUM",
+      "statement": "O conceito de \"manutenção da ordem pública\" no R-200 envolve atuações predominantemente ostensivas para:",
+      "options": {
+        "A": "investigar crimes já ocorridos e indiciar suspeitos.",
+        "B": "julgar infrações de menor potencial ofensivo.",
+        "C": "aplicar sanções disciplinares a militares.",
+        "D": "prevenir, dissuadir, coibir ou reprimir eventos que violem a ordem pública.",
+        "E": "administrar o sistema prisional."
+      },
+      "correct": "D",
+      "explanation": "Definição do R-200: é o exercício dinâmico do poder de polícia no campo da segurança pública.",
+      "reference": "Decreto 88.777/1983 (R-200), art. 2º"
+    }
+  ]
+}

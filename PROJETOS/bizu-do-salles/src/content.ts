@@ -23,6 +23,14 @@ export const questionFile = z.object({
   state: z.string().regex(/^[A-Z]{2}$/).optional(),
   sourceLicense: z.string().min(10),
   author: z.string(),
+  /** AUTORAL = criada do zero pelo Bizu · BASEADA_EM_PROVA = nova, inspirada no tema de uma prova · OFICIAL = reprodução autorizada. */
+  origem: z.enum(["AUTORAL", "BASEADA_EM_PROVA", "OFICIAL"]).default("AUTORAL"),
+  /** ALTA = conferida no texto oficial vigente · MEDIA = confiável, mas pede revisão · REVISAO = dúvida (não vai para o aluno). */
+  confianca: z.enum(["ALTA", "MEDIA", "REVISAO"]).default("MEDIA"),
+  /** Data da última conferência da legislação (AAAA-MM-DD). */
+  verificadoEm: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
+  /** Identificadores do banco de fontes (content/fontes/fontes.json). */
+  fontes: z.array(z.string()).default([]),
   questions: z.array(question).min(1),
 });
 
@@ -54,6 +62,23 @@ export const materialFile = z.object({
   body: z.string().default(""),
 });
 export type MaterialFile = z.infer<typeof materialFile>;
+
+export const fonte = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  titulo: z.string(),
+  orgao: z.string(),
+  url: z.string().url().optional(),
+  categoria: z.enum(["OFICIAL", "LICENCA_ABERTA", "DOMINIO_PUBLICO", "PUBLICO_COM_DIREITOS", "COMERCIAL"]),
+  uso: z.string(),
+  dataDocumento: z.string().optional(),
+  acessadoEm: z.string(),
+});
+export type Fonte = z.infer<typeof fonte>;
+
+/** Banco de fontes: content/fontes/fontes.json. */
+export function loadFontes(file = join(__dirname, "..", "content", "fontes", "fontes.json")): Fonte[] {
+  return z.array(fonte).parse(JSON.parse(readFileSync(file, "utf8")));
+}
 
 /** Lê e valida content/materiais/*.json. */
 export function loadMaterialFiles(dir = join(__dirname, "..", "content", "materiais")): MaterialFile[] {

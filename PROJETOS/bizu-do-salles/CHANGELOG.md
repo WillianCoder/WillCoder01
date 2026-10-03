@@ -2,6 +2,48 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.12.0] — 2026-10-03
+### Adicionado
+- **Sistema de confiabilidade:** `origem` (AUTORAL / BASEADA_EM_PROVA / OFICIAL), `confianca` (ALTA / MEDIA / REVISAO), `verificadoEm` e `fontes` em cada arquivo de questões.
+  - Confiança REVISAO não é publicada para o aluno.
+  - A rastreabilidade fica gravada em cada questão.
+- **Banco de fontes** `content/fontes/fontes.json` (30 fontes, com categoria de uso), validado por teste.
+- **+52 questões autorais** (total ativo: 347) em 8 matérias da grade que estavam vazias:
+  - História da PMESP
+  - Direitos Humanos (igualdade racial)
+  - Direito de Trânsito
+  - Direito Civil
+  - Criminalística
+  - Medicina Legal
+  - Doutrina de Polícia Ostensiva
+  - Gerenciamento de Crises
+- **+4 resumos:** História da PMESP, Crises, Polícia Ostensiva e Local de crime.
+
+## [0.11.0] — 2026-10-03
+### Alterado
+- **Ciclos alinhados à grade oficial:** 1º CENS = Ciclo Básico e 2º CENS = Ciclo Específico.
+  - As disciplinas agora têm os nomes oficiais das matérias (`src/config/grade.ts`).
+  - O RDPM passou a ser "Direito Administrativo Disciplinar Militar" e foi para o Ciclo Básico.
+- `npm run content:realinhar`: aplica a reorganização no banco existente.
+  - Move questões e resumos (inclusive os criados pelo painel) e ordena as matérias como na grade.
+  - Desativa, sem apagar, as matérias antigas que ficaram vazias.
+  - Registra cada mudança na Auditoria.
+- **Preços menores que os da concorrência** (`src/config/planos.ts`):
+  - Ciclo Básico: R$ 29,90 por 6 meses.
+  - Ciclo Específico: R$ 29,90 por 6 meses.
+  - Completo: R$ 49,90 por 12 meses.
+  - `npm run planos:atualizar` aplica os novos valores no banco. Assinaturas já pagas não mudam.
+- Importação por planilha reativa a matéria se ela estava desativada.
+### Testes
+- Toda disciplina do conteúdo precisa existir na grade oficial, no ciclo certo.
+
+## [0.10.0] — 2026-10-03
+### Auditoria curricular (CFSd PMESP)
+- `docs/AUDITORIA_CFSD.md`: grade curricular oficial (Manual do Aluno ESSd, 6ª ed.) cruzada com o banco de questões, com lacunas e decisões pendentes.
+- **Matemática fora do escopo do CFSd** (não consta na grade). As 35 questões foram **movidas**, não apagadas, para `content/fora-do-escopo/`.
+- `npm run content:arquivar`: oculta essas questões no banco (status ARQUIVADA), registra na Auditoria e pode ser desfeito pelo painel.
+- Novo teste garante que conteúdo fora do escopo não volte ao banco ativo.
+
 ## [0.9.0] — 2026-10-03
 ### Adicionado
 - **152 questões originais novas** (total: 330) no estilo das provas: Português, Matemática e Raciocínio Lógico, Informática, Administração Pública, Direito Penal, Processo Penal, Penal Militar (CPM), Estatuto do Desarmamento, Maria da Penha, Lei de Drogas, ECA, uso da força (Lei 13.060), garantias constitucionais, Direitos Humanos, Polícia Comunitária, Trânsito (CTB) e Primeiros Socorros.

@@ -67,7 +67,8 @@ export async function importQuestions(form: FormData) {
     const cycle = cycles[CICLO[r.ciclo]];
     const subject = await db.subject.upsert({
       where: { cycleId_slug: { cycleId: cycle.id, slug: slug(r.disciplina) } },
-      update: {}, create: { cycleId: cycle.id, name: r.disciplina, slug: slug(r.disciplina) },
+      // reativa a matéria se ela tinha sido desativada (ex.: nome antigo após o realinhamento da grade)
+      update: { active: true }, create: { cycleId: cycle.id, name: r.disciplina, slug: slug(r.disciplina) },
     });
     const topic = r.assunto ? await db.topic.upsert({
       where: { subjectId_slug: { subjectId: subject.id, slug: slug(r.assunto) } },
