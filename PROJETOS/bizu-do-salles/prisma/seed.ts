@@ -9,17 +9,15 @@ import { PrismaClient } from "@prisma/client";
 import { loadMaterialFiles, loadQuestionFiles } from "../src/content";
 import { UFS } from "../src/core/states";
 import { REGRAS } from "../src/config/regras";
+import { ordemNaGrade } from "../src/config/grade";
+import { PLANOS } from "../src/config/planos";
 
 const db = new PrismaClient();
 const slug = (s: string) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
 async function main() {
-  // ✏️ EDITÁVEL: planos da PRIMEIRA carga (depois, altere pelo painel → Planos e preços)
-  const plans = [
-    { slug: "basico", name: "Ciclo Básico", description: "Acesso completo ao Ciclo Básico.", priceCents: 3500, durationDays: 90, cycles: ["BASIC"] },
-    { slug: "especifico", name: "Ciclo Específico", description: "Acesso completo ao Ciclo Específico.", priceCents: 3500, durationDays: 90, cycles: ["SPECIFIC"] },
-    { slug: "basico-especifico", name: "Básico + Específico", description: "Plano trimestral com os dois ciclos.", priceCents: 6000, durationDays: 90, cycles: ["BASIC", "SPECIFIC"] },
-  ] as const;
+  // ✏️ Planos e preços: src/config/planos.ts (depois da primeira carga, use o painel ou `npm run planos:atualizar`)
+  const plans = PLANOS;
   for (const p of plans) {
     // update vazio: o seed nunca sobrescreve preços alterados pelo administrador.
     await db.plan.upsert({ where: { slug: p.slug }, update: {}, create: { ...p, cycles: [...p.cycles], benefits: [] } });
@@ -48,7 +46,7 @@ async function main() {
     const subject = await db.subject.upsert({
       where: { cycleId_slug: { cycleId: cycle.id, slug: slug(file.subject) } },
       update: {},
-      create: { cycleId: cycle.id, name: file.subject, slug: slug(file.subject) },
+      create: { cycleId: cycle.id, name: file.subject, slug: slug(file.subject), order: ordemNaGrade(file.cycle, file.subject) },
     });
     const topic = await db.topic.upsert({
       where: { subjectId_slug: { subjectId: subject.id, slug: slug(file.topic) } },

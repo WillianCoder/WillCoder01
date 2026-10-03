@@ -1,4 +1,5 @@
 import { join } from "node:path";
+import { ordemNaGrade } from "../src/config/grade";
 import { describe, expect, it } from "vitest";
 import { activationWindow, canAccess, daysRemaining } from "../src/core/access";
 import { checkSession, newSessionToken, hashToken, sessionsToRevoke } from "../src/core/session";
@@ -72,6 +73,12 @@ describe("banco de questões", () => {
     const fora = loadQuestionFiles(join(__dirname, "..", "content", "fora-do-escopo")).flatMap((f) => f.questions.map((q) => q.code));
     expect(fora.length).toBeGreaterThan(0);
     expect(fora.filter((c) => ativos.has(c))).toEqual([]);
+  });
+  it("toda disciplina do conteúdo é uma matéria da grade oficial, no ciclo certo", () => {
+    const fora = [...loadQuestionFiles(), ...loadMaterialFiles().filter((m) => m.cycle && m.subject)]
+      .filter((f) => ordemNaGrade(f.cycle as "BASIC" | "SPECIFIC", f.subject as string) < 0)
+      .map((f) => `${f.cycle} · ${f.subject}`);
+    expect(fora).toEqual([]);
   });
   it("nenhuma letra concentra mais de 35% dos gabaritos", () => {
     const qs = loadQuestionFiles().flatMap((f) => f.questions);

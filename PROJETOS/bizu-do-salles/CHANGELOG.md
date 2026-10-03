@@ -2,6 +2,24 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.11.0] — 2026-10-03
+### Alterado
+- **Ciclos alinhados à grade oficial:** 1º CENS = Ciclo Básico e 2º CENS = Ciclo Específico.
+  - As disciplinas agora têm os nomes oficiais das matérias (`src/config/grade.ts`).
+  - O RDPM passou a ser "Direito Administrativo Disciplinar Militar" e foi para o Ciclo Básico.
+- `npm run content:realinhar`: aplica a reorganização no banco existente.
+  - Move questões e resumos (inclusive os criados pelo painel) e ordena as matérias como na grade.
+  - Desativa, sem apagar, as matérias antigas que ficaram vazias.
+  - Registra cada mudança na Auditoria.
+- **Preços menores que os da concorrência** (`src/config/planos.ts`):
+  - Ciclo Básico: R$ 29,90 por 6 meses.
+  - Ciclo Específico: R$ 29,90 por 6 meses.
+  - Completo: R$ 49,90 por 12 meses.
+  - `npm run planos:atualizar` aplica os novos valores no banco. Assinaturas já pagas não mudam.
+- Importação por planilha reativa a matéria se ela estava desativada.
+### Testes
+- Toda disciplina do conteúdo precisa existir na grade oficial, no ciclo certo.
+
 ## [0.10.0] — 2026-10-03
 ### Auditoria curricular (CFSd PMESP)
 - `docs/AUDITORIA_CFSD.md`: grade curricular oficial (Manual do Aluno ESSd, 6ª ed.) cruzada com o banco de questões, com lacunas e decisões pendentes.
