@@ -1,0 +1,27 @@
+{
+  "titulo": "Arte Militar 011",
+  "tipo": "projeto",
+  "categoria": "Web",
+  "status": "desenvolvimento",
+  "tecnologias": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "data": "2026-10-04",
+  "atualizado": "2026-10-04",
+  "versao": "1.1.0",
+  "nivel": "intermediario",
+  "resumo": "Loja virtual de artigos militares com menu lateral, catálogo por categorias, loja física no mapa e pedidos finalizados pelo WhatsApp Business.",
+  "destaque": false,
+  "portfolio": {
+    "problema": "",
+    "desenvolvido": "",
+    "participacao": "",
+    "resultado": ""
+  },
+  "links": {
+    "demo": "https://williancoder.github.io/WillCoder01/PROJETOS/arte-militar-011/site/",
+    "repositorio": ""
+  }
+}

@@ -1,0 +1,148 @@
+const test = require("node:test");
+const assert = require("node:assert/strict");
+const { carregarSite } = require("./carregar");
+
+// objetos vindos do site são de outro "contexto" do Node: comparamos pelo conteúdo
+const igual = (a, b, msg) => assert.equal(JSON.stringify(a), JSON.stringify(b), msg);
+
+const site = carregarSite();
+const PD = site.PEDIDO;
+const LOJA = site.LOJA;
+const PRODUTOS = site.PRODUTOS;
+
+test("formata preço em reais", () => {
+  assert.equal(PD.formatarPreco(0), "R$ 0,00");
+  assert.equal(PD.formatarPreco(89.9), "R$ 89,90");
+  assert.equal(PD.formatarPreco(1234.5), "R$ 1.234,50");
+  assert.equal(PD.formatarPreco(1234567.891), "R$ 1.234.567,89");
+});
+
+test("normaliza acentos para a busca", () => {
+  assert.equal(PD.normalizar("  Calçados Táticos "), "calcados taticos");
+});
+
+test("mesmo produto com mesmas variações soma a quantidade", () => {
+  let c = [];
+  c = PD.adicionarItem(c, { id: "a", variacoes: { Tamanho: "42", Cor: "Preto" }, qtd: 1 });
+  c = PD.adicionarItem(c, { id: "a", variacoes: { Cor: "Preto", Tamanho: "42" }, qtd: 2 });
+  c = PD.adicionarItem(c, { id: "a", variacoes: { Tamanho: "43", Cor: "Preto" }, qtd: 1 });
+  assert.equal(c.length, 2);
+  assert.equal(c[0].qtd, 3);
+});
+
+test("quantidade tem limite e zero remove o item", () => {
+  let c = PD.adicionarItem([], { id: "a", variacoes: {}, qtd: 500 });
+  assert.equal(c[0].qtd, PD.QTD_MAX);
+  const chave = PD.chaveItem("a", {});
+  igual(PD.alterarQuantidade(c, chave, 0), []);
+  igual(PD.removerItem(c, chave), []);
+});
+
+test("carrinho ignora produto que saiu do catálogo e usa o preço atual", () => {
+  const p = PRODUTOS[0];
+  const linhas = PD.linhasDoCarrinho([{ id: p.id, variacoes: {}, qtd: 2 }, { id: "nao-existe", variacoes: {}, qtd: 1 }], PRODUTOS);
+  assert.equal(linhas.length, 1);
+  assert.equal(linhas[0].total, Math.round(p.preco * 2 * 100) / 100);
+});
+
+test("número do pedido segue o padrão PREFIXO-AAMMDD-NNNN", () => {
+  assert.equal(PD.gerarNumero("AM011", new Date(2026, 9, 4), 0.0547), "AM011-261004-0547");
+});
+
+test("desconto Pix: tela e mensagem batem centavo a centavo", () => {
+  const t = PD.calcularTotais(469.7, "Pix", 5);
+  assert.equal(t.descontoPix, 23.49);
+  assert.equal(t.total, 446.21);
+  assert.equal(PD.calcularTotais(469.7, "Cartão de crédito", 5).total, 469.7);
+});
+
+const dadosValidos = () => ({
+  itens: [{ id: "calca-tatica-ripstop", variacoes: { Tamanho: "42", Cor: "Caqui" }, qtd: 2 }],
+  cliente: { nome: "Fulano de Tal", telefone: "(11) 98765-4321", email: "" },
+  entrega: "envio",
+  pagamento: "Pix",
+  endereco: { cep: "01001-000", rua: "Praça da Sé", numero: "100", complemento: "", bairro: "Sé", cidade: "São Paulo", uf: "SP" },
+  observacoes: "Entregar à tarde",
+  numero: "AM011-261004-0001",
+  data: new Date(2026, 9, 4, 14, 30)
+});
+
+test("validação aponta campos obrigatórios", () => {
+  const e = PD.validarPedido({ itens: [], cliente: {}, endereco: {}, entrega: "envio" }, LOJA);
+  for (const campo of ["nome", "telefone", "itens", "pagamento", "cep", "rua", "numero", "bairro", "cidade", "uf"]) {
+    assert.ok(e[campo], `deveria acusar "${campo}"`);
+  }
+  igual(PD.validarPedido(dadosValidos(), LOJA), {});
+});
+
+test("retirada na loja não exige endereço", () => {
+  const d = dadosValidos();
+  d.entrega = "retirada";
+  d.endereco = {};
+  igual(PD.validarPedido(d, LOJA), {});
+  assert.equal(PD.montarPedido(d, PRODUTOS, LOJA).endereco, null);
+});
+
+test("mensagem do WhatsApp: resumo, produtos detalhados, valores, cliente e entrega", () => {
+  const d = dadosValidos();
+  d.itens.push({ id: "lanterna-tatica-led", variacoes: {}, qtd: 1 });
+  d.urlBase = "https://loja.exemplo/";
+  const pedido = PD.montarPedido(d, PRODUTOS, LOJA);
+  const msg = PD.mensagemPedido(pedido, LOJA);
+  // cabeçalho e resumo
+  assert.match(msg, /^\*PEDIDO AM011-261004-0001\*\nArte Militar 011 \| 04\/10\/2026 14:30/);
+  assert.match(msg, /2 produtos diferentes \| 3 unidades/);
+  assert.match(msg, /Entrega: Envio pelos Correios/);
+  // cada produto: código, categoria, variações, conta, preço "de", resumo e link
+  assert.match(msg, /\*1\. Calça Tática Rip-Stop\*\nCód\. VES-\d{3} \| Vestuário > Calças Táticas\nTamanho: 42 \| Cor: Caqui\n2 un\. x R\$ 169,90 = \*R\$ 339,80\* \(de R\$ 199,90 cada\)/);
+  assert.match(msg, /https:\/\/loja\.exemplo\/#\/produto\/calca-tatica-ripstop/);
+  assert.match(msg, /\*2\. Lanterna Tática LED Recarregável\*/);
+  // valores
+  assert.match(msg, /Produtos \(3 unidades\): R\$ 469,70/);
+  assert.match(msg, /Economia nas promoções: R\$ 90,00/);
+  assert.match(msg, /Desconto Pix \(5%\): -R\$ 23,49/);
+  assert.match(msg, /\*TOTAL DOS PRODUTOS: R\$ 446,21\* \+ frete/);
+  // cliente e entrega
+  assert.match(msg, /WhatsApp: \(11\) 98765-4321/);
+  assert.match(msg, /Praça da Sé, 100\nSé - São Paulo\/SP\nCEP 01001-000/);
+  assert.match(msg, /\*OBSERVAÇÕES\*\nEntregar à tarde/);
+  assert.equal(pedido.produtosDiferentes, 2);
+  assert.equal(pedido.quantidade, 3);
+});
+
+test("retirada na loja: total sem frete", () => {
+  const d = dadosValidos();
+  d.entrega = "retirada";
+  const msg = PD.mensagemPedido(PD.montarPedido(d, PRODUTOS, LOJA), LOJA);
+  assert.match(msg, /\*TOTAL: R\$ 322,81\*\n/);
+  assert.match(msg, /Frete: sem custo \(retirada na loja\)/);
+  assert.doesNotMatch(msg, /CEP /);
+});
+
+test("pedido grande vira mensagem compacta e continua com todos os itens", () => {
+  const d = dadosValidos();
+  d.urlBase = "https://loja.exemplo/";
+  d.itens = PRODUTOS.map((p) => ({ id: p.id, variacoes: {}, qtd: 1 }));
+  const pedido = PD.montarPedido(d, PRODUTOS, LOJA);
+  const url = PD.FINALIZADORES.whatsapp(pedido, LOJA).url;
+  const texto = decodeURIComponent(url.split("?text=")[1]);
+  assert.ok(url.length < 20000, "link muito grande: " + url.length);
+  assert.match(texto, new RegExp(PRODUTOS.length + " produtos diferentes"));
+  for (const p of PRODUTOS) assert.ok(texto.includes(p.codigo), "faltou " + p.codigo);
+  assert.doesNotMatch(texto, /https:\/\/loja\.exemplo/, "versão compacta não leva links");
+});
+
+test("mensagem de um produto só (Comprar agora) traz código e conta", () => {
+  const p = PRODUTOS.find((x) => x.id === "coturno-tatico-cano-alto");
+  const msg = PD.mensagemProduto(p, { Tamanho: "42", Cor: "Preto" }, 2, LOJA, "https://loja.exemplo/#/produto/" + p.id);
+  assert.match(msg, /Cód\. CAL-001 \| Calçados > Coturnos/);
+  assert.match(msg, /2 un\. x R\$ 289,90 = \*R\$ 579,80\*/);
+});
+
+test("link do WhatsApp usa só os números e codifica o texto", () => {
+  const url = PD.linkWhatsApp("+55 (11) 90000-0000", "Olá & tchau");
+  assert.equal(url, "https://wa.me/5511900000000?text=Ol%C3%A1%20%26%20tchau");
+  const fin = PD.FINALIZADORES.whatsapp(PD.montarPedido(dadosValidos(), PRODUTOS, LOJA), LOJA);
+  assert.equal(fin.tipo, "redirecionar");
+  assert.ok(fin.url.startsWith("https://wa.me/" + LOJA.contato.whatsapp + "?text="));
+});

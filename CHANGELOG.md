@@ -3,6 +3,8 @@
 Todas as mudanças relevantes deste repositório. Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
 ## [Não lançado]
+### Adicionado
+- Projeto `PROJETOS/arte-militar-011/`: loja virtual de artigos militares com menu lateral, pedidos pelo WhatsApp e loja física no mapa; testes no CI.
 
 ## [1.0.0] - 2026-09-29
 ### Adicionado

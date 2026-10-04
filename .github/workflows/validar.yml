@@ -31,6 +31,19 @@ jobs:
       - name: Sintaxe dos scripts do Raspberry
         run: for f in PROJETOS/boneco-arvore-ia/instalar/raspberry/*.sh; do bash -n "$f"; done
 
+  arte-militar-011:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Testes do catálogo e do pedido
+        working-directory: PROJETOS/arte-militar-011
+        run: node --test tests/*.test.js
+      - name: Sintaxe dos scripts do site
+        run: for f in PROJETOS/arte-militar-011/site/js/*.js; do node --check "$f"; done
+
   bizu-do-salles:
     runs-on: ubuntu-latest
     defaults:

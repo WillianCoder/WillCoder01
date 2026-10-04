@@ -1,0 +1,11 @@
+{
+  "name": "Arte Militar 011",
+  "short_name": "AM 011",
+  "description": "Artigos militares, táticos e de aventura. Pedidos pelo WhatsApp.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d0f0b",
+  "theme_color": "#0d0f0b",
+  "lang": "pt-BR",
+  "icons": [{ "src": "img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
