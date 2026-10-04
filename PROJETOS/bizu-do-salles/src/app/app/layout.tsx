@@ -1,10 +1,11 @@
 /**
  * 📄 O QUE É: MENU DA ÁREA DO ALUNO (barra lateral no computador, barra inferior no celular).
- * ✏️ EDITÁVEL: Lista NAV: [endereço, ícone, nome]. MOBILE: quais itens aparecem no celular (máx. 5).
+ * ✏️ EDITÁVEL: Lista NAV: [endereço, ícone, nome]. MOBILE: itens fixos da barra do celular (máx. 4) + botão ☰ Mais.
  * ⚠️ CUIDADO: Não mude os endereços (primeiro valor) sem criar a página correspondente.
  * 📘 Guia completo: docs/RELATORIO.pdf (capítulo 'Guia de edição')
  */
 import Link from "next/link";
+import { MoreMenu } from "@/components/MoreMenu";
 import { requireUser } from "@/lib/auth";
 import { logout } from "../auth-actions";
 
@@ -23,8 +24,9 @@ const NAV = [
   ["/app/planos", "💳", "Meu plano"],
   ["/app/configuracoes", "⚙️", "Configurações"],
 ] as const;
-// ✏️ EDITÁVEL: itens da barra inferior no celular (máximo 5)
-const MOBILE = [NAV[0], NAV[1], NAV[2], NAV[9], NAV[11]];
+// ✏️ EDITÁVEL: itens fixos da barra inferior no celular (máximo 4; o 5º botão é "☰ Mais", com o resto do menu)
+const MOBILE = [NAV[0], NAV[1], NAV[2], NAV[9]];
+const MAIS = NAV.filter((n) => !(MOBILE as readonly (typeof NAV)[number][]).includes(n));
 
 export default async function StudentLayout({ children }: { children: React.ReactNode }) {
   const user = await requireUser();
@@ -42,6 +44,9 @@ export default async function StudentLayout({ children }: { children: React.Reac
       <main className="main" id="conteudo">{children}</main>
       <nav className="bottom-nav" aria-label="Menu">
         {MOBILE.map(([href, icon, label]) => <Link key={href} href={href}><span aria-hidden>{icon}</span>{label}</Link>)}
+        <MoreMenu items={[...MAIS.map(([href, icon, label]) => ({ href, icon, label })), ...(user.role !== "STUDENT" ? [{ href: "/admin", icon: "🛠️", label: "Administração" }] : [])]}>
+          <form action={logout}><button className="btn ghost small" type="submit">Sair</button></form>
+        </MoreMenu>
       </nav>
     </div>
   );
