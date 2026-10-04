@@ -4,6 +4,17 @@ Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versões
 
 ## [Não lançado]
 
+## [1.2.0] - 2026-10-04
+### Adicionado
+- **Painel administrativo** em `site/admin/`: produtos (com upload e compressão de fotos), banners, categorias, contatos/WhatsApp, loja física, entregas e pagamentos, cores e textos. Rascunho automático, prévia do site, validação antes de publicar, publicação em um único commit pelo GitHub e aviso quando já está no ar.
+- `site/js/validar.js` (regras do catálogo) e `site/js/serializar.js` (gravação padronizada de `config.js`/`produtos.js`).
+- Modo prévia na loja (`?previa=1`).
+
+### Alterado
+- `config.js` e `produtos.js` passam a ser gravados em formato JSON (o mesmo que o painel usa); nenhum dado mudou.
+- Testes de cálculo do pedido usam um catálogo de exemplo fixo, para que mudar preços pelo painel nunca trave a publicação.
+- `ferramentas/fotos.js` grava pelo mesmo módulo do painel.
+
 ## [1.1.0] - 2026-10-04
 ### Adicionado
 - Código curto em cada produto (`CAL-001`, `VES-007`...), exibido no pedido do WhatsApp.

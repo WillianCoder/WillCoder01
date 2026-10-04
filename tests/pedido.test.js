@@ -7,8 +7,35 @@ const igual = (a, b, msg) => assert.equal(JSON.stringify(a), JSON.stringify(b), 
 
 const site = carregarSite();
 const PD = site.PEDIDO;
-const LOJA = site.LOJA;
-const PRODUTOS = site.PRODUTOS;
+// Os cálculos são testados com um catálogo de exemplo FIXO: assim mudar preços,
+// nomes ou categorias pelo painel nunca quebra estes testes (nem trava a publicação).
+const LOJA = {
+  nome: "Arte Militar 011",
+  contato: { whatsapp: "5511900000000" },
+  urlSite: "https://loja.exemplo/",
+  pedidos: {
+    prefixo: "AM011",
+    descontoPix: 5,
+    entregas: [
+      { id: "retirada", nome: "Retirar na loja física", detalhe: "" },
+      { id: "envio", nome: "Envio pelos Correios / transportadora", detalhe: "" }
+    ],
+    pagamentos: ["Pix", "Cartão de crédito"]
+  },
+  categorias: [
+    { id: "vestuario", nome: "Vestuário", subcategorias: [{ id: "calcas", nome: "Calças Táticas" }] },
+    { id: "calcados", nome: "Calçados", subcategorias: [{ id: "coturnos", nome: "Coturnos" }] },
+    { id: "camping", nome: "Camping e Sobrevivência", subcategorias: [{ id: "lanternas", nome: "Lanternas" }] }
+  ]
+};
+const PRODUTOS = [
+  { id: "coturno-tatico-cano-alto", codigo: "CAL-001", nome: "Coturno Tático Cano Alto", categoria: "calcados", subcategoria: "coturnos", preco: 289.9, precoAntigo: 349.9, resumo: "Couro e nylon.", variacoes: {} },
+  { id: "calca-tatica-ripstop", codigo: "VES-007", nome: "Calça Tática Rip-Stop", categoria: "vestuario", subcategoria: "calcas", preco: 169.9, precoAntigo: 199.9, resumo: "8 bolsos.", variacoes: {} },
+  { id: "lanterna-tatica-led", codigo: "CAM-003", nome: "Lanterna Tática LED Recarregável", categoria: "camping", subcategoria: "lanternas", preco: 129.9, precoAntigo: 159.9, resumo: "Recarregável.", variacoes: {} }
+];
+// catálogo real (só para testes que não dependem de preços)
+const LOJA_REAL = site.LOJA;
+const PRODUTOS_REAL = site.PRODUTOS;
 
 test("formata preço em reais", () => {
   assert.equal(PD.formatarPreco(0), "R$ 0,00");
@@ -122,13 +149,13 @@ test("retirada na loja: total sem frete", () => {
 test("pedido grande vira mensagem compacta e continua com todos os itens", () => {
   const d = dadosValidos();
   d.urlBase = "https://loja.exemplo/";
-  d.itens = PRODUTOS.map((p) => ({ id: p.id, variacoes: {}, qtd: 1 }));
-  const pedido = PD.montarPedido(d, PRODUTOS, LOJA);
-  const url = PD.FINALIZADORES.whatsapp(pedido, LOJA).url;
+  d.itens = PRODUTOS_REAL.map((p) => ({ id: p.id, variacoes: {}, qtd: 1 }));
+  const pedido = PD.montarPedido(d, PRODUTOS_REAL, LOJA_REAL);
+  const url = PD.FINALIZADORES.whatsapp(pedido, LOJA_REAL).url;
   const texto = decodeURIComponent(url.split("?text=")[1]);
   assert.ok(url.length < 20000, "link muito grande: " + url.length);
-  assert.match(texto, new RegExp(PRODUTOS.length + " produtos diferentes"));
-  for (const p of PRODUTOS) assert.ok(texto.includes(p.codigo), "faltou " + p.codigo);
+  assert.match(texto, new RegExp(PRODUTOS_REAL.length + " produtos diferentes"));
+  for (const p of PRODUTOS_REAL) assert.ok(texto.includes(p.codigo), "faltou " + p.codigo);
   assert.doesNotMatch(texto, /https:\/\/loja\.exemplo/, "versão compacta não leva links");
 });
 
@@ -136,7 +163,8 @@ test("mensagem de um produto só (Comprar agora) traz código e conta", () => {
   const p = PRODUTOS.find((x) => x.id === "coturno-tatico-cano-alto");
   const msg = PD.mensagemProduto(p, { Tamanho: "42", Cor: "Preto" }, 2, LOJA, "https://loja.exemplo/#/produto/" + p.id);
   assert.match(msg, /Cód\. CAL-001 \| Calçados > Coturnos/);
-  assert.match(msg, /2 un\. x R\$ 289,90 = \*R\$ 579,80\*/);
+  const conta = "2 un. x " + PD.formatarPreco(p.preco) + " = *" + PD.formatarPreco(p.preco * 2) + "*";
+  assert.ok(msg.includes(conta), "faltou a conta: " + conta);
 });
 
 test("link do WhatsApp usa só os números e codifica o texto", () => {

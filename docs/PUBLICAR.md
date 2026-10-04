@@ -11,6 +11,9 @@ Não precisa fazer nada: editou e salvou na `main` → em ~1 minuto o site atual
 
 **Primeira vez:** em **Settings → Pages**, confira se *Source* está como **GitHub Actions** (o workflow tenta ativar sozinho).
 
+## Painel administrativo
+Fica em **/admin/** do site (ex.: `https://williancoder.github.io/arte-militar-011/admin/`). Ele publica pelo mesmo caminho: grava no GitHub e o workflow põe no ar. Guia: [PAINEL.md](PAINEL.md).
+
 ## Domínio próprio
 Um endereço como `artemilitar011.com.br` passa muito mais confiança:
 

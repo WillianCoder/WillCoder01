@@ -73,3 +73,30 @@ for (const p of PRODUTOS) {
     }
   });
 }
+
+test("validação do painel: catálogo atual sem problemas", () => {
+  const problemas = site.VALIDAR.validarCatalogo(LOJA, PRODUTOS, site.ILUSTRACOES.tipos);
+  assert.equal(problemas.map((p) => p.msg).join("\n"), "");
+});
+
+test("validação do painel: acusa os erros comuns", () => {
+  const copia = JSON.parse(JSON.stringify(PRODUTOS.slice(0, 2)));
+  copia[0].preco = 0;
+  copia[1].codigo = copia[0].codigo;
+  copia[1].variacoes = { Cor: ["Rosa Choque"] };
+  const loja = JSON.parse(JSON.stringify(LOJA));
+  loja.contato.whatsapp = "(11) 9999-9999";
+  const msgs = site.VALIDAR.validarCatalogo(loja, copia, site.ILUSTRACOES.tipos).map((p) => p.msg).join("\n");
+  assert.match(msgs, /WhatsApp deve ter só números/);
+  assert.match(msgs, /preço deve ser maior que zero/);
+  assert.match(msgs, /Código repetido/);
+  assert.match(msgs, /cor "Rosa Choque" não está cadastrada/);
+});
+
+test("gravação (painel e ajudante de fotos) preserva todos os dados", () => {
+  const S = site.SERIALIZAR;
+  const lidos = S.lerDados(S.gerarConfigJs(LOJA), S.gerarProdutosJs(PRODUTOS));
+  assert.equal(JSON.stringify(lidos.loja), JSON.stringify(LOJA));
+  assert.equal(lidos.produtos.length, PRODUTOS.length);
+  assert.equal(JSON.stringify(lidos.produtos[0]), JSON.stringify(S.ordenarProduto(PRODUTOS[0])));
+});

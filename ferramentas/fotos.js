@@ -15,6 +15,7 @@
 const fs = require("fs");
 const path = require("path");
 const vm = require("vm");
+const SERIALIZAR = require("../site/js/serializar.js");
 
 const RAIZ = path.join(__dirname, "..");
 const SITE = path.join(RAIZ, "site");
@@ -57,21 +58,11 @@ function fotosDoProduto(p, arquivos) {
     .map((f) => "img/produtos/" + f.arq);
 }
 
-function escreverImagens(texto, p, imagens) {
-  const ancora = texto.indexOf(`id: "${p.id}",`);
-  if (ancora === -1) throw new Error(`produto ${p.id} não encontrado em produtos.js`);
-  const ini = texto.indexOf("imagens:", ancora);
-  const fim = texto.indexOf("],", ini);
-  const lista = "imagens: [" + imagens.map((i) => JSON.stringify(i)).join(", ") + "]";
-  return texto.slice(0, ini) + lista + texto.slice(fim + 1);
-}
-
 function main() {
   const vincular = process.argv.includes("--vincular");
   const { produtos, loja } = carregarProdutos();
   const arquivos = fs.existsSync(PASTA_FOTOS) ? fs.readdirSync(PASTA_FOTOS).filter((a) => EXTENSOES.test(a)) : [];
   const usados = new Set();
-  let texto = fs.readFileSync(ARQ_PRODUTOS, "utf8");
   let alterados = 0;
 
   for (const p of produtos) {
@@ -82,13 +73,12 @@ function main() {
     const extras = (p.imagens || []).filter((i) => !novas.includes(i) && (/^https?:/.test(i) || fs.existsSync(path.join(SITE, i))) && !i.startsWith("img/produtos/"));
     const final = [...novas, ...extras];
     if (JSON.stringify(final) !== JSON.stringify(p.imagens || [])) {
-      texto = escreverImagens(texto, p, final);
       p.imagens = final;
       alterados++;
       console.log(`OK    ${p.codigo}  ${p.nome}: ${final.length} foto(s)`);
     }
   }
-  if (vincular && alterados) fs.writeFileSync(ARQ_PRODUTOS, texto);
+  if (vincular && alterados) fs.writeFileSync(ARQ_PRODUTOS, SERIALIZAR.gerarProdutosJs(produtos));
 
   const sobras = arquivos.filter((a) => !usados.has(a));
   sobras.forEach((a) => console.log(`AVISO ${a}: o nome não começa com o código de nenhum produto (ex.: CAL-001.jpg)`));

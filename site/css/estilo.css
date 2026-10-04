@@ -76,6 +76,7 @@ p { margin: 0; }
 .principal { min-width: 0; display: flex; flex-direction: column; }
 main { flex: 1; width: 100%; max-width: 1360px; margin: 0 auto; padding: 28px clamp(16px, 3vw, 44px) 56px; }
 
+.aviso-topo--previa { background: #7a5b16 !important; color: #fff3cf !important; }
 .aviso-topo {
   background: repeating-linear-gradient(-45deg, #1a1f14 0 14px, #151910 14px 28px);
   border-bottom: 1px solid var(--linha);

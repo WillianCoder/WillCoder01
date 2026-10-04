@@ -1,6 +1,6 @@
 # Arte Militar 011 — Loja virtual
 
-> ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-f5c518) ![Versão](https://img.shields.io/badge/vers%C3%A3o-1.1.0-f5c518)
+> ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-f5c518) ![Versão](https://img.shields.io/badge/vers%C3%A3o-1.2.0-f5c518)
 
 ## 📌 Sobre
 Site de vendas da **Arte Militar 011**: artigos militares, táticos e de aventura. O cliente navega pelo **painel lateral à esquerda**, escolhe tamanho e cor, monta o pedido e **envia tudo pronto para o WhatsApp Business** da loja. Tem página da **loja física com mapa**, contatos, perguntas frequentes e histórico de pedidos.
@@ -14,8 +14,15 @@ Site de vendas da **Arte Militar 011**: artigos militares, táticos e de aventur
 | ![Página inicial no computador com o painel lateral à esquerda](screenshots/inicio-computador.jpg) | ![Menu lateral aberto no celular com as subcategorias de Equipamentos Táticos](screenshots/menu-celular.jpg) |
 | ![Página de produto com escolha de cor e botões de pedido](screenshots/produto-computador.jpg) | ![Página inicial no celular](screenshots/inicio-celular.jpg) |
 
+## 🛠️ Painel administrativo
+Edite produtos, fotos, preços, banners, categorias, contatos, WhatsApp e textos **sem mexer em código**:
+
+**https://williancoder.github.io/arte-militar-011/admin/** — guia: [docs/PAINEL.md](docs/PAINEL.md)
+
+Você edita, confere na prévia e clica em **Publicar**; em 1 a 3 minutos o site atualiza.
+
 ## ✅ Antes de divulgar — troque os dados de exemplo
-Tudo isso fica em **um único arquivo**: [`site/js/config.js`](site/js/config.js).
+Tudo isso dá para fazer pelo **painel** (seções *Loja e contatos* e *Produtos*), ou à mão em [`site/js/config.js`](site/js/config.js).
 
 - [ ] `contato.whatsapp` — **seu número do WhatsApp Business** (só números: `55` + DDD + número). Todos os pedidos vão para ele.
 - [ ] `contato.whatsappExibicao`, `telefone`, `telefoneExibicao`, `email`, `instagram`
@@ -24,6 +31,8 @@ Tudo isso fica em **um único arquivo**: [`site/js/config.js`](site/js/config.js
 - [ ] Fotos reais dos produtos ([como colocar](docs/PRODUTOS.md#fotos))
 
 ## 🧭 O que editar e onde
+O caminho mais fácil para tudo abaixo é o [painel](docs/PAINEL.md). A tabela mostra onde cada coisa fica, caso prefira editar os arquivos.
+
 | Quero mudar… | Arquivo | Guia |
 |---|---|---|
 | WhatsApp, telefone, e-mail, redes sociais | `site/js/config.js` → `contato` | [Guia de edição](docs/GUIA-DE-EDICAO.md#1-contatos) |
@@ -124,7 +133,8 @@ arte-militar-011/
 ├── .github/workflows/      # publicação no GitHub Pages + testes
 ├── meta.json / CHANGELOG.md
 ├── docs/
-│   ├── GUIA-DE-EDICAO.md   # como mudar cada coisa do site
+│   ├── PAINEL.md           # ★ como usar o painel administrativo
+│   ├── GUIA-DE-EDICAO.md   # como mudar cada coisa do site (à mão)
 │   ├── PRODUTOS.md         # cadastrar produtos e fotos
 │   ├── PAGAMENTOS-FUTURO.md# plano para cobrar pelo site
 │   ├── PUBLICAR.md         # domínio próprio, Google, WhatsApp Business
@@ -133,12 +143,15 @@ arte-militar-011/
 ├── ferramentas/fotos.js    # liga as fotos aos produtos pelo código
 ├── site/                   # ← o site (é isso que vai para o ar)
 │   ├── index.html
+│   ├── admin/              # ★ painel administrativo (index.html, admin.js, admin.css)
 │   ├── css/estilo.css      # visual (cores no topo)
 │   ├── js/config.js        # ★ dados da loja
 │   ├── js/produtos.js      # ★ catálogo
 │   ├── js/pedido.js        # cálculo do pedido + mensagem do WhatsApp
 │   ├── js/ilustracoes.js   # desenhos dos produtos e ícones
 │   ├── js/app.js           # telas e navegação
+│   ├── js/validar.js       # regras que o painel confere antes de publicar
+│   ├── js/serializar.js    # grava config.js/produtos.js (painel e ajudante de fotos)
 │   └── img/                # fotos (produtos/, banners/), ícone, imagem de compartilhamento
 ├── tests/                  # testes automáticos (rodam no GitHub a cada alteração)
 └── screenshots/            # imagens deste README
@@ -161,13 +174,12 @@ node --test tests/*.test.js
 Se você errar algo ao editar um produto, o teste diz qual produto e o que está errado. Eles também rodam sozinhos no GitHub (aba **Actions**).
 
 ## 📊 Status
-Versão 1.1.0 pronta para uso — faltam os dados reais da loja (veja o checklist acima). Histórico no [CHANGELOG](CHANGELOG.md).
+Versão 1.2.0 pronta para uso — faltam os dados reais da loja (veja o checklist acima). Histórico no [CHANGELOG](CHANGELOG.md).
 
 ## 🔮 Próximas melhorias
 - [ ] Fotos reais dos produtos
 - [ ] Domínio próprio (ex.: `artemilitar011.com.br`) — [como fazer](docs/PUBLICAR.md#domínio-próprio)
 - [ ] Pagamento pelo site + cálculo de frete — [plano](docs/PAGAMENTOS-FUTURO.md)
-- [ ] Painel para editar produtos sem mexer em código (planilha Google ou CMS)
 
 ## 🐛 Problemas conhecidos
 - O histórico "Meus pedidos" fica salvo só no aparelho/navegador do cliente (não há banco de dados — de propósito, por enquanto).

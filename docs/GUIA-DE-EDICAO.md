@@ -1,5 +1,9 @@
 # Guia de edição — Arte Militar 011
 
+> **Mais fácil:** quase tudo deste guia dá para fazer pelo [painel administrativo](PAINEL.md), sem abrir arquivo nenhum. Este guia é para quem quiser editar os arquivos à mão.
+>
+> Os arquivos `config.js` e `produtos.js` são gravados pelo painel no formato **JSON**: os nomes dos campos ficam entre aspas (`"nome": "Arte Militar 011"`). Os exemplos abaixo mostram os campos; ao editar à mão, siga o formato que estiver no arquivo.
+
 Tudo que é **informação da loja** fica em dois arquivos:
 
 | Arquivo | O que tem |

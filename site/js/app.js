@@ -20,6 +20,18 @@
 (function () {
   "use strict";
 
+  /* Prévia do painel administrativo: mostra as alterações ainda não publicadas */
+  var EM_PREVIA = /[?&]previa=1/.test(location.search);
+  if (EM_PREVIA) {
+    try {
+      var previa = JSON.parse(localStorage.getItem("am011:previa"));
+      if (previa && previa.loja && previa.produtos) {
+        window.LOJA = previa.loja;
+        window.PRODUTOS = previa.produtos;
+      }
+    } catch (e) { /* sem prévia: mostra o site normal */ }
+  }
+
   var LOJA = window.LOJA;
   var PRODUTOS = window.PRODUTOS || [];
   var IL = window.ILUSTRACOES;
@@ -1553,7 +1565,8 @@
     $("#sombra").addEventListener("click", fecharMenu);
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") fecharMenu(); });
 
-    var aviso = LOJA.pedidos.avisoTopo;
+    var aviso = EM_PREVIA ? "PRÉVIA DO PAINEL — alterações ainda não publicadas. Clientes não veem esta versão." : LOJA.pedidos.avisoTopo;
+    if (EM_PREVIA) $("#aviso-topo").classList.add("aviso-topo--previa");
     if (aviso) {
       $("#aviso-topo").textContent = aviso;
       $("#aviso-topo").hidden = false;

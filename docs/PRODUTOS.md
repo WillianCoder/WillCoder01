@@ -1,5 +1,7 @@
 # Produtos — cadastrar, editar e colocar fotos
 
+> **Mais fácil:** use o [painel administrativo](PAINEL.md) → *Produtos*: lá você cria, edita, coloca fotos e marca esgotado com cliques. Este guia explica os campos e o jeito manual.
+
 Todos os produtos ficam em [`site/js/produtos.js`](../site/js/produtos.js), um bloco `{ ... }` por produto. Os 51 produtos que vieram são **exemplos realistas** (nomes, preços de mercado e descrições) para você ajustar ao seu estoque.
 
 ## Modelo completo (copie e cole)
