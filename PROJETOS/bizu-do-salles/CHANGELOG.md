@@ -2,6 +2,12 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.13.0] — 2026-10-04
+### Melhorado (celular)
+- **Botão "☰ Mais" na barra inferior** do aluno e do admin, com o menu completo. Antes, no celular, não dava para chegar em Materiais, Cadernos, Ranking, Meu plano, Cupons, Auditoria, Escolas e Importar.
+- **Painel do admin sem cortes no celular:** as tabelas largas rolam dentro do quadro e os títulos quebram linha.
+- Novo teste automático no tamanho do iPhone 14 Pro (393×852).
+
 ## [0.12.0] — 2026-10-03
 ### Adicionado
 - **Sistema de confiabilidade:** `origem` (AUTORAL / BASEADA_EM_PROVA / OFICIAL), `confianca` (ALTA / MEDIA / REVISAO), `verificadoEm` e `fontes` em cada arquivo de questões.
