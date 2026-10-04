@@ -1,6 +1,6 @@
 // Arquivo gerado por scripts/catalogo.py — não edite manualmente.
 window.CATALOGO = {
-  "gerado": "2026-09-29",
+  "gerado": "2026-10-04",
   "perfil": {
     "nome": "Willian Salles",
     "titulo": "Desenvolvimento • Tecnologia • Projetos • Aprendizado",
@@ -16,15 +16,15 @@ window.CATALOGO = {
     }
   },
   "estatisticas": {
-    "total": 3,
-    "projetos": 2,
+    "total": 4,
+    "projetos": 3,
     "concluidos": 0,
-    "desenvolvimento": 2,
+    "desenvolvimento": 3,
     "academicos": 0,
     "estudos": 0,
     "experimentos": 1,
     "portfolio": 0,
-    "documentos": 9,
+    "documentos": 10,
     "tecnologias": [
       "CSS",
       "HTML",
@@ -42,6 +42,34 @@ window.CATALOGO = {
     ]
   },
   "itens": [
+    {
+      "titulo": "Arte Militar 011",
+      "tipo": "projeto",
+      "categoria": "Web",
+      "status": "desenvolvimento",
+      "tecnologias": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "data": "2026-10-04",
+      "atualizado": "2026-10-04",
+      "versao": "1.1.0",
+      "nivel": "intermediario",
+      "resumo": "Loja virtual de artigos militares com menu lateral, catálogo por categorias, loja física no mapa e pedidos finalizados pelo WhatsApp Business.",
+      "destaque": false,
+      "portfolio": {
+        "problema": "",
+        "desenvolvido": "",
+        "participacao": "",
+        "resultado": ""
+      },
+      "links": {
+        "demo": "https://williancoder.github.io/WillCoder01/PROJETOS/arte-militar-011/site/",
+        "repositorio": ""
+      },
+      "caminho": "PROJETOS/arte-militar-011"
+    },
     {
       "titulo": "Bizu do Salles",
       "tipo": "projeto",
