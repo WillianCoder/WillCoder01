@@ -44,6 +44,15 @@ Gerado automaticamente por `scripts/catalogo.py` a partir dos `meta.json` — ne
 | 📦 Itens encerrados | [ARQUIVO](ARQUIVO/README.md) |
 | 🧩 Modelos para novos itens | [TEMPLATES](TEMPLATES/README.md) |
 
+## 🌐 Sites (cada um em seu próprio repositório)
+Cada site vive em um repositório separado, para não misturar código, histórico e publicação.
+
+| Site | Repositório | Status |
+|---|---|---|
+| 📚 Concursos Públicos | [site-concursos-publicos-geral](https://github.com/WillianCoder/site-concursos-publicos-geral) | 🟡 Em desenvolvimento |
+| 🎖️ Arte Militar | [arte-militar-011](https://github.com/WillianCoder/arte-militar-011) | 🟡 Em desenvolvimento |
+| 🚔 PM Alerta – Anotador de Audiências | *repositório próprio em breve* | 🔵 Planejado — em projeto |
+
 ## 📊 Status dos projetos
 🟢 Concluído · 🟡 Em desenvolvimento · 🔵 Planejado · 🟠 Em teste · 🔴 Bloqueado · ⚪ Arquivado
 
