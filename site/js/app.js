@@ -242,8 +242,7 @@
 
   function linkWhats(texto) { return PD.linkWhatsApp(LOJA.contato.whatsapp, texto); }
   function urlDoProduto(p) {
-    var base = location.protocol === "file:" ? LOJA.urlSite : location.origin + location.pathname;
-    return base + "#/produto/" + p.id;
+    return urlBase() + "#/produto/" + p.id;
   }
 
   /* ============================ painel lateral ============================ */
@@ -417,6 +416,7 @@
     var opcoes = opcoesNavegacao;
     opcoesNavegacao = {};
     clearInterval(timerBanner);
+    esconderAviso();
 
     var r = lerRota();
     var p = r.partes;
@@ -951,6 +951,8 @@
       '<dl class="resumo__linhas" id="resumo-linhas"></dl>' +
       '<button type="submit" class="btn btn--whats btn--bloco btn--grande">' + icone("whatsapp") + "Enviar pedido pelo WhatsApp</button>" +
       '<p class="resumo__nota">Você será levado ao WhatsApp com o pedido pronto. Lá confirmamos disponibilidade, frete e pagamento. Nada é cobrado pelo site.</p>' +
+      '<details class="previa" id="previa-mensagem"><summary>' + icone("whatsapp") + "Ver a mensagem que será enviada</summary>" +
+      '<pre class="previa__texto" id="previa-texto"></pre></details>' +
       '<label class="caixa"><input type="checkbox" id="lembrar"' + (cli.nome || !Object.keys(cli).length ? " checked" : "") + "> Lembrar meus dados neste aparelho</label>" +
       '<button type="button" class="link-seta link-seta--perigo" id="limpar-pedido">' + icone("lixeira") + "Esvaziar pedido</button>" +
       "</div></aside>" +
@@ -969,11 +971,35 @@
       var pag = (form.querySelector('[name="pagamento"]:checked') || {}).value || "";
       var ent = (form.querySelector('[name="entrega"]:checked') || {}).value || "";
       var t = PD.calcularTotais(sub, pag, LOJA.pedidos.descontoPix);
+      var economia = linhas.reduce(function (s, l) {
+        var a = l.produto.precoAntigo;
+        return s + (a > l.precoUnitario ? (a - l.precoUnitario) * l.qtd : 0);
+      }, 0);
       $("#resumo-linhas").innerHTML =
-        "<div><dt>Produtos (" + qtd + ")</dt><dd>" + R(t.subtotal) + "</dd></div>" +
+        '<div class="resumo__contagem"><dt>Produtos diferentes</dt><dd>' + linhas.length + "</dd></div>" +
+        '<div class="resumo__contagem"><dt>Unidades</dt><dd>' + qtd + "</dd></div>" +
+        "<div><dt>Subtotal</dt><dd>" + R(t.subtotal) + "</dd></div>" +
+        (economia ? '<div class="resumo__desconto"><dt>Você economiza nas promoções</dt><dd>' + R(economia) + "</dd></div>" : "") +
         (t.descontoPix ? '<div class="resumo__desconto"><dt>Desconto Pix (' + t.percentualPix + "%)</dt><dd>-" + R(t.descontoPix) + "</dd></div>" : "") +
         "<div><dt>Frete</dt><dd>" + (ent === "retirada" ? "Grátis (retirada)" : "A combinar") + "</dd></div>" +
-        '<div class="resumo__total"><dt>Total</dt><dd>' + R(t.total) + "</dd></div>";
+        '<div class="resumo__total"><dt>Total</dt><dd>' + R(t.total) + "</dd></div>" +
+        (ent === "retirada" ? "" : '<p class="resumo__frete">+ frete, informado pelo WhatsApp</p>');
+      atualizarPrevia();
+    }
+
+    // prévia: mostra exatamente o texto que vai chegar no WhatsApp
+    var previa = $("#previa-mensagem");
+    function atualizarPrevia() {
+      if (!previa || !previa.open) return;
+      var dados = lerFormulario(form);
+      if (!dados.cliente.nome) dados.cliente.nome = "(seu nome)";
+      if (!dados.cliente.telefone) dados.cliente.telefone = "(seu WhatsApp)";
+      var pedido = PD.montarPedido(Object.assign(dados, { numero: LOJA.pedidos.prefixo + "-......-....", urlBase: urlBase() }), PRODUTOS, LOJA);
+      $("#previa-texto").textContent = PD.mensagemPedido(pedido, LOJA);
+    }
+    if (previa) {
+      previa.addEventListener("toggle", atualizarPrevia);
+      form.addEventListener("input", atualizarPrevia);
     }
 
     function mostrarEndereco() {
@@ -1075,10 +1101,10 @@
       .catch(function () { if ($("#dica-cep")) dica.textContent = "Não foi possível buscar o CEP agora. Preencha manualmente."; });
   }
 
-  function enviarPedido(form) {
+  function lerFormulario(form) {
     var val = function (n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ""; };
     var marcado = function (n) { var el = form.querySelector('[name="' + n + '"]:checked'); return el ? el.value : ""; };
-    var dados = {
+    return {
       itens: carrinho,
       cliente: { nome: val("nome"), telefone: val("telefone"), email: val("email") },
       entrega: marcado("entrega"),
@@ -1086,6 +1112,14 @@
       endereco: { cep: val("cep"), rua: val("rua"), numero: val("numero"), complemento: val("complemento"), bairro: val("bairro"), cidade: val("cidade"), uf: val("uf") },
       observacoes: val("obs")
     };
+  }
+
+  function urlBase() {
+    return location.protocol === "file:" ? LOJA.urlSite : location.origin + location.pathname;
+  }
+
+  function enviarPedido(form) {
+    var dados = lerFormulario(form);
 
     var erros = PD.validarPedido(dados, LOJA);
     $$("[data-erro]", form).forEach(function (p) {
@@ -1115,6 +1149,7 @@
       armazenamento.apagar(CHAVE_CLIENTE);
     }
 
+    dados.urlBase = urlBase();
     var pedido = PD.montarPedido(dados, PRODUTOS, LOJA);
     var historico = armazenamento.ler(CHAVE_HISTORICO, []);
     historico.unshift(pedido);
@@ -1149,10 +1184,41 @@
       "<p>O número do seu pedido é <strong>" + esc(pedido.numero) + "</strong>.</p>" +
       "<p>Abrimos o WhatsApp com tudo preenchido — é só tocar em <strong>enviar</strong> por lá. Respondemos confirmando disponibilidade, frete e pagamento.</p>" +
       '<div class="hero__botoes">' +
-      '<a class="btn btn--whats btn--grande" href="' + PD.FINALIZADORES.whatsapp(pedido, LOJA).url + '" target="_blank" rel="noopener">' + icone("whatsapp") + "O WhatsApp não abriu? Clique aqui</a>" +
+      '<a class="btn btn--whats btn--grande" href="' + esc(PD.FINALIZADORES.whatsapp(pedido, LOJA).url) + '" target="_blank" rel="noopener">' + icone("whatsapp") + "O WhatsApp não abriu? Clique aqui</a>" +
       '<a class="btn btn--secundario" href="#/">Continuar comprando</a></div>' +
+      resumoDoPedido(pedido) +
       '<p class="dica">Seus pedidos ficam salvos neste aparelho em <a href="#/meus-pedidos">Meus pedidos</a>.</p>' +
       "</div>"
+    );
+  }
+
+  /* Resumo do pedido enviado (mesmas informações da mensagem do WhatsApp) */
+  function resumoDoPedido(pedido) {
+    var retirada = pedido.entrega && pedido.entrega.id === "retirada";
+    var qtd = pedido.quantidade || 0;
+    var diferentes = pedido.produtosDiferentes || pedido.linhas.length;
+    return (
+      '<section class="bloco resumo-pedido">' +
+      "<h2>" + icone("lista") + "Resumo do pedido</h2>" +
+      '<p class="resumo-pedido__contagem">' + diferentes + (diferentes === 1 ? " produto" : " produtos diferentes") + " · " + qtd + (qtd === 1 ? " unidade" : " unidades") + "</p>" +
+      '<table class="tabela-pedido"><thead><tr><th scope="col">Produto</th><th scope="col">Qtd</th><th scope="col">Total</th></tr></thead><tbody>' +
+      pedido.linhas.map(function (l) {
+        var v = PD.textoVariacoes(l.variacoes);
+        return (
+          "<tr><td><strong>" + esc(l.nome) + "</strong><small>" + esc((l.codigo || l.id) + (v ? " · " + v : "")) + "</small></td>" +
+          "<td>" + l.qtd + "</td><td>" + R(l.total) + "</td></tr>"
+        );
+      }).join("") +
+      "</tbody></table>" +
+      '<dl class="resumo__linhas">' +
+      "<div><dt>Subtotal</dt><dd>" + R(pedido.subtotal) + "</dd></div>" +
+      (pedido.economia ? '<div class="resumo__desconto"><dt>Economia nas promoções</dt><dd>' + R(pedido.economia) + "</dd></div>" : "") +
+      (pedido.descontoPix ? '<div class="resumo__desconto"><dt>Desconto Pix (' + pedido.percentualPix + "%)</dt><dd>-" + R(pedido.descontoPix) + "</dd></div>" : "") +
+      "<div><dt>Frete</dt><dd>" + (retirada ? "Grátis (retirada)" : "A combinar") + "</dd></div>" +
+      '<div class="resumo__total"><dt>Total</dt><dd>' + R(pedido.total) + "</dd></div>" +
+      "</dl>" +
+      '<p class="dica">Entrega: ' + esc(pedido.entrega ? pedido.entrega.nome : "-") + " · Pagamento: " + esc(pedido.pagamento || "-") + "</p>" +
+      "</section>"
     );
   }
 
@@ -1382,6 +1448,13 @@
 
   /* ================================ avisos ================================= */
   var timerAviso;
+  function esconderAviso() {
+    var t = $("#toast");
+    if (!t || t.hidden) return;
+    clearTimeout(timerAviso);
+    t.classList.remove("visivel");
+    t.hidden = true;
+  }
   function mostrarAviso(html, acao) {
     var t = $("#toast");
     t.innerHTML = "<span>" + html + "</span>" + (acao ? '<a class="toast__acao" href="' + acao.link + '">' + acao.texto + "</a>" : "");

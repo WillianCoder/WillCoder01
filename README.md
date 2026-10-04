@@ -1,6 +1,6 @@
 # Arte Militar 011 — Loja virtual
 
-> ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-f5c518) ![Versão](https://img.shields.io/badge/vers%C3%A3o-1.0.0-f5c518)
+> ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-f5c518) ![Versão](https://img.shields.io/badge/vers%C3%A3o-1.1.0-f5c518)
 
 ## 📌 Sobre
 Site de vendas da **Arte Militar 011**: artigos militares, táticos e de aventura. O cliente navega pelo **painel lateral à esquerda**, escolhe tamanho e cor, monta o pedido e **envia tudo pronto para o WhatsApp Business** da loja. Tem página da **loja física com mapa**, contatos, perguntas frequentes e histórico de pedidos.
@@ -29,6 +29,7 @@ Tudo isso fica em **um único arquivo**: [`site/js/config.js`](site/js/config.js
 | WhatsApp, telefone, e-mail, redes sociais | `site/js/config.js` → `contato` | [Guia de edição](docs/GUIA-DE-EDICAO.md#1-contatos) |
 | Endereço, mapa e horários da loja | `site/js/config.js` → `lojaFisica` | [Guia de edição](docs/GUIA-DE-EDICAO.md#2-loja-física-e-mapa) |
 | Produtos, preços, fotos, tamanhos, cores | `site/js/produtos.js` | [Produtos](docs/PRODUTOS.md) |
+| Fotos reais (qual foto vai em qual produto) | `site/img/produtos/` + `node ferramentas/fotos.js --vincular` | [Lista de fotos](docs/FOTOS.md) |
 | Categorias e subcategorias do menu lateral | `site/js/config.js` → `categorias` | [Guia de edição](docs/GUIA-DE-EDICAO.md#5-categorias-do-menu-lateral) |
 | Banners da página inicial | `site/js/config.js` → `banners` | [Guia de edição](docs/GUIA-DE-EDICAO.md#4-banners-da-página-inicial) |
 | Entregas, pagamentos, desconto Pix, aviso do topo | `site/js/config.js` → `pedidos` | [Guia de edição](docs/GUIA-DE-EDICAO.md#3-pedidos-entrega-pagamento-e-pix) |
@@ -44,34 +45,69 @@ Tudo isso fica em **um único arquivo**: [`site/js/config.js`](site/js/config.js
 2. Na página do produto escolhe **tamanho/cor** e a quantidade.
 3. **Adicionar ao pedido** → pode continuar comprando. Ou **Comprar agora pelo WhatsApp** (um produto só).
 4. Em **Meu pedido** preenche nome, telefone, entrega (retirada, Correios ou motoboy — o CEP preenche o endereço sozinho) e forma de pagamento preferida.
-5. **Enviar pedido pelo WhatsApp** → abre o WhatsApp com a mensagem pronta, com número do pedido (ex.: `AM011-261004-4821`), itens, valores e endereço. Você confirma frete e pagamento por lá.
+5. **Enviar pedido pelo WhatsApp** → abre o WhatsApp com a mensagem pronta e organizada em blocos:
+   - **Resumo:** número do pedido, quantos produtos diferentes e unidades, total, entrega e pagamento.
+   - **Produtos:** para cada item, nome, **código** (ex.: `CAL-001`), categoria, tamanho/cor, quantidade × preço, preço antigo se estava em promoção, uma frase de descrição e o link do produto.
+   - **Valores:** subtotal, economia nas promoções, desconto Pix, frete e **total**.
+   - **Cliente, entrega** (endereço completo), **pagamento** e **observações**.
 
-Exemplo da mensagem que chega para você:
+   Pedidos muito grandes saem numa versão compacta (sem a frase e o link de cada item), para caber no WhatsApp. Você confirma frete e pagamento por lá.
+
+Exemplo da mensagem que chega para você (o cliente pode juntar quantos produtos quiser; antes de enviar ele vê essa prévia no site, e depois um resumo igual na tela de confirmação):
 ```
-*NOVO PEDIDO - ARTE MILITAR 011*
-Pedido: *AM011-261004-0547*
-Data: 04/10/2026 14:30
+*PEDIDO AM011-261004-0547*
+Arte Militar 011 | 04/10/2026 14:30
 
-*ITENS*
-1) Calça Tática Rip-Stop
-   Tamanho: 42 | Cor: Caqui
-   2 x R$ 169,90 = R$ 339,80
+*RESUMO*
+2 produtos diferentes | 3 unidades
+Total: *R$ 598,21* + frete
+Entrega: Envio pelos Correios / transportadora
+Pagamento: Pix
 
-Subtotal (2 itens): *R$ 339,80*
-Desconto Pix (5%): -R$ 16,99
-Total no Pix: *R$ 322,81*
+------------------------------
+*PRODUTOS*
+
+*1. Coturno Tático Cano Alto*
+Cód. CAL-001 | Calçados > Coturnos
+Tamanho: 42 | Cor: Preto
+1 un. x R$ 289,90 = *R$ 289,90* (de R$ 349,90 cada)
+Couro e nylon, solado antiderrapante e palmilha anatômica.
+https://williancoder.github.io/WillCoder01/PROJETOS/arte-militar-011/site/#/produto/coturno-tatico-cano-alto
+
+*2. Calça Tática Rip-Stop*
+Cód. VES-003 | Vestuário > Calças Táticas
+Tamanho: 42 | Cor: Caqui
+2 un. x R$ 169,90 = *R$ 339,80* (de R$ 199,90 cada)
+8 bolsos, elastano para mobilidade e reforço nos joelhos.
+https://williancoder.github.io/WillCoder01/PROJETOS/arte-militar-011/site/#/produto/calca-tatica-ripstop
+
+------------------------------
+*VALORES*
+Produtos (3 unidades): R$ 629,70
+Economia nas promoções: R$ 120,00
+Desconto Pix (5%): -R$ 31,49
 Frete: a combinar
+*TOTAL DOS PRODUTOS: R$ 598,21* + frete
 
+------------------------------
 *CLIENTE*
 Nome: Fulano de Tal
-Telefone: (11) 98765-4321
+WhatsApp: (11) 98765-4321
 
-*ENTREGA:* Envio pelos Correios / transportadora
+*ENTREGA*
+Envio pelos Correios / transportadora
 Praça da Sé, 100
 Sé - São Paulo/SP
-CEP: 01001-000
+CEP 01001-000
 
-*PAGAMENTO:* Pix
+*PAGAMENTO*
+Pix
+
+*OBSERVAÇÕES*
+Entregar à tarde
+
+------------------------------
+Próximo passo: a loja confirma o estoque, o frete e o pagamento por aqui.
 ```
 
 ## 🗺️ Páginas
@@ -90,7 +126,9 @@ arte-militar-011/
 │   ├── PRODUTOS.md         # cadastrar produtos e fotos
 │   ├── PAGAMENTOS-FUTURO.md# plano para cobrar pelo site
 │   ├── PUBLICAR.md         # domínio próprio, Google, WhatsApp Business
-│   └── PESQUISA-REFERENCIAS.md # lojas analisadas e decisões
+│   ├── PESQUISA-REFERENCIAS.md # lojas analisadas e decisões
+│   └── FOTOS.md            # lista de conferência das fotos (gerada)
+├── ferramentas/fotos.js    # liga as fotos aos produtos pelo código
 ├── site/                   # ← o site (é isso que vai para o ar)
 │   ├── index.html
 │   ├── css/estilo.css      # visual (cores no topo)
@@ -122,7 +160,7 @@ node --test tests/*.test.js
 Se você errar algo ao editar um produto, o teste diz qual produto e o que está errado. Eles também rodam sozinhos no GitHub (aba **Actions**).
 
 ## 📊 Status
-Versão 1.0.0 pronta para uso — faltam os dados reais da loja (veja o checklist acima). Histórico no [CHANGELOG](CHANGELOG.md).
+Versão 1.1.0 pronta para uso — faltam os dados reais da loja (veja o checklist acima). Histórico no [CHANGELOG](CHANGELOG.md).
 
 ## 🔮 Próximas melhorias
 - [ ] Fotos reais dos produtos

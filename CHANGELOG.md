@@ -4,6 +4,17 @@ Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) · Versões
 
 ## [Não lançado]
 
+## [1.1.0] - 2026-10-04
+### Adicionado
+- Código curto em cada produto (`CAL-001`, `VES-007`...), exibido no pedido do WhatsApp.
+- Mensagem do pedido reorganizada em blocos: resumo (produtos diferentes, unidades, total), produtos detalhados (código, categoria, variações, conta, preço antigo, descrição e link), valores (subtotal, economia, desconto Pix, frete, total), cliente, entrega, pagamento e observações. Pedidos grandes saem em versão compacta.
+- Prévia da mensagem do WhatsApp na página do pedido e resumo completo na tela de confirmação.
+- Resumo do carrinho com produtos diferentes, unidades e economia nas promoções.
+- `ferramentas/fotos.js`: liga as fotos de `site/img/produtos/` aos produtos pelo código e gera `docs/FOTOS.md`.
+
+### Corrigido
+- Aviso "foi adicionado ao pedido" não fica mais por cima da página seguinte.
+
 ## [1.0.0] - 2026-10-04
 ### Adicionado
 - Site da loja com **painel lateral à esquerda**: busca, "Meu pedido", categorias que abrem no clique, vitrines e atendimento.

@@ -6,6 +6,8 @@
 
    Campos:
      id            identificador único, sem acento e sem espaço (vai no link)
+     codigo        código curto do produto (ex.: "CAL-001"). Aparece no pedido do
+                   WhatsApp e no nome das fotos. Use um código que ainda não exista.
      nome          nome que aparece na loja
      categoria     id de uma categoria do config.js (ex.: "calcados")
      subcategoria  id de uma subcategoria dessa categoria (ex.: "coturnos")
@@ -31,6 +33,7 @@ window.PRODUTOS = [
   /* ============================ CALÇADOS ============================ */
   {
     id: "coturno-tatico-cano-alto",
+    codigo: "CAL-001",
     nome: "Coturno Tático Cano Alto",
     categoria: "calcados",
     subcategoria: "coturnos",
@@ -51,6 +54,7 @@ window.PRODUTOS = [
   },
   {
     id: "coturno-desert-cano-medio",
+    codigo: "CAL-002",
     nome: "Coturno Desert Cano Médio",
     categoria: "calcados",
     subcategoria: "coturnos",
@@ -70,6 +74,7 @@ window.PRODUTOS = [
   },
   {
     id: "bota-tatica-impermeavel",
+    codigo: "CAL-003",
     nome: "Bota Tática Impermeável",
     categoria: "calcados",
     subcategoria: "botas",
@@ -89,6 +94,7 @@ window.PRODUTOS = [
   },
   {
     id: "meia-termica-cano-longo",
+    codigo: "CAL-004",
     nome: "Meia Térmica Cano Longo (kit 3 pares)",
     categoria: "calcados",
     subcategoria: "meias",
@@ -110,6 +116,7 @@ window.PRODUTOS = [
   /* ============================ VESTUÁRIO ============================ */
   {
     id: "gandola-camuflada-ripstop",
+    codigo: "VES-001",
     nome: "Gandola Camuflada Rip-Stop",
     categoria: "vestuario",
     subcategoria: "gandolas",
@@ -129,6 +136,7 @@ window.PRODUTOS = [
   },
   {
     id: "combat-shirt-multicam",
+    codigo: "VES-002",
     nome: "Combat Shirt Multicam",
     categoria: "vestuario",
     subcategoria: "gandolas",
@@ -148,6 +156,7 @@ window.PRODUTOS = [
   },
   {
     id: "calca-tatica-ripstop",
+    codigo: "VES-003",
     nome: "Calça Tática Rip-Stop",
     categoria: "vestuario",
     subcategoria: "calcas",
@@ -167,6 +176,7 @@ window.PRODUTOS = [
   },
   {
     id: "calca-camuflada-combate",
+    codigo: "VES-004",
     nome: "Calça Camuflada de Combate",
     categoria: "vestuario",
     subcategoria: "calcas",
@@ -186,6 +196,7 @@ window.PRODUTOS = [
   },
   {
     id: "camiseta-militar-dry",
+    codigo: "VES-005",
     nome: "Camiseta Militar Dry Fit",
     categoria: "vestuario",
     subcategoria: "camisetas",
@@ -203,6 +214,7 @@ window.PRODUTOS = [
   },
   {
     id: "camiseta-bandeira-brasil",
+    codigo: "VES-006",
     nome: "Camiseta Bandeira do Brasil Tática",
     categoria: "vestuario",
     subcategoria: "camisetas",
@@ -220,6 +232,7 @@ window.PRODUTOS = [
   },
   {
     id: "jaqueta-softshell",
+    codigo: "VES-007",
     nome: "Jaqueta Softshell Tática",
     categoria: "vestuario",
     subcategoria: "jaquetas",
@@ -239,6 +252,7 @@ window.PRODUTOS = [
   },
   {
     id: "corta-vento-leve",
+    codigo: "VES-008",
     nome: "Corta-vento Leve Dobrável",
     categoria: "vestuario",
     subcategoria: "jaquetas",
@@ -256,6 +270,7 @@ window.PRODUTOS = [
   },
   {
     id: "bone-tatico-velcro",
+    codigo: "VES-009",
     nome: "Boné Tático com Velcro",
     categoria: "vestuario",
     subcategoria: "bones",
@@ -273,6 +288,7 @@ window.PRODUTOS = [
   },
   {
     id: "chapeu-boonie",
+    codigo: "VES-010",
     nome: "Chapéu Boonie Camuflado",
     categoria: "vestuario",
     subcategoria: "bones",
@@ -290,6 +306,7 @@ window.PRODUTOS = [
   },
   {
     id: "balaclava-tatica",
+    codigo: "VES-011",
     nome: "Balaclava Tática",
     categoria: "vestuario",
     subcategoria: "balaclavas",
@@ -309,6 +326,7 @@ window.PRODUTOS = [
   /* ======================= EQUIPAMENTOS TÁTICOS ====================== */
   {
     id: "colete-plate-carrier",
+    codigo: "EQP-001",
     nome: "Colete Plate Carrier Modular",
     categoria: "equipamentos",
     subcategoria: "coletes",
@@ -329,6 +347,7 @@ window.PRODUTOS = [
   },
   {
     id: "colete-modular-leve",
+    codigo: "EQP-002",
     nome: "Colete Modular Leve",
     categoria: "equipamentos",
     subcategoria: "coletes",
@@ -346,6 +365,7 @@ window.PRODUTOS = [
   },
   {
     id: "cinto-tatico-fivela-metal",
+    codigo: "EQP-003",
     nome: "Cinto Tático Fivela de Metal",
     categoria: "equipamentos",
     subcategoria: "cintos",
@@ -363,6 +383,7 @@ window.PRODUTOS = [
   },
   {
     id: "cinto-guarnicao",
+    codigo: "EQP-004",
     nome: "Cinto de Guarnição Modular",
     categoria: "equipamentos",
     subcategoria: "cintos",
@@ -380,6 +401,7 @@ window.PRODUTOS = [
   },
   {
     id: "coldre-polimero-universal",
+    codigo: "EQP-005",
     nome: "Coldre Externo em Polímero",
     categoria: "equipamentos",
     subcategoria: "coldres",
@@ -399,6 +421,7 @@ window.PRODUTOS = [
   },
   {
     id: "coldre-velado",
+    codigo: "EQP-006",
     nome: "Coldre Velado Interno",
     categoria: "equipamentos",
     subcategoria: "coldres",
@@ -416,6 +439,7 @@ window.PRODUTOS = [
   },
   {
     id: "porta-carregador-duplo",
+    codigo: "EQP-007",
     nome: "Porta-carregador Duplo MOLLE",
     categoria: "equipamentos",
     subcategoria: "modulares",
@@ -433,6 +457,7 @@ window.PRODUTOS = [
   },
   {
     id: "bolsa-administrativa-molle",
+    codigo: "EQP-008",
     nome: "Bolsa Administrativa MOLLE",
     categoria: "equipamentos",
     subcategoria: "modulares",
@@ -450,6 +475,7 @@ window.PRODUTOS = [
   },
   {
     id: "luva-tatica-meio-dedo",
+    codigo: "EQP-009",
     nome: "Luva Tática Meio Dedo",
     categoria: "equipamentos",
     subcategoria: "luvas",
@@ -467,6 +493,7 @@ window.PRODUTOS = [
   },
   {
     id: "luva-tatica-dedo-inteiro",
+    codigo: "EQP-010",
     nome: "Luva Tática Dedo Inteiro Touch",
     categoria: "equipamentos",
     subcategoria: "luvas",
@@ -484,6 +511,7 @@ window.PRODUTOS = [
   },
   {
     id: "joelheira-cotoveleira-kit",
+    codigo: "EQP-011",
     nome: "Kit Joelheira + Cotoveleira Tática",
     categoria: "equipamentos",
     subcategoria: "protecao",
@@ -503,6 +531,7 @@ window.PRODUTOS = [
   /* ========================= MOCHILAS E BOLSAS ======================= */
   {
     id: "mochila-assalto-40l",
+    codigo: "MOC-001",
     nome: "Mochila Tática de Assalto 40L",
     categoria: "mochilas",
     subcategoria: "mochilas",
@@ -522,6 +551,7 @@ window.PRODUTOS = [
   },
   {
     id: "mochila-3-dias-60l",
+    codigo: "MOC-002",
     nome: "Mochila Expedição 60L",
     categoria: "mochilas",
     subcategoria: "mochilas",
@@ -539,6 +569,7 @@ window.PRODUTOS = [
   },
   {
     id: "mochila-edc-25l",
+    codigo: "MOC-003",
     nome: "Mochila EDC 25L Urbana",
     categoria: "mochilas",
     subcategoria: "mochilas",
@@ -556,6 +587,7 @@ window.PRODUTOS = [
   },
   {
     id: "bornal-tatico",
+    codigo: "MOC-004",
     nome: "Bornal Tático de Ombro",
     categoria: "mochilas",
     subcategoria: "bornais",
@@ -573,6 +605,7 @@ window.PRODUTOS = [
   },
   {
     id: "pochete-tatica",
+    codigo: "MOC-005",
     nome: "Pochete Tática",
     categoria: "mochilas",
     subcategoria: "bornais",
@@ -590,6 +623,7 @@ window.PRODUTOS = [
   },
   {
     id: "saco-estanque-20l",
+    codigo: "MOC-006",
     nome: "Saco Estanque 20L",
     categoria: "mochilas",
     subcategoria: "bolsas",
@@ -609,6 +643,7 @@ window.PRODUTOS = [
   /* ====================== CAMPING E SOBREVIVÊNCIA ===================== */
   {
     id: "faca-tatica-lamina-fixa",
+    codigo: "CAM-001",
     nome: "Faca Tática Lâmina Fixa com Bainha",
     categoria: "camping",
     subcategoria: "facas",
@@ -626,6 +661,7 @@ window.PRODUTOS = [
   },
   {
     id: "canivete-multifuncao",
+    codigo: "CAM-002",
     nome: "Canivete Multifunção 11 em 1",
     categoria: "camping",
     subcategoria: "facas",
@@ -643,6 +679,7 @@ window.PRODUTOS = [
   },
   {
     id: "lanterna-tatica-led",
+    codigo: "CAM-003",
     nome: "Lanterna Tática LED Recarregável",
     categoria: "camping",
     subcategoria: "lanternas",
@@ -660,6 +697,7 @@ window.PRODUTOS = [
   },
   {
     id: "lanterna-cabeca",
+    codigo: "CAM-004",
     nome: "Lanterna de Cabeça LED",
     categoria: "camping",
     subcategoria: "lanternas",
@@ -677,6 +715,7 @@ window.PRODUTOS = [
   },
   {
     id: "cantil-militar-caneco",
+    codigo: "CAM-005",
     nome: "Cantil Militar com Caneco e Capa",
     categoria: "camping",
     subcategoria: "hidratacao",
@@ -694,6 +733,7 @@ window.PRODUTOS = [
   },
   {
     id: "bolsa-hidratacao-2l",
+    codigo: "CAM-006",
     nome: "Bolsa de Hidratação 2L",
     categoria: "camping",
     subcategoria: "hidratacao",
@@ -711,6 +751,7 @@ window.PRODUTOS = [
   },
   {
     id: "rede-selva-mosquiteiro",
+    codigo: "CAM-007",
     nome: "Rede de Selva com Mosquiteiro",
     categoria: "camping",
     subcategoria: "abrigo",
@@ -728,6 +769,7 @@ window.PRODUTOS = [
   },
   {
     id: "poncho-impermeavel",
+    codigo: "CAM-008",
     nome: "Poncho Impermeável Multiuso",
     categoria: "camping",
     subcategoria: "abrigo",
@@ -745,6 +787,7 @@ window.PRODUTOS = [
   },
   {
     id: "bussola-lensatica",
+    codigo: "CAM-009",
     nome: "Bússola Lensática Militar",
     categoria: "camping",
     subcategoria: "navegacao",
@@ -762,6 +805,7 @@ window.PRODUTOS = [
   },
   {
     id: "binoculo-10x42",
+    codigo: "CAM-010",
     nome: "Binóculo 10x42",
     categoria: "camping",
     subcategoria: "navegacao",
@@ -779,6 +823,7 @@ window.PRODUTOS = [
   },
   {
     id: "kit-sobrevivencia",
+    codigo: "CAM-011",
     nome: "Kit de Sobrevivência 12 Itens",
     categoria: "camping",
     subcategoria: "sobrevivencia",
@@ -796,6 +841,7 @@ window.PRODUTOS = [
   },
   {
     id: "marmita-campanha",
+    codigo: "CAM-012",
     nome: "Marmita de Campanha em Alumínio",
     categoria: "camping",
     subcategoria: "sobrevivencia",
@@ -815,6 +861,7 @@ window.PRODUTOS = [
   /* ====================== ACESSÓRIOS E INSÍGNIAS ===================== */
   {
     id: "patch-bandeira-brasil",
+    codigo: "ACS-001",
     nome: "Patch Bandeira do Brasil Bordado",
     categoria: "acessorios",
     subcategoria: "patches",
@@ -832,6 +879,7 @@ window.PRODUTOS = [
   },
   {
     id: "patch-tipo-sanguineo",
+    codigo: "ACS-002",
     nome: "Patch Tipo Sanguíneo",
     categoria: "acessorios",
     subcategoria: "patches",
@@ -849,6 +897,7 @@ window.PRODUTOS = [
   },
   {
     id: "patch-personalizado-nome",
+    codigo: "ACS-003",
     nome: "Tarjeta de Nome Personalizada",
     categoria: "acessorios",
     subcategoria: "patches",
@@ -866,6 +915,7 @@ window.PRODUTOS = [
   },
   {
     id: "dog-tag-personalizada",
+    codigo: "ACS-004",
     nome: "Dog Tag Personalizada (par)",
     categoria: "acessorios",
     subcategoria: "dogtags",
@@ -883,6 +933,7 @@ window.PRODUTOS = [
   },
   {
     id: "oculos-balistico",
+    codigo: "ACS-005",
     nome: "Óculos de Proteção Tático",
     categoria: "acessorios",
     subcategoria: "oculos",
@@ -900,6 +951,7 @@ window.PRODUTOS = [
   },
   {
     id: "protetor-auricular",
+    codigo: "ACS-006",
     nome: "Abafador de Ruído para Tiro",
     categoria: "acessorios",
     subcategoria: "oculos",
@@ -917,6 +969,7 @@ window.PRODUTOS = [
   },
   {
     id: "caneca-militar-esmaltada",
+    codigo: "ACS-007",
     nome: "Caneca Militar Esmaltada",
     categoria: "acessorios",
     subcategoria: "presentes",
