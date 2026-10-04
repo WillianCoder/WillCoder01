@@ -72,14 +72,14 @@ Cód. CAL-001 | Calçados > Coturnos
 Tamanho: 42 | Cor: Preto
 1 un. x R$ 289,90 = *R$ 289,90* (de R$ 349,90 cada)
 Couro e nylon, solado antiderrapante e palmilha anatômica.
-https://williancoder.github.io/WillCoder01/PROJETOS/arte-militar-011/site/#/produto/coturno-tatico-cano-alto
+https://williancoder.github.io/arte-militar-011/#/produto/coturno-tatico-cano-alto
 
 *2. Calça Tática Rip-Stop*
 Cód. VES-003 | Vestuário > Calças Táticas
 Tamanho: 42 | Cor: Caqui
 2 un. x R$ 169,90 = *R$ 339,80* (de R$ 199,90 cada)
 8 bolsos, elastano para mobilidade e reforço nos joelhos.
-https://williancoder.github.io/WillCoder01/PROJETOS/arte-militar-011/site/#/produto/calca-tatica-ripstop
+https://williancoder.github.io/arte-militar-011/#/produto/calca-tatica-ripstop
 
 ------------------------------
 *VALORES*
