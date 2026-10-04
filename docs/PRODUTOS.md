@@ -104,7 +104,6 @@ Campo `ilustracao.tipo`:
 ## Conferir se está tudo certo
 No GitHub, a aba **Actions** roda os testes a cada alteração. No computador:
 ```bash
-cd PROJETOS/arte-militar-011
 node --test tests/*.test.js
 ```
 Exemplos de avisos: `subcategoria "coturno" não existe em "calcados"`, `cor "preto" não está cadastrada` (maiúscula importa), `preço deve ser número com ponto (ex.: 89.9), sem aspas`.

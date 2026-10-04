@@ -1,21 +1,22 @@
 # Publicar e divulgar
 
 ## Onde o site está no ar
-O repositório já publica tudo no **GitHub Pages** automaticamente (workflow `.github/workflows/pages.yml`) sempre que algo entra na branch `main`:
+Este repositório publica a pasta `site/` no **GitHub Pages** automaticamente (workflow `.github/workflows/pages.yml`) sempre que algo entra na branch `main` — e só publica se os testes passarem:
 
-**https://williancoder.github.io/WillCoder01/PROJETOS/arte-militar-011/site/**
+**https://williancoder.github.io/arte-militar-011/**
 
 Não precisa fazer nada: editou e salvou na `main` → em ~1 minuto o site atualiza. Acompanhe na aba **Actions**.
 
 > O navegador pode guardar a versão antiga por alguns minutos. Use **Ctrl + F5** (ou aba anônima) para ver na hora.
 
+**Primeira vez:** em **Settings → Pages**, confira se *Source* está como **GitHub Actions** (o workflow tenta ativar sozinho).
+
 ## Domínio próprio
-Um endereço como `artemilitar011.com.br` passa muito mais confiança. O caminho mais simples é colocar o site num **repositório só dele**:
+Um endereço como `artemilitar011.com.br` passa muito mais confiança:
 
 1. **Registre o domínio** em [registro.br](https://registro.br) (~R$ 40/ano para `.com.br`).
-2. **Crie um repositório novo** no GitHub (ex.: `arte-militar-011`) e envie para ele **o conteúdo da pasta `site/`** (o `index.html` precisa ficar na raiz).
-3. No repositório novo: **Settings → Pages** → *Source*: `Deploy from a branch` → `main` / `(root)` → *Custom domain*: `www.artemilitar011.com.br` → marque **Enforce HTTPS** (aparece depois que o DNS propagar).
-4. No **registro.br → DNS** do domínio, crie:
+2. No GitHub: **Settings → Pages → Custom domain** → `www.artemilitar011.com.br` → **Save**.
+3. No **registro.br → DNS** do domínio, crie:
    | Tipo | Nome | Valor |
    |---|---|---|
    | CNAME | `www` | `williancoder.github.io` |
@@ -23,9 +24,10 @@ Um endereço como `artemilitar011.com.br` passa muito mais confiança. O caminho
    | A | *(vazio)* | `185.199.109.153` |
    | A | *(vazio)* | `185.199.110.153` |
    | A | *(vazio)* | `185.199.111.153` |
+4. Espere o DNS propagar (de minutos a 24 h) e marque **Enforce HTTPS** em Settings → Pages.
 5. Atualize no projeto: `urlSite` no `config.js` e o `og:image` no `index.html` com o novo endereço.
 
-Alternativas gratuitas equivalentes: **Cloudflare Pages** e **Netlify** (arrastar a pasta `site/` e pronto).
+Alternativas gratuitas equivalentes: **Cloudflare Pages** e **Netlify** (apontando para a pasta `site/`).
 
 ## Google e prévia do link
 - **Título e descrição no Google:** no topo do `site/index.html` (`<title>` e `<meta name="description">`). Cada página do site também troca o título da aba sozinha.
@@ -47,7 +49,7 @@ Alternativas gratuitas equivalentes: **Cloudflare Pages** e **Netlify** (arrasta
 
 ## Como testar no computador
 ```bash
-cd PROJETOS/arte-militar-011/site
+cd site
 python -m http.server 8000
 ```
 Abra http://localhost:8000. (Abrir o `index.html` com dois cliques também funciona.)

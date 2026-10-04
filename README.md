@@ -5,8 +5,8 @@
 ## 📌 Sobre
 Site de vendas da **Arte Militar 011**: artigos militares, táticos e de aventura. O cliente navega pelo **painel lateral à esquerda**, escolhe tamanho e cor, monta o pedido e **envia tudo pronto para o WhatsApp Business** da loja. Tem página da **loja física com mapa**, contatos, perguntas frequentes e histórico de pedidos.
 
-🌐 **Site no ar:** https://williancoder.github.io/WillCoder01/PROJETOS/arte-militar-011/site/
-(publicado automaticamente pelo GitHub Pages a cada alteração na `main`)
+🌐 **Site no ar:** https://williancoder.github.io/arte-militar-011/
+(publicado automaticamente pelo GitHub Pages a cada alteração na `main` — workflow `.github/workflows/pages.yml`, que publica só a pasta `site/`)
 
 ## 📸 Imagens
 | Computador | Celular (menu aberto) |
@@ -120,6 +120,8 @@ HTML, CSS e JavaScript puros — **sem framework, sem instalação, sem servidor
 ```
 arte-militar-011/
 ├── README.md               # esta página
+├── LICENSE
+├── .github/workflows/      # publicação no GitHub Pages + testes
 ├── meta.json / CHANGELOG.md
 ├── docs/
 │   ├── GUIA-DE-EDICAO.md   # como mudar cada coisa do site
@@ -146,7 +148,7 @@ arte-militar-011/
 - **Mais simples:** dê dois cliques em `site/index.html`.
 - **Igual ao site no ar** (recomendado para testar o mapa e o CEP):
   ```bash
-  cd PROJETOS/arte-militar-011/site
+  cd site
   python -m http.server 8000
   # abra http://localhost:8000
   ```
@@ -154,7 +156,6 @@ arte-militar-011/
 ## 🧪 Testes
 Conferem o catálogo (categoria existe? preço é número? foto existe? cor cadastrada?) e o pedido (valores, Pix, mensagem do WhatsApp).
 ```bash
-cd PROJETOS/arte-militar-011
 node --test tests/*.test.js
 ```
 Se você errar algo ao editar um produto, o teste diz qual produto e o que está errado. Eles também rodam sozinhos no GitHub (aba **Actions**).
@@ -173,4 +174,4 @@ Versão 1.1.0 pronta para uso — faltam os dados reais da loja (veja o checklis
 - Como as páginas usam `#/` no endereço, o Google indexa melhor a página inicial do que cada produto. Se SEO de produto virar prioridade, ver [Publicar](docs/PUBLICAR.md#google-e-prévia-do-link).
 
 ## 📄 Licença
-Código sob a licença do repositório. Marcas e fotos de fabricantes pertencem aos seus donos.
+Código sob a licença [MIT](LICENSE). Marcas e fotos de fabricantes pertencem aos seus donos.

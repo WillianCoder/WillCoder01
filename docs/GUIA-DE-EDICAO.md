@@ -12,7 +12,7 @@ Os outros arquivos (`app.js`, `pedido.js`, `ilustracoes.js`, `estilo.css`) são 
 ---
 
 ## Como editar pelo GitHub (sem instalar nada)
-1. Abra o repositório no GitHub e entre em `PROJETOS/arte-militar-011/site/js/`.
+1. Abra o repositório **arte-militar-011** no GitHub e entre em `site/js/`.
 2. Clique no arquivo (ex.: `config.js`) e depois no **ícone de lápis** ✏️ ("Edit this file").
 3. Faça a alteração.
 4. Clique em **Commit changes…** → escreva o que mudou (ex.: "troca número do WhatsApp") → **Commit changes**.

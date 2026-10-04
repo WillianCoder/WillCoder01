@@ -218,5 +218,5 @@ window.LOJA = {
     "servidores: o carrinho e o histórico ficam somente no seu navegador.",
 
   // Endereço público do site (usado no compartilhamento e no Google). Troque quando tiver domínio próprio.
-  urlSite: "https://williancoder.github.io/WillCoder01/PROJETOS/arte-militar-011/site/"
+  urlSite: "https://williancoder.github.io/arte-militar-011/"
 };

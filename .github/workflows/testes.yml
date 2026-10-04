@@ -1,0 +1,21 @@
+name: Testes
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Testes do catálogo e do pedido
+        run: node --test tests/*.test.js
+      - name: Sintaxe dos scripts do site
+        run: for f in site/js/*.js; do node --check "$f"; done
