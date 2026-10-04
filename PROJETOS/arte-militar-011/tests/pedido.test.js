@@ -83,18 +83,60 @@ test("retirada na loja não exige endereço", () => {
   assert.equal(PD.montarPedido(d, PRODUTOS, LOJA).endereco, null);
 });
 
-test("mensagem do WhatsApp traz itens, valores, cliente e endereço", () => {
-  const pedido = PD.montarPedido(dadosValidos(), PRODUTOS, LOJA);
+test("mensagem do WhatsApp: resumo, produtos detalhados, valores, cliente e entrega", () => {
+  const d = dadosValidos();
+  d.itens.push({ id: "lanterna-tatica-led", variacoes: {}, qtd: 1 });
+  d.urlBase = "https://loja.exemplo/";
+  const pedido = PD.montarPedido(d, PRODUTOS, LOJA);
   const msg = PD.mensagemPedido(pedido, LOJA);
-  assert.match(msg, /Pedido: \*AM011-261004-0001\*/);
-  assert.match(msg, /Data: 04\/10\/2026 14:30/);
-  assert.match(msg, /Calça Tática Rip-Stop/);
-  assert.match(msg, /Tamanho: 42 \| Cor: Caqui/);
-  assert.match(msg, /2 x R\$ 169,90 = R\$ 339,80/);
-  assert.match(msg, /Total no Pix: \*R\$ 322,81\*/);
-  assert.match(msg, /Praça da Sé, 100/);
-  assert.match(msg, /CEP: 01001-000/);
-  assert.match(msg, /OBSERVAÇÕES:\* Entregar à tarde/);
+  // cabeçalho e resumo
+  assert.match(msg, /^\*PEDIDO AM011-261004-0001\*\nArte Militar 011 \| 04\/10\/2026 14:30/);
+  assert.match(msg, /2 produtos diferentes \| 3 unidades/);
+  assert.match(msg, /Entrega: Envio pelos Correios/);
+  // cada produto: código, categoria, variações, conta, preço "de", resumo e link
+  assert.match(msg, /\*1\. Calça Tática Rip-Stop\*\nCód\. VES-\d{3} \| Vestuário > Calças Táticas\nTamanho: 42 \| Cor: Caqui\n2 un\. x R\$ 169,90 = \*R\$ 339,80\* \(de R\$ 199,90 cada\)/);
+  assert.match(msg, /https:\/\/loja\.exemplo\/#\/produto\/calca-tatica-ripstop/);
+  assert.match(msg, /\*2\. Lanterna Tática LED Recarregável\*/);
+  // valores
+  assert.match(msg, /Produtos \(3 unidades\): R\$ 469,70/);
+  assert.match(msg, /Economia nas promoções: R\$ 90,00/);
+  assert.match(msg, /Desconto Pix \(5%\): -R\$ 23,49/);
+  assert.match(msg, /\*TOTAL DOS PRODUTOS: R\$ 446,21\* \+ frete/);
+  // cliente e entrega
+  assert.match(msg, /WhatsApp: \(11\) 98765-4321/);
+  assert.match(msg, /Praça da Sé, 100\nSé - São Paulo\/SP\nCEP 01001-000/);
+  assert.match(msg, /\*OBSERVAÇÕES\*\nEntregar à tarde/);
+  assert.equal(pedido.produtosDiferentes, 2);
+  assert.equal(pedido.quantidade, 3);
+});
+
+test("retirada na loja: total sem frete", () => {
+  const d = dadosValidos();
+  d.entrega = "retirada";
+  const msg = PD.mensagemPedido(PD.montarPedido(d, PRODUTOS, LOJA), LOJA);
+  assert.match(msg, /\*TOTAL: R\$ 322,81\*\n/);
+  assert.match(msg, /Frete: sem custo \(retirada na loja\)/);
+  assert.doesNotMatch(msg, /CEP /);
+});
+
+test("pedido grande vira mensagem compacta e continua com todos os itens", () => {
+  const d = dadosValidos();
+  d.urlBase = "https://loja.exemplo/";
+  d.itens = PRODUTOS.map((p) => ({ id: p.id, variacoes: {}, qtd: 1 }));
+  const pedido = PD.montarPedido(d, PRODUTOS, LOJA);
+  const url = PD.FINALIZADORES.whatsapp(pedido, LOJA).url;
+  const texto = decodeURIComponent(url.split("?text=")[1]);
+  assert.ok(url.length < 20000, "link muito grande: " + url.length);
+  assert.match(texto, new RegExp(PRODUTOS.length + " produtos diferentes"));
+  for (const p of PRODUTOS) assert.ok(texto.includes(p.codigo), "faltou " + p.codigo);
+  assert.doesNotMatch(texto, /https:\/\/loja\.exemplo/, "versão compacta não leva links");
+});
+
+test("mensagem de um produto só (Comprar agora) traz código e conta", () => {
+  const p = PRODUTOS.find((x) => x.id === "coturno-tatico-cano-alto");
+  const msg = PD.mensagemProduto(p, { Tamanho: "42", Cor: "Preto" }, 2, LOJA, "https://loja.exemplo/#/produto/" + p.id);
+  assert.match(msg, /Cód\. CAL-001 \| Calçados > Coturnos/);
+  assert.match(msg, /2 un\. x R\$ 289,90 = \*R\$ 579,80\*/);
 });
 
 test("link do WhatsApp usa só os números e codifica o texto", () => {

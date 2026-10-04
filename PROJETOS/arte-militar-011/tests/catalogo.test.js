@@ -37,6 +37,13 @@ test("banners apontam para ilustrações ou imagens válidas", () => {
   }
 });
 
+test("produtos têm código único no formato ABC-000", () => {
+  const cods = PRODUTOS.map((p) => p.codigo);
+  for (const p of PRODUTOS) assert.match(p.codigo || "", /^[A-Z]{2,4}-\d{3}$/, `código inválido em "${p.id}" (use algo como CAL-001)`);
+  const repetidos = cods.filter((c, i) => cods.indexOf(c) !== i);
+  assert.equal(repetidos.join(", "), "", "códigos repetidos");
+});
+
 test("produtos têm id único", () => {
   const ids = PRODUTOS.map((p) => p.id);
   const repetidos = ids.filter((id, i) => ids.indexOf(id) !== i);

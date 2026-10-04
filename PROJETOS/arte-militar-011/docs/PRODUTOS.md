@@ -6,6 +6,7 @@ Todos os produtos ficam em [`site/js/produtos.js`](../site/js/produtos.js), um b
 ```js
 {
   id: "coturno-tatico-cano-alto",          // único, minúsculas, sem acento, hífens no lugar de espaço
+  codigo: "CAL-001",                       // código curto: aparece no pedido do WhatsApp e no nome das fotos
   nome: "Coturno Tático Cano Alto",
   categoria: "calcados",                   // id de uma categoria do config.js
   subcategoria: "coturnos",                // id de uma subcategoria dessa categoria
@@ -51,7 +52,18 @@ Depois de colar, confira a **vírgula** depois do `}`.
 - A variação chamada **`Cor`** é especial: mostra bolinhas coloridas e muda a cor da ilustração. Cada cor precisa estar cadastrada em `cores` no `config.js` ([como](GUIA-DE-EDICAO.md#6-cores-das-variações)).
 - Sem variações: `variacoes: {}`.
 
+## Códigos dos produtos
+Cada produto tem um `codigo` curto, por categoria: `VES` vestuário, `CAL` calçados, `EQP` equipamentos, `MOC` mochilas, `CAM` camping, `ACS` acessórios + número (`CAL-001`, `CAL-002`...). Ele aparece **em cada item da mensagem do WhatsApp**, para você achar o produto no estoque na hora, e é usado no **nome das fotos**. Produto novo: use o próximo número livre da categoria (os testes avisam se repetir). A lista completa com todos os códigos está em [FOTOS.md](FOTOS.md).
+
 ## Fotos
+**Jeito mais fácil:** mande as fotos na conversa com o Claude dizendo de qual produto é cada uma (ou com o código no nome). Ele identifica o produto, comprime, renomeia, coloca no lugar certo e confere se ficou tudo certo.
+
+**Fazendo você mesmo (com o ajudante):**
+1. Nomeie cada foto com o **código** do produto: `CAL-001.jpg` (capa), `CAL-001-2.jpg`, `CAL-001-3.jpg`...
+2. Coloque em `site/img/produtos/`.
+3. Na pasta do projeto, rode `node ferramentas/fotos.js --vincular` — ele preenche o campo `imagens` de cada produto sozinho e atualiza a [lista de conferência](FOTOS.md). Foto com nome que não bate com nenhum código gera um aviso.
+
+**Fazendo à mão:**
 Enquanto um produto não tem foto, o site mostra uma **ilustração** (desenho) do tipo do produto, que muda de cor conforme a variação. Para usar fotos reais:
 
 1. **Prepare a foto**

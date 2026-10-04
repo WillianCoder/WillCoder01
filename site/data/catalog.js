@@ -54,7 +54,7 @@ window.CATALOGO = {
       ],
       "data": "2026-10-04",
       "atualizado": "2026-10-04",
-      "versao": "1.0.0",
+      "versao": "1.1.0",
       "nivel": "intermediario",
       "resumo": "Loja virtual de artigos militares com menu lateral, catálogo por categorias, loja física no mapa e pedidos finalizados pelo WhatsApp Business.",
       "destaque": false,
