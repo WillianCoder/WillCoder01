@@ -51,7 +51,7 @@ Cada site vive em um repositório separado, para não misturar código, históri
 |---|---|---|
 | 📚 Concursos Públicos | [site-concursos-publicos-geral](https://github.com/WillianCoder/site-concursos-publicos-geral) | 🟡 Em desenvolvimento |
 | 🎖️ Arte Militar | [arte-militar-011](https://github.com/WillianCoder/arte-militar-011) | 🟡 Em desenvolvimento |
-| 🚔 PM Alerta – Anotador de Audiências | [pm-alerta-audiencias](https://github.com/WillianCoder/pm-alerta-audiencias) | 🟡 Em desenvolvimento |
+| ⚖️ Alerta Audiência – Anotador de Audiências | [pm-alerta-audiencias](https://github.com/WillianCoder/pm-alerta-audiencias) | 🟡 Em desenvolvimento |
 
 ## 📊 Status dos projetos
 🟢 Concluído · 🟡 Em desenvolvimento · 🔵 Planejado · 🟠 Em teste · 🔴 Bloqueado · ⚪ Arquivado
