@@ -25,9 +25,9 @@ Gerado automaticamente por `scripts/catalogo.py` a partir dos `meta.json` — ne
 <!-- STATS:INICIO -->
 | Itens | Projetos | Concluídos | Em desenvolvimento | Acadêmicos | Estudos | Experimentos | Documentos |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| 3 | 2 | 0 | 2 | 0 | 0 | 1 | 9 |
+| 4 | 3 | 0 | 3 | 0 | 0 | 1 | 10 |
 
-**Tecnologias registradas:** CSS, HTML, Impressão 3D, JavaScript, Ollama, Piper TTS, PostgreSQL, Prisma, Python, Raspberry Pi, TypeScript, Vitest, Vosk
+**Tecnologias registradas:** CSS, Firebase, HTML, Impressão 3D, JavaScript, Ollama, Piper TTS, PostgreSQL, Prisma, PWA, Python, Raspberry Pi, TypeScript, Vitest, Vosk
 <!-- STATS:FIM -->
 
 ## 🧭 Como navegar
@@ -51,7 +51,7 @@ Cada site vive em um repositório separado, para não misturar código, históri
 |---|---|---|
 | 📚 Concursos Públicos | [site-concursos-publicos-geral](https://github.com/WillianCoder/site-concursos-publicos-geral) | 🟡 Em desenvolvimento |
 | 🎖️ Arte Militar | [arte-militar-011](https://github.com/WillianCoder/arte-militar-011) | 🟡 Em desenvolvimento |
-| 🚔 PM Alerta – Anotador de Audiências | *repositório próprio em breve* | 🔵 Planejado — em projeto |
+| 🚔 PM Alerta – Anotador de Audiências | [PROJETOS/pm-alerta-audiencias](PROJETOS/pm-alerta-audiencias/README.md) · *vai para repositório próprio* | 🟡 Em desenvolvimento |
 
 ## 📊 Status dos projetos
 🟢 Concluído · 🟡 Em desenvolvimento · 🔵 Planejado · 🟠 Em teste · 🔴 Bloqueado · ⚪ Arquivado
