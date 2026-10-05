@@ -1,6 +1,6 @@
 // Arquivo gerado por scripts/catalogo.py — não edite manualmente.
 window.CATALOGO = {
-  "gerado": "2026-10-05",
+  "gerado": "2026-09-29",
   "perfil": {
     "nome": "Willian Salles",
     "titulo": "Desenvolvimento • Tecnologia • Projetos • Aprendizado",
@@ -16,18 +16,17 @@ window.CATALOGO = {
     }
   },
   "estatisticas": {
-    "total": 4,
-    "projetos": 3,
+    "total": 3,
+    "projetos": 2,
     "concluidos": 0,
-    "desenvolvimento": 3,
+    "desenvolvimento": 2,
     "academicos": 0,
     "estudos": 0,
     "experimentos": 1,
     "portfolio": 0,
-    "documentos": 10,
+    "documentos": 9,
     "tecnologias": [
       "CSS",
-      "Firebase",
       "HTML",
       "Impressão 3D",
       "JavaScript",
@@ -35,7 +34,6 @@ window.CATALOGO = {
       "Piper TTS",
       "PostgreSQL",
       "Prisma",
-      "PWA",
       "Python",
       "Raspberry Pi",
       "TypeScript",
@@ -44,36 +42,6 @@ window.CATALOGO = {
     ]
   },
   "itens": [
-    {
-      "titulo": "PM Alerta — Anotador de Audiências",
-      "tipo": "projeto",
-      "categoria": "Web",
-      "status": "desenvolvimento",
-      "tecnologias": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Firebase",
-        "PWA"
-      ],
-      "data": "2026-10-04",
-      "atualizado": "2026-10-05",
-      "versao": "0.1.0",
-      "nivel": "intermediario",
-      "resumo": "PWA de lembretes de audiências para policiais militares: Premium R$ 10 via Pix, painel administrativo, AdSense e anúncios próprios.",
-      "destaque": false,
-      "portfolio": {
-        "problema": "",
-        "desenvolvido": "",
-        "participacao": "",
-        "resultado": ""
-      },
-      "links": {
-        "demo": "",
-        "repositorio": ""
-      },
-      "caminho": "PROJETOS/pm-alerta-audiencias"
-    },
     {
       "titulo": "Bizu do Salles",
       "tipo": "projeto",

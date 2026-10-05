@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /$
-Allow: /index.html
-Allow: /privacidade.html
-Allow: /termos.html
-Disallow: /admin.html
