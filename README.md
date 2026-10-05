@@ -25,7 +25,7 @@ Gerado automaticamente por `scripts/catalogo.py` a partir dos `meta.json` — ne
 <!-- STATS:INICIO -->
 | Itens | Projetos | Concluídos | Em desenvolvimento | Acadêmicos | Estudos | Experimentos | Documentos |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| 3 | 2 | 0 | 2 | 0 | 0 | 1 | 9 |
+| 3 | 2 | 0 | 2 | 0 | 0 | 1 | 8 |
 
 **Tecnologias registradas:** CSS, HTML, Impressão 3D, JavaScript, Ollama, Piper TTS, PostgreSQL, Prisma, Python, Raspberry Pi, TypeScript, Vitest, Vosk
 <!-- STATS:FIM -->

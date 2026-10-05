@@ -1,5 +1,5 @@
 {
-  "titulo": "Boneco Árvore IA",
+  "titulo": "Boneco IA",
   "tipo": "projeto",
   "categoria": "Inteligência Artificial",
   "status": "desenvolvimento",
@@ -12,10 +12,10 @@
     "Impressão 3D"
   ],
   "data": "2026-09-29",
-  "atualizado": "2026-09-29",
-  "versao": "0.3.0",
+  "atualizado": "2026-10-05",
+  "versao": "0.3.1",
   "nivel": "iniciante",
-  "resumo": "Boneco impresso em 3D com IA offline que acorda pelo nome e responde com voz grossa de árvore, sem sair do personagem.",
+  "resumo": "Boneco impresso em 3D com IA 100% offline e gratuita que acorda pelo nome e responde com a voz do personagem.",
   "destaque": false,
   "portfolio": {
     "problema": "",
@@ -25,6 +25,6 @@
   },
   "links": {
     "demo": "",
-    "repositorio": ""
+    "repositorio": "https://github.com/WillianCoder/boneco-ia"
   }
 }
