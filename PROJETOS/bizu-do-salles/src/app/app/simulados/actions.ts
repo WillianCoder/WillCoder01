@@ -9,7 +9,7 @@ import { db } from "@/lib/db";
 import { requireUser } from "@/lib/auth";
 import { userAccess } from "@/lib/access";
 import { filterWhere, FILTERS, visibleWhere, type Filter } from "@/lib/questions";
-import { pickRandom } from "@/core/simulation";
+import { pickRandom, smartPick, type SmartCandidate } from "@/core/simulation";
 import { orderFor, originalLetter } from "@/core/shuffle";
 import { rateLimit } from "@/lib/rate-limit";
 import { REGRAS } from "@/config/regras";
@@ -23,6 +23,7 @@ export async function createSimulation(form: FormData) {
   if (!rateLimit(`sim:${user.id}`, 20, 60 * 60_000)) fail("Muitos simulados criados em pouco tempo. Tente mais tarde.");
 
   const R = REGRAS.simulado;
+  if (form.get("tipo") === "inteligente") return createSmartSimulation(user, Number(form.get("tempo")));
   const rapido = form.get("tipo") === "rapido";
   const filtro = String(form.get("filtro") ?? "todas");
   const filter: Filter = filtro in FILTERS ? (filtro as Filter) : "todas";
@@ -84,4 +85,41 @@ export async function finishSimulation(form: FormData) {
   });
   if (done.count === 1 && answers.length) await db.questionAttempt.createMany({ data: answers });
   redirect(`/app/simulados/${attempt!.id}${late ? "?atrasado=1" : ""}`);
+}
+
+/**
+ * Simulado inteligente ("Tenho 10/30/60 minutos"): prioriza questões que o aluno errou
+ * e questões novas das matérias em que ele vai pior. Tempo e quantidade em REGRAS.simulado.tenhoMinutos.
+ */
+async function createSmartSimulation(user: Awaited<ReturnType<typeof requireUser>>, tempo: number) {
+  const n = REGRAS.simulado.tenhoMinutos[tempo];
+  if (!n) fail("Tempo inválido.");
+  const { cycles } = await userAccess(user.id, user.role);
+  const [pool, tentativas] = await Promise.all([
+    db.question.findMany({ where: visibleWhere(user, cycles), select: { id: true, subjectId: true }, take: 3000 }),
+    db.questionAttempt.findMany({ where: { userId: user.id }, select: { questionId: true, correct: true, question: { select: { subjectId: true } } }, orderBy: { createdAt: "desc" }, take: 5000 }),
+  ]);
+  if (pool.length === 0) fail("Nenhuma questão disponível para você ainda.");
+  const errou = new Set(tentativas.filter((t) => !t.correct).map((t) => t.questionId));
+  const respondeu = new Set(tentativas.map((t) => t.questionId));
+  const porMateria = new Map<string, { total: number; certas: number }>();
+  for (const t of tentativas) {
+    const m = porMateria.get(t.question.subjectId) ?? { total: 0, certas: 0 };
+    m.total++; if (t.correct) m.certas++;
+    porMateria.set(t.question.subjectId, m);
+  }
+  const candidatos: SmartCandidate[] = pool.map((q) => {
+    const m = porMateria.get(q.subjectId);
+    return { id: q.id, answered: respondeu.has(q.id), wrongBefore: errou.has(q.id), subjectRate: m ? Math.round((m.certas / m.total) * 100) : null };
+  });
+  const chosen = smartPick(candidatos, n!);
+  const sim = await db.simulation.create({
+    data: {
+      title: `Simulado inteligente · Tenho ${tempo} min · ${chosen.length} questões`, kind: "smart",
+      timeLimitS: tempo * 60, createdBy: user.id,
+      items: { create: chosen.map((questionId, position) => ({ questionId, position })) },
+    },
+  });
+  const attempt = await db.simulationAttempt.create({ data: { simulationId: sim.id, userId: user.id, total: chosen.length } });
+  redirect(`/app/simulados/${attempt.id}`);
 }

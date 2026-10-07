@@ -2,6 +2,19 @@
 
 Formato [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/), versões [SemVer](https://semver.org/lang/pt-BR/).
 
+## [0.14.0] — 2026-10-07
+### Adicionado
+- **🧭 Por que errei?** depois de cada erro: o que revisar, aproveitamento na matéria, treino de 5 questões, refazer erros e link para o resumo.
+- **🧠 Simulado inteligente** ("Tenho 10/30/60 min"): prioriza questões erradas e matérias fracas, com cronômetro.
+- **Nota de 0 a 10** no resultado do simulado, lida pelas regras de avaliação da ESSd (7,0 e 5,0).
+- **🎖️ Patentes, XP e 12 conquistas** no painel do aluno (calculado das respostas; sem mudança no banco).
+- **Página pública /grade** com as matérias oficiais, horas e quantas questões/resumos existem em cada uma.
+- Página inicial nova: preço por dia, números do banco, como funciona, destaque do plano Completo, perguntas frequentes e aviso de site independente.
+- `sitemap.xml`, sitemap no `robots.txt` e perguntas frequentes marcadas para o Google.
+- `docs/PLANO_DE_NEGOCIO.pdf` (`npm run negocio`): custos, taxas, ponto de equilíbrio, cenários e onde ganhar mais.
+### Melhorado (celular)
+- Números do painel, do resultado e do desempenho em 2 colunas; topo das páginas públicas com Grade/Entrar/Criar conta.
+
 ## [0.13.0] — 2026-10-04
 ### Melhorado (celular)
 - **Botão "☰ Mais" na barra inferior** do aluno e do admin, com o menu completo. Antes, no celular, não dava para chegar em Materiais, Cadernos, Ranking, Meu plano, Cupons, Auditoria, Escolas e Importar.

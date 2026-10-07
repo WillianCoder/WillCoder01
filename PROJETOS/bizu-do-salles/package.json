@@ -25,6 +25,7 @@
     "postinstall": "prisma generate",
     "comandos": "node scripts/gerar-comandos.mjs",
     "aprendizado": "node scripts/gerar-aprendizado.mjs",
+    "negocio": "node scripts/gerar-negocio.mjs",
     "content:arquivar": "tsx scripts/arquivar-fora-do-escopo.ts",
     "content:realinhar": "tsx scripts/realinhar-grade.ts",
     "planos:atualizar": "tsx scripts/atualizar-planos.ts"

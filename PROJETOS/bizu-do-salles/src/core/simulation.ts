@@ -51,3 +51,44 @@ export function secondsLeft(startedAt: Date, timeLimitS: number | null, now = ne
   if (!timeLimitS) return null;
   return Math.max(0, timeLimitS - Math.floor((now.getTime() - startedAt.getTime()) / 1000));
 }
+
+/** Questão candidata ao simulado inteligente. */
+export interface SmartCandidate {
+  id: string;
+  answered: boolean; // o aluno já respondeu esta questão alguma vez
+  wrongBefore: boolean; // já errou esta questão
+  subjectRate: number | null; // aproveitamento do aluno na matéria (0–100); null = nunca respondeu a matéria
+}
+
+/** Peso de cada questão: erros antigos primeiro, depois questões novas de matérias fracas. */
+export function smartWeight(c: SmartCandidate) {
+  const fraqueza = c.subjectRate === null ? 1 : (100 - c.subjectRate) / 50; // 0 (domina) a 2 (não acerta nada)
+  return 0.25 + (c.wrongBefore ? 3 : 0) + (c.answered ? 0 : 1.5) + fraqueza;
+}
+
+/**
+ * Simulado inteligente: sorteio PONDERADO sem repetição (método Efraimidis–Spirakis).
+ * Quem tem mais peso tem mais chance, mas ainda há variedade entre simulados.
+ */
+export function smartPick(candidates: readonly SmartCandidate[], n: number, rand: () => number = () => randomInt(1, 1_000_000) / 1_000_000): string[] {
+  return candidates
+    .map((c) => ({ id: c.id, key: Math.pow(rand(), 1 / smartWeight(c)) }))
+    .sort((a, b) => b.key - a.key)
+    .slice(0, Math.max(0, n))
+    .map((c) => c.id);
+}
+
+/** Nota de 0 a 10 (uma casa decimal), como nas verificações do CFSd. */
+export function notaDez(correct: number, total: number) {
+  return total ? Math.round((correct / total) * 100) / 10 : 0;
+}
+
+/**
+ * Leitura da nota pelas regras de avaliação da ESSd (Manual do Aluno, art. 146):
+ * abaixo de 7,0 o aluno vai para a verificação final; abaixo de 5,0 após a final, 2ª época.
+ */
+export function situacaoCFSd(nota: number) {
+  if (nota >= 7) return { nivel: "ok" as const, texto: "Acima de 7,0: neste ritmo você evitaria a verificação final." };
+  if (nota >= 5) return { nivel: "atencao" as const, texto: "Entre 5,0 e 7,0: no curso, isso levaria à verificação final. Revise as matérias abaixo." };
+  return { nivel: "risco" as const, texto: "Abaixo de 5,0: zona de risco (verificação final e, depois, 2ª época). Priorize as matérias abaixo." };
+}

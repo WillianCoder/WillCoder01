@@ -15,6 +15,8 @@ import { stateWhere } from "@/core/states";
 import { CYCLE_NAME, LEVEL_NAME } from "@/lib/format";
 import { answer, reportProblem, toggleMark } from "../actions";
 import { addToNotebook } from "../cadernos/actions";
+import { createSimulation } from "../simulados/actions";
+import { visibleMaterialWhere } from "@/lib/materials";
 
 export const metadata = { title: "Questões" };
 const POS = ["A", "B", "C", "D", "E"];
@@ -44,6 +46,16 @@ export default async function Questoes({ searchParams }: { searchParams: Promise
   const caderno = sp.caderno ? notebooks.find((n) => n.id === sp.caderno) : null;
   const nextId = q ? await nextQuestionId(filter === "nao-respondidas" ? { AND: [where, { id: { not: q.id } }] } : where, q.code) : null;
   const locked = await db.question.count({ where: { ...stateWhere(user.stateCode), status: "PUBLISHED", isFree: false, subject: { cycle: { code: { notIn: cycles as ("BASIC" | "SPECIFIC")[] } } } } });
+
+  // "Por que errei?": desempenho do aluno nesta matéria e se existe resumo para revisar.
+  const errou = !!(q && attempt && !attempt.correct);
+  const [naMateria, acertosNaMateria, resumos] = errou && q
+    ? await Promise.all([
+        db.questionAttempt.count({ where: { userId: user.id, question: { subjectId: q.subjectId } } }),
+        db.questionAttempt.count({ where: { userId: user.id, correct: true, question: { subjectId: q.subjectId } } }),
+        db.material.count({ where: { AND: [visibleMaterialWhere(user, cycles), { subjectId: q.subjectId }] } }),
+      ])
+    : [0, 0, 0];
 
   const order = q ? orderFor(user.id, q) : [];
   const byLetter = Object.fromEntries(q?.options.map((o) => [o.letter, o]) ?? []);
@@ -115,6 +127,23 @@ export default async function Questoes({ searchParams }: { searchParams: Promise
                 </div>
               ))}
               <div><h3>Por quê?</h3><p>{q.explanation}</p><p className="muted">📌 Referência: {q.reference}</p></div>
+              {errou && (
+                <div className="card stack revisao" role="note" aria-label="Por que errei">
+                  <h3>🧭 Por que errei?</h3>
+                  <p>Você marcou <strong>{POS[order.indexOf(attempt.chosenLetter)]}</strong>; o correto é <strong>{POS[order.indexOf(q.correctLetter)]}</strong>.
+                    {" "}Revise <strong>{q.subject.name}</strong>{q.topic ? <> › {q.topic.name}</> : null}, com base em <em>{q.reference}</em>.</p>
+                  {naMateria > 0 && <p className="muted">Seu aproveitamento nesta matéria: <strong>{Math.round((acertosNaMateria / naMateria) * 100)}%</strong> em {naMateria} resposta(s).</p>}
+                  <div className="row">
+                    <form action={createSimulation}>
+                      <input type="hidden" name="disciplina" value={q.subjectId} /><input type="hidden" name="quantidade" value="5" />
+                      <input type="hidden" name="filtro" value="todas" /><input type="hidden" name="minutos" value="0" />
+                      <button className="btn small" type="submit">🎯 Treinar 5 questões desta matéria</button>
+                    </form>
+                    <Link className="btn ghost small" href={`/app/questoes?filtro=erradas&disciplina=${q.subjectId}`}>🔁 Refazer meus erros aqui</Link>
+                    {resumos > 0 && <Link className="btn ghost small" href={`/app/materiais?disciplina=${q.subjectId}`}>📖 Ler o resumo</Link>}
+                  </div>
+                </div>
+              )}
             </div>
           )}
 

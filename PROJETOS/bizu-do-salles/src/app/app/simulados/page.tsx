@@ -27,6 +27,19 @@ export default async function Simulados({ searchParams }: { searchParams: Promis
       <h1>Simulados</h1>
       {erro && <p className="alert bad" role="alert">{erro}</p>}
 
+      <section className="card stack destaque">
+        <h2>🧠 Simulado inteligente</h2>
+        <p className="muted">Quanto tempo você tem? O Bizu monta o simulado priorizando <strong>as questões que você errou</strong> e as <strong>matérias em que você vai pior</strong>, com cronômetro.</p>
+        <div className="row">
+          {Object.entries(R.tenhoMinutos).map(([min, qtd]) => (
+            <form action={createSimulation} key={min}>
+              <input type="hidden" name="tipo" value="inteligente" /><input type="hidden" name="tempo" value={min} />
+              <button className="btn" type="submit" aria-label={`Tenho ${min} minutos: ${qtd} questões`}>⏱️ Tenho {min} min <small>· {qtd} questões</small></button>
+            </form>
+          ))}
+        </div>
+      </section>
+
       <div className="grid">
         <form action={createSimulation} className="card stack">
           <input type="hidden" name="tipo" value="rapido" />
