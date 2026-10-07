@@ -338,7 +338,7 @@ model NotebookQuestion {
 model Simulation {
   id         String               @id @default(cuid())
   title      String
-  kind       String               // quick | subject | cycle | full | custom | review | errors
+  kind       String               // quick | subject | cycle | full | custom | review | errors | smart
   timeLimitS Int?
   createdBy  String?
   items      SimulationQuestion[]

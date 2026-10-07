@@ -28,7 +28,7 @@ export default async function Desempenho() {
   return (
     <div className="stack">
       <h1>Desempenho</h1>
-      <div className="grid">
+      <div className="grid stats">
         <div className="card"><div className="muted">Aproveitamento geral</div><div className="stat">{x.overall.rate}%</div></div>
         <div className="card"><div className="muted">Questões respondidas</div><div className="stat">{x.overall.answered}</div></div>
         <div className="card"><div className="muted">Tempo médio por questão</div><div className="stat">{avg}s</div></div>

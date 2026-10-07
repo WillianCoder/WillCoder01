@@ -1,6 +1,8 @@
 import "server-only";
 import { db } from "./db";
 import type { Attempt } from "../core/performance";
+import { maiorSequencia } from "../core/gamificacao";
+import { notaDez } from "../core/simulation";
 
 /** Tentativas do aluno no formato das regras de desempenho (limitado às 5.000 mais recentes). */
 export async function userAttempts(userId: string): Promise<Attempt[]> {
@@ -22,5 +24,21 @@ export async function streak(userId: string) {
   const cur = new Date();
   if (!days.has(day(cur))) cur.setDate(cur.getDate() - 1); // ainda não estudou hoje: conta até ontem
   while (days.has(day(cur))) { n++; cur.setDate(cur.getDate() - 1); }
-  return { streak: n, today: rows.filter((r) => day(r.createdAt) === day(new Date())).length };
+  return { streak: n, recorde: maiorSequencia(days), today: rows.filter((r) => day(r.createdAt) === day(new Date())).length };
+}
+
+/** Totais para XP e conquistas (contam TODAS as respostas, sem o limite de 5.000). */
+export async function totais(userId: string) {
+  const [respondidas, acertos, simulados] = await Promise.all([
+    db.questionAttempt.count({ where: { userId } }),
+    db.questionAttempt.count({ where: { userId, correct: true } }),
+    db.simulationAttempt.findMany({ where: { userId, finishedAt: { not: null } }, select: { correct: true, total: true, simulation: { select: { kind: true } } }, take: 2000 }),
+  ]);
+  return {
+    respondidas,
+    acertos,
+    simulados: simulados.length,
+    simuladosInteligentes: simulados.filter((s) => s.simulation.kind === "smart").length,
+    melhorNotaSimulado: Math.max(0, ...simulados.filter((s) => s.total >= 10).map((s) => notaDez(s.correct, s.total))),
+  };
 }

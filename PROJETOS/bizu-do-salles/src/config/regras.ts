@@ -53,6 +53,8 @@ export const REGRAS = {
     maxMinutos: 240,
     // ✏️ EDITÁVEL: tolerância (segundos) após o fim do tempo para aceitar o envio automático
     toleranciaSegundos: 60,
+    // ✏️ EDITÁVEL: "Tenho X minutos" → quantas questões o simulado inteligente sorteia
+    tenhoMinutos: { 10: 10, 30: 25, 60: 50 } as Record<number, number>,
   },
 
   ranking: {

@@ -53,6 +53,8 @@ textarea { min-height: 110px; }
 .alert { padding: .8rem 1rem; border-radius: 10px; background: var(--surface-2); border-left: 4px solid var(--accent); }
 .alert.bad { background: var(--bad-bg); border-color: var(--bad); }
 .alert.ok { background: var(--ok-bg); border-color: var(--ok); }
+.revisao { border-left: 4px solid var(--accent); } /* caixa "Por que errei?" */
+.destaque { border: 2px solid var(--brand); } /* cartão em destaque (ex.: simulado inteligente) */
 .badge { display: inline-block; padding: .1rem .55rem; border-radius: 999px; background: var(--surface-2); font-size: .8rem; font-weight: 600; }
 .stat { font-size: 1.9rem; font-weight: 700; }
 .bar { height: 10px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
@@ -110,3 +112,23 @@ th, td { text-align: left; padding: .55rem .5rem; border-bottom: 1px solid var(-
 .timer { position: sticky; top: 0; z-index: 5; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: .5rem .9rem; font-weight: 700; font-size: 1.1rem; width: fit-content; }
 .timer.warn { border-color: var(--accent); color: var(--accent); }
 .qnum { font-weight: 800; color: var(--brand); margin-right: .35rem; }
+
+/* Conquistas (painel do aluno) */
+.conquistas { list-style: none; padding: 0; margin: .75rem 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: .5rem; }
+.conquistas li { display: flex; gap: .6rem; align-items: center; padding: .5rem .65rem; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.conquistas li > span:first-child { font-size: 1.5rem; }
+.conquistas li small { display: block; }
+.conquistas li.off { opacity: .5; filter: grayscale(1); }
+
+/* Páginas públicas */
+.public-nav { gap: .5rem; flex-wrap: nowrap; }
+.public-nav a, .topbar .logo { white-space: nowrap; }
+.public-nav > a:not(.btn) { color: var(--text); font-weight: 600; text-decoration: none; }
+.passos { list-style: none; padding: 0; margin: 0; counter-reset: passo; }
+.passos li { counter-increment: passo; }
+.passos li h3::before { content: counter(passo) ". "; color: var(--brand); }
+.numeros .stat { color: var(--brand); }
+@media (max-width: 520px) { .hide-xs { display: none; } }
+/* Números do painel: 2 por linha no celular */
+.stats { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.stats .stat { font-size: clamp(1.4rem, 6vw, 1.9rem); }

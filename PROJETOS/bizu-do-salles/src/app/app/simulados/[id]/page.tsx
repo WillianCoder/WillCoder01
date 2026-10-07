@@ -10,9 +10,9 @@ import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 import { requireUser } from "@/lib/auth";
 import { orderFor } from "@/core/shuffle";
-import { gradeSimulation, secondsLeft } from "@/core/simulation";
+import { gradeSimulation, notaDez, secondsLeft, situacaoCFSd } from "@/core/simulation";
 import { Timer } from "@/components/Timer";
-import { finishSimulation } from "../actions";
+import { createSimulation, finishSimulation } from "../actions";
 
 export const metadata = { title: "Simulado" };
 const POS = ["A", "B", "C", "D", "E"];
@@ -62,12 +62,17 @@ export default async function SimuladoPage({ params, searchParams }: { params: P
   const chosenBy = Object.fromEntries(attempt.answers.map((a) => [a.questionId, a.chosenLetter]));
   const r = gradeSimulation(items.map((q) => ({ subject: q.subject.name, correctLetter: q.correctLetter, chosenLetter: chosenBy[q.id] ?? null })));
   const minutes = Math.max(1, Math.round((attempt.finishedAt.getTime() - attempt.startedAt.getTime()) / 60000));
+  const nota = notaDez(r.correct, r.total);
+  const situacao = situacaoCFSd(nota);
   return (
     <div className="stack">
       <h1>Resultado · {attempt.simulation.title}</h1>
       {sp.atrasado && <p className="alert bad">O simulado foi enviado depois do fim do tempo; as respostas não foram consideradas.</p>}
-      <div className="grid">
-        <div className="card"><div className="muted">Nota</div><div className="stat">{r.correct}/{r.total}</div></div>
+      <p className={`alert ${situacao.nivel === "ok" ? "ok" : situacao.nivel === "risco" ? "bad" : ""}`} role="status">
+        <strong>Nota {nota.toLocaleString("pt-BR", { minimumFractionDigits: 1 })} / 10.</strong> {situacao.texto}
+      </p>
+      <div className="grid stats">
+        <div className="card"><div className="muted">Acertos</div><div className="stat">{r.correct}/{r.total}</div></div>
         <div className="card"><div className="muted">Aproveitamento</div><div className="stat">{r.rate}%</div></div>
         <div className="card"><div className="muted">Erros / em branco</div><div className="stat">{r.wrong} / {r.blank}</div></div>
         <div className="card"><div className="muted">Tempo</div><div className="stat">{minutes} min</div></div>
@@ -81,7 +86,8 @@ export default async function SimuladoPage({ params, searchParams }: { params: P
         ))}
       </section>
       <div className="row">
-        <Link className="btn" href="/app/simulados">Novo simulado</Link>
+        <form action={createSimulation}><input type="hidden" name="tipo" value="inteligente" /><input type="hidden" name="tempo" value="10" /><button className="btn" type="submit">🧠 Treinar meus pontos fracos (10 min)</button></form>
+        <Link className="btn ghost" href="/app/simulados">Novo simulado</Link>
         <Link className="btn ghost" href="/app/questoes?filtro=erradas">Revisar meus erros</Link>
       </div>
       <h2>Correção</h2>
